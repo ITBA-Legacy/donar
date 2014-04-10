@@ -17,10 +17,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: rails-bootstrap_development
+  database: donar_development
   pool: 5
-  username: rails-bootstrap
-  password: rails-bootstrap
+  username: donar
+  password: donar
   host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -47,28 +47,28 @@ development:
 test: &test
   adapter: postgresql
   encoding: unicode
-  database: rails-bootstrap_test
+  database: donar_test
   pool: 5
-  username: rails-bootstrap
-  password: rails-bootstrap
+  username: donar
+  password: donar
   host: localhost
 
 staging:
   adapter: postgresql
   encoding: unicode
-  database: rails-bootstrap_staging
+  database: donar_staging
   pool: 5
-  username: rails-bootstrap
-  password: rails-bootstrap
+  username: donar
+  password: donar
   host: localhost
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: rails-bootstrap_production
+  database: donar_production
   pool: 5
-  username: rails-bootstrap
-  password: rails-bootstrap
+  username: donar
+  password: donar
   host: localhost
 
 cucumber:

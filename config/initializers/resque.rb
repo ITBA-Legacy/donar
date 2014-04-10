@@ -19,5 +19,5 @@
 # end
 
 # Resque::Server.use(Rack::Auth::Basic) do |user, password|
-#   password == "wolox1189"
+#   password == "donar"
 # end
