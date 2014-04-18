@@ -34,3 +34,7 @@ coverage/*
 
 # Images
 public/uploads
+
+#Oauth
+.google.yml
+.facebook.yml

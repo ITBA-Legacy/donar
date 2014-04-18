@@ -66,6 +66,10 @@ gem 'resque-scheduler', require: 'resque_scheduler'
 
 gem 'pundit'
 
+# Oauth Login
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
