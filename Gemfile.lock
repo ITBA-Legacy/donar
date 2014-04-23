@@ -211,6 +211,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    railroady (1.1.1)
     rails (4.0.2)
       actionmailer (= 4.0.2)
       actionpack (= 4.0.2)
@@ -377,6 +378,7 @@ DEPENDENCIES
   pry-nav
   pry-stack_explorer
   pundit
+  railroady
   rails (= 4.0.2)
   rails_12factor
   resque
