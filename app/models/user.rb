@@ -4,10 +4,17 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_create do |user|
-      user.provider = auth.provider
-      user.uid = auth.uid
+  has_many :identities
+
+  def self.from_omniauth(auth, current_user)
+    binding.pry
+    identity = Identity.find_with_omniauth(auth)
+    if identity.present? && !current_user.present?
+      identity.user
+    elsif !identity.present? && current_user.present?
+      create_new_identity(auth, current_user)
+    else
+      create_user(auth)
     end
   end
 
@@ -28,5 +35,25 @@ class User < ActiveRecord::Base
 
   def update_with_password(params, *options)
     encrypted_password.blank? ? update_attributes(params, *options) : super
+  end
+
+  private
+
+  def self.create_new_identity(auth, current_user)
+    current_user.identities << Identity.create(uid: auth.uid, provider: auth.provider)
+    current_user.save!
+    current_user
+  end
+
+  def self.create_user(auth)
+    identity = Identity.create(uid: auth.uid, provider: auth.provider)
+    user = where(email: auth.info.email).first_or_create do |user|
+      user.email = auth.info.email
+      user.provider = auth.provider
+      user.uid = auth.uid
+    end
+    identity.user = user
+    identity.save!
+    user
   end
 end
