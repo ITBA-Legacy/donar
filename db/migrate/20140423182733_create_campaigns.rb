@@ -3,9 +3,9 @@ class CreateCampaigns < ActiveRecord::Migration
     create_table :campaigns do |t|
       t.string :name
       t.text :description
-      t.double :goal
+      t.float :goal
       t.datetime :deadline
-      t.double :minimum
+      t.float :minimum
       t.string :category
       t.string :locality
       t.references :organization, index: true
