@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   has_many :identities
 
   def self.from_omniauth(auth, current_user)
-    binding.pry
     identity = Identity.find_with_omniauth(auth)
     if identity.present? && !current_user.present?
       identity.user
