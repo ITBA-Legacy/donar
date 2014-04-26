@@ -29,7 +29,7 @@ end
 
 gem "less-rails"
 gem "therubyracer"
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -65,6 +65,10 @@ gem 'rufus-scheduler'
 gem 'resque-scheduler', require: 'resque_scheduler'
 
 gem 'pundit'
+
+# Oauth Login
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
 
 group :development do
   gem 'better_errors'
