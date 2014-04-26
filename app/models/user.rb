@@ -9,8 +9,10 @@ class User < ActiveRecord::Base
   def self.from_omniauth(auth, current_user)
     identity = Identity.find_with_omniauth(auth)
     if identity.present? && !current_user.present?
+      #the user has logged in in the past using this method but it is not logged it right now
       identity.user
     elsif !identity.present? && current_user.present?
+      # the user is logged in but has never used this method. He is linking accounts
       create_new_identity(auth, current_user)
     else
       create_user(auth)
@@ -45,7 +47,10 @@ class User < ActiveRecord::Base
   end
 
   def self.create_user(auth)
+    binding.pry
     identity = Identity.create(uid: auth.uid, provider: auth.provider)
+    # this method ensures that if the user exists, then the accounts are linked and no user is
+    # created
     user = where(email: auth.info.email).first_or_create do |user|
       user.email = auth.info.email
       user.provider = auth.provider
