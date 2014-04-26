@@ -47,7 +47,6 @@ class User < ActiveRecord::Base
   end
 
   def self.create_user(auth)
-    binding.pry
     identity = Identity.create(uid: auth.uid, provider: auth.provider)
     # this method ensures that if the user exists, then the accounts are linked and no user is
     # created
