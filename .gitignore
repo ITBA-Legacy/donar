@@ -37,3 +37,5 @@ public/uploads
 
 .google.yml
 .facebook.yml
+
+*.svg
