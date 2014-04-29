@@ -6,14 +6,14 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: bca806aa816cbb4b17ce9b0c19c7923e809eaa08
+  revision: 1fe5f4e9e26b5deee072c6a2798314e78b3360f1
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
       bourbon
       coffee-rails
       devise (~> 3.2)
-      formtastic (~> 2.3.0.rc2)
+      formtastic (~> 2.3.0.rc3)
       inherited_resources (~> 1.3)
       jquery-rails
       jquery-ui-rails
@@ -24,16 +24,17 @@ GIT
 
 GIT
   remote: git://github.com/justinfrench/formtastic.git
-  revision: f630fb0bee233c75301cc0a362cfbe58ae7b5001
+  revision: 16a528a37d84f6c51ddbf196597e9472abc4e255
   specs:
-    formtastic (2.3.0.rc2)
-      actionpack (>= 3.0)
+    formtastic (2.3.0.rc3)
+      actionpack (>= 3.2.13)
 
 GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: 663760e67b80ee25adc293bf5f03debae28b5af9
+  revision: 128f373e151528c9516ea8df32831fc60ac1c35d
+  branch: bootstrap3
   specs:
-    twitter-bootstrap-rails (2.2.8)
+    twitter-bootstrap-rails (3.1.1)
       actionpack (>= 3.1)
       execjs
       rails (>= 3.1)
@@ -71,15 +72,15 @@ GEM
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (4.0.2)
-    ast (1.1.0)
+    ast (2.0.0)
     bcrypt (3.1.7)
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bourbon (3.1.8)
-      sass (>= 3.2.0)
+    bourbon (3.2.1)
+      sass (~> 3.2)
       thor
     builder (3.1.4)
     capybara (2.2.1)
@@ -104,7 +105,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    columnize (0.3.6)
+    columnize (0.8.9)
     commonjs (0.2.7)
     cucumber (1.3.14)
       builder (>= 2.1.2)
@@ -165,7 +166,7 @@ GEM
     jquery-turbolinks (2.0.2)
       railties (>= 3.1.0)
       turbolinks
-    jquery-ui-rails (4.2.0)
+    jquery-ui-rails (4.2.1)
       railties (>= 3.2.16)
     json (1.8.1)
     jwt (0.1.11)
@@ -192,7 +193,7 @@ GEM
     mini_portile (0.5.3)
     minitest (4.7.5)
     mono_logger (1.1.0)
-    multi_json (1.9.2)
+    multi_json (1.9.3)
     multi_test (0.1.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -209,7 +210,7 @@ GEM
       rack (~> 1.0)
     omniauth-facebook (1.6.0)
       omniauth-oauth2 (~> 1.1)
-    omniauth-google-oauth2 (0.2.3)
+    omniauth-google-oauth2 (0.2.4)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
     omniauth-oauth2 (1.1.2)
@@ -218,8 +219,8 @@ GEM
       oauth2 (~> 0.9.3)
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
-    parser (2.1.7)
-      ast (~> 1.1)
+    parser (2.1.9)
+      ast (>= 1.1, < 3.0)
       slop (~> 3.4, >= 3.4.5)
     pg (0.17.1)
     poltergeist (1.5.0)
@@ -227,7 +228,7 @@ GEM
       cliver (~> 0.3.1)
       multi_json (~> 1.0)
       websocket-driver (>= 0.2.0)
-    polyamorous (0.6.4)
+    polyamorous (1.0.0)
       activerecord (>= 3.0)
     polyglot (0.3.4)
     powerpack (0.0.9)
@@ -267,11 +268,13 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
     raindrops (0.13.0)
-    rake (10.2.2)
-    ransack (1.1.0)
+    rake (10.3.1)
+    ransack (1.2.2)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
-      polyamorous (~> 0.6.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.0.0)
     redis (3.0.7)
     redis-namespace (1.4.1)
       redis (~> 3.0.4)
@@ -305,9 +308,9 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-    rubocop (0.20.1)
+    rubocop (0.21.0)
       json (>= 1.7.7, < 2)
-      parser (~> 2.1.7)
+      parser (~> 2.1.9)
       powerpack (~> 0.0.6)
       rainbow (>= 1.99.1, < 3.0)
       ruby-progressbar (~> 1.4)
@@ -372,7 +375,7 @@ GEM
       rack (>= 1.0.0)
     warden (1.2.3)
       rack (>= 1.0)
-    websocket-driver (0.3.2)
+    websocket-driver (0.3.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
