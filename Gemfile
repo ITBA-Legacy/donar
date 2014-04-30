@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 ruby "2.0.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.0.4'
 
 gem 'google-webfonts-rails'
 
@@ -69,6 +69,7 @@ gem 'pundit'
 # Oauth Login
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter'
 
 group :development do
   gem 'better_errors'
