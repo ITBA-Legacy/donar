@@ -1,7 +1,5 @@
 es:
   activerecord:
-    models:
-      auction:
     errors:
       models:
         auction:

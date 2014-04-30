@@ -1,0 +1,19 @@
+table.table.table-bordered
+  thead
+    tr
+      th
+        = t('organization.name')
+      th
+        = t('organization.description')
+      th
+        = t('organization.locality')
+  tbody
+  - @organizations.each do |organization|
+    tr
+      td
+        = organization.name
+      td
+        = organization.description
+      td
+        = organization.locality
+

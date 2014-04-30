@@ -1,3 +1,7 @@
 es:
   application:
     title: Donar
+  organizations:
+    name: Nombre
+    description: Description
+    create: Crear Organización
