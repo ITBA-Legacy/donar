@@ -238,6 +238,9 @@ Devise.setup do |config|
                                   AppConfiguration.for(:google).google_secret,
                                   { access_type: "offline", approval_prompt: "" }
 
+  config.omniauth :twitter, AppConfiguration.for(:twitter).twitter_key,
+                            AppConfiguration.for(:twitter).twitter_secret
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

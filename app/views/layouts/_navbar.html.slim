@@ -20,3 +20,6 @@ nav.navbar.navbar-inverse role="navigation" style="position: static;"
       li
         = link_to t('devise.sessions.sign_in_with_google'),
           user_omniauth_authorize_path(:google_oauth2)
+      li
+        = link_to t('devise.sessions.sign_in_with_twitter'),
+          user_omniauth_authorize_path(:twitter)
