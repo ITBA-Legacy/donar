@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423195337) do
+ActiveRecord::Schema.define(version: 20140430164348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,14 @@ ActiveRecord::Schema.define(version: 20140423195337) do
   add_index "contributions", ["campaign_perk_id"], name: "index_contributions_on_campaign_perk_id", using: :btree
   add_index "contributions", ["user_id"], name: "index_contributions_on_user_id", using: :btree
 
+  create_table "identities", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "milestones", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -76,6 +84,14 @@ ActiveRecord::Schema.define(version: 20140423195337) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "organizations_users", id: false, force: true do |t|
+    t.integer "user_id",         null: false
+    t.integer "organization_id", null: false
+  end
+
+  add_index "organizations_users", ["organization_id", "user_id"], name: "index_organizations_users_on_organization_id_and_user_id", using: :btree
+  add_index "organizations_users", ["user_id", "organization_id"], name: "index_organizations_users_on_user_id_and_organization_id", using: :btree
 
   create_table "perks", force: true do |t|
     t.integer  "campaign_id"
@@ -99,5 +115,25 @@ ActiveRecord::Schema.define(version: 20140423195337) do
 
   add_index "updates", ["campaign_id"], name: "index_updates_on_campaign_id", using: :btree
   add_index "updates", ["user_id"], name: "index_updates_on_user_id", using: :btree
+
+  create_table "users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "uid"
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
