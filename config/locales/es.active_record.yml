@@ -6,6 +6,10 @@ es:
           attributes:
             name:
               blank: Nombre es requerido
+            description:
+              blank: Descripción es requerida
+            locality:
+              blank: Localidad es requerida
     models:
       organization:
         one: Organización
