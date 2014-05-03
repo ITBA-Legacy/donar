@@ -11,7 +11,7 @@ table.table.table-bordered.table-hover
   - @organizations.each do |organization|
     tr
       td
-        = organization.name
+        = link_to organization.name, organization
       td
         = organization.description
       td
