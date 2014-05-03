@@ -3,7 +3,7 @@ module UserAuthenticationHelper
   def from_omniauth(auth, current_user)
     identity = Identity.find_with_omniauth(auth)
     if identity.present? && !current_user.present?
-      #the user has logged in in the past using this method but it is not logged it right now
+      # the user has logged in in the past using this method but it is not logged it right now
       identity.user
     elsif !identity.present? && current_user.present?
       # the user is logged in but has never used this method. He is linking accounts
@@ -14,8 +14,8 @@ module UserAuthenticationHelper
   end
 
   def new_with_session(params, session)
-    if session["devise.user_attributes"]
-      new(session["devise.user_attributes"], without_protection: true) do |user|
+    if session['devise.user_attributes']
+      new(session['devise.user_attributes'], without_protection: true) do |user|
         user.attributes = params
         user.valid?
       end
@@ -37,10 +37,10 @@ module UserAuthenticationHelper
     identity = Identity.create(uid: auth.uid, provider: auth.provider)
     # this method ensures that if the user exists, then the accounts are linked and no user is
     # created
-    user = where(email: auth.info.email).first_or_create do |user|
-      user.email = auth.info.email
-      user.provider = auth.provider
-      user.uid = auth.uid
+    user = where(email: auth.info.email).first_or_create do |aux_user|
+      aux_user.email = auth.info.email
+      aux_user.provider = auth.provider
+      aux_user.uid = auth.uid
     end
     identity.user = user
     identity.save!

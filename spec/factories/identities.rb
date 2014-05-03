@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :identity do
-    provider "MyString"
-    uid "MyString"
-    references ""
+    provider 'MyString'
+    uid 'MyString'
+    references ''
   end
 end
