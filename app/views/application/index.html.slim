@@ -1,2 +1,4 @@
-= link_to t('organizatons.create'), new_organization_path
-= link_to t('organizatons.index'), organizations_path
+p
+  = link_to t('helpers.submit.organization.new'), new_organization_path, class: 'btn btn-primary'
+p
+  = link_to Organization.model_name.human(count: 2), organizations_path, class: 'btn btn-primary'

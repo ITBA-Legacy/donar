@@ -1,7 +1,9 @@
 es:
   application:
     title: Donar
-  organizations:
-    name: Nombre
-    description: Description
-    create: Crear Organización
+  helpers:
+    submit:
+      organization:
+        create: "Crear %{model}"
+        new: "Nueva Organización"
+        edit: "Editar Organización"

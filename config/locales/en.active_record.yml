@@ -1,18 +1,17 @@
 en:
   activerecord:
-    models:
-      auction:
     errors:
       models:
-        auction:
+        organization:
           attributes:
-            end_date:
-              end_date_in_future: Date must be in the future
-            seller:
-              seller_different_winner: Seller must be differente than the winner
-        bid:
-          attributes:
-            amount:
-              lower_bid: Bid must be bigger from last bid submitted
-              lower_bid_buy_it_now_price: Bid must be smaller or equal than the buy it now price
-              no_enough_account: You don't have enought money in your account
+            name:
+              blank: Name is required
+    models:
+      organization:
+        one: Organization
+        other: Organizations
+    attributes:
+      organization:
+        name: Name
+        description: Description
+        locality: Locality

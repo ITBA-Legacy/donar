@@ -1,12 +1,12 @@
-table.table.table-bordered
+table.table.table-bordered.table-hover
   thead
     tr
       th
-        = t('organization.name')
+        = Organization.human_attribute_name(:name)
       th
-        = t('organization.description')
+        = Organization.human_attribute_name(:description)
       th
-        = t('organization.locality')
+        = Organization.human_attribute_name(:locality)
   tbody
   - @organizations.each do |organization|
     tr
