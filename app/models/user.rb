@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :contributions
 
-
   def email_required?
     super && (provider.blank? || provider != 'twitter')
   end

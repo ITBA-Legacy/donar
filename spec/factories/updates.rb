@@ -2,8 +2,6 @@
 
 FactoryGirl.define do
   factory :update do
-    user nil
-    campaign nil
-    message "MyText"
+    message { Faker::Lorem.sentence }
   end
 end
