@@ -7,6 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # encoding: utf-8
 
+# We create a small of "almost real" objetcts to have for Demo Purposes
+
 # User creation
    martin = User.create(
             email: 'mmarquez@gmail.com',
@@ -128,6 +130,9 @@
                 Comment.create(user: diego, message: 'Hay hermosos arboles en Corrientes'),
                       ]
     )
+
+# We use part of the previous entities to generate more object with a change in some config
+# we migt be able to manage the number of entities of each kind we create.
 
 
 
