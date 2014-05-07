@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe CreateOrganizationContext do
 
-  let(:params) { build(:organization) }
+  let(:params) { attributes_for(:organization) }
   let(:user) { create(:user) }
   let(:context) { CreateOrganizationContext.new(user) }
 
