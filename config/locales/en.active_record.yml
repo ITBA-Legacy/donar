@@ -2,20 +2,38 @@ en:
   activerecord:
     errors:
       models:
-        organization:
+        campaign:
           attributes:
             name:
               blank: Name is required
             description:
               blank: Description is required
+            goal:
+              blank: Goal is required
+              only_integer: Goal must be a number
+            deadline:
+              blank: End date is required
+              on_or_after: End date must be after current date
+            minimum:
+              blank: Minimum pledge is required
+              only_integer: Minimum pledge must be a number
+            category:
+              blank: Category is required
+            short_description:
+              blank: Short description is required
             locality:
               blank: Locality is required
     models:
-      organization:
-        one: Organization
-        other: Organizations
+      campaign:
+        one: Campaign
+        other: Campaigns
     attributes:
-      organization:
+      campaign:
         name: Name
         description: Description
+        goal: Goal
+        deadline: End Date
+        minimum: Minimum Pledge
+        category: Category
+        short_description: Short Description
         locality: Locality

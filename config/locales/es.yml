@@ -3,7 +3,7 @@ es:
     title: Donar
   helpers:
     submit:
-      organization:
+      campaign:
         create: "Crear %{model}"
-        new: "Nueva Organización"
-        edit: "Editar Organización"
+        new: "Nueva Campaña"
+        edit: "Editar Campaña"

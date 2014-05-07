@@ -365,6 +365,7 @@ GEM
     thread_safe (0.3.3)
     tilt (1.4.1)
     timecop (0.7.1)
+    timeliness (0.3.7)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -378,6 +379,8 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    validates_timeliness (3.0.14)
+      timeliness (~> 0.3.6)
     vegas (0.1.11)
       rack (>= 1.0.0)
     warden (1.2.3)
@@ -441,3 +444,4 @@ DEPENDENCIES
   twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
   unicorn
+  validates_timeliness (~> 3.0)

@@ -1,0 +1,39 @@
+legend
+  = Campaign.model_name.human
+.col-md-6
+  ul.list-group
+    li.list-group-item
+      h4.list-group-item-heading
+        = Campaign.human_attribute_name(:name)
+      p.list-group-item-text
+        = @campaign.name
+    li.list-group-item
+      h4.list-group-item-heading
+        = Campaign.human_attribute_name(:description)
+      p.list-group-item-text
+        = @campaign.description
+    li.list-group-item
+      h4.list-group-item-heading
+        = Campaign.human_attribute_name(:goal)
+      p.list-group-item-text
+        = @campaign.goal
+    li.list-group-item
+      h4.list-group-item-heading
+        = Campaign.human_attribute_name(:deadline)
+      p.list-group-item-text
+        = @campaign.deadline
+    li.list-group-item
+      h4.list-group-item-heading
+        = Campaign.human_attribute_name(:minimum)
+      p.list-group-item-text
+        = @campaign.minimum
+    li.list-group-item
+      h4.list-group-item-heading
+        = Campaign.human_attribute_name(:short_description)
+      p.list-group-item-text
+        = @campaign.short_description
+    li.list-group-item
+      h4.list-group-item-heading
+        = Campaign.human_attribute_name(:locality)
+      p.list-group-item-text
+        = @campaign.locality

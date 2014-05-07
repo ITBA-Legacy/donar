@@ -3,8 +3,10 @@ Donar::Application.routes.draw do
   root 'application#index'
 
   resources :organizations
+  resources :campaigns
 
   get 'funder' => 'application#funder'
 
   get 'project' => 'application#project'
+
 end
