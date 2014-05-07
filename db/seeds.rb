@@ -10,26 +10,31 @@
 # We create a small of "almost real" objetcts to have for Demo Purposes
 
 # User creation
-   martin = User.create(
+   martin = User.new(
             email: 'mmarquez@gmail.com',
             password: '12345678',
             password_confirmation: '12345678')
-   esteban = User.create(
+   martin.save! # Have to do it this way in order to devise gem to complete the rest.
+   esteban = User.new(
             email: 'epintos7@gmail.com',
             password: '12345678',
             password_confirmation: '12345678')
-   diego = User.create(
+   esteban.save!
+   diego = User.new(
             email: 'strubolini@gmail.com',
             password: '12345678',
             password_confirmation: '12345678')
+   diego.save!
    matias = User.create(
             email: 'mdesanti90@gmail.com',
             password: '12345678',
             password_confirmation: '12345678')
+   diego.save!
    federico = User.create(
             email: 'federicohomovc@gmail.com',
             password: '12345678',
             password_confirmation: '12345678')
+   diego.save!
 
 # Organization creation
    cemic = Organization.create(
