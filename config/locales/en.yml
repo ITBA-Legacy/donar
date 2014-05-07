@@ -7,5 +7,9 @@ es:
         create: "Create %{model}"
         new: "New Organization"
         edit: "Edit Organization"
+      campaign:
+        create: "Crear %{model}"
+        new: "Nueva Campaign"
+        edit: "Editar Campaign"
   users:
     organizations: My Organizations

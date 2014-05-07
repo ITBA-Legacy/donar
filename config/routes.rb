@@ -7,4 +7,6 @@ Donar::Application.routes.draw do
       get :list
     end
   end
+
+  resources :campaigns
 end
