@@ -11,7 +11,7 @@ describe CreateOrganizationContext do
     context 'Creating an organization' do
 
       it 'assigns the current user' do
-        organization = context.handle(JSON.parse(params.to_json))
+        organization = context.handle(params)
         expect(organization.valid?).to be true
         expect(organization.users).to include(user)
       end
