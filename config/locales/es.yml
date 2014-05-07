@@ -1,3 +1,9 @@
 es:
   application:
     title: Donar
+  helpers:
+    submit:
+      campaign:
+        create: "Crear %{model}"
+        new: "Nueva Campaña"
+        edit: "Editar Campaña"

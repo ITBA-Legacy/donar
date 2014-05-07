@@ -1,18 +1,39 @@
 en:
   activerecord:
-    models:
-      auction:
     errors:
       models:
-        auction:
+        campaign:
           attributes:
-            end_date:
-              end_date_in_future: Date must be in the future
-            seller:
-              seller_different_winner: Seller must be differente than the winner
-        bid:
-          attributes:
-            amount:
-              lower_bid: Bid must be bigger from last bid submitted
-              lower_bid_buy_it_now_price: Bid must be smaller or equal than the buy it now price
-              no_enough_account: You don't have enought money in your account
+            name:
+              blank: Name is required
+            description:
+              blank: Description is required
+            goal:
+              blank: Goal is required
+              only_integer: Goal must be a number
+            deadline:
+              blank: End date is required
+              on_or_after: End date must be after current date
+            minimum:
+              blank: Minimum pledge is required
+              only_integer: Minimum pledge must be a number
+            category:
+              blank: Category is required
+            short_description:
+              blank: Short description is required
+            locality:
+              blank: Locality is required
+    models:
+      campaign:
+        one: Campaign
+        other: Campaigns
+    attributes:
+      campaign:
+        name: Name
+        description: Description
+        goal: Goal
+        deadline: End Date
+        minimum: Minimum Pledge
+        category: Category
+        short_description: Short Description
+        locality: Locality
