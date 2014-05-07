@@ -17,3 +17,51 @@ legend
         = Organization.human_attribute_name(:locality)
       p.list-group-item-text
         = @organization.locality
+legend
+  = Campaign.model_name.human(count: 2)
+table.table.table-bordered.table-hover
+  thead
+    tr
+      th
+        = Organization.human_attribute_name(:name)
+      th
+        = Organization.human_attribute_name(:description)
+      th
+        = Organization.human_attribute_name(:goal)
+      th
+        = Organization.human_attribute_name(:deadline)
+      th
+        = Organization.human_attribute_name(:minimum)
+      th
+        = Organization.human_attribute_name(:category)
+      th
+        = Organization.human_attribute_name(:locality)
+      th
+        = Organization.human_attribute_name(:category)
+      th
+        = Organization.human_attribute_name(:short_description)
+  tbody
+  - @organization.campaigns.each do |campaign|
+    tr
+      td
+        = link_to campaign.name, campaign
+      td
+        = campaign.description
+      th
+        = campaign.goal
+      th
+        = campaign.deadline
+      th
+        = campaign.minimum
+      th
+        = campaign.category
+      th
+        = campaign.locality
+      th
+        = campaign.category
+      th
+        = campaign.short_description
+p
+  = link_to t('helpers.submit.campaign.new'), new_campaign_path, class: 'btn btn-primary'
+
+
