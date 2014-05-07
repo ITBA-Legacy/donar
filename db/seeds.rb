@@ -49,16 +49,16 @@
             users: [martin, diego])
    agrupar = Organization.create(
             name: 'Fundación Agrupar',
-            description: 'Fundación cuya misión es promover, facilitar, apoyar y desarrollar' +
-            ' actividades tendientes a mejorar la calidad de vida de la comunidad en armonía' +
-            ' con la naturaleza.',
+            description: 'Fundación cuya misión es promover, facilitar, apoyar y desarrollar ' +
+            'actividades tendientes a mejorar la calidad de vida de la comunidad en armonía ' +
+            'con la naturaleza.',
             locality: 'Argentina',
             users: [esteban, matias, federico])
    cruz_roja = Organization.create(
             name: 'Cruz Roja Argentina',
-            description: 'Asociación Civil, humanitaria y de carácter voluntario, con presencia' +
-            ' en todo el territorio argentino. Una de las 187 Sociedades Nacionales que integran' +
-            ' el Movimiento Internacional de la Cruz Roja y Media Luna Roja.',
+            description: 'Asociación Civil, humanitaria y de carácter voluntario, con presencia ' +
+            'en todo el territorio argentino. Una de las 187 Sociedades Nacionales que integran ' +
+            'el Movimiento Internacional de la Cruz Roja y Media Luna Roja.',
             locality: 'Argentina',
             users: [diego, esteban, matias])
 
@@ -78,28 +78,31 @@
 
    tomografo_cemic = Campaign.create(
             name: 'Nuevo tomógrafo',
-            description: 'El objetivo es comprar el tomografo computado General Electric CT Max 640',
+            description: 'El objetivo es comprar el tomografo computado General Electric '+
+            'CT Max 640',
             goal: 100000.0,
-            deadline: DateTime.now + 1.month,
+            deadline: DateTime.current + 1.month,
             minimum: 1.0,
             category: 'buys',
             locality: 'Argentina',
             short_description: 'Un nuevo tomógrafo para el CEMIC',
             organization: cemic,
-            perks: tomografo_sticker,
+            perks: [tomografo_sticker, tomografo_visit],
             contributions: [
-              Contribution.create(user: martin, campaign_perk: tomografo_sticker, amount: 100.0),
-              Contribution.create(user: diego, campaign_perk: tomografo_sticker, amount: 200.0),
-              Contribution.create(user: federico, campaign_perk: tomografo_visit, amount: 1000.0),
-              Contribution.create(user: martin, campaign_perk: tomografo_visit, amount: 2000.0)
+              Contribution.create(user: martin, perk: tomografo_sticker, amount: 100.0),
+              Contribution.create(user: diego, perk: tomografo_sticker, amount: 200.0),
+              Contribution.create(user: federico, perk: tomografo_visit, amount: 1000.0),
+              Contribution.create(user: martin, perk: tomografo_visit, amount: 2000.0)
                           ],
             comments: [
                 Comment.create(user: matias, message: 'Quiero participar'),
                 Comment.create(user: diego, message: 'Gracias por el esfuerzo!'),
-                Comment.create(user: federico, message: 'Es hora de que tengamos un mejor tomógrafo'),
+                Comment.create(user: federico,
+                               message:'Es hora de que tengamos un mejor tomógrafo'),
                 Comment.create(user: martin, message: 'Que bueno! Un tomógrafo'),
                 Comment.create(user: matias, message: 'Necesitamos mejor equipamiento'),
-                Comment.create(user: federico, message: 'Es hora de que tengamos un mejor tomógrafo'),
+                Comment.create(user: federico,
+                               message: 'Es hora de que tengamos un mejor tomógrafo'),
                 Comment.create(user: federico, message: 'Felicitaciones por la iniciativa'),
                 Comment.create(user: diego, message: '!!!!!!!!')
                       ]
@@ -109,9 +112,10 @@
 
    comedor_villa31 = Campaign.create(
             name: 'Comedor 31',
-            description: 'COAS busca crear un comedor infantil para 500 niños que funcione en la Villa 31',
+            description: 'COAS busca crear un comedor infantil para 500 niños que funcione en ' +
+            'la Villa 31',
             goal: 200000.0,
-            deadline: DateTime.now + 1.month,
+            deadline: DateTime.current + 1.month,
             minimum: 10.0,
             category: 'food',
             locality: 'Argentina',
@@ -128,7 +132,7 @@
             name: 'Museo del Arbol',
             description: 'El objetivo es crear un museo de los arboles que funcione al aire libre',
             goal: 100000.0,
-            deadline: DateTime.now + 1.month,
+            deadline: DateTime.current + 1.month,
             minimum: 1.0,
             category: 'startup',
             locality: 'Argentina',
@@ -142,6 +146,3 @@
 
 # We use part of the previous entities to generate more object with a change in some config
 # we migt be able to manage the number of entities of each kind we create.
-
-
-
