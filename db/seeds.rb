@@ -49,12 +49,16 @@
             users: [martin, diego])
    agrupar = Organization.create(
             name: 'Fundación Agrupar',
-            description: 'Fundación cuya misión es promover, facilitar, apoyar y desarrollar actividades tendientes a mejorar la calidad de vida de la comunidad en armonía con la naturaleza.',
+            description: 'Fundación cuya misión es promover, facilitar, apoyar y desarrollar' +
+            ' actividades tendientes a mejorar la calidad de vida de la comunidad en armonía' +
+            ' con la naturaleza.',
             locality: 'Argentina',
             users: [esteban, matias, federico])
    cruz_roja = Organization.create(
             name: 'Cruz Roja Argentina',
-            description: 'Asociación Civil, humanitaria y de carácter voluntario, con presencia en todo el territorio argentino. Una de las 187 Sociedades Nacionales que integran el Movimiento Internacional de la Cruz Roja y Media Luna Roja.',
+            description: 'Asociación Civil, humanitaria y de carácter voluntario, con presencia' +
+            ' en todo el territorio argentino. Una de las 187 Sociedades Nacionales que integran' +
+            ' el Movimiento Internacional de la Cruz Roja y Media Luna Roja.',
             locality: 'Argentina',
             users: [diego, esteban, matias])
 
