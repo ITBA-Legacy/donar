@@ -7,31 +7,41 @@
   martin = User.create(
     email: 'mmarquez@gmail.com',
     password: '12345678',
-    password_confirmation: '12345678'
+    password_confirmation: '12345678',
+    first_name: 'Martin',
+    last_name: 'Marquez'
   )
 
   esteban = User.create(
     email: 'epintos7@gmail.com',
     password: '12345678',
-    password_confirmation: '12345678'
+    password_confirmation: '12345678',
+    first_name: 'Esteban',
+    last_name: 'Pintos'
   )
 
   diego = User.create(
     email: 'strubolini@gmail.com',
     password: '12345678',
-    password_confirmation: '12345678'
+    password_confirmation: '12345678',
+    first_name: 'Diego',
+    last_name: 'Strubolini'
   )
 
   matias = User.create(
     email: 'mdesanti90@gmail.com',
     password: '12345678',
-    password_confirmation: '12345678'
+    password_confirmation: '12345678',
+    first_name: 'Matias',
+    last_name: 'de Santi'
   )
 
   federico = User.create(
     email: 'federicohomovc@gmail.com',
     password: '12345678',
-    password_confirmation: '12345678'
+    password_confirmation: '12345678',
+    first_name: 'Federico',
+    last_name: 'Homovc'
   )
 
   # Organization creation

@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :contributions
 
+  mount_uploader :avatar, AvatarUploader
+
   def email_required?
     super && (provider.blank? || provider != 'twitter')
   end
@@ -20,5 +22,9 @@ class User < ActiveRecord::Base
 
   def update_with_password(params, *options)
     encrypted_password.blank? ? update_attributes(params, *options) : super
+  end
+
+  def full_name
+    "#{first_name} #{last_name}"
   end
 end

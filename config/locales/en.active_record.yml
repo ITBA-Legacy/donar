@@ -63,3 +63,6 @@ en:
         contribution: Total Contribution
       contribution:
         amount: Amount
+      user:
+        created_at: Joined
+        full_name: Name

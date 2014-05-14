@@ -16,15 +16,20 @@ es:
         create: "Crear %{model}"
         new: "Nueva Contribución"
         edit: "Editar Contribución"
+  activerecord:
+    models:
+      user: Usuario
   users:
     organizations: Mis Organizaciones
     campaigns: Mis Campañas
+    profile: Mi Perfil
+    contributions: Mis Contribuciones
   campaigns:
     categories:
       education: Educación
       social: Social
       health: Salud
-    constribute: Constribuir
+    constribute: Contribuir
 
 
 
