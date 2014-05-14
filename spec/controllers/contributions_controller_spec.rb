@@ -33,22 +33,22 @@ describe ContributionsController do
       end
 
       it 'creates the contribution' do
-        expect {
+        expect do
           post :create,
                organization_id: organization.id,
                campaign_id: campaign.id,
                contribution: contribution
-        }.to change(Contribution, :count).by(1)
+        end.to change(Contribution, :count).by(1)
       end
 
       it 'adds the amount to the campaign' do
-        expect {
+        expect do
           post :create,
                organization_id: organization.id,
                campaign_id: campaign.id,
                contribution: contribution
           campaign.reload
-        }.to change(campaign, :contribution).by(contribution[:amount])
+        end.to change(campaign, :contribution).by(contribution[:amount])
       end
 
     end
