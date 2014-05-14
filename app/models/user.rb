@@ -12,8 +12,16 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
+  def first_name_required?
+    super && provider.blank?
+  end
+
+  def first_name_required?
+    super && provider.blank?
+  end
+
   def email_required?
-    super && (provider.blank? || provider != 'twitter')
+    super && provider.blank?
   end
 
   def password_required?
