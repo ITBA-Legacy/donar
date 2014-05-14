@@ -46,6 +46,9 @@ en:
       constribution:
         one: Contribution
         other: Contributions
+      perk:
+        one: Perk
+        other: Perks
     attributes:
       organization:
         name: Name
@@ -63,3 +66,8 @@ en:
         contribution: Total Contribution
       contribution:
         amount: Amount
+      perk:
+        amount: Minimum Amount
+        name: Name
+        maximun: Maximum
+        description: Description

@@ -45,6 +45,11 @@
     = f.label :short_description, class: 'control-label col-sm-2'
     .col-md-4
       = f.text_area :short_description, class: 'form-control col-md-2', required: true
+  legend
+    = Perk.model_name.human(count: 2)
+  = f.fields_for :perks do |f_perk|
+    = render '/perks/_fields', f: f_perk
+  = link_to_add_fields t('helpers.submit.perk.new'), f, :perks
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit nil, class: 'btn btn-primary'

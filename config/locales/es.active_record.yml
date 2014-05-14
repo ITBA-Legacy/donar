@@ -47,6 +47,9 @@ es:
       constribution:
         one: Contribución
         other: Contribuciones
+      perk:
+        one: Beneficio
+        other: Beneficios
     attributes:
       organization:
         name: Nombre
@@ -64,3 +67,8 @@ es:
         contribution: Contribución Total
       contribution:
         amount: Donación
+      perk:
+        amount: Mínima Donación
+        name: Nombre
+        maximun: Máximo
+        description: Descripción

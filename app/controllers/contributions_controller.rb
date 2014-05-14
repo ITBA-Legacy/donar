@@ -5,9 +5,13 @@ class ContributionsController < ApplicationController
   before_action :authenticate_user!
   nested_belongs_to :organization, :campaign
 
-  FIELDS = [:amount]
+  FIELDS = [:amount, :organization_id]
 
   def create
+    @contribution = CreateContributionContext.new(current_user).handle(
+      resource_params.first,
+      @campaign
+    )
     create! { organization_campaign_path(@organization, @campaign) }
   end
 

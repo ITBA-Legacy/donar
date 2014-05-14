@@ -16,6 +16,11 @@ es:
         create: "Create %{model}"
         new: "New Contribution"
         edit: "Edit Contribution"
+      perk:
+        create: "Create %{model}"
+        new: "New Perk"
+        edit: "Edit Perk"
+        remove: "Remove Perk"
   users:
     organizations: My Organizations
     campaigns: My Campaigns

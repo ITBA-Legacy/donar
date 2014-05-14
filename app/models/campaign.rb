@@ -6,7 +6,8 @@ class Campaign < ActiveRecord::Base
   has_many :contributions
   has_many :milestones
 
-  accepts_nested_attributes_for :organization
+  accepts_nested_attributes_for :organization, :perks
+  accepts_nested_attributes_for :perks, allow_destroy: true
 
   CATEGORIES = [:education, :social, :health]
 

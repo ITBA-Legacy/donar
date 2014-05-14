@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514033345) do
+ActiveRecord::Schema.define(version: 20140514170407) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20140514033345) do
     t.integer  "campaign_id"
     t.float    "amount"
     t.string   "name"
-    t.integer  "maximun"
+    t.integer  "maximum"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"

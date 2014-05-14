@@ -6,7 +6,7 @@ class CampaignsController < ApplicationController
   belongs_to :organization
 
   FIELDS = [:name, :description, :goal, :deadline, :minimum, :category, :short_description,
-            :locality]
+            :locality, perk: [:amount, :name, :maximum, :description]]
 
   def resource_params
     return [] if request.get?
