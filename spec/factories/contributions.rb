@@ -2,9 +2,6 @@
 
 FactoryGirl.define do
   factory :contribution do
-    campaign nil
-    campaign_perk nil
-    user nil
     amount 1.5
   end
 end

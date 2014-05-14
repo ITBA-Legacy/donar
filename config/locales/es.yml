@@ -7,3 +7,7 @@ es:
         create: "Crear %{model}"
         new: "Nueva Campaña"
         edit: "Editar Campaña"
+      organization:
+        create: "Crear %{model}"
+        new: "Nueva Organización"
+        edit: "Editar Organización"

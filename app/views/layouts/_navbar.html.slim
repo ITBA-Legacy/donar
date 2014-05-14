@@ -3,7 +3,7 @@ nav.navbar.navbar-inverse role="navigation" style="position: static;"
     /! Brand and toggle get grouped for better mobile display
     .navbar-header
       button.navbar-toggle data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"
-      a.navbar-brand href="#"  Donar
+      = link_to "Donar", root_path, class: "navbar-brand"
     /! Collect the nav links, forms, and other content for toggling
     ul.nav.navbar-nav.pull-right
       - if user_signed_in?

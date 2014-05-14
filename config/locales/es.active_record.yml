@@ -2,6 +2,14 @@ es:
   activerecord:
     errors:
       models:
+        organization:
+          attributes:
+            name:
+              blank: Nombre es requerido
+            description:
+              blank: Descripción es requerida
+            locality:
+              blank: Localidad es requerida
         campaign:
           attributes:
             name:
@@ -24,10 +32,17 @@ es:
             locality:
               blank: Localidad es requerida
     models:
+      organization:
+        one: Organización
+        other: Organizaciones
       campaign:
         one: Campaña
         other: Campañas
     attributes:
+      organization:
+        name: Nombre
+        description: Descripción
+        locality: Localidad
       campaign:
         name: Nombre
         description: Descripción
