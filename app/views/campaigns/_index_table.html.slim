@@ -29,7 +29,7 @@
         - campaigns.each do |campaign|
           tr
             td
-              = link_to campaign.name, organization_campaign_path(@organization, campaign)
+              = link_to campaign.name, organization_campaign_path(campaign.organization, campaign)
             td
               = campaign.description
             th

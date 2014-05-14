@@ -8,8 +8,7 @@ class Campaign < ActiveRecord::Base
       :tsearch => {
         :dictionary => "spanish"
       }
-    },
-    :ignoring => :accents
+    }
 
 
   belongs_to :organization
