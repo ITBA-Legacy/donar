@@ -4,45 +4,35 @@
 
   # User creation
 
-  martin = User.new(
+  martin = User.create(
     email: 'mmarquez@gmail.com',
     password: '12345678',
     password_confirmation: '12345678'
   )
-  martin.skip_confirmation!
-  marti.save!
 
-  esteban = User.new(
+  esteban = User.create(
     email: 'epintos7@gmail.com',
     password: '12345678',
     password_confirmation: '12345678'
   )
-  esteban.skip_confirmation!
-  esteban.save!
 
-  diego = User.new(
+  diego = User.create(
     email: 'strubolini@gmail.com',
     password: '12345678',
     password_confirmation: '12345678'
   )
-  diego.skip_confirmation!
-  diego.save!
 
-  matias = User.new(
+  matias = User.create(
     email: 'mdesanti90@gmail.com',
     password: '12345678',
     password_confirmation: '12345678'
   )
-  matias.skip_confirmation!
-  matias.save!
 
-  federico = User.new(
+  federico = User.create(
     email: 'federicohomovc@gmail.com',
     password: '12345678',
     password_confirmation: '12345678'
   )
-  federico.skip_confirmation!
-  federico.save!
 
   # Organization creation
 
@@ -80,6 +70,19 @@
 
   # Campaign creation
 
+  tomografo_cemic = Campaign.create(
+    name: 'Nuevo tomógrafo',
+    description: 'El objetivo es comprar el tomografo computado General Electric '+
+    'CT Max 640',
+    goal: 100000.0,
+    deadline: DateTime.current + 1.month,
+    minimum: 1.0,
+    category: 'health',
+    locality: 'Argentina',
+    short_description: 'Un nuevo tomógrafo para el CEMIC',
+    organization: cemic
+  )
+
   tomografo_sticker = Perk.create(
     amount: 100.0,
     name: 'Sticker "Yo ayude a comprar le nuevo tomógrafo del CEMIC"',
@@ -94,38 +97,33 @@
     description: 'Una visita'
   )
 
+  tomografo_cemic.perks = [tomografo_sticker, tomografo_visit]
 
-  tomografo_cemic = Campaign.create(
-    name: 'Nuevo tomógrafo',
-    description: 'El objetivo es comprar el tomografo computado General Electric '+
-    'CT Max 640',
-    goal: 100000.0,
-    deadline: DateTime.current + 1.month,
-    minimum: 1.0,
-    category: 'buys',
-    locality: 'Argentina',
-    short_description: 'Un nuevo tomógrafo para el CEMIC',
-    organization: cemic,
-    perks: [tomografo_sticker, tomografo_visit],
-    contributions: [
-      Contribution.create(user: martin, perk: tomografo_sticker, amount: 100.0),
-      Contribution.create(user: diego, perk: tomografo_sticker, amount: 200.0),
-      Contribution.create(user: federico, perk: tomografo_visit, amount: 1000.0),
-      Contribution.create(user: martin, perk: tomografo_visit, amount: 2000.0)
-    ],
-    comments: [
-      Comment.create(user: matias, message: 'Quiero participar'),
-      Comment.create(user: diego, message: 'Gracias por el esfuerzo!'),
-      Comment.create(user: federico,
-                     message:'Es hora de que tengamos un mejor tomógrafo'),
-      Comment.create(user: martin, message: 'Que bueno! Un tomógrafo'),
-      Comment.create(user: matias, message: 'Necesitamos mejor equipamiento'),
-      Comment.create(user: federico,
-                     message: 'Es hora de que tengamos un mejor tomógrafo'),
-      Comment.create(user: federico, message: 'Felicitaciones por la iniciativa'),
-      Comment.create(user: diego, message: '!!!!!!!!')
-    ]
-  )
+  tomografo_cemic.contributions = [
+    Contribution.create(user: martin, perk: tomografo_sticker, amount: 100.0,
+                        campaign: tomografo_cemic),
+    Contribution.create(user: diego, perk: tomografo_sticker, amount: 200.0,
+                        campaign: tomografo_cemic),
+    Contribution.create(user: federico, perk: tomografo_visit, amount: 1000.0,
+                        campaign: tomografo_cemic),
+    Contribution.create(user: martin, perk: tomografo_visit, amount: 2000.0,
+                        campaign: tomografo_cemic)
+  ]
+
+  tomografo_cemic.comments = [
+    Comment.create(user: matias, message: 'Quiero participar'),
+    Comment.create(user: diego, message: 'Gracias por el esfuerzo!'),
+    Comment.create(user: federico,
+                   message:'Es hora de que tengamos un mejor tomógrafo'),
+    Comment.create(user: martin, message: 'Que bueno! Un tomógrafo'),
+    Comment.create(user: matias, message: 'Necesitamos mejor equipamiento'),
+    Comment.create(user: federico,
+                   message: 'Es hora de que tengamos un mejor tomógrafo'),
+    Comment.create(user: federico, message: 'Felicitaciones por la iniciativa'),
+    Comment.create(user: diego, message: '!!!!!!!!')
+  ]
+
+  tomografo_cemic.save!
 
   comedor_villa31 = Campaign.create(
     name: 'Comedor 31',
@@ -134,16 +132,19 @@
     goal: 200000.0,
     deadline: DateTime.current + 1.month,
     minimum: 10.0,
-    category: 'food',
+    category: 'health',
     locality: 'Argentina',
     short_description: 'Un nuevo comedor para la Villa 31',
-    organization: coas,
-    comments: [
-      Comment.create(user: martin, message: 'Linda propuesta'),
-      Comment.create(user: diego, message: 'Es importante que se logre'),
-      Comment.create(user: federico, message: 'Fundamental para esta época de crisis'),
-    ]
+    organization: coas
   )
+
+  comedor_villa31.comments = [
+    Comment.create(user: martin, message: 'Linda propuesta'),
+    Comment.create(user: diego, message: 'Es importante que se logre'),
+    Comment.create(user: federico, message: 'Fundamental para esta época de crisis'),
+  ]
+
+  comedor_villa31.save!
 
   museo_del_arbol = Campaign.create(
     name: 'Museo del Arbol',
@@ -151,12 +152,15 @@
     goal: 100000.0,
     deadline: DateTime.current + 1.month,
     minimum: 1.0,
-    category: 'startup',
+    category: 'health',
     locality: 'Argentina',
     short_description: 'Un nuevo museo para mostrar la fauna de nuestra hermosa provincia',
-    organization: agrupar,
-    comments: [
-      Comment.create(user: esteban, message: 'Siempre me gustaron los museos'),
-      Comment.create(user: diego, message: 'Hay hermosos arboles en Corrientes'),
-    ]
+    organization: agrupar
   )
+
+  museo_del_arbol.comments = [
+    Comment.create(user: esteban, message: 'Siempre me gustaron los museos'),
+    Comment.create(user: diego, message: 'Hay hermosos arboles en Corrientes'),
+  ]
+
+  museo_del_arbol.save!
