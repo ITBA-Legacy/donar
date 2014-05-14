@@ -1,5 +1,17 @@
-# Se trata de una campaña para recolectar dinero con cierto fin.
+# It's a Campaign/Project/Fundriser to raise something.
 class Campaign < ActiveRecord::Base
+
+  include PgSearch
+  pg_search_scope :search,
+    :against => [:name, :description, :short_description],
+    :using => {
+      :tsearch => {
+        :dictionary => "spanish"
+      }
+    },
+    :ignoring => :accents
+
+
   belongs_to :organization
   has_many :perks
   has_many :comments

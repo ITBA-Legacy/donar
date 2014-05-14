@@ -9,4 +9,10 @@ class CampaignsController < ApplicationController
     [params.require(:campaign).permit(FIELDS)]
   end
 
+  def search
+    @campaigns = Campaign.search(params[:query])
+
+    render :index
+  end
+
 end

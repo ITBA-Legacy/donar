@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140430164348) do
+ActiveRecord::Schema.define(version: 20140507175742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20140430164348) do
 
   create_table "contributions", force: true do |t|
     t.integer  "campaign_id"
-    t.integer  "campaign_perk_id"
+    t.integer  "perk_id"
     t.integer  "user_id"
     t.float    "amount"
     t.datetime "created_at"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20140430164348) do
   end
 
   add_index "contributions", ["campaign_id"], name: "index_contributions_on_campaign_id", using: :btree
-  add_index "contributions", ["campaign_perk_id"], name: "index_contributions_on_campaign_perk_id", using: :btree
+  add_index "contributions", ["perk_id"], name: "index_contributions_on_perk_id", using: :btree
   add_index "contributions", ["user_id"], name: "index_contributions_on_user_id", using: :btree
 
   create_table "identities", force: true do |t|
