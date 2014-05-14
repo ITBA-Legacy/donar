@@ -1,0 +1,50 @@
+- if @campaign.errors.present?
+  .alert.alert-danger
+    ul
+      - @campaign.errors.each do |attr, msg|
+        li= msg
+= form_for [@organization, @campaign],
+           html: { class: 'form-horizontal', role: 'form' } do |f|
+  .form-group
+    = f.label :name, class: 'control-label col-sm-2'
+    .col-md-4
+      = f.text_field :name, class: 'form-control col-md-2', required: true
+  .form-group
+    = f.label :description, class: 'control-label col-sm-2'
+    .col-md-4
+      = f.text_area :description, class: 'form-control col-md-2', required: true
+  .form-group
+    = f.label :goal, class: 'control-label col-sm-2'
+    .col-md-4
+      .input-group
+        span.input-group-addon
+          | $
+        = f.number_field :goal, class: 'form-control col-md-2', required: true, min: 0.0
+  .form-group
+    = f.label :deadline, class: 'control-label col-sm-2'
+    .col-md-4
+      = f.date_field :deadline, class: 'form-control col-md-2', required: true, min: Time.current
+  .form-group
+    = f.label :minimum_pledge, class: 'control-label col-sm-2'
+    .col-md-4
+      .input-group
+        span.input-group-addon
+          | $
+        = f.number_field :minimum, class: 'form-control col-md-2', required: true, min: 0.0
+  .form-group
+    = f.label :category, class: 'control-label col-sm-2'
+    .col-md-4
+      = f.select :category,
+                 Campaign::CATEGORIES.collect { |c| [t("campaigns.categories.#{c}"), c] },
+                 class: 'form-control col-md-2', required: true
+  .form-group
+    = f.label :locality, class: 'control-label col-sm-2'
+    .col-md-4
+      = f.text_field :locality, class: 'form-control col-md-2', required: true
+  .form-group
+    = f.label :short_description, class: 'control-label col-sm-2'
+    .col-md-4
+      = f.text_area :short_description, class: 'form-control col-md-2', required: true
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit nil, class: 'btn btn-primary'

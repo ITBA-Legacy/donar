@@ -10,12 +10,57 @@ es:
               blank: Descripción es requerida
             locality:
               blank: Localidad es requerida
+        campaign:
+          attributes:
+            name:
+              blank: Nombre es requerido
+            description:
+              blank: Descripción es requerida
+            goal:
+              blank: El objetivo es requerido
+              only_integer: El objetivo debe ser un número
+            deadline:
+              blank: La fecha de finalización es requerida
+              on_or_after: La fecha de finalización debe ser posterior a la actual
+            minimum:
+              blank: El monto mínimo es requerido
+              only_integer: El monto mínimo debe ser un número
+            category:
+              blank: La categoría es requerida
+              inlusion: La categoría no es válida
+            short_description:
+              blank: La descripción breve es requerida
+            locality:
+              blank: Localidad es requerida
+        contribution:
+          attributes:
+            amount:
+              not_a_number: Cantidad inválida
+
     models:
       organization:
         one: Organización
         other: Organizaciones
+      campaign:
+        one: Campaña
+        other: Campañas
+      constribution:
+        one: Contribución
+        other: Contribuciones
     attributes:
       organization:
         name: Nombre
         description: Descripción
         locality: Localidad
+      campaign:
+        name: Nombre
+        description: Descripción
+        goal: Objetivo
+        deadline: Fecha de finalización
+        minimum: Donación mínima
+        category: Categoría
+        short_description: Descripción breve
+        locality: Localidad
+        contribution: Contribución Total
+      contribution:
+        amount: Donación

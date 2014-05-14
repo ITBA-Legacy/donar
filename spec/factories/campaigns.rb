@@ -7,7 +7,7 @@ FactoryGirl.define do
     goal 100
     deadline { Time.current + 1.month }
     minimum 1.5
-    category { Faker::Commerce.department }
+    category 'health'
     locality { Faker::Address.city }
     short_description { Faker::Lorem.sentence }
   end
