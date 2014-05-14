@@ -32,6 +32,11 @@ es:
               blank: La descripción breve es requerida
             locality:
               blank: Localidad es requerida
+        contribution:
+          attributes:
+            amount:
+              not_a_number: Cantidad inválida
+
     models:
       organization:
         one: Organización
@@ -39,6 +44,9 @@ es:
       campaign:
         one: Campaña
         other: Campañas
+      constribution:
+        one: Contribución
+        other: Contribuciones
     attributes:
       organization:
         name: Nombre
@@ -53,3 +61,6 @@ es:
         category: Categoría
         short_description: Descripción breve
         locality: Localidad
+        contribution: Contribución Total
+      contribution:
+        amount: Donación

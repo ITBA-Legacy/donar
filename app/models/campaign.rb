@@ -15,4 +15,16 @@ class Campaign < ActiveRecord::Base
   validates :minimum, :goal, numericality: { greater_than: 0 }
   validates :deadline, timeliness: { on_or_after: -> { Date.current } }
 
+  after_initialize :default_attributes
+
+  def add_contribution(amount)
+    update_attributes!(contribution: contribution + amount)
+  end
+
+  private
+
+  def default_attributes
+    self.contribution ||= 0.0
+  end
+
 end

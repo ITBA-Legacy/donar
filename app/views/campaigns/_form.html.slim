@@ -19,7 +19,7 @@
       .input-group
         span.input-group-addon
           | $
-        = f.number_field :goal, class: 'form-control col-md-2', required: true, min: 1
+        = f.number_field :goal, class: 'form-control col-md-2', required: true, min: 0.0
   .form-group
     = f.label :deadline, class: 'control-label col-sm-2'
     .col-md-4
@@ -30,7 +30,7 @@
       .input-group
         span.input-group-addon
           | $
-        = f.number_field :minimum, class: 'form-control col-md-2', required: true, min: 1
+        = f.number_field :minimum, class: 'form-control col-md-2', required: true, min: 0.0
   .form-group
     = f.label :category, class: 'control-label col-sm-2'
     .col-md-4

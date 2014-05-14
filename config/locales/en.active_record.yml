@@ -32,6 +32,10 @@ en:
               blank: Short description is required
             locality:
               blank: Locality is required
+        contribution:
+          attributes:
+            amount:
+              not_a_number: Invalid amount
     models:
       organization:
         one: Organization
@@ -39,6 +43,9 @@ en:
       campaign:
         one: Campaign
         other: Campaigns
+      constribution:
+        one: Contribution
+        other: Contributions
     attributes:
       organization:
         name: Name
@@ -53,3 +60,6 @@ en:
         category: Category
         short_description: Short Description
         locality: Locality
+        contribution: Total Contribution
+      contribution:
+        amount: Amount

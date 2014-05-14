@@ -22,7 +22,7 @@ legend
         h4.list-group-item-heading
           = Campaign.human_attribute_name(:deadline)
         p.list-group-item-text
-          = @campaign.deadline
+          = l(@campaign.deadline, format: :short)
       li.list-group-item
         h4.list-group-item-heading
           = Campaign.human_attribute_name(:minimum)
@@ -38,6 +38,17 @@ legend
           = Campaign.human_attribute_name(:locality)
         p.list-group-item-text
           = @campaign.locality
+      li.list-group-item
+        h4.list-group-item-heading
+          = Campaign.human_attribute_name(:contribution)
+        p.list-group-item-text
+          = "$ #{@campaign.contribution}"
+.row
+  .col-md-6
+    p
+      = link_to t('campaigns.constribute'),
+                new_organization_campaign_contribution_path(@campaign.organization, @campaign),
+                class: 'btn btn-primary'
 .row
   .col-md-6
     p

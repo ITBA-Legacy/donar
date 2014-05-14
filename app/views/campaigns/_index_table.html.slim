@@ -22,6 +22,8 @@
           th
             = Campaign.human_attribute_name(:category)
           th
+            = Campaign.human_attribute_name(:contribution)
+          th
             = Campaign.human_attribute_name(:short_description)
       tbody
         - campaigns.each do |campaign|
@@ -33,7 +35,7 @@
             th
               = "$ #{campaign.goal}"
             th
-              = campaign.deadline
+              = l(campaign.deadline, format: :short)
             th
               = "$ #{campaign.minimum}"
             th
@@ -42,5 +44,7 @@
               = campaign.locality
             th
               = campaign.category
+            th
+              = "$ #{campaign.contribution}"
             th
               = campaign.short_description

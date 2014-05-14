@@ -98,4 +98,14 @@ describe Campaign do
 
   end
 
+  describe '#add_contribution' do
+
+    it 'increases the contribution' do
+      expect {
+        campaign.add_contribution(10)
+      }.to change(campaign, :contribution).by(10)
+    end
+
+  end
+
 end
