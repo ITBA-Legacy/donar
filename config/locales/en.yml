@@ -7,3 +7,5 @@ es:
         create: "Create %{model}"
         new: "New Organization"
         edit: "Edit Organization"
+  users:
+    organizations: My Organizations
