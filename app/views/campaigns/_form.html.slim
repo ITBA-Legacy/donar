@@ -1,9 +1,10 @@
-= form_for @campaign do |f|
+- if @campaign.errors.present?
   .alert.alert-danger
     ul
       - @campaign.errors.each do |attr, msg|
         li= msg
-= form_for @campaign, html: { class: 'form-horizontal', role: 'form' } do |f|
+= form_for [@organization, @campaign],
+           html: { class: 'form-horizontal', role: 'form' } do |f|
   .form-group
     = f.label :name, class: 'control-label col-sm-2'
     .col-md-4
@@ -15,7 +16,10 @@
   .form-group
     = f.label :goal, class: 'control-label col-sm-2'
     .col-md-4
-      = f.number_field :goal, class: 'form-control col-md-2', required: true, min: 1
+      .input-group
+        span.input-group-addon
+          | $
+        = f.number_field :goal, class: 'form-control col-md-2', required: true, min: 1
   .form-group
     = f.label :deadline, class: 'control-label col-sm-2'
     .col-md-4
@@ -23,11 +27,16 @@
   .form-group
     = f.label :minimum_pledge, class: 'control-label col-sm-2'
     .col-md-4
-      = f.number_field :minimum, class: 'form-control col-md-2', required: true, min: 1
+      .input-group
+        span.input-group-addon
+          | $
+        = f.number_field :minimum, class: 'form-control col-md-2', required: true, min: 1
   .form-group
     = f.label :category, class: 'control-label col-sm-2'
     .col-md-4
-      = f.select :category, Campaign::CATEGORIES, class: 'form-control col-md-2', required: true
+      = f.select :category,
+                 Campaign::CATEGORIES.collect { |c| [t("campaigns.categories.#{c}"), c] },
+                 class: 'form-control col-md-2', required: true
   .form-group
     = f.label :locality, class: 'control-label col-sm-2'
     .col-md-4

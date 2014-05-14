@@ -27,6 +27,7 @@ es:
               only_integer: El monto mínimo debe ser un número
             category:
               blank: La categoría es requerida
+              inlusion: La categoría no es válida
             short_description:
               blank: La descripción breve es requerida
             locality:

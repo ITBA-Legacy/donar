@@ -1,6 +1,7 @@
 es:
   application:
     title: Donar
+    no_results: No results found
   helpers:
     submit:
       organization:
@@ -8,8 +9,14 @@ es:
         new: "New Organization"
         edit: "Edit Organization"
       campaign:
-        create: "Crear %{model}"
-        new: "Nueva Campaign"
-        edit: "Editar Campaign"
+        create: "Create %{model}"
+        new: "New Campaign"
+        edit: "Edit Campaign"
   users:
     organizations: My Organizations
+    campaigns: My Campaigns
+  campaigns:
+    categories:
+      education: Education
+      social: Social
+      health: Health

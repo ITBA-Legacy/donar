@@ -6,11 +6,13 @@ class Campaign < ActiveRecord::Base
   has_many :contributions
   has_many :milestones
 
-  CATEGORIES = ['Education', 'Social', 'Health']
+  accepts_nested_attributes_for :organization
 
-  validates :category, :inclusion => CATEGORIES
+  CATEGORIES = [:education, :social, :health]
+
+  validates :category, inclusion: { in: CATEGORIES.map(&:to_s) }
   validates :name, :description, :goal, :minimum, :short_description, :locality, presence: true
-  validates_numericality_of :minimum, :goal, greater_or_equal_to: 1
-  validates_date :deadline, on_or_after: lambda { Date.current }
+  validates :minimum, :goal, numericality: { greater_or_equal_to: 1 }
+  validates :deadline, timeliness: { on_or_after: -> { Date.current } }
 
 end

@@ -27,6 +27,7 @@ en:
               only_integer: Minimum pledge must be a number
             category:
               blank: Category is required
+              inlusion: Category not valid
             short_description:
               blank: Short description is required
             locality:

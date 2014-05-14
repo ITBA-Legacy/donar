@@ -70,7 +70,8 @@ gem 'pundit'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
-#ita: esta es la gema que valida la fecha
+
+# Validates dates
 gem 'validates_timeliness', '~> 3.0'
 
 group :development do

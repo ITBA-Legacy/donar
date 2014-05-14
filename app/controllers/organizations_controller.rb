@@ -1,8 +1,8 @@
 class OrganizationsController < ApplicationController
 
-  before_action :authenticate_user!
-
   inherit_resources
+
+  before_action :authenticate_user!
 
   FIELDS = [:name, :description, :locality]
 
