@@ -1,39 +1,567 @@
-legend
-  = Campaign.model_name.human
-.col-md-6
-  ul.list-group
-    li.list-group-item
-      h4.list-group-item-heading
-        = Campaign.human_attribute_name(:name)
-      p.list-group-item-text
-        = @campaign.name
-    li.list-group-item
-      h4.list-group-item-heading
-        = Campaign.human_attribute_name(:description)
-      p.list-group-item-text
-        = @campaign.description
-    li.list-group-item
-      h4.list-group-item-heading
-        = Campaign.human_attribute_name(:goal)
-      p.list-group-item-text
-        = @campaign.goal
-    li.list-group-item
-      h4.list-group-item-heading
-        = Campaign.human_attribute_name(:deadline)
-      p.list-group-item-text
-        = @campaign.deadline
-    li.list-group-item
-      h4.list-group-item-heading
-        = Campaign.human_attribute_name(:minimum)
-      p.list-group-item-text
-        = @campaign.minimum
-    li.list-group-item
-      h4.list-group-item-heading
-        = Campaign.human_attribute_name(:short_description)
-      p.list-group-item-text
-        = @campaign.short_description
-    li.list-group-item
-      h4.list-group-item-heading
-        = Campaign.human_attribute_name(:locality)
-      p.list-group-item-text
-        = @campaign.locality
+#header.header
+  = render 'layouts/funder_login_navbar'
+  = render 'layouts/funder_navbar'
+.container-fluid.line.contentt.description_page
+  .clear
+  .content.description
+    .row-fluid.cols
+      .left_content_descr.span8
+        h1.decoration.text-center
+          span.nobacgr= @campaign.name
+        .video
+          #myCarousel.carousel.slide
+            .carousel-inner.content style=("width: 100%")
+              .item
+                iframe#player1 allowfullscreen="" frameborder="0" height="380" mozallowfullscreen="" src="http://player.vimeo.com/video/47653105?api=1&amp;player_id=player1" webkitallowfullscreen="" width="620"
+                p
+                  a href="http://vimeo.com/51205913"  MotibU
+                  from
+                  a href="http://vimeo.com/jamiejessett"  MotibU
+                  on
+                  a href="http://vimeo.com/"  Vimeo
+              .item.active
+                div
+                  =image_tag 'pics_project.png'
+            #visiblepanel.visiblepanel style=("display: none;")
+              a#slide_left.left.carousel-control data-slide="prev" href="#myCarousel"
+              a#slide_rigth.right.carousel-control data-slide="next" href="#myCarousel"
+        .tabbable style=("margin-bottom: 18px;")
+          #tabs_pages
+            ul.tabs_pages_ul.row-fluid
+              li.active.span4
+                a data-toggle="tab" href="#tab1"  DESCRIPTION
+              li.span4
+                a data-toggle="tab" href="#tab2"  BACKERS
+              li.span4
+                a data-toggle="tab" href="#tab3"  UPDATES
+          .tab-content style=("padding-bottom: 9px;")
+            #tab1.tab-pane.active
+              #description_content
+                .title_description_content
+                  = @campaign.description
+            #tab2.tab-pane
+              #backers_content
+                .row-fluid
+                  .span6
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                  .span6
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                    .backers_block_text
+                      .image_face_backers_content
+                        .face_backers_content
+                      .text_backers_content
+                        .backer_name Backer
+                        .backer_date April 2, 2013 at 8:45 pm
+                        .number_project Backed 5 project
+                .row-fluid
+                  .span12
+                    .btn-toolbar.text-center
+                      .decoration.text-center.proj
+                        .btn-group.nobacgr
+                          button.btn
+                            span.gray 1
+                          button.btn.mleft10 2
+                          button.btn.mleft10 3
+                          button.btn.mleft10 4
+                          button.btn.mleft10 5
+            #tab3.tab-pane
+              #updates_content
+                .row-fluid
+                  .span12
+                    .updates_block_text
+                      h4 Update 3
+                      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec massa ut justo accumsan malesuada ut pharetra sapien. Nullam ac nisi vel augue ultrices venenatis sed sed felis. Quisque velit tortor, suscipit et auctor tempus, pretium eu velit. Vestibulum vitae ligula sapien. Donec et felis lorem. Vestibulum non feugiat risus. Sed malesuada nisl vel lorem rhoncus feugiat. Proin pellentesque velit nec metus tincidunt quis egestas tortor venenatis. Phasellus mattis sapien suscipit massa suscipit placerat. Vestibulum semper laoreet tempus. Curabitur ac sagittis urna. Sed rhoncus massa vel lorem lobortis sit amet adipiscing nunc aliquet.  accumsan sit amet, posuere eget odio. Suspendisse pellentesque odio id nunc tempor placerat. Pellentesque ipsum mauris, ultrices ut rhoncus id, vehicula eget est.
+                    .updates_block_text
+                      h4 Update 2
+                      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec massa ut justo accumsan malesuada ut pharetra sapien. Nullam ac nisi vel augue ultrices venenatis sed sed felis. Quisque velit tortor, suscipit et auctor tempus, pretium eu velit. Vestibulum vitae ligula sapien. Donec et felis lorem. Vestibulum non feugiat risus. Sed malesuada nisl vel lorem rhoncus feugiat. Proin pellentesque velit nec metus tincidunt quis egestas tortor venenatis. Phasellus mattis sapien suscipit massa suscipit placerat. Vestibulum semper laoreet tempus. Curabitur ac sagittis urna. Sed rhoncus massa vel lorem lobortis sit amet adipiscing nunc aliquet. Quisque metus velit, mattis a vehicula sed, hendrerit sed leo. Donec aliquet molestie semper. Donec ac condimentum nisl. Ut bibendum scelerisque turpis vitae porttitor.
+                    .updates_block_text
+                      h4 Update 1
+                      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec massa ut justo accumsan malesuada ut pharetra sapien. Nullam ac nisi vel augue. Nullam ac nisi vel augue.
+        #social_uncategorized
+          .left_social_uncategorized
+            span Uncategorized
+          .social.inline.fright
+            ul#social_mid.bleft_social
+              li
+                a href="https://www.facebook.com/" original-title="twitter" target="_blank"
+                  =image_tag 'social/icon_header_face.png'
+              li
+                a href="https://plus.google.com/" original-title="googleplus" target="_blank"
+                  =image_tag 'social/icon_header_g.png'
+              li
+                a href="https://twitter.com/" target="_blank" title="facebook"
+                  =image_tag 'social/icon_header_tw.png'
+              li
+                a href="http://www.linkedin.com/" original-title="linkedin" target="_blank"
+                  =image_tag 'social/icon_header_in.png'
+              li
+                a href="johndoe_domainname.html" original-title="mail" target="_self"
+                  =image_tag 'social/icon_header_p.png'
+              li
+                a href="johndoe_domainname.html" original-title="mail" target="_self"
+                  =image_tag 'social/icon_header_ball.png'
+        .clear
+        #author_review
+          h3.decoration.text-center
+            span.nobacgr Author
+          #face_social_text
+            .left_face_social_text.span4
+              .face_big.span9
+                .pix_author
+              .social_link_author
+                .social_bord
+                  a href="#"
+                    =image_tag 'description/facebook_author_icon.png'
+                .social_bord
+                  a href="#"
+                    =image_tag 'description/twitter_author_icon.png'
+                .social_bord_last
+                  a href="#"
+                    =image_tag 'description/google_author_icon.png'
+            .right_face_social_text.span8
+              .name_surname John Doe
+              .proff CEO
+              .text_author_right Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec massa ut justo accumsan malesuada ut pharetra sapien.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec massa ut justo accumsan malesuada ut pharetra sapien.
+        .clear
+        h4.decoration.text-center
+          span.nobacgr Ask a Question
+        #asc_a_question
+          .reply_user.main_reply
+            .row-fluid
+              .span2
+                .image_face
+              .span10
+                .name_and_date
+                  span.user_name User
+                  | \- April 10, 2013 at 7:34 pm -
+                  span.reply_t Reply
+                .text_reply Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec massa ut justo accumsan malesuada ut pharetra sapien.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec massa ut justo accumsan malesuada ut pharetra sapien.
+          .reply_user.subreply
+            .row-fluid
+              .span2
+                .image_face
+              .span10
+                .name_and_date
+                  span.user_name Admin
+                  | \- April 10, 2013 at 7:34 pm -
+                  span.reply_t Reply
+                .text_reply Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec massa ut justo accumsan malesuada ut pharetra sapien.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec massa ut justo accumsan malesuada ut pharetra sapien.
+        #asc_a_question_form
+          h3.text-center.asc_question_form_name
+            | Ask a
+            span.h3_quest Question
+          .form_question
+            .row-fluid
+              .controls.controls-row.message
+                input.inputp.search-query.span4 placeholder="Name*" type="text"
+                  input.inputp.search-query.span4 placeholder="Email*" type="text"
+                    input.inputp.search-query.span4 placeholder="Website*" type="text"
+                      .clear
+                      textarea#redex.inputp.search-query.span12 placeholder=("Project description") rows="5"
+                      .clear
+                      .tmargin20
+                        button.btn type="submit"
+                          strong Send Message
+      .sidebar_descr.span4 style=("height: 2067px;")
+        #back_this_project_block
+          .backers_days_blocks.first
+            .row-fluid
+              .span1 style=("margin-right: 10px")
+                .image_first
+              .text_backers_days_blocks.span10
+                .top_text_backers_days_blocks= @campaign.contributions.count
+                .bottom_text_backers_days_blocks Backers
+          .backers_days_blocks
+            .row-fluid
+              .span1 style=("margin-right: 10px")
+                .image_second
+              .text_backers_days_blocks.span10
+                .top_text_backers_days_blocks 25,000
+                .bottom_text_backers_days_blocks= "pledged of #{@campaign.goal} goal"
+          .backers_days_blocks
+            .row-fluid
+              .span1 style=("margin-right: 10px")
+                .image_third
+              .text_backers_days_blocks.span10
+                .top_text_backers_days_blocks= (@campaign.deadline - Time.current).to_i
+                .bottom_text_backers_days_blocks days to go
+        .back_this_project_button
+          button.btn.btn-large.back_project type="button"
+            small BACK THIS PROJECT
+        #pledges_block
+          h3.decoration.text-center
+            span.nobacgr_desc Pledges
+          .pledges_block_info
+            .pledges_block_info_link
+              a#link_pledges_block_info_link_1 Pledge $5 or more
+            #pledges_block_info_1
+              .pledges_block_info_backers 10 backers
+              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              .pledges_block_info_estimate_delivery Estimate delivery: Jan 2013
+          .pledges_block_info
+            .pledges_block_info_link
+              a#link_pledges_block_info_link_2 Pledge $10 or more
+            #pledges_block_info_2
+              .pledges_block_info_backers 15 backers
+              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              .pledges_block_info_estimate_delivery Estimate delivery: Feb 2013
+          .pledges_block_info
+            .pledges_block_info_link
+              a#link_pledges_block_info_link_3 Pledge $15 or more
+            #pledges_block_info_3
+              .pledges_block_info_backers 20 backers
+              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              .pledges_block_info_estimate_delivery Estimate delivery: Mar 2013
+          .pledges_block_info
+            .pledges_block_info_link
+              a#link_pledges_block_info_link_4 Pledge $20 or more
+            #pledges_block_info_4
+              .pledges_block_info_backers 5 backers
+              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              .pledges_block_info_estimate_delivery Estimate delivery: Jan 2013
+          .pledges_block_info
+            .pledges_block_info_link
+              a#link_pledges_block_info_link_5 Pledge $25 or more
+            #pledges_block_info_5
+              .pledges_block_info_backers 20 backers
+              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              .pledges_block_info_estimate_delivery Estimate delivery: Feb 2013
+          .pledges_block_info
+            .pledges_block_info_link
+              a#link_pledges_block_info_link_6 Pledge $30 or more
+            #pledges_block_info_6
+              .pledges_block_info_backers 30 backers
+              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              .pledges_block_info_estimate_delivery Estimate delivery: Mar 2013
+          .pledges_block_info
+            .pledges_block_info_link
+              a#link_pledges_block_info_link_7 Pledge $35 or more
+            #pledges_block_info_7
+              .pledges_block_info_backers 20 backers
+              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              .pledges_block_info_estimate_delivery Estimate delivery: Jan 2013
+        #payment_getaway
+          /! <h3 class="text-center payment_getaway_name"><span class="title_h3 left_t"></span>Payment Getaway<span class="title_h3 right_t"></span></h3
+          h3.decoration.text-center
+            span.nobacgr_desc Payment Getaway
+          .payment_getaway_block
+            .payment_cost $15
+            .your_card
+              h3 Choose Your Card:
+              ul.choose
+                li
+                  input#rfirst checked="" hidden="" name="radio" type="radio"
+                    label for="rfirst"  Visa
+                li
+                  input#rsecond hidden="" name="radio" type="radio"
+                    label for="rsecond"  MasterCard
+                li
+                  input#re hidden="" name="radio" type="radio"
+                    label for="re"  American Express
+            .payment_getaway_button
+              button.btn.btn-large.make_payment type="button"
+                small Make Payment
+#footer
+  .footer
+    .row-fluid
+      .span3
+        h3 FUNDER
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenapus
+      .span3.foot
+        h4 Recent Tweets
+        .tmargin20
+          =image_tag 'social_tweet.png', class: 'fleft tw'
+            .mleft40
+              span 1234 Street
+              span 4r6yg 456hv
+              span Lorem ipus ex vixc ilflf nfnfoof wrfoo rcgetg  erger
+              br
+                a.green http://www.envato.com
+            .clear.foot
+            =image_tag 'social_tweet.png', class: 'fleft tw'
+              .mleft40
+                span 1234 Street
+                span 4r6yg 456hv
+                span Lorem ipus ex vixc ilflf n
+                br
+                  a.green http://www.envato.com
+      .span3.foot
+        h4 Recent Posts
+        .tmargin20
+          .recents
+            p.green
+              a href="#"  Lorem ipsus dolor sit amet
+            p.green
+              a href="#"  Proin nibh aufu suscript
+            p.green
+              a href="#"  Lorem ipsus dolor sit amet
+          p.green.recents
+            a href="#"  LQuri wfcw ertvc
+      .span3.foot
+        h4 Flickr Feed
+        .flckr
+          div
+            .flickr
+            .flickr
+            .flickr
+            .flickrl
+            .flickr
+            .flickr
+            .flickr
+            .flickrl
+            .flickr
+            .flickr
+            .flickr
+            .flickrl
+  .footer_bot
+    .footer_bott
+      .fleft © All Rights Reserved. Design by UOU Design.
+      .fright
+        ul#social_b.socialbott.inline
+          li
+            a href="https://www.facebook.com/" original-title="twitter" target="_blank"
+              =image_tag 'social/icon_header_face.png'
+          li
+            a href="https://plus.google.com/" original-title="googleplus" target="_blank"
+              =image_tag 'social/icon_header_g.png'
+          li
+            a href="https://twitter.com/" target="_blank" title="facebook"
+              =image_tag 'social/icon_header_tw.png'
+          li
+            a href="http://www.linkedin.com/" original-title="linkedin" target="_blank"
+              =image_tag 'social/icon_header_in.png'
+          li
+            a href="johndoe_domainname.html" original-title="mail" target="_self"
+              =image_tag 'social/icon_header_p.png'
+          li
+            a href="johndoe_domainname.html" original-title="mail" target="_self"
+              =image_tag 'social/icon_header_ball.png'
+      .clear
+javascript:
+  $("#link_pledges_block_info_link_1").click(function() {
+      if ($('#pledges_block_info_1').is(':visible'))
+      {
+          $('#link_pledges_block_info_link_1').addClass('not_active');
+          $("#pledges_block_info_1").toggle();
+      }
+      else
+      {
+          $('#link_pledges_block_info_link_1').removeClass('not_active');
+          $("#pledges_block_info_1").toggle();
+      }
+  });
+
+  $("#link_pledges_block_info_link_2").click(function() {
+      if ($('#pledges_block_info_2').is(':visible'))
+      {
+          $('#link_pledges_block_info_link_2').addClass('not_active');
+          $("#pledges_block_info_2").toggle();
+      }
+      else
+      {
+          $('#link_pledges_block_info_link_2').removeClass('not_active');
+          $("#pledges_block_info_2").toggle();
+      }
+  });
+
+  $("#link_pledges_block_info_link_3").click(function() {
+      if ($('#pledges_block_info_3').is(':visible'))
+      {
+          $('#link_pledges_block_info_link_3').addClass('not_active');
+          $("#pledges_block_info_3").toggle();
+      }
+      else
+      {
+          $('#link_pledges_block_info_link_3').removeClass('not_active');
+          $("#pledges_block_info_3").toggle();
+      }
+  });
+
+  $("#link_pledges_block_info_link_4").click(function() {
+      if ($('#pledges_block_info_4').is(':visible'))
+      {
+          $('#link_pledges_block_info_link_4').addClass('not_active');
+          $("#pledges_block_info_4").toggle();
+      }
+      else
+      {
+          $('#link_pledges_block_info_link_4').removeClass('not_active');
+          $("#pledges_block_info_4").toggle();
+      }
+  });
+
+  $("#link_pledges_block_info_link_5").click(function() {
+      if ($('#pledges_block_info_5').is(':visible'))
+      {
+          $('#link_pledges_block_info_link_5').addClass('not_active');
+          $("#pledges_block_info_5").toggle();
+      }
+      else
+      {
+        $('#link_pledges_block_info_link_5').removeClass('not_active');
+        $("#pledges_block_info_5").toggle();
+      }
+  });
+
+  $("#link_pledges_block_info_link_6").click(function() {
+      if ($('#pledges_block_info_6').is(':visible'))
+      {
+          $('#link_pledges_block_info_link_6').addClass('not_active');
+          $("#pledges_block_info_6").toggle();
+      }
+      else
+      {
+          $('#link_pledges_block_info_link_6').removeClass('not_active');
+          $("#pledges_block_info_6").toggle();
+      }
+  });
+
+  $("#link_pledges_block_info_link_7").click(function() {
+      if ($('#pledges_block_info_7').is(':visible'))
+      {
+          $('#link_pledges_block_info_link_7').addClass('not_active');
+          $("#pledges_block_info_7").toggle();
+      }
+      else
+      {
+          $('#link_pledges_block_info_link_7').removeClass('not_active');
+          $("#pledges_block_info_7").toggle();
+      }
+  });
+
+  $(function(){
+      var iframe = $('#player1')[0];
+      var player = $f(iframe);
+      var myCarousel = $('#myCarousel');
+
+      player.addEvent('ready', function() {
+          player.addEvent('play', onPlay);
+      });
+
+
+      $('#myCarousel').bind('slide', function(){
+          player.api('pause');
+          $('#myCarousel').carousel({
+              interval: 6000
+          })
+      });
+
+
+      function onPlay(id) {
+          $myCarousel.carousel('pause');
+      }
+
+
+  });
+
+
+javascript:
+  var a = $('.left_content_descr').height();
+  $('.sidebar_descr').height(1746);
+
+javascript:
+  $('#myCarousel').hover(function() {
+      $('#visiblepanel').toggle();
+  });
+
+
+javascript:
+  $(function(){
+      //bind change event to select
+      $('#dynamic_select').bind('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+  });

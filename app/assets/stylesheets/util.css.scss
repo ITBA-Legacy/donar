@@ -1,0 +1,13 @@
+.hidden {
+  visibility: none;
+}
+
+.custom-select {
+  display: block;
+  margin-top: 10px;
+  color: #999999;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border-radius: 15px;
+}
