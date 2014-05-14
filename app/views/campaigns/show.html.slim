@@ -52,4 +52,10 @@ legend
 .row
   .col-md-6
     p
+      = link_to t('campaigns.add_milestone'),
+                new_organization_campaign_milestone_path(@campaign.organization, @campaign),
+                class: 'btn btn-primary'
+.row
+  .col-md-6
+    p
       = link_to Organization.model_name.human, parent_url, class: 'btn btn-primary'

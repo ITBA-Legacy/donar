@@ -10,6 +10,7 @@ Donar::Application.routes.draw do
 
     resources :campaigns do
       resources :contributions
+      resources :milestones
     end
 
   end
