@@ -3,8 +3,15 @@ Donar::Application.routes.draw do
   root 'application#index'
 
   resources :organizations do
+
     collection do
       get :list
     end
+
+    resources :campaigns do
+      resources :contributions
+    end
+
   end
+
 end

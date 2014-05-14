@@ -4,6 +4,8 @@ class OrganizationsController < ApplicationController
 
   inherit_resources
 
+  before_action :authenticate_user!
+
   FIELDS = [:name, :description, :locality]
 
   def list
