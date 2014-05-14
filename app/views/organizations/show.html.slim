@@ -17,3 +17,11 @@ legend
         = Organization.human_attribute_name(:locality)
       p.list-group-item-text
         = @organization.locality
+legend
+  = Campaign.model_name.human(count: 2)
+= render '/campaigns/index_table', campaigns: @organization.campaigns
+p
+  = link_to t('helpers.submit.campaign.new'), new_organization_campaign_path(@organization),
+            class: 'btn btn-primary'
+
+

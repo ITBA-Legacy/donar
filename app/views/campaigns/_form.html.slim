@@ -1,4 +1,9 @@
-= form_for @campaign do |f|
+- if @campaign.errors.present?
+  .alert.alert-danger
+    ul
+      - @campaign.errors.each do |attr, msg|
+        li= msg
+= form_for [@organization, @campaign] do |f|
   .create_projects
     .row-fluid
       .span6

@@ -23,10 +23,42 @@ en:
               blank: Short description is required
             locality:
               blank: Locality is required
+        campaign:
+          attributes:
+            name:
+              blank: Name is required
+            description:
+              blank: Description is required
+            goal:
+              blank: Goal is required
+              only_integer: Goal must be a number
+            deadline:
+              blank: End date is required
+              on_or_after: End date must be after current date
+            minimum:
+              blank: Minimum pledge is required
+              only_integer: Minimum pledge must be a number
+            category:
+              blank: Category is required
+              inlusion: Category not valid
+            short_description:
+              blank: Short description is required
+            locality:
+              blank: Locality is required
+        contribution:
+          attributes:
+            amount:
+              not_a_number: Invalid amount
     models:
+      organization:
+        one: Organization
+        other: Organizations
       campaign:
         one: Campaign
         other: Campaigns
+      constribution:
+        one: Contribution
+        other: Contributions
     attributes:
       campaign:
         name: Name
@@ -37,3 +69,15 @@ en:
         category: Category
         short_description: Short Description
         locality: Locality
+      campaign:
+        name: Name
+        description: Description
+        goal: Goal
+        deadline: End Date
+        minimum: Minimum Pledge
+        category: Category
+        short_description: Short Description
+        locality: Locality
+        contribution: Total Contribution
+      contribution:
+        amount: Amount

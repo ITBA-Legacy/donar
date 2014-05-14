@@ -74,6 +74,9 @@ gem 'omniauth-twitter'
 #ita: esta es la gema que valida la fecha
 gem 'validates_timeliness', '~> 3.0'
 
+# Validates dates
+gem 'validates_timeliness', '~> 3.0'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
