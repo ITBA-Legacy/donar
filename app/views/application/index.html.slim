@@ -1,0 +1,7 @@
+p
+  = link_to t('helpers.submit.organization.new'), new_organization_path, class: 'btn btn-primary'
+p
+  = link_to Organization.model_name.human(count: 2), organizations_path, class: 'btn btn-primary'
+- if user_signed_in?
+  p
+    = link_to t('users.organizations'), list_organizations_path, class: 'btn btn-primary'

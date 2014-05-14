@@ -41,6 +41,14 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  # Only use expect sintax
+  config.expect_with :rspec do |c|
+    c.syntax = :expect
+  end
+
+  # Devise test
+  config.include Devise::TestHelpers, type: :controller
+
   # Method inclusion
   config.include FactoryGirl::Syntax::Methods
 

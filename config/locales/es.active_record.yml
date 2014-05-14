@@ -2,6 +2,14 @@ es:
   activerecord:
     errors:
       models:
+        organization:
+          attributes:
+            name:
+              blank: Nombre es requerido
+            description:
+              blank: Descripción es requerida
+            locality:
+              blank: Localidad es requerida
         campaign:
           attributes:
             name:
@@ -19,15 +27,31 @@ es:
               only_integer: El monto mínimo debe ser un número
             category:
               blank: La categoría es requerida
+              inlusion: La categoría no es válida
             short_description:
               blank: La descripción breve es requerida
             locality:
               blank: Localidad es requerida
+        contribution:
+          attributes:
+            amount:
+              not_a_number: Cantidad inválida
+
     models:
+      organization:
+        one: Organización
+        other: Organizaciones
       campaign:
         one: Campaña
         other: Campañas
+      constribution:
+        one: Contribución
+        other: Contribuciones
     attributes:
+      organization:
+        name: Nombre
+        description: Descripción
+        locality: Localidad
       campaign:
         name: Nombre
         description: Descripción
@@ -37,3 +61,6 @@ es:
         category: Categoría
         short_description: Descripción breve
         locality: Localidad
+        contribution: Contribución Total
+      contribution:
+        amount: Donación

@@ -2,6 +2,14 @@ en:
   activerecord:
     errors:
       models:
+        organization:
+          attributes:
+            name:
+              blank: Name is required
+            description:
+              blank: Description is required
+            locality:
+              blank: Locality is required
         campaign:
           attributes:
             name:
@@ -19,15 +27,30 @@ en:
               only_integer: Minimum pledge must be a number
             category:
               blank: Category is required
+              inlusion: Category not valid
             short_description:
               blank: Short description is required
             locality:
               blank: Locality is required
+        contribution:
+          attributes:
+            amount:
+              not_a_number: Invalid amount
     models:
+      organization:
+        one: Organization
+        other: Organizations
       campaign:
         one: Campaign
         other: Campaigns
+      constribution:
+        one: Contribution
+        other: Contributions
     attributes:
+      organization:
+        name: Name
+        description: Description
+        locality: Locality
       campaign:
         name: Name
         description: Description
@@ -37,3 +60,6 @@ en:
         category: Category
         short_description: Short Description
         locality: Locality
+        contribution: Total Contribution
+      contribution:
+        amount: Amount

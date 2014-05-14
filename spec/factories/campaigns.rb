@@ -2,14 +2,13 @@
 
 FactoryGirl.define do
   factory :campaign do
-    name "MyString"
-    description "MyText"
-    goal ""
-    deadline "2014-04-23 15:27:33"
-    minimum ""
-    category "MyString"
-    locality "MyString"
-    organization nil
-    short_description "MyText"
+    name { Faker::Company.name }
+    description { Faker::Lorem.paragraph }
+    goal 100
+    deadline { Time.current + 1.month }
+    minimum 1.5
+    category 'health'
+    locality { Faker::Address.city }
+    short_description { Faker::Lorem.sentence }
   end
 end
