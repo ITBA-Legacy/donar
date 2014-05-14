@@ -23,11 +23,11 @@ describe Campaign do
       it 'validates the goal not to be nil' do
         campaign.goal = nil
         expect(campaign.valid?).to be false
-        expect(campaign).to have(1).error_on(:goal)
+        expect(campaign).to have(2).error_on(:goal)
       end
 
       it 'validates the goal to be a number' do
-        campaign.goal = 'aaa'
+        campaign.goal = Faker::Lorem.characters(3)
         expect(campaign.valid?).to be false
         expect(campaign).to have(1).error_on(:goal)
       end
@@ -41,11 +41,11 @@ describe Campaign do
       it 'validates the minimum pledge not to be nil' do
         campaign.minimum = nil
         expect(campaign.valid?).to be false
-        expect(campaign).to have(1).error_on(:minimum)
+        expect(campaign).to have(2).error_on(:minimum)
       end
 
       it 'validates the minimum pledge to be a number' do
-        campaign.minimum = 'aaa'
+        campaign.minimum = Faker::Lorem.characters(3)
         expect(campaign.valid?).to be false
         expect(campaign).to have(1).error_on(:minimum)
       end
@@ -68,7 +68,7 @@ describe Campaign do
         expect(campaign).to have(1).error_on(:deadline)
       end
 
-      it 'validates the deadline to be after current date' do
+      it 'validates the deadline to be after the current date' do
         campaign.deadline = Time.current - 2.days
         expect(campaign.valid?).to be false
         expect(campaign).to have(1).error_on(:deadline)
@@ -78,6 +78,12 @@ describe Campaign do
         campaign.locality = nil
         expect(campaign.valid?).to be false
         expect(campaign).to have(1).error_on(:locality)
+      end
+
+      it 'validates the category inclusion' do
+        campaign.category = Faker::Lorem.characters(3)
+        expect(campaign.valid?).to be false
+        expect(campaign).to have(1).error_on(:category)
       end
 
     end
