@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
     super && provider.blank?
   end
 
-  def first_name_required?
+  def last_name_required?
     super && provider.blank?
   end
 
