@@ -12,14 +12,6 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
-  def first_name_required?
-    super && provider.blank?
-  end
-
-  def last_name_required?
-    super && provider.blank?
-  end
-
   def email_required?
     super && provider.blank?
   end
