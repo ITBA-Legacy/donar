@@ -8,11 +8,13 @@ es:
         create: "Create %{model}"
         new: "New Organization"
         edit: "Edit Organization"
+        update: "Update Organization"
       campaign:
         create: "Create %{model}"
         new: "New Campaign"
         edit: "Edit Campaign"
-      campaign:
+        update: "Update Campaign"
+      contribution:
         create: "Create %{model}"
         new: "New Contribution"
         edit: "Edit Contribution"

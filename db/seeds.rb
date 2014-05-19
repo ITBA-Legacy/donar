@@ -86,14 +86,14 @@
   tomografo_sticker = Perk.create(
     amount: 100.0,
     name: 'Sticker "Yo ayude a comprar le nuevo tomógrafo del CEMIC"',
-    maximun: 100,
+    maximum: 100,
     description: 'Un sticker'
   )
 
   tomografo_visit = Perk.create(
     amount: 1000.0,
     name: 'Visita guiada por el CEMIC',
-    maximun: 10,
+    maximum: 10,
     description: 'Una visita'
   )
 

@@ -74,6 +74,9 @@ gem 'omniauth-twitter'
 # Validates dates
 gem 'validates_timeliness', '~> 3.0'
 
+# Nested Form with Jquery
+gem 'cocoon'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
