@@ -1,21 +1,6 @@
-legend
-  = Organization.model_name.human(count: 2)
-table.table.table-bordered.table-hover
-  thead
-    tr
-      th
-        = Organization.human_attribute_name(:name)
-      th
-        = Organization.human_attribute_name(:description)
-      th
-        = Organization.human_attribute_name(:locality)
-  tbody
+#header.header
+  = render 'layouts/funder_login_navbar'
+#contentWrapper.wrapper.row-fluid.projects.font_p
+  .zone-content.clearfix
   - @organizations.each do |organization|
-    tr
-      td
-        = link_to organization.name, organization
-      td
-        = organization.description
-      td
-        = organization.locality
-
+    = render 'card', locals: { organization: organization }

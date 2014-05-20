@@ -460,10 +460,10 @@
                   .span4.bordered
                     .folder
                       h4.text-center.title
-                        a href="projects.html#proj#{index}"= campaign.name
+                        = link_to campaign.name, organization_campaign_path(campaign.organization, campaign)
                     .proj_name
                       .clear
-                      span.fleft.author= campaign.organization.present? ? campaign.organization.users.first.email : "Test"
+                      span.fleft.author= campaign.organization.present? &&  campaign.organization.users.first.present? ? campaign.organization.users.first.email : "Test"
                       table.icons
                         tbody
                           tr
@@ -505,100 +505,12 @@
             button.btn.mleft10 4
             button.btn.mleft10 5
           a#registr name="id_reg"
-    h1.decoration.text-center.proj
-      span.nobacgr Create Your Project
-    .create_projects
-      .row-fluid
-        .span3
-          h4.text-center
-            | Step 1:
-            span.green Registration
-        .span3.bleft
-          h4.text-center
-            | Step 2:
-            span.green Project Summary
-        .span3.bleft
-          h4.text-center
-            | Step 3:
-            span.green Project page
-        .span3.bleft
-          h4.text-center
-            | Step 4:
-            span.green Project page
-      .row-fluid.border_proj.duration
-        .span3
-          .column_project
-            h4.text-center Personal Info:
-            form.form-search
-              input.inputp.search-query.span12 placeholder="Name" type="text"
-                input.inputp.search-query.span12 placeholder="Surname" type="text"
-                  input.inputp.search-query.span12 placeholder="Email" type="text"
-                    input.inputp.search-query.span12 placeholder="Username" type="text"
-                      input.inputp.search-query.span12 placeholder="Password" type="text"
-                        input.inputp.search-query.span12 placeholder=("Repeat Password") type="text"
-                          select
-                            option Location
-                            option Belarus
-                            option Armenia
-                            option England
-                            option China
-                          input.inputp.search-query.span12.face placeholder=("Account Name") style=("padding-left: 30px;") type="text"
-                            input.inputp.search-query.span12.tweet placeholder=("Account Name") style=("padding-left: 30px;") type="text"
-                              input.inputp.search-query.span12 placeholder=("Payment Gateway") type="text"
-        .span3
-          .bleft.column_project
-            h4.text-center Project Description:
-            form.form-search
-              input.inputp.search-query.span12 placeholder=("Project Name") type="text"
-                select
-                  option Category
-                  option Armenia
-                  option England
-                  option China
-                select
-                  option Location
-                  option Armenia
-                  option England
-                  option China
-                .upload_img.inline
-                  input name="upload" type="file" /
-                textarea#redex2.inputp.search-query.span12 placeholder=("Short description") rows="9"
-                input.inputp.search-query.span12 placeholder=("Payment Gateway") type="text"
-        .span3
-          .bleft.column_project
-            h4.text-center Project Details:
-            form.form-search
-              input.inputp.search-query.span12 placeholder=("Video URL") type="text"
-                .upload_pic1.inline
-                  input name="upload" type="file" /
-                .upload_pic2.inline
-                  input name="upload" type="file" /
-                .upload_pic3.inline
-                  input name="upload" type="file" /
-                input.inputp.search-query.span12.face placeholder=("Account Name") style=("padding-left: 30px;") type="text"
-                  input.inputp.search-query.span12.tweet placeholder=("Account Name") style=("padding-left: 30px;") type="text"
-                    textarea#redex3.inputp.search-query.span12 placeholder=("Project description") rows="5"
-                    .upload_html.inline
-                      input name="upload" type="file" /
-        .span3
-          .bleft.column_project
-            h4.text-center Project Duration:
-            ul
-              li
-                input#rfirst checked="" hidden="" name="radio" type="radio" /
-                label for="rfirst"  30 Days ($15)
-              li
-                input#rsecond hidden="" name="radio" type="radio" /
-                label for="rsecond"  45 Days ($20)
-              li
-                input#re hidden="" name="radio" type="radio" /
-                label for="re"  60 Days ($25)
-      .decoration.text-center.create_butt
-        span.nobacgr_whit
-          button.btn.btn-large.search-query type="button"
-            span.butt_small
-              strong CREATE
-        a name="id_cont"
+    - if user_signed_in?
+      section.section.content
+        .clear.big-green.text-center
+          = link_to t('helpers.submit.organization.new'), new_organization_path
+        .clear.big-green.text-center
+          = link_to t('users.organizations'), list_organizations_path
     h1.decoration.text-center.conts
       span.nobacgr Contact Us
     .contacts

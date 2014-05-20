@@ -1,5 +1,4 @@
 Donar::Application.routes.draw do
-  mount Peek::Railtie => '/peek'
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   root 'application#index'
 

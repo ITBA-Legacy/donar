@@ -2,22 +2,27 @@ a name="id_home"
   .width.titul
     .reg.inline
       .bleft.inline.login
-        a#login-link.login-link href="#"  Login
-      .bleft.bright.inline.login
-        a#reg-link.login-link href="#"  Register
+        - if user_signed_in?
+          = link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete, id: 'login-link', class: 'login-link'
+        - else
+          = link_to t('devise.sessions.sign_in'), new_user_session_path, id: 'login-link', class: 'login-link'
+      - if ! user_signed_in?
+        .bleft.bright.inline.login
+          a#reg-link.login-link href="#"  Register
     .social.inline.fright
       ul#social
-        li.bleft.inline
-          ul style=("margin-left: 10px")
-            li
-              a href="https://www.facebook.com/" original-title="twitter" target="_blank"
-                =image_tag 'social/icon_header_face.png'
-            li
-              a href="https://plus.google.com/" original-title="googleplus" target="_blank"
-                =image_tag 'social/icon_header_g.png'
-            li
-              a href="https://twitter.com/" target="_blank" title="facebook"
-                =image_tag 'social/icon_header_tw.png'
+        - if ! user_signed_in?
+          li.bleft.inline
+            ul style=("margin-left: 10px")
+              li
+                = link_to omniauth_authorize_path(:user, :facebook)
+                  =image_tag 'social/icon_header_face.png'
+              li
+                = link_to omniauth_authorize_path(:user, :google_oauth2)
+                  =image_tag 'social/icon_header_g.png'
+              li
+                = link_to omniauth_authorize_path(:user, :twitter)
+                  =image_tag 'social/icon_header_tw.png'
         li.bleft.first.socialz
           a.active href="#"  EN
         li.bleft.socialz

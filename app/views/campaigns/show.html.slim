@@ -184,55 +184,13 @@
         #pledges_block
           h3.decoration.text-center
             span.nobacgr_desc Pledges
-          .pledges_block_info
-            .pledges_block_info_link
-              a#link_pledges_block_info_link_1 Pledge $5 or more
-            #pledges_block_info_1
-              .pledges_block_info_backers 10 backers
-              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              .pledges_block_info_estimate_delivery Estimate delivery: Jan 2013
-          .pledges_block_info
-            .pledges_block_info_link
-              a#link_pledges_block_info_link_2 Pledge $10 or more
-            #pledges_block_info_2
-              .pledges_block_info_backers 15 backers
-              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              .pledges_block_info_estimate_delivery Estimate delivery: Feb 2013
-          .pledges_block_info
-            .pledges_block_info_link
-              a#link_pledges_block_info_link_3 Pledge $15 or more
-            #pledges_block_info_3
-              .pledges_block_info_backers 20 backers
-              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              .pledges_block_info_estimate_delivery Estimate delivery: Mar 2013
-          .pledges_block_info
-            .pledges_block_info_link
-              a#link_pledges_block_info_link_4 Pledge $20 or more
-            #pledges_block_info_4
-              .pledges_block_info_backers 5 backers
-              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              .pledges_block_info_estimate_delivery Estimate delivery: Jan 2013
-          .pledges_block_info
-            .pledges_block_info_link
-              a#link_pledges_block_info_link_5 Pledge $25 or more
-            #pledges_block_info_5
-              .pledges_block_info_backers 20 backers
-              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              .pledges_block_info_estimate_delivery Estimate delivery: Feb 2013
-          .pledges_block_info
-            .pledges_block_info_link
-              a#link_pledges_block_info_link_6 Pledge $30 or more
-            #pledges_block_info_6
-              .pledges_block_info_backers 30 backers
-              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              .pledges_block_info_estimate_delivery Estimate delivery: Mar 2013
-          .pledges_block_info
-            .pledges_block_info_link
-              a#link_pledges_block_info_link_7 Pledge $35 or more
-            #pledges_block_info_7
-              .pledges_block_info_backers 20 backers
-              .pledges_block_info_text Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              .pledges_block_info_estimate_delivery Estimate delivery: Jan 2013
+          - @campaign.perks.each do |perk|
+            .pledges_block_info
+              .pledges_block_info_link
+                a#link_pledges_block_info_link_1= "Pledge #{perk.amount} or more"
+              #pledges_block_info_1
+                .pledges_block_info_backers= perk.name
+                .pledges_block_info_estimate_delivery Estimate delivery: Jan 2013
         #payment_getaway
           /! <h3 class="text-center payment_getaway_name"><span class="title_h3 left_t"></span>Payment Getaway<span class="title_h3 right_t"></span></h3
           h3.decoration.text-center
