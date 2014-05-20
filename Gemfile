@@ -77,6 +77,8 @@ gem 'validates_timeliness', '~> 3.0'
 # Validates dates
 gem 'validates_timeliness', '~> 3.0'
 
+gem 'time_diff'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

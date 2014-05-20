@@ -42,106 +42,15 @@
             #tab2.tab-pane
               #backers_content
                 .row-fluid
-                  .span6
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                  .span6
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
-                    .backers_block_text
-                      .image_face_backers_content
-                        .face_backers_content
-                      .text_backers_content
-                        .backer_name Backer
-                        .backer_date April 2, 2013 at 8:45 pm
-                        .number_project Backed 5 project
+                  - @campaign.contributions.each do |c|
+                    .span6
+                      .backers_block_text
+                        .image_face_backers_content
+                          .face_backers_content
+                        .text_backers_content
+                          .backer_name= c.user.email
+                          .backer_date= c.created_at.to_formatted_s(:long_ordinal)
+                          .number_project= "Backed #{c.user.contributions.count} projects"
                 .row-fluid
                   .span12
                     .btn-toolbar.text-center
@@ -157,15 +66,10 @@
               #updates_content
                 .row-fluid
                   .span12
-                    .updates_block_text
-                      h4 Update 3
-                      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec massa ut justo accumsan malesuada ut pharetra sapien. Nullam ac nisi vel augue ultrices venenatis sed sed felis. Quisque velit tortor, suscipit et auctor tempus, pretium eu velit. Vestibulum vitae ligula sapien. Donec et felis lorem. Vestibulum non feugiat risus. Sed malesuada nisl vel lorem rhoncus feugiat. Proin pellentesque velit nec metus tincidunt quis egestas tortor venenatis. Phasellus mattis sapien suscipit massa suscipit placerat. Vestibulum semper laoreet tempus. Curabitur ac sagittis urna. Sed rhoncus massa vel lorem lobortis sit amet adipiscing nunc aliquet.  accumsan sit amet, posuere eget odio. Suspendisse pellentesque odio id nunc tempor placerat. Pellentesque ipsum mauris, ultrices ut rhoncus id, vehicula eget est.
-                    .updates_block_text
-                      h4 Update 2
-                      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec massa ut justo accumsan malesuada ut pharetra sapien. Nullam ac nisi vel augue ultrices venenatis sed sed felis. Quisque velit tortor, suscipit et auctor tempus, pretium eu velit. Vestibulum vitae ligula sapien. Donec et felis lorem. Vestibulum non feugiat risus. Sed malesuada nisl vel lorem rhoncus feugiat. Proin pellentesque velit nec metus tincidunt quis egestas tortor venenatis. Phasellus mattis sapien suscipit massa suscipit placerat. Vestibulum semper laoreet tempus. Curabitur ac sagittis urna. Sed rhoncus massa vel lorem lobortis sit amet adipiscing nunc aliquet. Quisque metus velit, mattis a vehicula sed, hendrerit sed leo. Donec aliquet molestie semper. Donec ac condimentum nisl. Ut bibendum scelerisque turpis vitae porttitor.
-                    .updates_block_text
-                      h4 Update 1
-                      p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam nec massa ut justo accumsan malesuada ut pharetra sapien. Nullam ac nisi vel augue. Nullam ac nisi vel augue.
+                    - @campaign.updates.each do |u|
+                      .updates_block_text
+                        h4= "Update #{u.created_at.to_formatted_s(:long_ordinal)}"
+                        p= u.message
         #social_uncategorized
           .left_social_uncategorized
             span Uncategorized
@@ -272,7 +176,7 @@
               .span1 style=("margin-right: 10px")
                 .image_third
               .text_backers_days_blocks.span10
-                .top_text_backers_days_blocks= (@campaign.deadline - Time.current).to_i
+                .top_text_backers_days_blocks= Time.diff(Time.current, @campaign.deadline)[:day]
                 .bottom_text_backers_days_blocks days to go
         .back_this_project_button
           button.btn.btn-large.back_project type="button"
