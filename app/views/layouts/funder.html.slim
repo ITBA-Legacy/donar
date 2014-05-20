@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    title Donar
+    meta content="" name="description"
+    meta content="" name="keywords"
+    meta content="width=device-width, initial-scale=1.0" name="viewport"
+    meta content="" name="author"
+    link href="favicon.html" rel=("shortcut icon") /
+    link href="img/touch-icon.html" rel="apple-touch-icon" /
+    link href="img/touch-icon.html" rel="image_src" /
+    link href="http://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet" type="text/css"
+    link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100" rel="stylesheet" type="text/css"
+    link href="http://fonts.googleapis.com/css?family=Titillium+Web:400,700,200,300" rel="stylesheet"
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    /! HTML5 shim, for IE6-8 support of HTML5 elements
+    /![if lt IE 9]
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script
+    /![if IE 8]
+    /! <style type="text/css">
+    /! input[type="checkbox"], input[type="radio"] {
+    /! display: inline;
+    /! }
+    /! input[type="checkbox"] + label, input[type="radio"] + label{
+    /! display: inline;
+    /! background: none;
+    /! margin-bottom: 15px;
+    /! }
+    /! \.zone {
+    /! background-color: #727272;
+    /! filter: alpha(Opacity=70);
+    /! }
+    /! \.black {
+    /! background-color: #727272;
+    /! filter: alpha(Opacity=70);
+    /! }
+    /! </style>
+    javascript:
+      $(window).scroll(function fade() {
+          if ($(window).scrollTop() > 400) {
+              $("#navtop").css("display", "block");
+          }
+          else {
+              $("#navtop").css("display", "none");
+          }
+      });
+  body
+    = yield
+

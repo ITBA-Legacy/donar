@@ -31,10 +31,9 @@ GIT
 
 GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
-  revision: 128f373e151528c9516ea8df32831fc60ac1c35d
-  branch: bootstrap3
+  revision: 95de3b0e288aede73d38a18cce30cde66e733558
   specs:
-    twitter-bootstrap-rails (3.1.1)
+    twitter-bootstrap-rails (2.2.8)
       actionpack (>= 3.1)
       execjs
       rails (>= 3.1)
@@ -366,6 +365,9 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.3)
     tilt (1.4.1)
+    time_diff (0.3.0)
+      activesupport
+      i18n
     timecop (0.7.1)
     timeliness (0.3.7)
     treetop (1.4.15)
@@ -415,6 +417,7 @@ DEPENDENCIES
   inherited_resources
   jquery-rails
   jquery-turbolinks
+  jquery-ui-rails
   launchy
   less-rails
   loadjs
@@ -441,6 +444,7 @@ DEPENDENCIES
   simplecov
   slim-rails
   therubyracer
+  time_diff
   timecop
   turbolinks
   twitter-bootstrap-rails!

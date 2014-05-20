@@ -29,10 +29,11 @@ end
 
 gem "less-rails"
 gem "therubyracer"
-gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
+gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'loadjs'
 
@@ -70,12 +71,16 @@ gem 'pundit'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
+#ita: esta es la gema que valida la fecha
+gem 'validates_timeliness', '~> 3.0'
 
 # Validates dates
 gem 'validates_timeliness', '~> 3.0'
 
 # Nested Form with Jquery
 gem 'cocoon'
+
+gem 'time_diff'
 
 group :development do
   gem 'better_errors'
