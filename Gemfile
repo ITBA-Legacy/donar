@@ -86,7 +86,7 @@ end
 
 group :debugging, :development, :test do
   gem 'pry'
-  gem 'debugger', '1.6.6'
+  gem 'debugger'
   gem 'debugger-pry'
   gem 'pry-nav'
   gem 'pry-stack_explorer'
