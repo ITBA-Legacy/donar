@@ -1,0 +1,3 @@
+.row
+  - campaigns.each do |c|
+    = render 'campaigns/card', locals: { campaign: c }

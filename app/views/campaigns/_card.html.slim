@@ -6,8 +6,12 @@ figure.col-xs-6.first.campaign-card
     .col-xs-5.img.first
       = image_tag "crowdfunding.png"
     .col-xs-7.progress_report
-      h2= "$#{campaign.contribution}"
-      h4= t 'campaigns.card.goal', goal: campaign.goal
+      .row
+        .col-xs-8
+          h2= "$#{campaign.contribution}"
+          h4= t 'campaigns.card.goal', goal: campaign.goal
+        .col-xs-4.text-right#category-icon
+          =image_tag "#{category_icon(campaign.category)}"
       .progress
         .progress-bar.progress-bar-success.p80 aria-valuenow=percentage_done aria-valuemin="0" aria-valuemax="100" style="width: #{percentage_done}%"
       br
