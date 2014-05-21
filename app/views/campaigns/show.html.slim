@@ -48,9 +48,9 @@
                         .image_face_backers_content
                           .face_backers_content
                         .text_backers_content
-                          .backer_name= c.user.present? && c.user.email.present? ? c.user.email : "default email"
+                          .backer_name= c.user.email
                           .backer_date= c.created_at.to_formatted_s(:long_ordinal)
-                          .number_project= "Backed #{c.user.present? ? c.user.contributions.count : 0} projects"
+                          .number_project= "Backed #{c.user.contributions.count} projects"
                 .row-fluid
                   .span12
                     .btn-toolbar.text-center
