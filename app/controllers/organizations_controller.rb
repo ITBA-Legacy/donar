@@ -11,8 +11,10 @@ class OrganizationsController < ApplicationController
   end
 
   def create
-    @organization = CreateOrganizationContext.new(current_user).handle(resource_params.first)
-    create!
+    create! do
+      @organization.users << current_user
+      organization_path @organization
+    end
   end
 
   def resource_params

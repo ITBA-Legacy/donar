@@ -18,5 +18,4 @@ class CampaignsController < ApplicationController
 
     render :index
   end
-
 end

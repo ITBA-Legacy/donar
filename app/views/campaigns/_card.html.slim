@@ -1,0 +1,21 @@
+- campaign = locals[:campaign]
+- percentage_done = campaign.contribution > 0 ? (campaign.contribution / campaign.goal) * 100 : 0
+figure.col-xs-6.first.campaign-card
+  h3#card-title= campaign.name
+  #charity_process_inner
+    .col-xs-5.img.first
+      = image_tag "crowdfunding.png"
+    .col-xs-7.progress_report
+      h2= "$#{campaign.contribution}"
+      h4= t 'campaigns.card.goal', goal: campaign.goal
+      .progress
+        .progress-bar.progress-bar-success.p80 aria-valuenow=percentage_done aria-valuemin="0" aria-valuemax="100" style="width: #{percentage_done}%"
+      br
+        .info
+          .col-xs-6.first
+            span.glyphicon.glyphicon-user
+            span= t 'campaigns.card.pledgers', count: campaign.contributions.count
+          .col-xs-6.ntr
+            span.glyphicon.glyphicon-calendar
+            span= t 'campaigns.card.days_left', count: (campaign.deadline.to_date - Time.current.to_date).to_i
+

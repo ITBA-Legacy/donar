@@ -7,4 +7,6 @@ p
     field
       = search_field_tag 'query'
       = submit_tag t('campaigns.search')
-
+.row
+  - Campaign.all.each do |c|
+    = render 'campaigns/card', locals: { campaign: c }

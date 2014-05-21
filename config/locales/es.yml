@@ -29,6 +29,10 @@ es:
     profile: Mi Perfil
     contributions: Mis Contribuciones
   campaigns:
+    card:
+      goal: "de $%{goal}"
+      pledgers: "%{count} Donadores"
+      days_left: "%{count} Días Restantes"
     categories:
       education: Educación
       social: Social
