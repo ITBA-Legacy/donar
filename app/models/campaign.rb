@@ -1,4 +1,11 @@
+# It's a Campaign/Project/Fundriser to raise something.
 class Campaign < ActiveRecord::Base
+
+  include PgSearch
+  pg_search_scope :search,
+                  against: [:name, :description, :short_description],
+                  using: { tsearch: { dictionary: 'spanish' } }
+
   belongs_to :organization
   has_many :perks
   has_many :comments
@@ -6,7 +13,7 @@ class Campaign < ActiveRecord::Base
   has_many :contributions
   has_many :milestones
 
-  accepts_nested_attributes_for :organization
+  accepts_nested_attributes_for :perks, reject_if: :all_blank, allow_destroy: true
 
   CATEGORIES = [:education, :social, :health]
 

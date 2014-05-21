@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 20140514180822) do
     t.integer  "campaign_id"
     t.float    "amount"
     t.string   "name"
-    t.integer  "maximun"
+    t.integer  "maximum"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"

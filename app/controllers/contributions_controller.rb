@@ -8,6 +8,10 @@ class ContributionsController < ApplicationController
   FIELDS = [:amount]
 
   def create
+    # @contribution = CreateContributionContext.new(current_user).handle(
+    #   resource_params.first,
+    #   @campaign
+    # )
     create! { organization_campaign_path(@organization, @campaign) }
   end
 

@@ -47,6 +47,12 @@ es:
       constribution:
         one: Contribución
         other: Contribuciones
+      perk:
+        one: Beneficio
+        other: Beneficios
+      user:
+        one: Usuario
+        other: Usuarios
     attributes:
       organization:
         name: Nombre
@@ -67,3 +73,8 @@ es:
       user:
         created_at: Fecha de ingreso
         full_name: Nombre
+      perk:
+        amount: Mínima Donación
+        name: Nombre
+        maximun: Máximo
+        description: Descripción
