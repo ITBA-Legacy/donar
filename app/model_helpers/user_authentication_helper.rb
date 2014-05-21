@@ -39,8 +39,6 @@ module UserAuthenticationHelper
     # created
     user = where(email: auth.info.email).first_or_create do |aux_user|
       aux_user.email = auth.info.email
-      aux_user.first_name = auth.info.first_name
-      aux_user.last_name = auth.info.last_name
       aux_user.provider = auth.provider
       aux_user.uid = auth.uid
     end
