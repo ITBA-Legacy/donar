@@ -10,6 +10,9 @@ gem 'google-webfonts-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Use postgresql as the full text search engine.
+gem 'pg_search'
+
 # To extract sensitive configuration
 gem 'app_configuration'
 
@@ -73,6 +76,9 @@ gem 'omniauth-twitter'
 
 # Validates dates
 gem 'validates_timeliness', '~> 3.0'
+
+# Nested Form with Jquery
+gem 'cocoon'
 
 group :development do
   gem 'better_errors'

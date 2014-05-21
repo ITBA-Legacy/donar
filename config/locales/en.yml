@@ -8,17 +8,21 @@ es:
         create: "Create %{model}"
         new: "New Organization"
         edit: "Edit Organization"
+        update: "Update Organization"
       campaign:
         create: "Create %{model}"
         new: "New Campaign"
         edit: "Edit Campaign"
-      campaign:
+        update: "Update Campaign"
+      contribution:
         create: "Create %{model}"
         new: "New Contribution"
         edit: "Edit Contribution"
-  activerecord:
-    models:
-      user: User
+      perk:
+        create: "Create %{model}"
+        new: "New Perk"
+        edit: "Edit Perk"
+        remove: "Remove Perk"
   users:
     organizations: My Organizations
     campaigns: My Campaigns
@@ -30,6 +34,7 @@ es:
       social: Social
       health: Health
     constribute: Contribute
+    search: Search
 
 
 

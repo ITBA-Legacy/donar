@@ -26,9 +26,9 @@ describe CampaignsController do
       end
 
       it 'creates the campaign' do
-        expect {
+        expect do
           post :create, organization_id: organization.id, campaign: campaign
-        }.to change(Campaign, :count).by(1)
+        end.to change(Campaign, :count).by(1)
       end
 
     end
