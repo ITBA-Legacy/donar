@@ -1,16 +1,15 @@
 .jumbotron
   h1 Donar
-  p Crowfounding platform for non-profits
+  p
+    = t('application.slogan')
   p
     = link_to Campaign.model_name.human(count: 2), campaigns_path, class:'btn btn-primary btn-lg'
 
-- if user_signed_in?
-  .row
-    = form_tag search_campaigns_path, class: 'form-inline text-center', role: 'form' do
-      .form-group
-        .col-md-4
-          = search_field_tag 'query', nil, class: 'form-control', placeholder: t('campaigns.search')
-      = submit_tag t('campaigns.search'), class: 'btn btn-primary'
+= form_tag search_campaigns_path, class: 'form-inline text-center', role: 'form' do
+  .form-group
+    .col-md-4
+      = search_field_tag 'query', nil, class: 'form-control', placeholder: t('campaigns.search')
+  = submit_tag t('campaigns.search'), class: 'btn btn-primary'
 br
 p.text-center
   = link_to t('helpers.submit.organization.new'), new_organization_path, class: 'btn btn-primary'

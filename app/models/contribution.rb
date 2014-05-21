@@ -3,7 +3,7 @@ class Contribution < ActiveRecord::Base
   belongs_to :perk
   belongs_to :user
 
-  validates :amount, numericality: { greater_than: 0.0 }
+  validates :amount, numericality: { greater_than: 0 }
 
   after_create :add_campaign_contribution
 

@@ -2,6 +2,7 @@ es:
   application:
     title: Donar
     no_results: No results found
+    slogan: Crowdfounding platform for non-profits
   helpers:
     submit:
       organization:
@@ -28,6 +29,7 @@ es:
     campaigns: My Campaigns
     profile: My Profile
     contributions: My Contributions
+    link_accounts: Link accounts
   campaigns:
     categories:
       education: Education

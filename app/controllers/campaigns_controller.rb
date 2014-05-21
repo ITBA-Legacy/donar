@@ -2,7 +2,7 @@ class CampaignsController < ApplicationController
 
   inherit_resources
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:search, :index, :show]
   belongs_to :organization
 
   FIELDS = [:name, :description, :goal, :deadline, :minimum, :category, :short_description,

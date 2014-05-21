@@ -2,7 +2,7 @@ class OrganizationsController < ApplicationController
 
   inherit_resources
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
 
   FIELDS = [:name, :description, :locality]
 

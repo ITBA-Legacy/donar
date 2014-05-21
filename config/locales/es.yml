@@ -2,6 +2,7 @@ es:
   application:
     title: Donar
     no_results: No se encontraron resultados
+    slogan: Plataforma de Crowdfounding para ONG
   helpers:
     submit:
       organization:
@@ -28,6 +29,7 @@ es:
     campaigns: Mis Campañas
     profile: Mi Perfil
     contributions: Mis Contribuciones
+    link_accounts: Vincular cuentas
   campaigns:
     card:
       goal: "de $%{goal}"

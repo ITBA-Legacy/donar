@@ -22,6 +22,18 @@ legend
         = User.human_attribute_name(:created_at)
       p.list-group-item-text
         = l(@user.created_at, format: :short)
+    li.list-group-item
+      h4.list-group-item-heading
+        = t('users.link_accounts')
+      p.list-group-item-text
+        - unless has_provider?("facebook")
+          = link_to "Facebook", user_omniauth_authorize_path(:facebook)
+          = " / "
+        - unless has_provider?("google")
+          = link_to "Google", user_omniauth_authorize_path(:google_oauth2)
+          = " / "
+        - unless has_provider?("twitter")
+          = link_to "Twitter", user_omniauth_authorize_path(:twitter)
 
 legend
   = t('users.organizations')

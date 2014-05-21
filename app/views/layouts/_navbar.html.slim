@@ -14,12 +14,12 @@ nav.navbar.navbar-inverse role="navigation" style="position: static;"
       - else
         li
           = link_to t('devise.sessions.sign_in'), new_user_session_path
-      li
-        = link_to t('devise.sessions.sign_in_with_facebook'),
-          user_omniauth_authorize_path(:facebook)
-      li
-        = link_to t('devise.sessions.sign_in_with_google'),
-          user_omniauth_authorize_path(:google_oauth2)
-      li
-        = link_to t('devise.sessions.sign_in_with_twitter'),
-          user_omniauth_authorize_path(:twitter)
+        li
+          = link_to t('devise.sessions.sign_in_with_facebook'),
+            user_omniauth_authorize_path(:facebook)
+        li
+          = link_to t('devise.sessions.sign_in_with_google'),
+            user_omniauth_authorize_path(:google_oauth2)
+        li
+          = link_to t('devise.sessions.sign_in_with_twitter'),
+            user_omniauth_authorize_path(:twitter)
