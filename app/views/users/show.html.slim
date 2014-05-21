@@ -29,7 +29,7 @@ legend
         - unless has_provider?("facebook")
           = link_to "Facebook", user_omniauth_authorize_path(:facebook)
           = " / "
-        - unless has_provider?("google")
+        - unless has_provider?("google_oauth2")
           = link_to "Google", user_omniauth_authorize_path(:google_oauth2)
           = " / "
         - unless has_provider?("twitter")
