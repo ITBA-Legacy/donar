@@ -46,9 +46,20 @@ legend
 .row
   .col-md-6
     p
+      = link_to t('helpers.submit.campaign.edit'),
+                edit_organization_campaign_path(@campaign.organization, @campaign),
+                class: 'btn btn-primary'
+.row
+  .col-md-6
+    p
       = link_to t('campaigns.constribute'),
                 new_organization_campaign_contribution_path(@campaign.organization, @campaign),
                 class: 'btn btn-primary'
+.row
+  .col-md-12
+    legend
+      = Perk.model_name.human(count: 2)
+    = render 'perks/index_table', perks: @campaign.perks
 .row
   .col-md-6
     p
