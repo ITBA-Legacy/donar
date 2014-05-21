@@ -12,5 +12,4 @@ class CampaignsController < ApplicationController
     return [] if request.get?
     [params.require(:campaign).permit(FIELDS)]
   end
-
 end

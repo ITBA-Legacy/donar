@@ -366,9 +366,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.3)
     tilt (1.4.1)
-    time_diff (0.3.0)
-      activesupport
-      i18n
     timecop (0.7.1)
     timeliness (0.3.7)
     treetop (1.4.15)
@@ -444,7 +441,6 @@ DEPENDENCIES
   simplecov
   slim-rails
   therubyracer
-  time_diff
   timecop
   turbolinks
   twitter-bootstrap-rails!
