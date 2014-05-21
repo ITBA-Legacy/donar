@@ -6,7 +6,7 @@ p
   p
     = link_to t('users.organizations'), list_organizations_path, class: 'btn btn-primary'
 
-    = form_tag search_campaigns_path, :class: 'simple-form' do
+    = form_tag search_campaigns_path, class: 'simple-form' do
       field
         = search_field_tag 'query'
         = submit_tag t('campaigns.search')
