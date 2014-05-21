@@ -16,7 +16,7 @@ describe OrganizationsController do
 
       it 'renders all the organizations' do
         get :list
-        expect(response).to render_template(:index)
+        expect(response).to render_template(:list)
         expect(assigns(:organizations)).to include(organization)
       end
 

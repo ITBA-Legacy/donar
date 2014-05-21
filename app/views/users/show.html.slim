@@ -1,0 +1,31 @@
+legend
+  = t('users.profile')
+.col-md-3
+  - if @user.avatar.present?
+      = image_tag(user.avatar.url, height: 150, width: 150)
+  - else
+      = image_tag('default_avatar.jpg', height: 150, width: 150)
+.col-md-4
+  ul.list-group
+    li.list-group-item
+      h4.list-group-item-heading
+        = User.human_attribute_name(:full_name)
+      p.list-group-item-text
+        = @user.full_name
+    li.list-group-item
+      h4.list-group-item-heading
+        = User.human_attribute_name(:email)
+      p.list-group-item-text
+        = @user.email
+    li.list-group-item
+      h4.list-group-item-heading
+        = User.human_attribute_name(:created_at)
+      p.list-group-item-text
+        = l(@user.created_at, format: :short)
+
+legend
+  = t('users.organizations')
+= render '/organizations/index_table', organizations: @user.organizations
+legend
+  = t('users.contributions')
+= render '/contributions/index_table', contributions: @user.contributions

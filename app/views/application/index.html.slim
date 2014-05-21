@@ -3,11 +3,8 @@ p
 p
   = link_to Organization.model_name.human(count: 2), organizations_path, class: 'btn btn-primary'
 - if user_signed_in?
-  p
-    = link_to t('users.organizations'), list_organizations_path, class: 'btn btn-primary'
-
-    = form_tag search_campaigns_path, class: 'simple-form' do
-      field
-        = search_field_tag 'query'
-        = submit_tag t('campaigns.search')
+  = form_tag search_campaigns_path, class: 'simple-form' do
+    field
+      = search_field_tag 'query'
+      = submit_tag t('campaigns.search')
 

@@ -50,6 +50,9 @@ es:
       perk:
         one: Beneficio
         other: Beneficios
+      user:
+        one: Usuario
+        other: Usuarios
     attributes:
       organization:
         name: Nombre
@@ -67,6 +70,9 @@ es:
         contribution: Contribución Total
       contribution:
         amount: Donación
+      user:
+        created_at: Fecha de ingreso
+        full_name: Nombre
       perk:
         amount: Mínima Donación
         name: Nombre

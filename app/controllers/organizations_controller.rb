@@ -1,7 +1,5 @@
 class OrganizationsController < ApplicationController
 
-  before_action :authenticate_user!
-
   inherit_resources
 
   before_action :authenticate_user!
@@ -10,7 +8,6 @@ class OrganizationsController < ApplicationController
 
   def list
     @organizations = current_user.organizations
-    render :index
   end
 
   def create

@@ -4,7 +4,7 @@ es:
     no_results: No se encontraron resultados
   helpers:
     submit:
-      campaign:
+      organization:
         create: "Crear %{model}"
         new: "Nueva Organización"
         edit: "Editar Organización"
@@ -26,12 +26,14 @@ es:
   users:
     organizations: Mis Organizaciones
     campaigns: Mis Campañas
+    profile: Mi Perfil
+    contributions: Mis Contribuciones
   campaigns:
     categories:
       education: Educación
       social: Social
       health: Salud
-    constribute: Constribuir
+    constribute: Contribuir
     search: Buscar
 
 
