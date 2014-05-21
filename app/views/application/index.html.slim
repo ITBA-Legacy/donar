@@ -5,3 +5,6 @@ p
 - if user_signed_in?
   p
     = link_to t('users.organizations'), list_organizations_path, class: 'btn btn-primary'
+.row
+  - Campaign.all.each do |c|
+    = render 'campaigns/card', locals: { campaign: c }
