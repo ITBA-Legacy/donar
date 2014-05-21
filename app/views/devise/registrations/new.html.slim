@@ -16,7 +16,7 @@ legend
   .control-group
     = f.label :email, class: "control-label"
     .controls
-      = f.email_field :email, autofocus: true, required: true
+      = f.email_field :email, required: true
   - if f.object.password_required?
     .control-group
       = f.label :password, class: "control-label"
