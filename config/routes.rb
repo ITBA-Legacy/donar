@@ -14,4 +14,12 @@ Donar::Application.routes.draw do
 
   end
 
+  resources :campaigns do
+    collection do
+      get :search
+      post :search
+    end
+  end
+
+
 end

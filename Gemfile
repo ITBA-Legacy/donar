@@ -10,6 +10,9 @@ gem 'google-webfonts-rails'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+# Use postgresql as the full text search engine.
+gem 'pg_search'
+
 # To extract sensitive configuration
 gem 'app_configuration'
 
