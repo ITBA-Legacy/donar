@@ -1,26 +1,30 @@
 - campaign = locals[:campaign]
 - percentage_done = campaign.contribution > 0 ? (campaign.contribution / campaign.goal) * 100 : 0
-figure.col-xs-6.first.campaign-card
-  =link_to organization_campaign_path(campaign.organization, campaign), id: 'campaign-link'
-    h3#card-title= campaign.name
-  #charity_process_inner
-    .col-xs-5.img.first
+.col-sm-6.campaign-card
+  .row
+    .col-sm-12
+      =link_to organization_campaign_path(campaign.organization, campaign), id: 'campaign-link'
+        h3#card-title= campaign.name
+  .row
+    .col-sm-5.img.first
       = image_tag "crowdfunding.png"
-    .col-xs-7.progress_report
+    .col-sm-7
       .row
-        .col-xs-8
+        .col-sm-8
           h2= "$#{campaign.contribution}"
           h4= t 'campaigns.card.goal', goal: campaign.goal
-        .col-xs-4.text-right#category-icon
-          =image_tag "#{category_icon(campaign.category)}"
-      .progress
-        .progress-bar.progress-bar-success.p80 aria-valuenow=percentage_done aria-valuemin="0" aria-valuemax="100" style="width: #{percentage_done}%"
-      br
-        .info
-          .col-xs-6.first
-            span.glyphicon.glyphicon-user
-            span= t 'campaigns.card.pledgers', count: campaign.contributions.count
-          .col-xs-6.ntr
-            span.glyphicon.glyphicon-calendar
-            span= t 'campaigns.card.days_left', count: (campaign.deadline.to_date - Time.current.to_date).to_i
+        .col-sm-4
+          #category-icon
+            =image_tag "#{category_icon(campaign.category)}"
+      .row
+        .col-sm-12
+          .progress
+            .progress-bar.progress-bar-success.p80 aria-valuenow=percentage_done aria-valuemin="0" aria-valuemax="100" style="width: #{percentage_done}%"
+      .row
+        .col-sm-6.first
+          span.glyphicon.glyphicon-user
+          span= t 'campaigns.card.pledgers', count: campaign.contributions.count
+        .col-sm-6
+          span.glyphicon.glyphicon-calendar
+          span= t 'campaigns.card.days_left', count: (campaign.deadline.to_date - Time.current.to_date).to_i
 
