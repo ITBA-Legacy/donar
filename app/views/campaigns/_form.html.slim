@@ -3,45 +3,54 @@
     ul
       - @campaign.errors.each do |attr, msg|
         li= msg
-= form_for [@organization, @campaign] do |f|
-  .create_projects
-    .row-fluid
-      .span6
-        h4.text-center
-          | Paso 1:
-          span.green Datos básicos de la campaña
-      .span6.bleft
-        h4.text-center
-          | Paso 2:
-          span.green Últimos datos
-    .row-fluid.border_proj.duration
-      .span6
-        .bleft.column_project
-          h4.text-center Project Description:
-          form.form-search
-            = f.text_field :name, class: 'inputp search-query span12', required: true, placeholder: "Project Name"
-            = f.select :category, Campaign::CATEGORIES, {}, { class: 'custom-select' }
-            = f.text_area :description, class: 'inputp search-query span12', id: 'redex2', rows: '9', placeholder: "Description"
-            = f.date_field :deadline, class: 'inputp search-query span12', required: true, min: Time.current, placeholder: "Deadline"
-      .span6
-        .bleft.column_project
-          h4.text-center Project Details:
-          form.form-search
-            = f.number_field :goal, class: 'inputp search-query span12', required: true, min: 1, placeholder: "Objetivo"
-            = f.number_field :minimum, class: 'inputp search-query span12', required: true, min: 1, placeholder: "Donación mínima"
-            = f.text_field :locality, class: 'inputp search-query span12', required: true, placeholder: "Localidad"
-            input.inputp.search-query.span12 placeholder= "Video URL" type="text"
-              / .upload_pic1.inline
-              /   input name="upload" type="file" /
-              / .upload_pic2.inline
-              /   input name="upload" type="file" /
-              / .upload_pic3.inline
-              /   input name="upload" type="file" /
-              / input.inputp.search-query.span12.face placeholder= "Account Name" style="padding-left: 30px;" type="text"
-              / input.inputp.search-query.span12.tweet placeholder="Account Name" style="padding-left: 30px;" type="text"
-              = f.text_area :short_description, class: 'inputp search-query span12', id: 'redex3', required: true, placeholder: "Short Description", rows: 5
-    .decoration.text-center.create_butt
-      span.nobacgr_whit
-        = f.submit nil, class: 'btn btn-large search-query'
-          span.butt_small
-            strong CREATE
+= form_for [@organization, @campaign],
+           html: { class: 'form-horizontal', role: 'form' } do |f|
+  .form-group
+    = f.label :name, class: 'control-label col-sm-2'
+    .col-md-4
+      = f.text_field :name, class: 'form-control col-md-2', required: true
+  .form-group
+    = f.label :description, class: 'control-label col-sm-2'
+    .col-md-4
+      = f.text_area :description, class: 'form-control col-md-2', required: true
+  .form-group
+    = f.label :goal, class: 'control-label col-sm-2'
+    .col-md-4
+      .input-group
+        span.input-group-addon
+          | $
+        = f.number_field :goal, class: 'form-control col-md-2', required: true, min: 0.0
+  .form-group
+    = f.label :deadline, class: 'control-label col-sm-2'
+    .col-md-4
+      = f.date_field :deadline, class: 'form-control col-md-2', required: true, min: Time.current
+  .form-group
+    = f.label :minimum_pledge, class: 'control-label col-sm-2'
+    .col-md-4
+      .input-group
+        span.input-group-addon
+          | $
+        = f.number_field :minimum, class: 'form-control col-md-2', required: true, min: 0.0
+  .form-group
+    = f.label :category, class: 'control-label col-sm-2'
+    .col-md-4
+      = f.select :category,
+                 Campaign::CATEGORIES.collect { |c| [t("campaigns.categories.#{c}"), c] },
+                 class: 'form-control col-md-2', required: true
+  .form-group
+    = f.label :locality, class: 'control-label col-sm-2'
+    .col-md-4
+      = f.text_field :locality, class: 'form-control col-md-2', required: true
+  .form-group
+    = f.label :short_description, class: 'control-label col-sm-2'
+    .col-md-4
+      = f.text_area :short_description, class: 'form-control col-md-2', required: true
+  legend
+    = Perk.model_name.human(count: 2)
+  #perks
+    = f.fields_for :perks do |f_perk|
+      = render 'perk_fields', f: f_perk
+    = link_to_add_association t('helpers.submit.perk.new'), f, :perks, class: 'btn btn-info'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit nil, class: 'btn btn-primary btn-lg'

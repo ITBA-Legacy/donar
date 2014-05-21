@@ -26,4 +26,5 @@ class Campaign < ActiveRecord::Base
   def default_attributes
     self.contribution ||= 0.0
   end
+
 end
