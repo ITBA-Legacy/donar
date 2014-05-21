@@ -1,7 +1,8 @@
 - campaign = locals[:campaign]
 - percentage_done = campaign.contribution > 0 ? (campaign.contribution / campaign.goal) * 100 : 0
 figure.col-xs-6.first.campaign-card
-  h3#card-title= campaign.name
+  =link_to organization_campaign_path(campaign.organization, campaign), id: 'campaign-link'
+    h3#card-title= campaign.name
   #charity_process_inner
     .col-xs-5.img.first
       = image_tag "crowdfunding.png"
