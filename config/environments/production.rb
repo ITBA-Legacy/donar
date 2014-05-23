@@ -63,7 +63,20 @@ Donar::Application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default_url_options = { host: 'donar.com.ar' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default charset: "utf-8"
+  config.action_mailer.smtp_settings = {
+    address: AppConfiguration.for(:mailer).address,
+    port: AppConfiguration.for(:mailer).port,
+    enable_starttls_auto: AppConfiguration.for(:mailer).enable_starttls_auto,
+    user_name: AppConfiguration.for(:mailer).username,
+    password: AppConfiguration.for(:mailer).password,
+    authentication: AppConfiguration.for(:mailer).authentication,
+    domain: AppConfiguration.for(:mailer).domain
+  }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).

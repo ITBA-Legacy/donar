@@ -37,9 +37,12 @@ public/uploads
 
 .devise-security.yml
 
-#Oauth
+# Oauth
 .google.yml
 .facebook.yml
 .twitter.yml
 
 *.svg
+
+# Mailer
+.mailer.yml
