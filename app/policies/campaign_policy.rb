@@ -1,4 +1,4 @@
-class OrganizationPolicy < ApplicationPolicy
+class CampaignPolicy < ApplicationPolicy
 
   class Scope < Struct.new(:user, :scope)
     def resolve
@@ -7,7 +7,7 @@ class OrganizationPolicy < ApplicationPolicy
   end
 
   def update?
-    record.users.include?(user)
+    record.organization.users.include?(user)
   end
 
 end
