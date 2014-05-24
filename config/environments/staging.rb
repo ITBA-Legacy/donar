@@ -91,7 +91,7 @@ Donar::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.middleware.use ExceptionNotification::Rack, email: {
-    email_prefix: "[Donar][donar-production]",
+    email_prefix: "[Donar][donar-staging]",
     sender_address: "mailer@donar.com.ar",
     exception_recipients: "epintos7@wolox.com.ar"
   }

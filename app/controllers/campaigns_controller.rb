@@ -22,5 +22,4 @@ class CampaignsController < ApplicationController
     [params.require(:campaign).permit(FIELDS)]
   end
 
-
 end

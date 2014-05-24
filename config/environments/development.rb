@@ -13,8 +13,8 @@ Donar::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # Mailer configuration
+  config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
@@ -23,7 +23,7 @@ Donar::Application.configure do
     address: AppConfiguration.for(:mailer).address,
     port: AppConfiguration.for(:mailer).port,
     enable_starttls_auto: AppConfiguration.for(:mailer).enable_starttls_auto,
-    user_name: AppConfiguration.for(:mailer).username,
+    user_name: AppConfiguration.for(:mailer).user_name,
     password: AppConfiguration.for(:mailer).password,
     authentication: AppConfiguration.for(:mailer).authentication,
     domain: AppConfiguration.for(:mailer).domain
@@ -39,7 +39,5 @@ Donar::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-
-
 
 end

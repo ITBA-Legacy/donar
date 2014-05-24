@@ -80,6 +80,12 @@ gem 'validates_timeliness', '~> 3.0'
 # Nested Form with Jquery
 gem 'cocoon'
 
+# Mails preview
+gem 'mail_view', git: 'https://github.com/basecamp/mail_view.git'
+
+# Send mails when errors occur
+gem 'exception_notification'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

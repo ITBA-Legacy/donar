@@ -33,19 +33,15 @@ module UserAuthenticationHelper
     current_user
   end
 
+  # This method ensures that if the user exists, then the accounts are linked and no user is
+  # created
   def create_user(auth)
-    identity = Identity.create(uid: auth.uid, provider: auth.provider)
-    # this method ensures that if the user exists, then the accounts are linked and no user is
-    # created
     user = where(email: auth.info.email).first_or_create do |aux_user|
-      aux_user.email = auth.info.email
-      aux_user.first_name = auth.info.first_name
-      aux_user.last_name = auth.info.last_name
-      aux_user.provider = auth.provider
-      aux_user.uid = auth.uid
+      [:email, :first_name, :last_name, :provider, :uid]. each do |method|
+        aux_user[:email] = auth.info[method]
+      end
     end
-    identity.user = user
-    identity.save!
+    Identity.create(uid: auth.uid, provider: auth.provider, user: user)
     user
   end
 

@@ -1,6 +1,6 @@
 module ProviderToLinkHelper
 
-  def has_provider?(provider)
+  def provider?(provider)
     current_user.identities.each do |identity|
       return true if identity.provider == provider
     end

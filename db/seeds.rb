@@ -4,45 +4,55 @@
 
   # User creation
 
-  martin = User.create(
+  martin = User.new(
     email: 'mmarquez@gmail.com',
     password: '12345678',
     password_confirmation: '12345678',
     first_name: 'Martin',
     last_name: 'Marquez'
   )
+  martin.skip_confirmation!
+  martin.save!
 
-  esteban = User.create(
+  esteban = User.new(
     email: 'epintos7@gmail.com',
     password: '12345678',
     password_confirmation: '12345678',
     first_name: 'Esteban',
     last_name: 'Pintos'
   )
+  esteban.skip_confirmation!
+  esteban.save!
 
-  diego = User.create(
+  diego = User.new(
     email: 'strubolini@gmail.com',
     password: '12345678',
     password_confirmation: '12345678',
     first_name: 'Diego',
     last_name: 'Strubolini'
   )
+  diego.skip_confirmation!
+  diego.save!
 
-  matias = User.create(
+  matias = User.new(
     email: 'mdesanti90@gmail.com',
     password: '12345678',
     password_confirmation: '12345678',
     first_name: 'Matias',
     last_name: 'de Santi'
   )
+  matias.skip_confirmation!
+  matias.save!
 
-  federico = User.create(
+  federico = User.new(
     email: 'federicohomovc@gmail.com',
     password: '12345678',
     password_confirmation: '12345678',
     first_name: 'Federico',
     last_name: 'Homovc'
   )
+  federico.skip_confirmation!
+  federico.save!
 
   # Organization creation
 

@@ -40,6 +40,13 @@ GIT
       rails (>= 3.1)
       railties (>= 3.1)
 
+GIT
+  remote: https://github.com/basecamp/mail_view.git
+  revision: bc6ab46866a1544cb2c40877142087b0898485eb
+  specs:
+    mail_view (2.0.4)
+      tilt
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -138,6 +145,9 @@ GEM
     diff-lcs (1.2.5)
     docile (1.1.3)
     erubis (2.7.0)
+    exception_notification (4.0.1)
+      actionmailer (>= 3.0.4)
+      activesupport (>= 3.0.4)
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
@@ -412,6 +422,7 @@ DEPENDENCIES
   debugger
   debugger-pry
   devise
+  exception_notification
   factory_girl_rails
   faker
   formtastic!
@@ -422,6 +433,7 @@ DEPENDENCIES
   launchy
   less-rails
   loadjs
+  mail_view!
   omniauth-facebook
   omniauth-google-oauth2
   omniauth-twitter
