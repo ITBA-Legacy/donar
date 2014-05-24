@@ -43,12 +43,13 @@ legend
           = Campaign.human_attribute_name(:contribution)
         p.list-group-item-text
           = "$ #{@campaign.contribution}"
-.row
-  .col-md-6
-    p
-      = link_to t('helpers.submit.campaign.edit'),
-                edit_organization_campaign_path(@campaign.organization, @campaign),
-                class: 'btn btn-primary'
+- if policy(@campaign).update?
+  .row
+    .col-md-6
+      p
+        = link_to t('helpers.submit.campaign.edit'),
+                  edit_organization_campaign_path(@campaign.organization, @campaign),
+                  class: 'btn btn-primary'
 .row
   .col-md-6
     p
