@@ -7,7 +7,7 @@ addons:
     repo_token:
 
 env:
-  - RUBY_GC_MALLOC_LIMIT=90000000 RUBY_FREE_MIN=200000 SECURITY_SECRET_TOKEN=traviscitraviscitraviscitraviscitravisci
+  - RUBY_GC_MALLOC_LIMIT=90000000 RUBY_FREE_MIN=200000 SECURITY_SECRET_TOKEN=traviscitraviscitraviscitraviscitravisci  DEVISE_SECRET_KEY=traviscitraviscitraviscitraviscitravisci
 
 services:
   - postgresql

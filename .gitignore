@@ -35,7 +35,8 @@ coverage/*
 # Images
 public/uploads
 
-.devise-security.yml
+# Devise
+.devise.yml
 
 # Oauth
 .google.yml
