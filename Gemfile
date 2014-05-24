@@ -67,6 +67,7 @@ gem "resque-batched-job"
 gem 'rufus-scheduler'
 gem 'resque-scheduler', require: 'resque_scheduler'
 
+# Authorization System
 gem 'pundit'
 
 # Oauth Login

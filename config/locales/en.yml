@@ -31,13 +31,19 @@ es:
     contributions: My Contributions
     link_accounts: Link accounts
   campaigns:
+    card:
+      goal: "of $%{goal}"
+      pledgers: "%{count} Donors"
+      days_left: "%{count} Remaining Days"
     categories:
       education: Education
       social: Social
       health: Health
     constribute: Contribute
     search: Search
-
+  pundit:
+    organization_policy:
+      update?: 'No tienes permisos para editar esta organización'
 
 
 

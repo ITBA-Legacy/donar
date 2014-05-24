@@ -41,6 +41,9 @@ es:
       health: Salud
     constribute: Contribuir
     search: Buscar
+  pundit:
+    organization_policy:
+      update?: 'No tienes permisos para editar esta organización'
 
 
 
