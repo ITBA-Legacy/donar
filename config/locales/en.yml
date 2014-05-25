@@ -1,4 +1,4 @@
-es:
+en:
   application:
     title: Donar
     no_results: No results found
@@ -238,3 +238,8 @@ es:
       long:  '%B %d, %Y %H:%M'
       short:  '%d %b %H:%M'
     pm: pm
+  active_admin:
+    dashboard: Dashboard
+    dashboard_welcome:
+      welcome: Welcome to Donar
+      call_to_action: Here you can manage the campaigns and organizations from the website

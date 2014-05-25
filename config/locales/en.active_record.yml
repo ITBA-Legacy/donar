@@ -86,5 +86,5 @@ en:
       perk:
         amount: Minimum Amount
         name: Name
-        maximun: Maximum
+        maximum: Maximum
         description: Description

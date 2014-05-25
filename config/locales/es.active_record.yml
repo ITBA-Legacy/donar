@@ -61,8 +61,8 @@ es:
         name: Nombre
         description: Descripción
         locality: Localidad
-        created_at: Fecha de Creacion
-        updated_at: Ultima actualizacion
+        created_at: Fecha de Creación
+        updated_at: Ultima actualización
       campaign:
         name: Nombre
         description: Descripción
@@ -73,7 +73,7 @@ es:
         short_description: Descripción breve
         locality: Localidad
         contribution: Contribución Total
-        created_at: Fecha de Creacion
+        created_at: Fecha de Creación
       contribution:
         amount: Donación
       user:
@@ -87,5 +87,5 @@ es:
       perk:
         amount: Mínima Donación
         name: Nombre
-        maximun: Máximo
+        maximum: Máximo
         description: Descripción
