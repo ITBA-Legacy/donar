@@ -5,9 +5,8 @@ ActiveAdmin.register AdminUser do
     selectable_column
     id_column
     column :email
-    column :current_sign_in_at
-    column :sign_in_count
     column :created_at
+    column :sign_in_count
     actions
   end
 
@@ -17,7 +16,7 @@ ActiveAdmin.register AdminUser do
   filter :created_at
 
   form do |f|
-    f.inputs "Admin Details" do
+    f.inputs AdminUser.model_name.human do
       f.input :email
       f.input :password
       f.input :password_confirmation

@@ -52,11 +52,16 @@ en:
       user:
         one: User
         other: Users
+      admin_user:
+        one: Admin User
+        other: Admin Users
     attributes:
       organization:
         name: Name
         description: Description
         locality: Locality
+        created_at: Created at
+        updated_at: Updated at
       campaign:
         name: Name
         description: Description
@@ -67,11 +72,17 @@ en:
         short_description: Short Description
         locality: Locality
         contribution: Total Contribution
+        created_at: Created at
       contribution:
         amount: Amount
       user:
         created_at: Joined
         full_name: Name
+      admin_user:
+        created_at: Joined
+        sign_in_count: Sign In count
+        password: Password
+        password_confirmation: Password confirmation
       perk:
         amount: Minimum Amount
         name: Name

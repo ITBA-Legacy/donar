@@ -174,3 +174,11 @@
   ]
 
   museo_del_arbol.save!
+
+  # AdminUser creation
+
+  admin = AdminUser.create(
+   email: 'admin@example.com',
+   password: '123123123',
+   password_confirmation: '123123123',
+  )
