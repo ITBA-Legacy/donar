@@ -22,6 +22,9 @@ class Campaign < ActiveRecord::Base
   validates :minimum, :goal, numericality: { greater_than: 0 }
   validates :deadline, timeliness: { on_or_after: -> { Date.current } }
 
+  mount_uploader :main_image, CampaignImageUploader
+  mount_uploader :video, CampaignVideoUploader
+
   after_initialize :default_attributes
 
   def add_contribution(amount)
