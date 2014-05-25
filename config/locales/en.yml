@@ -31,6 +31,10 @@ es:
     contributions: My Contributions
     link_accounts: Link accounts
   campaigns:
+    next: Siguiente
+    previous: Atrás
+    first_step: 'Paso 1'
+    second_step: 'Paso 2'
     categories:
       education: Education
       social: Social

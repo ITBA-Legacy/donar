@@ -63,7 +63,7 @@
         = link_to_add_association t('helpers.submit.perk.new'), f, :perks, class: 'btn btn-info'
       .form-group
         .col-sm-2.text-center#next-button
-          .btn.btn-primary.btn-lg= "Siguiente"
+          .btn.btn-primary.btn-lg= t 'campaigns.next'
     #second-step.tab-pane.fade
       .col-sm-12.tabbed-form
         .form-group
@@ -86,7 +86,7 @@
             = tinymce
         .form-group
           .col-sm-2#previous-button.text-center
-            .btn.btn-primary.btn-lg= "Atrás"
+            .btn.btn-primary.btn-lg= t 'campaigns.previous'
         .form-group
           .col-sm-offset-2.col-sm-10
             = f.submit nil, class: 'btn btn-primary btn-lg'
