@@ -236,3 +236,8 @@ es:
       long:  '%A, %d de %B de %Y a las %I:%M %p'
       short:  '%d de %b a las %H:%M hrs'
     pm: pm
+  active_admin:
+    dashboard: Inicio
+    dashboard_welcome:
+      welcome: Bienvenido a Donar
+      call_to_action: Desde aquí podrá administrar las campañas y organizaciones del sitio

@@ -7,8 +7,21 @@ when "development"
   UsersCreationHelper.create_users
   OrganizationsCreationHelper.create_organizations(5)
   CampaignsCreationHelper.create_campaigns(25)
+  AdminUser.create(
+   email: 'admin@example.com',
+   password: '123123123',
+   password_confirmation: '123123123',
+  )
 when "staging"
   UsersCreationHelper.create_users
+  OrganizationsCreationHelper.create_organizations(5)
+  CampaignsCreationHelper.create_campaigns(25)
+  AdminUser.create(
+   email: 'admin@example.com',
+   password: '123123123',
+   password_confirmation: '123123123',
+  )
 when "production"
   UsersCreationHelper.create_users
 end
+
