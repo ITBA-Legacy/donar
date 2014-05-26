@@ -41,10 +41,10 @@ gem 'loadjs'
 
 gem 'inherited_resources'
 
+# Uploader images
 gem 'carrierwave'
 
-# We might need to do this in heroku for the gem to work
-# https://gist.github.com/coopermaruyama/3963576
+# Upload videos
 gem 'carrierwave-video'
 
 gem 'turbolinks'

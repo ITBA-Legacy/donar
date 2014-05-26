@@ -1,1 +1,1 @@
-tinymce.init({selector:'#rich-text-editor'});
+tinymce.init({ selector:'#rich-text-editor' })
