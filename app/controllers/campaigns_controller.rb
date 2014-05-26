@@ -6,7 +6,8 @@ class CampaignsController < ApplicationController
   belongs_to :organization
 
   FIELDS = [:name, :description, :goal, :deadline, :minimum, :category, :short_description,
-            :locality, perks_attributes: [:id, :amount, :name, :maximum, :description, :_destroy]]
+            :locality, :main_image, :video, :history,
+            perks_attributes: [:id, :amount, :name, :maximum, :description, :_destroy]]
 
   def search
     @campaigns = Campaign.search(params[:query])

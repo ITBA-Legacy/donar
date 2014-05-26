@@ -101,6 +101,9 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    carrierwave-video (0.5.6)
+      carrierwave
+      streamio-ffmpeg
     cliver (0.3.2)
     cocoon (1.2.6)
     codeclimate-test-reporter (0.3.0)
@@ -373,6 +376,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    streamio-ffmpeg (1.0.0)
     temple (0.6.7)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
@@ -382,6 +386,8 @@ GEM
     tilt (1.4.1)
     timecop (0.7.1)
     timeliness (0.3.7)
+    tinymce-rails (4.0.19)
+      railties (>= 3.1.1)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -414,6 +420,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   carrierwave
+  carrierwave-video
   cocoon
   codeclimate-test-reporter
   coffee-rails (~> 4.0.0)
@@ -459,6 +466,7 @@ DEPENDENCIES
   slim-rails
   therubyracer
   timecop
+  tinymce-rails
   turbolinks
   twitter-bootstrap-rails!
   uglifier (>= 1.0.3)

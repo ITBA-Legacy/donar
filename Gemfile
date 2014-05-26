@@ -43,6 +43,10 @@ gem 'inherited_resources'
 
 gem 'carrierwave'
 
+# We might need to do this in heroku for the gem to work
+# https://gist.github.com/coopermaruyama/3963576
+gem 'carrierwave-video'
+
 gem 'turbolinks'
 
 gem 'jquery-turbolinks'
@@ -85,6 +89,9 @@ gem 'mail_view', git: 'https://github.com/basecamp/mail_view.git'
 
 # Send mails when errors occur
 gem 'exception_notification'
+
+# Rich text input
+gem 'tinymce-rails'
 
 group :development do
   gem 'better_errors'

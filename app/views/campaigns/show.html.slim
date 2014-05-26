@@ -43,6 +43,20 @@ legend
           = Campaign.human_attribute_name(:contribution)
         p.list-group-item-text
           = "$ #{@campaign.contribution}"
+      li.list-group-item
+        h4.list-group-item-heading
+          = Campaign.human_attribute_name(:history)
+        = raw @campaign.history
+      li.list-group-item
+        h4.list-group-item-heading
+          = Campaign.human_attribute_name(:video)
+        video controls="" height="240" width="320"
+          source src=@campaign.video type="video/mp4"
+      li.list-group-item
+        h4.list-group-item-heading
+          = Campaign.human_attribute_name(:main_image)
+        = image_tag @campaign.main_image
+
 .row
   .col-md-6
     p

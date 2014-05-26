@@ -31,6 +31,10 @@ es:
     contributions: Mis Contribuciones
     link_accounts: Vincular cuentas
   campaigns:
+    next: Siguiente
+    previous: Atrás
+    first_step: 'Paso 1'
+    second_step: 'Paso 2'
     card:
       goal: "de $%{goal}"
       pledgers: "%{count} Donadores"
