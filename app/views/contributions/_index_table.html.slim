@@ -21,6 +21,7 @@
             td
               = contribution.campaign.description
             th
-              = contribution.campaign.category
+              = t("campaigns.categories.#{contribution.campaign.category}")
             th
               = "$ #{contribution.amount}"
+= paginate contributions

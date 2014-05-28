@@ -3,7 +3,7 @@ class CampaignsController < ApplicationController
   inherit_resources
 
   before_action :authenticate_user!, except: [:search, :index, :show]
-  belongs_to :organization
+  belongs_to :organization, optional: true
 
   FIELDS = [:name, :description, :goal, :deadline, :minimum, :category, :short_description,
             :locality, :main_image, :video, :history,
@@ -15,8 +15,10 @@ class CampaignsController < ApplicationController
   end
 
   def index
-    @campaigns = Campaign.all
+    index! { @campaigns = @campaigns.page(params[:page]||1).per(10) }
   end
+
+  private
 
   def resource_params
     return [] if request.get?

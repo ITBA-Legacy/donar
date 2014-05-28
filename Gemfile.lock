@@ -441,6 +441,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   jquery-validation-rails
+  kaminari
   launchy
   less-rails
   loadjs

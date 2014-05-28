@@ -30,9 +30,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem "less-rails"
-gem "therubyracer"
-gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
+gem 'less-rails'
+gem 'therubyracer'
+gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git',
+                               branch: 'bootstrap3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -69,6 +70,7 @@ gem "resque-batched-job"
 gem 'rufus-scheduler'
 gem 'resque-scheduler', require: 'resque_scheduler'
 
+# Authorization System
 gem 'pundit'
 
 # Oauth Login
@@ -91,7 +93,11 @@ gem 'exception_notification'
 # Rich text input
 gem 'tinymce-rails'
 
+# Validate forms
 gem 'jquery-validation-rails'
+
+# Pagination
+gem 'kaminari'
 
 group :development do
   gem 'better_errors'

@@ -18,16 +18,20 @@ legend
           = Organization.human_attribute_name(:locality)
         p.list-group-item-text
           = @organization.locality
-.row
-  .col-md-6
-    p
-      = link_to t('helpers.submit.organization.edit'), edit_organization_path(@organization),
-            class: 'btn btn-primary'
+
+- if policy(@organization).update?
+  .row
+    .col-md-6
+      p
+        = link_to t('helpers.submit.organization.edit'), edit_organization_path(@organization),
+              class: 'btn btn-primary'
 legend
   = Campaign.model_name.human(count: 2)
-= render '/campaigns/index_cards', campaigns: @organization.campaigns
-p
-  = link_to t('helpers.submit.campaign.new'), new_organization_campaign_path(@organization),
-            class: 'btn btn-primary'
+= render '/campaigns/index_cards', campaigns: @organization.campaigns.page(params[:page]||1)
+
+- if policy(@organization).update?
+  p
+    = link_to t('helpers.submit.campaign.new'), new_organization_campaign_path(@organization),
+              class: 'btn btn-primary'
 
 
