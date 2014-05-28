@@ -56,6 +56,17 @@ module CampaignsCreationHelper
       end
     end
 
+    def create_comments(campaign, times)
+      1.upto(times) do |time|
+        Comment.create(
+          user: User.all.sample,
+          message: Faker::Lorem.paragraph,
+          commentable: campaign,
+          commentable_type: 'Campaign'
+        )
+      end
+    end
+
   end
 
 end
