@@ -19,8 +19,11 @@ Donar::Application.routes.draw do
       get :list
     end
 
+    resources :comments, except: [:edit, :update]
+
     resources :campaigns do
       resources :contributions
+      resources :comments, except: [:edit, :update]
     end
 
   end
