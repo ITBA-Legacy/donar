@@ -15,7 +15,6 @@
 //= require cocoon
 //= require twitter/bootstrap
 //= require loadjs
-//= require turbolinks
 //= require tinymce-jquery
 //= require jquery.validate
 //= require_tree .

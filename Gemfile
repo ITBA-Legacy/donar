@@ -47,8 +47,6 @@ gem 'carrierwave'
 # Upload videos
 gem 'carrierwave-video'
 
-gem 'turbolinks'
-
 gem 'jquery-turbolinks'
 
 gem 'devise'

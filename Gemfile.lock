@@ -471,7 +471,6 @@ DEPENDENCIES
   therubyracer
   timecop
   tinymce-rails
-  turbolinks
   twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
   unicorn
