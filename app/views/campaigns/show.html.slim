@@ -78,3 +78,8 @@ legend
   .col-md-6
     p
       = link_to Organization.model_name.human, parent_url, class: 'btn btn-primary'
+.row
+  .col-md-6
+    p
+      = link_to t('helpers.submit.comment.new'), new_organization_campaign_comment_path(@campaign.organization, @campaign),
+                class: 'btn btn-primary'
