@@ -2,8 +2,12 @@
   margin-top: 15px;
 }
 
-#next-button, #previous-button{
+#next-button-container, #previous-button-container {
   margin: auto;
   float: none;
   margin-top: 15px;
+}
+
+.error {
+  color: red;
 }

@@ -93,6 +93,8 @@ gem 'exception_notification'
 # Rich text input
 gem 'tinymce-rails'
 
+gem 'jquery-validation-rails'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
