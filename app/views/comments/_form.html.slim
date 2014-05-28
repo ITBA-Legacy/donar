@@ -3,7 +3,7 @@
     ul
       - @comment.errors.each do |attr, msg|
         li= msg
-= form_for [parent, @comment], html: { class: 'form-horizontal', role: 'form' } do |f|
+= form_for build_association_chain, html: { class: 'form-horizontal', role: 'form' } do |f|
   .form-group
     = f.label :message, class: 'control-label col-sm-2'
     .col-md-4

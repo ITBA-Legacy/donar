@@ -11,10 +11,6 @@ class CommentsController < ApplicationController
     create! { parent_url }
   end
 
-  def begin_of_association_chain
-    @begin_of_association_chain ||= current_user
-  end
-
   def resource_params
     return [] if request.get?
     [params.require(:comment).permit(FIELDS)]
