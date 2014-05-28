@@ -2,7 +2,8 @@ ActiveAdmin.register Campaign do
 
   permit_params :name, :description, :goal, :deadline, :minimum, :category, :locality,
                 :organization_id, :short_description,
-                perks_attributes: [:id, :amount, :name, :maximum, :description, :_destroy]
+                perks_attributes: [:id, :amount, :name, :maximum, :description, :_destroy],
+                milestones_attributes: [:id, :name, :description, :goal_percentage, :_destroy]
 
   index do
     selectable_column
@@ -17,7 +18,14 @@ ActiveAdmin.register Campaign do
       t("campaigns.categories.#{campaign.category}")
     end
     column :locality
+    actions defaults: false do |campaign|
+      link_to "Aprobar", '/admin', class: "button"
+    end
+    actions defaults: false do |campaign|
+      link_to "Rechazar", '/admin', class: "button"
+    end
     actions
+
   end
 
   filter :organization
@@ -47,6 +55,12 @@ ActiveAdmin.register Campaign do
         cf.input :maximum, min: 1
         cf.input :description
         cf.input :_destroy, as: :boolean, required: false, label: t('active_admin.remove')
+      end
+      f.has_many :milestones do |mf|
+        mf.input :name
+        mf.input :description
+        mf.input :goal_percentage, min: 0.0, max: 1.0
+        mf.input :_destroy, as: :boolean, required: false, label: t('active_admin.remove')
       end
     end
     f.actions

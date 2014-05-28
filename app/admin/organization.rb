@@ -9,6 +9,12 @@ ActiveAdmin.register Organization do
     column :description
     column :locality
     column :created_at
+    actions defaults: false do |organization|
+      link_to "Aprobar", '/admin', class: "button"
+    end
+    actions defaults: false do |organization|
+      link_to "Rechazar", '/admin', class: "button"
+    end
     actions
   end
 
