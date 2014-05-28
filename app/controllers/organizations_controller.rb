@@ -2,19 +2,28 @@ class OrganizationsController < ApplicationController
 
   inherit_resources
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
 
   FIELDS = [:name, :description, :locality]
 
   def list
-    @organizations = current_user.organizations
-    render :index
+    @organizations = current_user.organizations.page(params[:page] || 1)
   end
 
   def create
-    @organization = CreateOrganizationContext.new(current_user).handle(resource_params.first)
-    create!
+    create! do
+      if @organization.valid?
+        @organization.users << current_user
+        organization_path @organization
+      end
+    end
   end
+
+  def index
+    index! { @organizations = @organizations.page(params[:page] || 1) }
+  end
+
+  private
 
   def resource_params
     return [] if request.get?

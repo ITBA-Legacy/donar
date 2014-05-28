@@ -2,8 +2,9 @@
 
 FactoryGirl.define do
   factory :user do
+    before(:create) { |user| user.skip_confirmation! }
     email { Faker::Internet.email }
-    password { 'password' }
-    password_confirmation { 'password' }
+    password 'password'
+    password_confirmation 'password'
   end
 end

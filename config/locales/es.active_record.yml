@@ -47,11 +47,22 @@ es:
       constribution:
         one: Contribución
         other: Contribuciones
+      perk:
+        one: Beneficio
+        other: Beneficios
+      user:
+        one: Usuario
+        other: Usuarios
+      admin_user:
+        one: Administrador
+        other: Administradores
     attributes:
       organization:
         name: Nombre
         description: Descripción
         locality: Localidad
+        created_at: Fecha de Creación
+        updated_at: Ultima actualización
       campaign:
         name: Nombre
         description: Descripción
@@ -62,5 +73,19 @@ es:
         short_description: Descripción breve
         locality: Localidad
         contribution: Contribución Total
+        created_at: Fecha de Creación
       contribution:
         amount: Donación
+      user:
+        created_at: Fecha de ingreso
+        full_name: Nombre
+      admin_user:
+        created_at: Fecha de ingreso
+        sign_in_count: Cantidad de ingresos
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
+      perk:
+        amount: Mínima Donación
+        name: Nombre
+        maximum: Máximo
+        description: Descripción

@@ -13,8 +13,21 @@ Donar::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # Mailer configuration
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default charset: "utf-8"
+  config.action_mailer.smtp_settings = {
+    address: AppConfiguration.for(:mailer).address,
+    port: AppConfiguration.for(:mailer).port,
+    enable_starttls_auto: AppConfiguration.for(:mailer).enable_starttls_auto,
+    user_name: AppConfiguration.for(:mailer).user_name,
+    password: AppConfiguration.for(:mailer).password,
+    authentication: AppConfiguration.for(:mailer).authentication,
+    domain: AppConfiguration.for(:mailer).domain
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -27,5 +40,4 @@ Donar::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

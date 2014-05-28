@@ -8,7 +8,13 @@ class ContributionsController < ApplicationController
   FIELDS = [:amount]
 
   def create
-    create! { organization_campaign_path(@organization, @campaign) }
+    create! do
+      if @contribution.valid?
+        @contribution.user = current_user
+        @contribution.save!
+        organization_campaign_path(@organization, @campaign)
+      end
+    end
   end
 
   def resource_params

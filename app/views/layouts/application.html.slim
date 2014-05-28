@@ -2,10 +2,10 @@ doctype html
 html lang = I18n.locale
   head
     title Donar
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
     = csrf_meta_tags
-  body
+  body data-controller=controller.controller_path data-action=controller.action_name
     .container
       = render "layouts/navbar"
       - flash.each do |name, msg|

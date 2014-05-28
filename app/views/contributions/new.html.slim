@@ -11,7 +11,7 @@
       .input-group
         span.input-group-addon
           | $
-        = f.number_field :amount, class: 'form-control col-md-2', required: true, min: 0.0
+        = f.number_field :amount, class: 'form-control col-md-2', required: true, min: 0.1, step: 'any'
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit nil, class: 'btn btn-primary'

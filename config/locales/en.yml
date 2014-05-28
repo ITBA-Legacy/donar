@@ -1,25 +1,44 @@
-es:
+en:
   application:
     title: Donar
     no_results: No results found
+    slogan: Crowdfounding platform for non-profits
   helpers:
     submit:
       organization:
         create: "Create %{model}"
         new: "New Organization"
         edit: "Edit Organization"
+        update: "Update Organization"
       campaign:
         create: "Create %{model}"
         new: "New Campaign"
         edit: "Edit Campaign"
-      campaign:
+        update: "Update Campaign"
+      contribution:
         create: "Create %{model}"
         new: "New Contribution"
         edit: "Edit Contribution"
+      perk:
+        create: "Create %{model}"
+        new: "New Perk"
+        edit: "Edit Perk"
+        remove: "Remove Perk"
   users:
     organizations: My Organizations
     campaigns: My Campaigns
+    profile: My Profile
+    contributions: My Contributions
+    link_accounts: Link accounts
   campaigns:
+    next: Siguiente
+    previous: Atrás
+    first_step: 'Paso 1'
+    second_step: 'Paso 2'
+    card:
+      goal: "of $%{goal}"
+      pledgers: "%{count} Donors"
+      days_left: "%{count} Remaining Days"
     categories:
       education: Education
       social: Social
@@ -27,7 +46,11 @@ es:
     constribute: Constribute
     achieve_milestone: Achieve milestone
     milestone_achieved: Milestone achieved
-
+    constribute: Contribute
+    search: Search
+  pundit:
+    organization_policy:
+      update?: 'No tienes permisos para editar esta organización'
 
 
 
@@ -228,3 +251,8 @@ es:
       long:  '%B %d, %Y %H:%M'
       short:  '%d %b %H:%M'
     pm: pm
+  active_admin:
+    dashboard: Dashboard
+    dashboard_welcome:
+      welcome: Welcome to Donar
+      call_to_action: Here you can manage the campaigns and organizations from the website
