@@ -2,23 +2,29 @@ ActiveAdmin.register Campaign do
 
   permit_params :name, :description, :goal, :deadline, :minimum, :category, :locality,
                 :organization_id, :short_description,
-                perks_attributes: [:amount, :name, :maximum, :description]
+                perks_attributes: [:id, :amount, :name, :maximum, :description, :_destroy]
 
   index do
     selectable_column
     id_column
     column :name
     column :description
-    column :goal
+    column :goal do |campaign|
+      "$#{campaign.goal}"
+    end
     column :deadline
-    column :category
+    column :category do |campaign|
+      t("campaigns.categories.#{campaign.category}")
+    end
     column :locality
     actions
   end
 
   filter :organization
   filter :name
-  filter :category
+  filter :category,
+         as: :select,
+         collection: Campaign::CATEGORIES.map { |c| [I18n.t("campaigns.categories.#{c}"), c] }
   filter :goal
   filter :locality
 
@@ -29,7 +35,9 @@ ActiveAdmin.register Campaign do
       f.input :goal, min: 0.0
       f.input :deadline, as: :datepicker
       f.input :minimum, min: 0.0
-      f.input :category, as: :select, collection: Campaign::CATEGORIES
+      f.input :category,
+              as: :select,
+              collection: Campaign::CATEGORIES.map { |c| [t("campaigns.categories.#{c}"), c] }
       f.input :locality
       f.input :organization
       f.input :short_description
@@ -38,6 +46,7 @@ ActiveAdmin.register Campaign do
         cf.input :name
         cf.input :maximum, min: 1
         cf.input :description
+        cf.input :_destroy, as: :boolean, required: false, label: t('active_admin.remove')
       end
     end
     f.actions
@@ -47,10 +56,16 @@ ActiveAdmin.register Campaign do
     attributes_table do
       row :name
       row :description
-      row :goal
+      row :goal do
+        "$ #{campaign.goal}"
+      end
       row :deadline
-      row :minimum
-      row :category
+      row :minimum do
+        "$ #{campaign.minimum}"
+      end
+      row :category do
+        t("campaigns.categories.#{campaign.category}")
+      end
       row :locality
       row :organization
       row :short_description
@@ -61,7 +76,9 @@ ActiveAdmin.register Campaign do
         t('application.no_results')
       else
         table_for campaign.perks do
-          column Perk.human_attribute_name(:amount), :amount
+          column Perk.human_attribute_name(:amount), :amount do |perk|
+            "$ #{perk.amount}"
+          end
           column Perk.human_attribute_name(:name), :name
           column Perk.human_attribute_name(:description), :description
           column Perk.human_attribute_name(:maximum), :maximum
