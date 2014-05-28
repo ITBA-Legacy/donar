@@ -9,9 +9,11 @@ class ContributionsController < ApplicationController
 
   def create
     create! do
-      @contribution.user = current_user
-      @contribution.save!
-      organization_campaign_path(@organization, @campaign)
+      if @contribution.valid?
+        @contribution.user = current_user
+        @contribution.save!
+        organization_campaign_path(@organization, @campaign)
+      end
     end
   end
 

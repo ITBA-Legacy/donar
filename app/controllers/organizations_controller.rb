@@ -12,8 +12,10 @@ class OrganizationsController < ApplicationController
 
   def create
     create! do
-      @organization.users << current_user
-      organization_path @organization
+      if @organization.valid?
+        @organization.users << current_user
+        organization_path @organization
+      end
     end
   end
 
