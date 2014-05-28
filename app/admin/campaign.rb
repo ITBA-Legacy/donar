@@ -68,6 +68,17 @@ ActiveAdmin.register Campaign do
         end
       end
     end
+    panel Milestone.model_name.human(count: 2) do
+      if campaign.milestones.empty?
+        t('application.no_results')
+      else
+        table_for campaign.milestones do
+          column Milestone.human_attribute_name(:name), :name
+          column Milestone.human_attribute_name(:description), :description
+          column Milestone.human_attribute_name(:goal_percentage), :goal_percentage
+        end
+      end
+    end
     active_admin_comments
   end
 
