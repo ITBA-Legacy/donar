@@ -60,7 +60,9 @@ es:
       previous: "&lsaquo; Anterior"
       next: "Próximo &rsaquo;"
       truncate: "&hellip;"
-
+  pundit:
+    organization_policy:
+      update?: 'No tienes permisos para editar esta organización'
 
 
 

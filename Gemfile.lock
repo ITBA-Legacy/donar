@@ -434,7 +434,6 @@ DEPENDENCIES
   faker
   formtastic!
   google-webfonts-rails
-  has_scope
   inherited_resources
   jquery-rails
   jquery-turbolinks
