@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514033345) do
+ActiveRecord::Schema.define(version: 20140522204208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20140514033345) do
     t.boolean  "approved"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "aasm_state"
   end
 
   add_index "milestones", ["campaign_id"], name: "index_milestones_on_campaign_id", using: :btree
@@ -98,7 +99,7 @@ ActiveRecord::Schema.define(version: 20140514033345) do
     t.integer  "campaign_id"
     t.float    "amount"
     t.string   "name"
-    t.integer  "maximun"
+    t.integer  "maximum"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -132,6 +133,9 @@ ActiveRecord::Schema.define(version: 20140514033345) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.string   "avatar"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

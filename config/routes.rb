@@ -9,10 +9,14 @@ Donar::Application.routes.draw do
     end
 
     resources :campaigns do
+      resources :milestones do
+        member do
+          get :achieve
+          patch :confirm_achieved
+        end
+      end
       resources :contributions
-      resources :milestones
     end
-
   end
 
 end

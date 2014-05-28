@@ -16,6 +16,9 @@ gem 'app_configuration'
 # Use unicorn as the app server
 gem 'unicorn'
 
+# Use AASM as a state machine engine
+gem 'aasm'
+
 group :assets do
   # Use SCSS for stylesheets
   gem 'sass-rails',   '~> 4.0.0'

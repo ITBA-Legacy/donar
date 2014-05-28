@@ -49,12 +49,14 @@ legend
       = link_to t('campaigns.constribute'),
                 new_organization_campaign_contribution_path(@campaign.organization, @campaign),
                 class: 'btn btn-primary'
-.row
-  .col-md-6
-    p
-      = link_to t('campaigns.add_milestone'),
-                new_organization_campaign_milestone_path(@campaign.organization, @campaign),
-                class: 'btn btn-primary'
+- if @campaign.next_unachieved_milestone.present?
+  .row
+    .col-md-6
+      p
+        = link_to t('campaigns.achieve_milestone'),
+                  achieve_organization_campaign_milestone_path(@campaign.organization,
+                    @campaign, @campaign.next_unachieved_milestone),
+                  class: 'btn btn-primary'
 .row
   .col-md-6
     p

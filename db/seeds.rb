@@ -86,14 +86,14 @@
   tomografo_sticker = Perk.create(
     amount: 100.0,
     name: 'Sticker "Yo ayude a comprar le nuevo tomógrafo del CEMIC"',
-    maximun: 100,
+    maximum: 100,
     description: 'Un sticker'
   )
 
   tomografo_visit = Perk.create(
     amount: 1000.0,
     name: 'Visita guiada por el CEMIC',
-    maximun: 10,
+    maximum: 10,
     description: 'Una visita'
   )
 
@@ -109,6 +109,14 @@
     Contribution.create(user: martin, perk: tomografo_visit, amount: 2000.0,
                         campaign: tomografo_cemic)
   ]
+
+  milestones = [
+    Milestone.create(name: 'Construir sala tomografo', description: 'Se construyo la sala de tomografo', goal_percentage: 0.20),
+    Milestone.create(name: 'Comprar tomógrafo', description: 'Se compró el tomografo al proveedor', goal_percentage: 0.60),
+    Milestone.create(name: 'Instalar tomógrafo', description: 'Se instaló el tomografo', goal_percentage: 0.20)
+  ]
+
+  tomografo_cemic.milestones = milestones
 
   tomografo_cemic.comments = [
     Comment.create(user: matias, message: 'Quiero participar'),
