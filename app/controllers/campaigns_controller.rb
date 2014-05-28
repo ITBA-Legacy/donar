@@ -15,7 +15,7 @@ class CampaignsController < ApplicationController
   end
 
   def index
-    index! { @campaigns = @campaigns.page(params[:page]||1).per(10) }
+    index! { @campaigns = @campaigns.page(params[:page] || 1).per(10) }
   end
 
   private
