@@ -30,9 +30,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem "less-rails"
-gem "therubyracer"
-gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git', branch: 'bootstrap3'
+gem 'less-rails'
+gem 'therubyracer'
+gem 'twitter-bootstrap-rails', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git',
+                               branch: 'bootstrap3'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -92,6 +93,9 @@ gem 'exception_notification'
 
 # Rich text input
 gem 'tinymce-rails'
+
+# Pagination
+gem 'kaminari'
 
 group :development do
   gem 'better_errors'

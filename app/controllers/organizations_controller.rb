@@ -7,7 +7,7 @@ class OrganizationsController < ApplicationController
   FIELDS = [:name, :description, :locality]
 
   def list
-    @organizations = current_user.organizations
+    @organizations = current_user.organizations.page(params[:page]||1)
   end
 
   def create
@@ -18,6 +18,12 @@ class OrganizationsController < ApplicationController
       end
     end
   end
+
+  def index
+    index! { @organizations = @organizations.page(params[:page]||1) }
+  end
+
+  private
 
   def resource_params
     return [] if request.get?
