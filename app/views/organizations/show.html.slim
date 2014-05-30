@@ -27,7 +27,7 @@ legend
               class: 'btn btn-primary'
 legend
   = Campaign.model_name.human(count: 2)
-= render '/campaigns/index_cards', campaigns: @organization.campaigns.page(params[:page]||1)
+= render '/campaigns/index_cards', campaigns: paginate_scope(@organization.campaigns)
 
 - if policy(@organization).update?
   p

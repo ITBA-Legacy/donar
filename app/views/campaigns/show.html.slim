@@ -74,7 +74,7 @@ legend
   .col-md-12
     legend
       = Perk.model_name.human(count: 2)
-    = render 'perks/index_table', perks: @campaign.perks
+    = render 'perks/index_table', perks: paginate_scope(@campaign.perks)
 .row
   .col-md-6
     p
