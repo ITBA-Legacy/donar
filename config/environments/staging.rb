@@ -93,7 +93,7 @@ Donar::Application.configure do
   config.middleware.use ExceptionNotification::Rack, email: {
     email_prefix: "[Donar][donar-staging]",
     sender_address: "mailer@donar.com.ar",
-    exception_recipients: "epintos7@wolox.com.ar"
+    exception_recipients: "epintos7@gmail.com"
   }
 
 end
