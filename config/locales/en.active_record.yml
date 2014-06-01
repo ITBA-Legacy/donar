@@ -49,6 +49,9 @@ en:
       perk:
         one: Perk
         other: Perks
+      milestone:
+        one: Milestone
+        other: Milestones
       user:
         one: User
         other: Users
@@ -88,3 +91,7 @@ en:
         name: Name
         maximum: Maximum
         description: Description
+      milestone:
+        name: Name
+        description: Description
+        goal_percentage: Goal Percentage

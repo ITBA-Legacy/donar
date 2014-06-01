@@ -18,11 +18,13 @@ ActiveAdmin.register Campaign do
       t("campaigns.categories.#{campaign.category}")
     end
     column :locality
-    actions defaults: false do |campaign|
-      link_to "Aprobar", '/admin', class: "button"
+    actions defaults: false do
+      link_to t('active_admin.approve'), '#', class: 'button',
+                                              onclick: 'alert("Campaña Aprobada")'
     end
-    actions defaults: false do |campaign|
-      link_to "Rechazar", '/admin', class: "button"
+    actions defaults: false do
+      link_to t('active_admin.reject'), '#', class: 'button',
+                                             onclick: 'alert("Campaña Rechazada")'
     end
     actions
 
@@ -107,6 +109,14 @@ ActiveAdmin.register Campaign do
           column Milestone.human_attribute_name(:name), :name
           column Milestone.human_attribute_name(:description), :description
           column Milestone.human_attribute_name(:goal_percentage), :goal_percentage
+          column do
+            link_to t('active_admin.approve'), '#', class: 'button',
+                                                    onclick: 'alert("Hito Aprobado")'
+          end
+          column do
+            link_to t('active_admin.reject'), '#', class: 'button',
+                                                   onclick: 'alert("Hito Rechazado")'
+          end
         end
       end
     end

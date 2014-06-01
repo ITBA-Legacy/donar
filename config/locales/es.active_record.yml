@@ -50,6 +50,9 @@ es:
       perk:
         one: Beneficio
         other: Beneficios
+      milestone:
+        one: Hito
+        other: Hitos
       user:
         one: Usuario
         other: Usuarios
@@ -89,3 +92,7 @@ es:
         name: Nombre
         maximum: Máximo
         description: Descripción
+      milestone:
+        name: Nombre
+        description: Descripción
+        goal_percentage: Porcentaje del Objetivo
