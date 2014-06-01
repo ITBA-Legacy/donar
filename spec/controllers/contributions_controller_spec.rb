@@ -24,13 +24,8 @@ describe ContributionsController do
         expect(Contribution.last.campaign).to eq campaign
       end
 
-      it 'redirects to the campaign view' do
-        post :create,
-             organization_id: organization.id,
-             campaign_id: campaign.id,
-             contribution: contribution
-        expect(response).to redirect_to organization_campaign_url(organization, campaign)
-      end
+      # removed the test that was here because it no longer redirects you yo the campaign path
+      # it redirects you to mercadopago
 
       it 'creates the contribution' do
         expect do

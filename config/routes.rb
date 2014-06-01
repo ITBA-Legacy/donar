@@ -36,6 +36,14 @@ Donar::Application.routes.draw do
     end
   end
 
+  resources :purchases do
+    collection do
+      get :success_mercadopago_callback
+      get :pending_mercadopago_callback
+      get :failure_mercadopago_callback
+    end
+  end
+
   # End Campaigns Routes
 
   # Mails Preview Routes
