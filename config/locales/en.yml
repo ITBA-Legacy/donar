@@ -26,8 +26,8 @@ en:
         remove: "Remove Perk"
   purchase:
     status:
-      success: "Confirmado"
-      awaiting_mp_response: "Pendiente confirmación de MercadoPago"
+      success: "Confirmed"
+      awaiting_mp_response: "Awaiting MercadoPago confirmation"
       na: "NA"
   users:
     organizations: My Organizations

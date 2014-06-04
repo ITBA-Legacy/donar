@@ -88,3 +88,5 @@ en:
         name: Name
         maximum: Maximum
         description: Description
+      purchase:
+        status: Status
