@@ -2,7 +2,7 @@ en:
   application:
     title: Donar
     no_results: No results found
-    slogan: Crowdfounding platform for non-profits
+    slogan: Crowdfunding platform for non-profits
   helpers:
     submit:
       comment:
@@ -60,7 +60,7 @@ en:
       social: Social
       health: Health
     constribute: Constribute
-    achieve_milestone: Achieve milestone
+    achieve_milestone: Achieve Milestone
     milestone_achieved: Milestone achieved
     constribute: Contribute
     search: Search
@@ -75,8 +75,6 @@ en:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
     constribute: Constribute
-    achieve_milestone: Achieve milestone
-    milestone_achieved: Milestone achieved
 
 
 

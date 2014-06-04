@@ -2,7 +2,7 @@ es:
   application:
     title: Donar
     no_results: No se encontraron resultados
-    slogan: Plataforma de Crowdfounding para ONG
+    slogan: Plataforma de Crowdfunding para ONG
   helpers:
     submit:
       comment:
@@ -59,7 +59,7 @@ es:
       education: Educación
       social: Social
       health: Salud
-    achieve_milestone: Cumplir hito
+    achieve_milestone: Cumplir Hito
     milestone_achieved: Hito cumplido
     constribute: Contribuir
     search: Buscar
@@ -74,8 +74,6 @@ es:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
     constribute: Constribuir
-    achieve_milestone: Cumplir hito
-    milestone_achieved: Hito cumplido
 
 
 

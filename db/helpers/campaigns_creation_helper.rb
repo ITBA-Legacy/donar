@@ -58,12 +58,13 @@ module CampaignsCreationHelper
 
     def create_contributions(campaign, times)
       1.upto(times) do |time|
-        Contribution.create(
+        contribution = Contribution.create(
           user: User.all.sample,
           perk: campaign.perks.sample,
           amount: rand(10..2000),
           campaign: campaign
         )
+        Purchase.create(status: :success, contribution: contribution)
       end
     end
   end
