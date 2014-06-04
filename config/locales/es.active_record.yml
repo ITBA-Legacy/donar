@@ -77,6 +77,8 @@ es:
         first_name: Nombre
         last_name: Apellido
         avatar: Imagen de Perfil
+        password: Contraseña
+        password_confirmation: Repetir Contraseña
       perk:
         amount: Mínima Donación
         name: Nombre
