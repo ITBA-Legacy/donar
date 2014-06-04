@@ -59,12 +59,9 @@ en:
       education: Education
       social: Social
       health: Health
-<<<<<<< HEAD
     constribute: Constribute
     achieve_milestone: Achieve milestone
     milestone_achieved: Milestone achieved
-=======
->>>>>>> master
     constribute: Contribute
     search: Search
 
@@ -77,13 +74,10 @@ en:
   pundit:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
-<<<<<<< HEAD
-=======
     constribute: Constribute
     achieve_milestone: Achieve milestone
     milestone_achieved: Milestone achieved
 
->>>>>>> master
 
 
 
