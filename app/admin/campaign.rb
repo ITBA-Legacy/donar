@@ -2,7 +2,8 @@ ActiveAdmin.register Campaign do
 
   permit_params :name, :description, :goal, :deadline, :minimum, :category, :locality,
                 :organization_id, :short_description,
-                perks_attributes: [:id, :amount, :name, :maximum, :description, :_destroy]
+                perks_attributes: [:id, :amount, :name, :maximum, :description, :_destroy],
+                milestones_attributes: [:id, :name, :description, :goal_percentage, :_destroy]
 
   index do
     selectable_column
@@ -17,7 +18,16 @@ ActiveAdmin.register Campaign do
       t("campaigns.categories.#{campaign.category}")
     end
     column :locality
+    actions defaults: false do
+      link_to t('active_admin.approve'), '#', class: 'button',
+                                              onclick: 'alert("Campaña Aprobada")'
+    end
+    actions defaults: false do
+      link_to t('active_admin.reject'), '#', class: 'button',
+                                             onclick: 'alert("Campaña Rechazada")'
+    end
     actions
+
   end
 
   filter :organization
@@ -47,6 +57,12 @@ ActiveAdmin.register Campaign do
         cf.input :maximum, min: 1
         cf.input :description
         cf.input :_destroy, as: :boolean, required: false, label: t('active_admin.remove')
+      end
+      f.has_many :milestones do |mf|
+        mf.input :name
+        mf.input :description
+        mf.input :goal_percentage, min: 0.0, max: 1.0
+        mf.input :_destroy, as: :boolean, required: false, label: t('active_admin.remove')
       end
     end
     f.actions
@@ -82,6 +98,25 @@ ActiveAdmin.register Campaign do
           column Perk.human_attribute_name(:name), :name
           column Perk.human_attribute_name(:description), :description
           column Perk.human_attribute_name(:maximum), :maximum
+        end
+      end
+    end
+    panel Milestone.model_name.human(count: 2) do
+      if campaign.milestones.empty?
+        t('application.no_results')
+      else
+        table_for campaign.milestones do
+          column Milestone.human_attribute_name(:name), :name
+          column Milestone.human_attribute_name(:description), :description
+          column Milestone.human_attribute_name(:goal_percentage), :goal_percentage
+          column do
+            link_to t('active_admin.approve'), '#', class: 'button',
+                                                    onclick: 'alert("Hito Aprobado")'
+          end
+          column do
+            link_to t('active_admin.reject'), '#', class: 'button',
+                                                   onclick: 'alert("Hito Rechazado")'
+          end
         end
       end
     end

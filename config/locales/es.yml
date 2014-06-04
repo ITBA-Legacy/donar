@@ -59,6 +59,8 @@ es:
       education: Educación
       social: Social
       health: Salud
+    achieve_milestone: Cumplir hito
+    milestone_achieved: Hito cumplido
     constribute: Contribuir
     search: Buscar
   views:
@@ -275,3 +277,5 @@ es:
       welcome: Bienvenido a Donar
       call_to_action: Desde aquí podrá administrar las campañas y organizaciones del sitio
     remove: Eliminar
+    approve: Aprobar
+    reject: Rechazar

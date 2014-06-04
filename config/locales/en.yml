@@ -59,6 +59,9 @@ en:
       education: Education
       social: Social
       health: Health
+    constribute: Constribute
+    achieve_milestone: Achieve milestone
+    milestone_achieved: Milestone achieved
     constribute: Contribute
     search: Search
 
@@ -281,3 +284,5 @@ en:
       welcome: Welcome to Donar
       call_to_action: Here you can manage the campaigns and organizations from the website
     remove: Remove
+    approve: Approve
+    reject: Reject
