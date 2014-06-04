@@ -58,6 +58,9 @@ en:
       admin_user:
         one: Admin User
         other: Admin Users
+      comment:
+        one: Comment
+        other: Comments
     attributes:
       organization:
         name: Name
@@ -95,3 +98,5 @@ en:
         name: Name
         description: Description
         goal_percentage: Goal Percentage
+      purchase:
+        status: Status

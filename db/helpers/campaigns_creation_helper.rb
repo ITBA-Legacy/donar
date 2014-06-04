@@ -30,7 +30,6 @@ module CampaignsCreationHelper
       create_perks(campaign, rand(2..10))
       create_milestones(campaign, rand(2..10))
       create_contributions(campaign, rand(0..30))
-      create_comments(campaign, rand(0..30))
       campaign.save!
     end
 
@@ -67,17 +66,5 @@ module CampaignsCreationHelper
         )
       end
     end
-
-    def create_comments(campaign, times)
-      1.upto(times) do |time|
-        Comment.create(
-          user: User.all.sample,
-          message: Faker::Lorem.paragraph,
-          campaign: campaign
-        )
-      end
-    end
-
   end
-
 end

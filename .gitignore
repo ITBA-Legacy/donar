@@ -47,3 +47,6 @@ public/uploads
 
 # Mailer
 .mailer.yml
+
+# Mercadopago
+.mercadopago.yml

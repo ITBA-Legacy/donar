@@ -64,21 +64,22 @@ ActiveRecord::Schema.define(version: 20140604170555) do
     t.float    "contribution",      default: 0.0
     t.string   "main_image"
     t.string   "video"
-    t.string   "history"
+    t.text     "history"
   end
 
   add_index "campaigns", ["organization_id"], name: "index_campaigns_on_organization_id", using: :btree
 
   create_table "comments", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "campaign_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
-  add_index "comments", ["campaign_id"], name: "index_comments_on_campaign_id", using: :btree
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+  add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
+  add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
 
   create_table "contributions", force: true do |t|
     t.integer  "campaign_id"
@@ -141,6 +142,18 @@ ActiveRecord::Schema.define(version: 20140604170555) do
   end
 
   add_index "perks", ["campaign_id"], name: "index_perks_on_campaign_id", using: :btree
+
+  create_table "purchases", force: true do |t|
+    t.string   "status"
+    t.integer  "contribution_id"
+    t.string   "success_token"
+    t.string   "failure_token"
+    t.string   "pending_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "purchases", ["contribution_id"], name: "index_purchases_on_contribution_id", using: :btree
 
   create_table "updates", force: true do |t|
     t.integer  "user_id"

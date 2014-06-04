@@ -24,14 +24,6 @@ describe ContributionsController do
         expect(Contribution.last.campaign).to eq campaign
       end
 
-      it 'redirects to the campaign view' do
-        post :create,
-             organization_id: organization.id,
-             campaign_id: campaign.id,
-             contribution: contribution
-        expect(response).to redirect_to organization_campaign_url(organization, campaign)
-      end
-
       it 'creates the contribution' do
         expect do
           post :create,
@@ -40,19 +32,6 @@ describe ContributionsController do
                contribution: contribution
         end.to change(Contribution, :count).by(1)
       end
-
-      it 'adds the amount to the campaign' do
-        expect do
-          post :create,
-               organization_id: organization.id,
-               campaign_id: campaign.id,
-               contribution: contribution
-          campaign.reload
-        end.to change(campaign, :contribution).by(contribution[:amount])
-      end
-
     end
-
   end
-
 end

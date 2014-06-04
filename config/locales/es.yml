@@ -5,6 +5,9 @@ es:
     slogan: Plataforma de Crowdfounding para ONG
   helpers:
     submit:
+      comment:
+        create: "Comentar"
+        new: "Nuevo Comentario"
       organization:
         create: "Crear %{model}"
         new: "Nueva Organización"
@@ -32,6 +35,11 @@ es:
           other: "Mostrando <b>todos %{count}</b> %{entry_name}"
       more_pages:
         display_entries: "Mostrando %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> en total"
+  purchase:
+    status:
+      success: "Confirmado"
+      awaiting_mp_response: "Pendiente confirmación de MercadoPago"
+      na: "NA"
   users:
     organizations: Mis Organizaciones
     campaigns: Mis Campañas
@@ -51,7 +59,6 @@ es:
       education: Educación
       social: Social
       health: Salud
-    constribute: Constribuir
     achieve_milestone: Cumplir hito
     milestone_achieved: Hito cumplido
     constribute: Contribuir
@@ -66,6 +73,9 @@ es:
   pundit:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
+    constribute: Constribuir
+    achieve_milestone: Cumplir hito
+    milestone_achieved: Hito cumplido
 
 
 

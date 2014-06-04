@@ -5,6 +5,9 @@ en:
     slogan: Crowdfounding platform for non-profits
   helpers:
     submit:
+      comment:
+        create: "Comentar"
+        new: "Nuevo Comentario"
       organization:
         create: "Create %{model}"
         new: "New Organization"
@@ -24,6 +27,19 @@ en:
         new: "New Perk"
         edit: "Edit Perk"
         remove: "Remove Perk"
+
+
+
+
+
+
+
+
+  purchase:
+    status:
+      success: "Confirmed"
+      awaiting_mp_response: "Awaiting MercadoPago confirmation"
+      na: "NA"
   users:
     organizations: My Organizations
     campaigns: My Campaigns
@@ -43,14 +59,31 @@ en:
       education: Education
       social: Social
       health: Health
+<<<<<<< HEAD
     constribute: Constribute
     achieve_milestone: Achieve milestone
     milestone_achieved: Milestone achieved
+=======
+>>>>>>> master
     constribute: Contribute
     search: Search
+
+
+
+
+
+
+
   pundit:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
+<<<<<<< HEAD
+=======
+    constribute: Constribute
+    achieve_milestone: Achieve milestone
+    milestone_achieved: Milestone achieved
+
+>>>>>>> master
 
 
 

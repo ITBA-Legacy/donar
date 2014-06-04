@@ -7,7 +7,7 @@ module OrganizationsCreationHelper
       puts 'Creating Organizations'
 
       1.upto(times) do |time|
-        Organization.create(
+        organization = Organization.create(
           name: "Organization #{time}",
           description: Faker::Lorem.sentence,
           locality: Faker::Address.city,
@@ -17,7 +17,5 @@ module OrganizationsCreationHelper
 
       puts 'Finished Creating Organizations'
     end
-
   end
-
 end

@@ -10,7 +10,7 @@ class CampaignsController < ApplicationController
             perks_attributes: [:id, :amount, :name, :maximum, :description, :_destroy]]
 
   def search
-    @campaigns = Campaign.search(params[:query])
+    @campaigns = Campaign.search(params[:query]).page(params[:page] || 1).per(10)
     render :index
   end
 

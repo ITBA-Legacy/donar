@@ -42,7 +42,7 @@ legend
         h4.list-group-item-heading
           = Campaign.human_attribute_name(:contribution)
         p.list-group-item-text
-          = "$ #{@campaign.contribution}"
+          = "$ #{Purchase.confirmed_amount(@campaign)}"
       li.list-group-item
         h4.list-group-item-heading
           = Campaign.human_attribute_name(:history)
@@ -82,8 +82,19 @@ legend
   .col-md-12
     legend
       = Perk.model_name.human(count: 2)
-    = render 'perks/index_table', perks: @campaign.perks
+    = render 'perks/index_table', perks: paginate_scope(@campaign.perks)
 .row
   .col-md-6
     p
       = link_to Organization.model_name.human, parent_url, class: 'btn btn-primary'
+.row
+  .col-md-12
+    legend
+      = Comment.model_name.human(count: 2)
+    - @campaign.comments.each do |comment|
+      = render 'comments/comment_card', comment: comment
+.row
+  .col-md-6
+    p
+      = link_to t('helpers.submit.comment.new'), new_organization_campaign_comment_path(@campaign.organization, @campaign),
+                class: 'btn btn-primary'

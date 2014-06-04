@@ -37,8 +37,8 @@ legend
 
 legend
   = t('users.organizations')
-= render '/organizations/index_table', organizations: @user.organizations.page(1)
+= render '/organizations/index_table', organizations: @user.organizations.page(1).per(50)
 legend
   = t('users.contributions')
-= render '/contributions/index_table', contributions: @user.contributions.page(params[:page]||1)
+= render '/contributions/index_table', contributions: paginate_scope(@user.contributions)
 

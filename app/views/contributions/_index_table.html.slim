@@ -13,6 +13,8 @@
             = Campaign.human_attribute_name(:category)
           th
             = Contribution.human_attribute_name(:amount)
+          th
+            = Purchase.human_attribute_name(:status)
       tbody
         - contributions.each do |contribution|
           tr
@@ -24,4 +26,9 @@
               = t("campaigns.categories.#{contribution.campaign.category}")
             th
               = "$ #{contribution.amount}"
+            th
+              - if contribution.purchase.present?
+                =  t("purchase.status.#{contribution.purchase.status}")
+              - else
+                = t('purchase.status.na')
 = paginate contributions
