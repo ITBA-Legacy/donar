@@ -15,11 +15,9 @@ class MilestonesController < ApplicationController
 
   def confirm_achieved
     @milestone = Milestone.find(params[:id])
-    @campaign = @milestone.campaign
     @milestone.achieve
-    @milestone.description = params[:milestone][:description]
-    @milestone.save
-    redirect_to organization_campaign_path(@campaign.organization, @campaign),
+    @milestone.update_attributes!(description: params[:milestone][:description])
+    redirect_to organization_campaign_path(@milestone.campaign.organization, @milestone.campaign),
                 notice: t('campaigns.milestone_achieved')
   end
 
