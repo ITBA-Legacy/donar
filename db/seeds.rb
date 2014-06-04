@@ -24,4 +24,3 @@ when "staging"
 when "production"
   UsersCreationHelper.create_users
 end
-

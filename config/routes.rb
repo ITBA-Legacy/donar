@@ -22,10 +22,15 @@ Donar::Application.routes.draw do
     resources :comments, except: [:edit, :update]
 
     resources :campaigns do
+      resources :milestones do
+        member do
+          get :achieve
+          patch :confirm_achieved
+        end
+      end
       resources :contributions
       resources :comments, except: [:edit, :update]
     end
-
   end
 
   # End Organizations Routes

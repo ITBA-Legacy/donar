@@ -27,6 +27,14 @@ en:
         new: "New Perk"
         edit: "Edit Perk"
         remove: "Remove Perk"
+
+
+
+
+
+
+
+
   purchase:
     status:
       success: "Confirmed"
@@ -53,9 +61,20 @@ en:
       health: Health
     constribute: Contribute
     search: Search
+
+
+
+
+
+
+
   pundit:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
+    constribute: Constribute
+    achieve_milestone: Achieve milestone
+    milestone_achieved: Milestone achieved
+
 
 
 

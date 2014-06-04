@@ -31,6 +31,13 @@ class Campaign < ActiveRecord::Base
     update_attributes!(contribution: contribution + amount)
   end
 
+  def next_unachieved_milestone
+    milestones.each do |milestone|
+      return milestone unless milestone.achieved?
+    end
+    nil
+  end
+
   private
 
   def default_attributes

@@ -71,6 +71,9 @@ es:
   pundit:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
+    constribute: Constribuir
+    achieve_milestone: Cumplir hito
+    milestone_achieved: Hito cumplido
 
 
 

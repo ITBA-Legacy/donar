@@ -4,7 +4,7 @@ class CreatePerks < ActiveRecord::Migration
       t.references :campaign, index: true
       t.float :amount
       t.string :name
-      t.integer :maximun
+      t.integer :maximum
       t.text :description
 
       t.timestamps
