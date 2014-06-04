@@ -27,5 +27,8 @@
             th
               = "$ #{contribution.amount}"
             th
-              = contribution.purchase.present? ? t("purchase.status.#{contribution.purchase.status}") : t 'purchase.status.na'
+              - if contribution.purchase.present?
+                =  t("purchase.status.#{contribution.purchase.status}")
+              - else
+                = t('purchase.status.na')
 = paginate contributions
