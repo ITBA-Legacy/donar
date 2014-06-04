@@ -13,13 +13,10 @@ class UsersController < ApplicationController
 
   def update_password
     if current_user.update_attributes(resource_params.first)
-      @user = current_user
       render :show
     else
       render :edit_password
     end
-
   end
-
 
 end
