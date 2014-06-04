@@ -24,9 +24,6 @@ describe ContributionsController do
         expect(Contribution.last.campaign).to eq campaign
       end
 
-      # removed the test that was here because it no longer redirects you yo the campaign path
-      # it redirects you to mercadopago
-
       it 'creates the contribution' do
         expect do
           post :create,

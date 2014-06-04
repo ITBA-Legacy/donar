@@ -42,7 +42,7 @@ legend
         h4.list-group-item-heading
           = Campaign.human_attribute_name(:contribution)
         p.list-group-item-text
-          = "$ #{@campaign.contribution}"
+          = "$ #{Purchase.confirmed_amount(@campaign)}"
       li.list-group-item
         h4.list-group-item-heading
           = Campaign.human_attribute_name(:history)

@@ -89,3 +89,5 @@ es:
         name: Nombre
         maximum: Máximo
         description: Descripción
+      purchase:
+        status: Estado

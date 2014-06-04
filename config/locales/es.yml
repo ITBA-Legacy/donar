@@ -32,6 +32,10 @@ es:
           other: "Mostrando <b>todos %{count}</b> %{entry_name}"
       more_pages:
         display_entries: "Mostrando %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> en total"
+  purchase:
+    status:
+      success: "Confirmado"
+      awaiting_mp_response: "Pendiente confirmación de MercadoPago"
   users:
     organizations: Mis Organizaciones
     campaigns: Mis Campañas

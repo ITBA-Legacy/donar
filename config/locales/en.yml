@@ -24,6 +24,10 @@ en:
         new: "New Perk"
         edit: "Edit Perk"
         remove: "Remove Perk"
+  purchase:
+    status:
+      success: "Confirmado"
+      awaiting_mp_response: "Pendiente confirmación de MercadoPago"
   users:
     organizations: My Organizations
     campaigns: My Campaigns
