@@ -55,6 +55,9 @@ en:
       admin_user:
         one: Admin User
         other: Admin Users
+      comment:
+        one: Comment
+        other: Comments
     attributes:
       organization:
         name: Name

@@ -38,6 +38,9 @@ es:
               not_a_number: Cantidad inválida
 
     models:
+      comment:
+        one: Comentario
+        other: Comentarios
       organization:
         one: Organización
         other: Organizaciones

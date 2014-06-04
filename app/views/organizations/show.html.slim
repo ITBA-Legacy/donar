@@ -29,8 +29,12 @@ legend
 p
   = link_to t('helpers.submit.campaign.new'), new_organization_campaign_path(@organization),
             class: 'btn btn-primary'
+.row
+  .col-md-12
+    legend
+      = Comment.model_name.human(count: 2)
+    - @organization.comments.each do |comment|
+      = render 'comments/comment_card', comment: comment
 p
   = link_to t('helpers.submit.comment.new'), new_organization_comment_path(@organization),
             class: 'btn btn-primary'
-
-

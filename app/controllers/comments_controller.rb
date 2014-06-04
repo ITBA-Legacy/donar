@@ -8,7 +8,9 @@ class CommentsController < ApplicationController
 
   def create
     build_resource.user = current_user
-    create! { parent_url }
+    create! do
+      parent.is_a?(Campaign) ? organization_campaign_url(parent.organization, parent) : parent_url
+    end
   end
 
   def resource_params
