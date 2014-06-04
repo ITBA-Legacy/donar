@@ -73,6 +73,10 @@ es:
       user:
         created_at: Fecha de ingreso
         full_name: Nombre
+        email: Email
+        first_name: Nombre
+        last_name: Apellido
+        avatar: Imagen de Perfil
       perk:
         amount: Mínima Donación
         name: Nombre

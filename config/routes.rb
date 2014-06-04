@@ -3,7 +3,12 @@ Donar::Application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   root 'application#index'
 
-  resources :users
+  resources :users do
+    member do
+      get :edit_password
+      patch :update_password
+    end
+  end
 
   resources :organizations do
 
