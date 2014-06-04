@@ -36,6 +36,7 @@ es:
     status:
       success: "Confirmado"
       awaiting_mp_response: "Pendiente confirmación de MercadoPago"
+      na: "NA"
   users:
     organizations: Mis Organizaciones
     campaigns: Mis Campañas
