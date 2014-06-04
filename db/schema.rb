@@ -11,10 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140522204208) do
+ActiveRecord::Schema.define(version: 20140604170555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_admin_comments", force: true do |t|
+    t.string   "namespace"
+    t.text     "body"
+    t.string   "resource_id",   null: false
+    t.string   "resource_type", null: false
+    t.integer  "author_id"
+    t.string   "author_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+
+  create_table "admin_users", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
+  add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "campaigns", force: true do |t|
     t.string   "name"
@@ -29,20 +62,24 @@ ActiveRecord::Schema.define(version: 20140522204208) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "contribution",      default: 0.0
+    t.string   "main_image"
+    t.string   "video"
+    t.text     "history"
   end
 
   add_index "campaigns", ["organization_id"], name: "index_campaigns_on_organization_id", using: :btree
 
   create_table "comments", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "campaign_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
     t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
-  add_index "comments", ["campaign_id"], name: "index_comments_on_campaign_id", using: :btree
-  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+  add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id", using: :btree
+  add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type", using: :btree
 
   create_table "contributions", force: true do |t|
     t.integer  "campaign_id"
@@ -71,10 +108,8 @@ ActiveRecord::Schema.define(version: 20140522204208) do
     t.datetime "done_date"
     t.float    "goal_percentage"
     t.integer  "campaign_id"
-    t.boolean  "approved"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "aasm_state"
   end
 
   add_index "milestones", ["campaign_id"], name: "index_milestones_on_campaign_id", using: :btree
@@ -107,6 +142,18 @@ ActiveRecord::Schema.define(version: 20140522204208) do
 
   add_index "perks", ["campaign_id"], name: "index_perks_on_campaign_id", using: :btree
 
+  create_table "purchases", force: true do |t|
+    t.string   "status"
+    t.integer  "contribution_id"
+    t.string   "success_token"
+    t.string   "failure_token"
+    t.string   "pending_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "purchases", ["contribution_id"], name: "index_purchases_on_contribution_id", using: :btree
+
   create_table "updates", force: true do |t|
     t.integer  "user_id"
     t.integer  "campaign_id"
@@ -136,8 +183,12 @@ ActiveRecord::Schema.define(version: 20140522204208) do
     t.string   "avatar"
     t.string   "first_name"
     t.string   "last_name"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 

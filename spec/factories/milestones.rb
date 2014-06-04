@@ -6,6 +6,5 @@ FactoryGirl.define do
     description { Faker::Lorem.paragraph }
     done_date { Time.current }
     goal_percentage 1.5
-    approved false
   end
 end

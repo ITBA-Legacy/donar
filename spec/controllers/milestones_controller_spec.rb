@@ -11,6 +11,8 @@ describe MilestonesController do
 
     context 'When achieving a milestone for a campaign' do
 
+      let(:description) { Faker::Lorem.paragraph }
+
       before(:each) do
         sign_in(user)
         user.reload
@@ -20,33 +22,11 @@ describe MilestonesController do
         patch :confirm_achieved, organization_id: organization.id,
                                  campaign_id: campaign.id,
                                  id: milestone.id,
-                                 milestone: { description: 'bla' }
+                                 milestone: { description: description }
         milestone.reload
-        expect(milestone.description).to eq 'bla'
+        expect(milestone.description).to eq description
         expect(milestone.achieved?).to be true
-
       end
-
-      # before(:each) do
-      #   sign_in(user)
-      #   user.reload
-      # end
-
-      # it 'assigns the organization to the campaign' do
-      #   post :create, organization_id: organization.id, campaign: campaign
-      #   expect(Campaign.last.organization).to eq organization
-      # end
-
-      # it 'redirects to the campaign view' do
-      #   post :create, organization_id: organization.id, campaign: campaign
-      #   expect(response).to redirect_to organization_campaign_url(organization, Campaign.last)
-      # end
-
-      # it 'creates the campaign' do
-      #   expect do
-      #     post :create, organization_id: organization.id, campaign: campaign
-      #   end.to change(Campaign, :count).by(1)
-      # end
 
     end
 
