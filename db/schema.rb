@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140524215140) do
+ActiveRecord::Schema.define(version: 20140604170555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -107,7 +107,6 @@ ActiveRecord::Schema.define(version: 20140524215140) do
     t.datetime "done_date"
     t.float    "goal_percentage"
     t.integer  "campaign_id"
-    t.boolean  "approved"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "aasm_state"
