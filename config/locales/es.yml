@@ -5,6 +5,9 @@ es:
     slogan: Plataforma de Crowdfounding para ONG
   helpers:
     submit:
+      comment:
+        create: "Comentar"
+        new: "Nuevo Comentario"
       organization:
         create: "Crear %{model}"
         new: "Nueva Organización"

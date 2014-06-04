@@ -5,6 +5,9 @@ en:
     slogan: Crowdfounding platform for non-profits
   helpers:
     submit:
+      comment:
+        create: "Comentar"
+        new: "Nuevo Comentario"
       organization:
         create: "Create %{model}"
         new: "New Organization"
