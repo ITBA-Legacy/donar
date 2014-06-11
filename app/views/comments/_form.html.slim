@@ -1,7 +1,7 @@
-- if @comment.errors.present?
+- if comment.errors.present?
   .alert.alert-danger
     ul
-      - @comment.errors.each do |attr, msg|
+      - comment.errors.each do |attr, msg|
         li= msg
 = form_for build_association_chain, html: { class: 'form-horizontal', role: 'form' } do |f|
   .form-group

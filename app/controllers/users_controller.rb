@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
   def update_password
     if current_user.update_attributes(resource_params.first)
+      sign_in(current_user, bypass: true)
       render :show
     else
       render :edit_password

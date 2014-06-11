@@ -1,9 +1,9 @@
-- if @campaign.errors.present?
+- if campaign.errors.present?
   .alert.alert-danger
     ul
-      - @campaign.errors.each do |attr, msg|
+      - campaign.errors.each do |attr, msg|
         li= msg
-= form_for [@organization, @campaign],
+= form_for [@organization, campaign],
            html: { class: 'form-horizontal', role: 'form' } do |f|
 
   ul.nav.nav-tabs#campaign-tabs
@@ -70,15 +70,15 @@
           = f.label :main_image, class: 'control-label col-sm-2'
           .col-sm-8
             = f.file_field :main_image, class: 'form-control col-sm-2'
-            - if @campaign.main_image.present?
-              =image_tag @campaign.main_image
+            - if campaign.main_image.present?
+              =image_tag campaign.main_image
         .form-group
           = f.label :video, class: 'control-label col-sm-2'
           .col-sm-8
             = f.file_field :video, class: 'form-control col-sm-2'
-            - if @campaign.video.present?
+            - if campaign.video.present?
               video controls="" height="240" width="320"
-                source src=@campaign.video type="video/mp4"
+                source src=campaign.video type="video/mp4"
         .form-group
           = f.label :history, class: 'control-label col-sm-2'
           .col-sm-8
