@@ -109,9 +109,7 @@ describe Campaign do
     it 'takes a compaign through the funded lifecycle' do
       campaign.approve
       campaign.start
-      while(campaign.goal>campaign.contribution) do
-        campaign.add_contribution(100)
-      end
+      campaign.add_contribution(100) while campaign.goal > campaign.contribution
       expect(campaign.started_funded?).to be true
       campaign.close
       expect(campaign.closed_funded?).to be true
@@ -129,6 +127,5 @@ describe Campaign do
       expect(campaign.closed_not_funded?).to be true
     end
   end
-
 
 end
