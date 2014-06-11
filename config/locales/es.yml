@@ -27,6 +27,11 @@ es:
         new: "Nuevo Beneficio"
         edit: "Editar Beneficio"
         remove: "Remover Beneficio"
+      user:
+        edit: "Editar Perfil"
+        edit_password: "Editar Contraseña"
+        done_edit_password: "Actualizar"
+        done_edit_user: "Actualizar"
     page_entries_info:
       one_page:
         display_entries:

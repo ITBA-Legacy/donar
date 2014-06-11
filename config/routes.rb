@@ -7,7 +7,12 @@ Donar::Application.routes.draw do
 
   # Users Routes
 
-  resources :users
+  resources :users do
+    member do
+      get :edit_password
+      patch :update_password
+    end
+  end
 
   # End Users Routes
 
@@ -56,9 +61,7 @@ Donar::Application.routes.draw do
 
   # Mails Preview Routes
 
-  if Rails.env.development?
-    mount MailPreview => 'mail_view'
-  end
+  mount MailPreview => 'mail_view' if Rails.env.development?
 
   # End Mails Preview Routes
 

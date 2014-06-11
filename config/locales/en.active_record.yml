@@ -84,6 +84,10 @@ en:
       user:
         created_at: Joined
         full_name: Name
+        email: Email
+        first_name: First Name
+        last_name: Last Name
+        avatar: Profile Picture
       admin_user:
         created_at: Joined
         sign_in_count: Sign In count
