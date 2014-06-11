@@ -103,7 +103,32 @@ describe Campaign do
     it 'increases the contribution' do
       expect { campaign.add_contribution(10) }.to change(campaign, :contribution).by(10)
     end
-
   end
+
+  describe '#fund campaign' do
+    it 'takes a compaign through the funded lifecycle' do
+      campaign.approve
+      campaign.start
+      while(campaign.goal>campaign.contribution) do
+        campaign.add_contribution(100)
+      end
+      expect(campaign.started_funded?).to be true
+      campaign.close
+      expect(campaign.closed_funded?).to be true
+    end
+  end
+
+  describe '#not_fund_campaign' do
+    it 'change states without funding' do
+      expect(campaign.pending?).to be true
+      campaign.approve
+      expect(campaign.approved?).to be true
+      campaign.start
+      expect(campaign.started_not_funded?).to be true
+      campaign.close
+      expect(campaign.closed_not_funded?).to be true
+    end
+  end
+
 
 end

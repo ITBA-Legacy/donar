@@ -6,6 +6,8 @@ class Campaign < ActiveRecord::Base
                   against: [:name, :description, :short_description],
                   using: { tsearch: { dictionary: 'spanish' } }
 
+  include AASM
+
   belongs_to :organization
   has_many :perks
   has_many :comments, as: :commentable
@@ -29,6 +31,9 @@ class Campaign < ActiveRecord::Base
 
   def add_contribution(amount)
     update_attributes!(contribution: contribution + amount)
+    if(contribution>=goal)
+      fund
+    end
   end
 
   def next_unachieved_milestone
@@ -38,7 +43,45 @@ class Campaign < ActiveRecord::Base
     nil
   end
 
+  # State machine that goes through the diferent states
+  aasm do
+    state :pending, initial: true
+    state :approved
+    state :rejected
+    state :started_not_funded
+    state :started_funded
+    state :closed_funded
+    state :closed_not_funded
+
+
+    event :approve do
+      transitions from: :pending, to: :approved
+    end
+
+    event :reject do
+      transitions from: :pending, to: :rejected
+    end
+
+    event :fund do
+      transitions from: :started_not_funded, to: :started_funded, guard: :funded?
+    end
+
+    event :start do
+      transitions from: :approved, to: :started_not_funded
+    end
+
+    event :close do
+      transitions from: :started_not_funded, to: :closed_not_funded
+      transitions from: :started_funded, to: :closed_funded
+    end
+
+  end
+
   private
+
+  def funded?
+    return goal <= contribution
+  end
 
   def default_attributes
     self.contribution ||= 0.0
