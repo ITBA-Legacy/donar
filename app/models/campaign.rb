@@ -1,4 +1,6 @@
 # It's a Campaign/Project/Fundriser to raise something.
+# Campaigs funding method will work on the bases of milestones.
+
 class Campaign < ActiveRecord::Base
 
   include PgSearch
@@ -47,12 +49,13 @@ class Campaign < ActiveRecord::Base
     state :approved
     state :rejected
     state :started_not_funded
-    state :started_funded
     state :closed_funded
+    state :closed_partially_funded
     state :closed_not_funded
 
     event :approve do
       transitions from: :pending, to: :approved
+      transitions from: :rejected, to: :approved
     end
 
     event :reject do
@@ -60,7 +63,8 @@ class Campaign < ActiveRecord::Base
     end
 
     event :fund do
-      transitions from: :started_not_funded, to: :started_funded, guard: :funded?
+      transitions from: :started_not_funded, to: :closed_funded, guard: :funded?
+      transitions from: :started_not_funded, to: :closed_partially_funded, guard: :partially_funded?
     end
 
     event :start do
@@ -69,7 +73,6 @@ class Campaign < ActiveRecord::Base
 
     event :close do
       transitions from: :started_not_funded, to: :closed_not_funded
-      transitions from: :started_funded, to: :closed_funded
     end
 
   end
@@ -78,6 +81,10 @@ class Campaign < ActiveRecord::Base
 
   def funded?
     goal <= contribution
+  end
+
+  def partially_funded?
+    milestones.first.goal_percentage * goal >= contribution
   end
 
   def default_attributes
