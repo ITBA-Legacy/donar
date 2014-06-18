@@ -1,17 +1,1 @@
-.jumbotron
-  h1 Donar
-  p
-    = t('application.slogan')
-  p
-    = link_to Campaign.model_name.human(count: 2), campaigns_path, class:'btn btn-primary btn-lg'
-
-= form_tag search_campaigns_path, class: 'form-inline text-center', role: 'form' do
-  .form-group
-    .col-md-4
-      = search_field_tag 'query', nil, class: 'form-control', placeholder: t('campaigns.search')
-  = submit_tag t('campaigns.search'), class: 'btn btn-primary'
-br
-p.text-center
-  = link_to t('helpers.submit.organization.new'), new_organization_path, class: 'btn btn-primary'
-p.text-center
-  = link_to Organization.model_name.human(count: 2), organizations_path, class: 'btn btn-primary'
+= render 'layouts/content', campaigns: @campaigns

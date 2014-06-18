@@ -1,11 +1,17 @@
-nav.navbar.navbar-inverse role="navigation" style="position: static;"
-  .container-fluid
-    /! Brand and toggle get grouped for better mobile display
-    .navbar-header
-      button.navbar-toggle data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"
-      = link_to "Donar", root_path, class: "navbar-brand"
-    /! Collect the nav links, forms, and other content for toggling
-    ul.nav.navbar-nav.pull-right
+.col-sm-4.pull-left
+  = link_to root_path do
+    = image_tag 'logo.png'
+.col-sm-7.pull-right
+  .row
+    .pull-right
+      = form_tag search_campaigns_path, class: 'form-inline', role: 'form' do
+        .form-group
+          #header-search.pull-left
+            = search_field_tag 'query', nil, class: 'form-control', placeholder: t('campaigns.search')
+            = image_submit_tag 'search.png'
+          = link_to t('users.profile'), '#', class: 'btn btn-primary'
+  .row
+    ul.nav.nav-pills.pull-right
       - if user_signed_in?
         li
           = link_to t('users.profile'), current_user
@@ -23,3 +29,4 @@ nav.navbar.navbar-inverse role="navigation" style="position: static;"
         li
           = link_to t('devise.sessions.sign_in_with_twitter'),
             user_omniauth_authorize_path(:twitter)
+

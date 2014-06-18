@@ -3,6 +3,18 @@ es:
     title: Donar
     no_results: No se encontraron resultados
     slogan: Plataforma de Crowdfunding para ONG
+    all: Ver todo
+    why_comunidar: "<span>¿Por qué Comuni<strong>DAR</strong>?</span>"
+    easy: FÁCIL
+    vital: VITAL
+    transparent: TRANSPARENTE
+    footer:
+      who_are_we: ¿QUIÉNES SOMOS?
+      requests: PEDIDOS
+      how_to: CÓMO DONAR
+      public: PUBLICA
+      terms: Términos y Condiciones
+      privacy: Políticas de Privacidad
   helpers:
     submit:
       comment:

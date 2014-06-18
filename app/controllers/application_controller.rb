@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def index
+    @campaigns = Kaminari.paginate_array(Campaign.limit(4)).page(1).per(4)
   end
 
   private

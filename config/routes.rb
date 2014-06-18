@@ -47,6 +47,9 @@ Donar::Application.routes.draw do
       get :search
       post :search
     end
+    member do
+      post :approve
+    end
   end
 
   resources :purchases do

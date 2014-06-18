@@ -3,6 +3,18 @@ en:
     title: Donar
     no_results: No results found
     slogan: Crowdfunding platform for non-profits
+    all: See all
+    why_comunidar: "<span>Why Comuni<strong>DAR</strong>?</span>"
+    easy: EASY
+    vital: VITAL
+    transparent: TRANSPARENT
+    footer:
+      who_are_we: WHO ARE WE?
+      requests: REQUESTS
+      how_to: HOW TO DONATE
+      public: PUBLIC
+      terms: Terms and Conditions
+      privacy: Privacy Politics
   helpers:
     submit:
       comment:
