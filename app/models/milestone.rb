@@ -14,7 +14,7 @@ class Milestone < ActiveRecord::Base
       transitions from: :rejected, to: :achieved # Here some condition might be checked?
     end
 
-    event :aprove do
+    event :approve do
       transitions from: :achieved, to: :approved
     end
 

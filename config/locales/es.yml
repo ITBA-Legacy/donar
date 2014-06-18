@@ -68,6 +68,12 @@ es:
     milestone_achieved: Hito cumplido
     constribute: Contribuir
     search: Buscar
+  milestones:
+    states:
+      achieved: Cumplido
+      approved: Aprobado
+      rejected: Rechazado
+      notAchieved: No cumplido
   views:
     pagination:
       first: "&laquo; Primera"
@@ -282,3 +288,4 @@ es:
     remove: Eliminar
     approve: Aprobar
     reject: Rechazar
+    achieve: Cumplir
