@@ -31,9 +31,7 @@ class Campaign < ActiveRecord::Base
 
   def add_contribution(amount)
     update_attributes!(contribution: contribution + amount)
-    if(contribution>=goal)
-      fund
-    end
+    fund if contribution >= goal
   end
 
   def next_unachieved_milestone
@@ -52,7 +50,6 @@ class Campaign < ActiveRecord::Base
     state :started_funded
     state :closed_funded
     state :closed_not_funded
-
 
     event :approve do
       transitions from: :pending, to: :approved
@@ -80,7 +77,7 @@ class Campaign < ActiveRecord::Base
   private
 
   def funded?
-    return goal <= contribution
+    goal <= contribution
   end
 
   def default_attributes
