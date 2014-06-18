@@ -101,6 +101,6 @@ en:
       milestone:
         name: Name
         description: Description
-        goal_percentage: Goal Percentage
+        amount: Amount
       purchase:
         status: Status

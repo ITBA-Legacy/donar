@@ -104,6 +104,6 @@ es:
       milestone:
         name: Nombre
         description: Descripción
-        goal_percentage: Porcentaje del Objetivo
+        amount: Monto
       purchase:
         status: Estado

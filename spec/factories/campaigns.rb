@@ -4,9 +4,9 @@ FactoryGirl.define do
   factory :campaign do
     name { Faker::Company.name }
     description { Faker::Lorem.paragraph }
-    goal 100
+    goal 200.0
     deadline { Time.current + 1.month }
-    minimum 1.5
+    minimum 1.0
     category 'health'
     locality { Faker::Address.city }
     short_description { Faker::Lorem.sentence }

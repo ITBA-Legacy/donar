@@ -64,7 +64,6 @@ class Campaign < ActiveRecord::Base
 
     event :fund do
       transitions from: :started_not_funded, to: :closed_funded, guard: :funded?
-      transitions from: :started_not_funded, to: :closed_partially_funded, guard: :partially_funded?
     end
 
     event :start do
@@ -72,7 +71,14 @@ class Campaign < ActiveRecord::Base
     end
 
     event :close do
-      transitions from: :started_not_funded, to: :closed_not_funded
+      transitions from: :started_not_funded,
+                  to: :closed_funded,
+                  guard: :funded?
+      transitions from: :started_not_funded,
+                  to: :closed_partially_funded,
+                  guard: :partially_funded?
+      transitions from: :started_not_funded,
+                  to: :closed_not_funded
     end
 
   end
@@ -84,7 +90,7 @@ class Campaign < ActiveRecord::Base
   end
 
   def partially_funded?
-    milestones.first.goal_percentage * goal >= contribution
+    milestones.first.amount <= contribution
   end
 
   def default_attributes
