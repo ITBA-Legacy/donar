@@ -2,7 +2,7 @@ es:
   application:
     title: Donar
     no_results: No se encontraron resultados
-    slogan: Plataforma de Crowdfounding para ONG
+    slogan: Plataforma de Crowdfunding para ONG
   helpers:
     submit:
       comment:
@@ -27,6 +27,11 @@ es:
         new: "Nuevo Beneficio"
         edit: "Editar Beneficio"
         remove: "Remover Beneficio"
+      user:
+        edit: "Editar Perfil"
+        edit_password: "Editar Contraseña"
+        done_edit_password: "Actualizar"
+        done_edit_user: "Actualizar"
     page_entries_info:
       one_page:
         display_entries:
@@ -59,6 +64,8 @@ es:
       education: Educación
       social: Social
       health: Salud
+    achieve_milestone: Cumplir Hito
+    milestone_achieved: Hito cumplido
     constribute: Contribuir
     search: Buscar
   views:
@@ -72,8 +79,6 @@ es:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
     constribute: Constribuir
-    achieve_milestone: Cumplir hito
-    milestone_achieved: Hito cumplido
 
 
 
@@ -180,7 +185,7 @@ es:
     messages:
       accepted: debe ser aceptado
       blank: no puede estar en blanco
-      confirmation: no coincide con la confirmación
+      confirmation: No coincide con la confirmación
       empty: no puede estar vacío
       equal_to: debe ser igual a %{count}
       even: debe ser un número par
@@ -200,7 +205,7 @@ es:
         one: es demasiado largo (máximo 1 caracter)
         other: es demasiado largo (máximo %{count} caracteres)
       too_short:
-        one: es demasiado corto (mínimo 1 caracter)
+        one: Es demasiado corto (mínimo 1 caracter)
         other: es demasiado corto (mínimo %{count} caracteres)
       wrong_length:
         one: longitud errónea (debe ser de 1 caracter)
@@ -275,3 +280,5 @@ es:
       welcome: Bienvenido a Donar
       call_to_action: Desde aquí podrá administrar las campañas y organizaciones del sitio
     remove: Eliminar
+    approve: Aprobar
+    reject: Rechazar

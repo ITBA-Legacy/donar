@@ -28,6 +28,7 @@ module CampaignsCreationHelper
         organization: Organization.all.sample
       )
       create_perks(campaign, rand(2..10))
+      create_milestones(campaign, rand(2..10))
       create_contributions(campaign, rand(0..30))
       campaign.save!
     end
@@ -44,14 +45,26 @@ module CampaignsCreationHelper
       end
     end
 
+    def create_milestones(campaign, times)
+      1.upto(times) do |time|
+        Milestone.create(
+          name: Faker::Commerce.product_name,
+          description: Faker::Lorem.sentence,
+          goal_percentage: rand,
+          campaign: campaign
+        )
+      end
+    end
+
     def create_contributions(campaign, times)
       1.upto(times) do |time|
-        Contribution.create(
+        contribution = Contribution.create(
           user: User.all.sample,
           perk: campaign.perks.sample,
           amount: rand(10..2000),
           campaign: campaign
         )
+        Purchase.create(status: :success, contribution: contribution)
       end
     end
   end

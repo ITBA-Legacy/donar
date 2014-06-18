@@ -1,8 +1,8 @@
-#MercadoPago Integration Library
-#Access MercadoPago for payments integration
+# MercadoPago Integration Library
+# Access MercadoPago for payments integration
 #
-#@author @maticompiano
-#@contributors @chrismo
+# @author @maticompiano
+# @contributors @chrismo
 
 require 'rubygems'
 require 'json/add/core'
@@ -78,38 +78,17 @@ class MercadoPago
 
   # Refund accredited payment
   def refund_payment(id)
-    begin
-      access_token = get_access_token
-    rescue => e
-      return e.message
-    end
-
-    refund_status = {"status" => "refunded"}
-    @rest_client.put("/collections/" + id + "?access_token=" + access_token, refund_status)
+    manage_collections(id, 'refunded', 'collections')
   end
 
   # Cancel pending payment
   def cancel_payment(id)
-    begin
-      access_token = get_access_token
-    rescue => e
-      return e.message
-    end
-
-    cancel_status = {"status" => "cancelled"}
-    @rest_client.put("/collections/" + id + "?access_token=" + access_token, cancel_status)
+    manage_collections(id, 'cancelled', 'collections')
   end
 
   # Cancel preapproval payment
   def cancel_preapproval_payment(id)
-    begin
-      access_token = get_access_token
-    rescue => e
-      return e.message
-    end
-
-    cancel_status = {"status" => "cancelled"}
-    @rest_client.put("/preapproval/" + id + "?access_token=" + access_token, cancel_status)
+    manage_collections(id, 'cancelled', 'preapproval')
   end
 
   # Search payments according to filters, with pagination
@@ -131,13 +110,7 @@ class MercadoPago
 
   # Create a checkout preference
   def create_preference(preference)
-    begin
-      access_token = get_access_token
-    rescue => e
-      return e.message
-    end
-
-    @rest_client.post("/checkout/preferences?access_token=" + access_token, preference)
+    submit_object(preference, '/checkout/preferences')
   end
 
   # Update a checkout preference
@@ -153,35 +126,17 @@ class MercadoPago
 
   # Get a checkout preference
   def get_preference(id)
-    begin
-      access_token = get_access_token
-    rescue => e
-      return e.message
-    end
-
-    @rest_client.get("/checkout/preferences/" + id + "?access_token=" + access_token)
+    fetch_by_id(id, '/checkout/preferences/')
   end
 
   # Create a preapproval payment
   def create_preapproval_payment(preapproval_payment)
-    begin
-      access_token = get_access_token
-    rescue => e
-      return e.message
-    end
-
-    @rest_client.post("/preapproval?access_token=" + access_token, preapproval_payment)
+    submit_object(preapproval_payment, '/preapproval')
   end
 
   # Get a preapproval payment
   def get_preapproval_payment(id)
-    begin
-      access_token = get_access_token
-    rescue => e
-      return e.message
-    end
-
-    @rest_client.get("/preapproval/" + id + "?access_token=" + access_token)
+    fetch_by_id(id, '/preapproval/')
   end
 
   def build_query(params)
@@ -189,6 +144,37 @@ class MercadoPago
   end
 
   private
+
+  def manage_collections(id, status, type)
+    begin
+      access_token = get_access_token
+    rescue => e
+      return e.message
+    end
+
+    collection_status = { 'status' => status }
+    @rest_client.put("/#{type}/#{id}?access_token=#{access_token}", collection_status)
+  end
+
+  def submit_object(object, url)
+    begin
+      access_token = get_access_token
+    rescue => e
+      return e.message
+    end
+
+    @rest_client.post("#{url}?access_token=#{access_token}", object)
+  end
+
+  def fetch_by_id(id, url)
+    begin
+      access_token = get_access_token
+    rescue => e
+      return e.message
+    end
+
+    @rest_client.get("#{url}#{id?}?access_token=#{access_token}")
+  end
 
   class RestClient
 

@@ -2,7 +2,6 @@
 Dir[Rails.root.join("db/helpers/*.rb")].each { |f| require f }
 
 case Rails.env
-
 when "development"
   UsersCreationHelper.create_users
   OrganizationsCreationHelper.create_organizations(5)

@@ -1,9 +1,9 @@
-- if @organization.errors.present?
+- if organization.errors.present?
   .alert.alert-danger
     ul
-      - @organization.errors.each do |attr, msg|
+      - organization.errors.each do |attr, msg|
         li= msg
-= form_for @organization, html: { class: 'form-horizontal', role: 'form' } do |f|
+= form_for organization, html: { class: 'form-horizontal', role: 'form' } do |f|
   .form-group
     = f.label :name, class: 'control-label col-sm-2'
     .col-md-4

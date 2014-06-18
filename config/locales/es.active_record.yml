@@ -53,6 +53,9 @@ es:
       perk:
         one: Beneficio
         other: Beneficios
+      milestone:
+        one: Hito
+        other: Hitos
       user:
         one: Usuario
         other: Usuarios
@@ -82,6 +85,12 @@ es:
       user:
         created_at: Fecha de ingreso
         full_name: Nombre
+        email: Email
+        first_name: Nombre
+        last_name: Apellido
+        avatar: Imagen de Perfil
+        password: Contraseña
+        password_confirmation: Repetir Contraseña
       admin_user:
         created_at: Fecha de ingreso
         sign_in_count: Cantidad de ingresos
@@ -92,5 +101,9 @@ es:
         name: Nombre
         maximum: Máximo
         description: Descripción
+      milestone:
+        name: Nombre
+        description: Descripción
+        goal_percentage: Porcentaje del Objetivo
       purchase:
         status: Estado

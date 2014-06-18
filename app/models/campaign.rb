@@ -17,7 +17,7 @@ class Campaign < ActiveRecord::Base
   has_many :contributions
   has_many :milestones
 
-  accepts_nested_attributes_for :perks, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :perks, :milestones, reject_if: :all_blank, allow_destroy: true
 
   CATEGORIES = [:education, :social, :health]
 
