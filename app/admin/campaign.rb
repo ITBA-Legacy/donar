@@ -109,13 +109,26 @@ ActiveAdmin.register Campaign do
           column Milestone.human_attribute_name(:name), :name
           column Milestone.human_attribute_name(:description), :description
           column Milestone.human_attribute_name(:goal_percentage), :goal_percentage
-          column do
-            link_to t('active_admin.approve'), '#', class: 'button',
-                                                    onclick: 'alert("Hito Aprobado")'
+          column Milestone.human_attribute_name(:aasm_state) do |milestone|
+            t("milestones.states.#{milestone.aasm_state}")
           end
-          column do
-            link_to t('active_admin.reject'), '#', class: 'button',
-                                                   onclick: 'alert("Hito Rechazado")'
+          column do |milestone|
+            if milestone.aasm_state == 'achieved'
+              link_to t('active_admin.approve'), approve_milestone_admin_campaign_path(milestone),
+                      class: 'button'
+            end
+          end
+          column do |milestone|
+            if milestone.aasm_state == 'achieved'
+              link_to t('active_admin.reject'), reject_milestone_admin_campaign_path(milestone),
+                      class: 'button'
+            end
+          end
+          column do |milestone|
+            if milestone.aasm_state == 'notAchieved' || milestone.aasm_state == 'rejected'
+              link_to t('active_admin.achieve'), achieve_milestone_admin_campaign_path(milestone),
+                      class: 'button'
+            end
           end
         end
       end
@@ -123,4 +136,18 @@ ActiveAdmin.register Campaign do
     active_admin_comments
   end
 
+  member_action :approve_milestone do
+    Milestone.find(params[:id]).approve!
+    redirect_to :back
+  end
+
+  member_action :reject_milestone do
+    Milestone.find(params[:id]).reject!
+    redirect_to :back
+  end
+
+  member_action :achieve_milestone do
+    Milestone.find(params[:id]).achieve!
+    redirect_to :back
+  end
 end
