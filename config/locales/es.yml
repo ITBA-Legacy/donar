@@ -4,7 +4,7 @@ es:
     no_results: No se encontraron resultados
     slogan: Plataforma de Crowdfunding para ONG
     all: Ver todo
-    why_comunidar: "<span>¿Por qué Comuni<strong>DAR</strong>?</span>"
+    why_comunidar: "<span>¿Por qué COMUNI<strong>DAR</strong>?</span>"
     easy: FÁCIL
     vital: VITAL
     transparent: TRANSPARENTE
@@ -71,7 +71,8 @@ es:
     card:
       goal: "de $%{goal}"
       pledgers: "%{count} Donadores"
-      days_left: "%{count} Días Restantes"
+      days_left: "Días Restantes"
+      raised: 'Recaudado'
     categories:
       education: Educación
       social: Social

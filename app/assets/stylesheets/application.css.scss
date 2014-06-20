@@ -10,13 +10,24 @@
 /* COLORS */
 
 $violet: #723270;
+$green: #40E246;
 
 /* HEADER */
 
 #header {
-  padding: 30px 0 20px 0;
+
+  padding: 30px 100px 12px 0;
+
+  #brand {
+    margin-left: 6.5%;
+  }
 
   #header-search {
+
+    input[type='search'] {
+      width: 186px;
+      margin-left: 30px;
+    }
 
     input[type='image'] {
       position: relative;
@@ -24,6 +35,21 @@ $violet: #723270;
       height: 34px
     }
 
+    a {
+      margin-left: 10px;
+    }
+
+  }
+
+  #header-pills {
+
+    margin-top: 15px;
+
+    a {
+      padding: 4px 15px;
+      text-transform: uppercase;
+      color: $green;
+    }
   }
 }
 
@@ -32,7 +58,15 @@ $violet: #723270;
 
 #content {
 
-  margin: 20px 0 40px 0;
+  margin: 30px 0 40px 0;
+  text-align: justify;
+
+  #header-carousel {
+
+    img {
+      height: 395px;
+    }
+  }
 
   #campaigns-title {
     margin: 30px 0;
@@ -51,12 +85,12 @@ $violet: #723270;
   #slogan-images {
     margin: 10px 0;
     text-align: center;
-    font-size: 15px;
+    font-size: 22px;
     font-weight: bold;
 
     img {
-      width: 90px;
-      height: 90px;
+      width: 120px;
+      height: 120px;
       margin-bottom: 15px;
     }
   }
@@ -66,6 +100,11 @@ $violet: #723270;
 /* FOOTER */
 
 #footer {
+
+  a {
+    color: white;
+  }
+
   background-color: black;
   padding: 10px 280px;
   text-align: center;

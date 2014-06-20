@@ -1,8 +1,7 @@
 - if campaigns.empty?
   p
     = t('application.no_results')
-.container
-  .row
-    - campaigns.each do |c|
-      = render 'campaigns/card', locals: { campaign: c }
+.row
+  - campaigns.each do |c|
+    = render 'campaigns/card', locals: { campaign: c }
 = paginate campaigns

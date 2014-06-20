@@ -4,7 +4,7 @@ en:
     no_results: No results found
     slogan: Crowdfunding platform for non-profits
     all: See all
-    why_comunidar: "<span>Why Comuni<strong>DAR</strong>?</span>"
+    why_comunidar: "<span>Why COMUNI<strong>DAR</strong>?</span>"
     easy: EASY
     vital: VITAL
     transparent: TRANSPARENT
@@ -71,7 +71,8 @@ en:
     card:
       goal: "of $%{goal}"
       pledgers: "%{count} Donors"
-      days_left: "%{count} Remaining Days"
+      days_left: "Remaining Days"
+      raised: 'Raised'
     categories:
       education: Education
       social: Social

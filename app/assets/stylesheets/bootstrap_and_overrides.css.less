@@ -28,10 +28,48 @@
 // Example:
 // @linkColor: #ff0000;
 
+@green: #40E246;
+@violet: #723270;
+
 body {
 
-  input, a.btn.btn-primary {
+  a:hover, a:focus, a:visited {
+    color: white;
+    text-decoration: none;
+  }
+
+  input, a.btn.btn-primary, .btn-lg, .btn-group-lg > .btn {
     border-radius: 0 !important;
+  }
+
+  .btn.btn-green {
+    background-color: @green;
+    border-color: @green;
+  }
+
+  .btn.btn-violet {
+    background-color: @violet;
+    border-color: @violet;
+  }
+
+  .nav-pills > li > a {
+    border-radius: 0;
+    border: 1px solid @green;
+  }
+
+  .nav > li > a:hover, .nav > li > a:focus {
+    background-color: transparent;
+  }
+
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+  }
+
+  #content {
+
+    .thumbnail {
+      padding: 0;
+    }
   }
 
 }

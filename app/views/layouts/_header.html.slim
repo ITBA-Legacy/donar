@@ -1,4 +1,4 @@
-.col-sm-4.pull-left
+#brand.col-sm-4.pull-left
   = link_to root_path do
     = image_tag 'logo.png'
 .col-sm-7.pull-right
@@ -9,24 +9,38 @@
           #header-search.pull-left
             = search_field_tag 'query', nil, class: 'form-control', placeholder: t('campaigns.search')
             = image_submit_tag 'search.png'
-          = link_to t('users.profile'), '#', class: 'btn btn-primary'
-  .row
+            - if user_signed_in?
+              = link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete,
+                        class: 'btn btn-primary btn-green'
+            - else
+              = link_to t('devise.sessions.sign_in'), new_user_session_path,
+                        class: 'btn btn-primary btn-green'
+
+  #header-pills.row
     ul.nav.nav-pills.pull-right
-      - if user_signed_in?
-        li
-          = link_to t('users.profile'), current_user
-        li
-          = link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete
-      - else
-        li
-          = link_to t('devise.sessions.sign_in'), new_user_session_path
-        li
-          = link_to t('devise.sessions.sign_in_with_facebook'),
-            user_omniauth_authorize_path(:facebook)
-        li
-          = link_to t('devise.sessions.sign_in_with_google'),
-            user_omniauth_authorize_path(:google_oauth2)
-        li
-          = link_to t('devise.sessions.sign_in_with_twitter'),
-            user_omniauth_authorize_path(:twitter)
+      li
+        = link_to t('application.footer.requests'), '#'
+      li
+        = link_to t('application.footer.how_to'), '#'
+      li
+        = link_to t('application.footer.public'), '#'
+      li
+        = link_to t('application.footer.who_are_we'), '#'
+      / - if user_signed_in?
+      /   li
+      /     = link_to t('users.profile'), current_user
+      /   li
+      /     = link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete
+      / - else
+      /   li
+      /     = link_to t('devise.sessions.sign_in'), new_user_session_path
+      /   li
+      /     = link_to t('devise.sessions.sign_in_with_facebook'),
+      /       user_omniauth_authorize_path(:facebook)
+      /   li
+      /     = link_to t('devise.sessions.sign_in_with_google'),
+      /       user_omniauth_authorize_path(:google_oauth2)
+      /   li
+      /     = link_to t('devise.sessions.sign_in_with_twitter'),
+      /       user_omniauth_authorize_path(:twitter)
 

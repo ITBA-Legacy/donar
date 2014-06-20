@@ -19,4 +19,5 @@
     .col-md-4
       = f.text_area :description, class: 'form-control col-md-2', required: true
   p
-    = link_to_remove_association t('helpers.submit.perk.remove'), f, class: 'btn btn-warning'
+    = link_to_remove_association t('helpers.submit.perk.remove'), f,
+                                 class: 'btn btn-primary btn-green'

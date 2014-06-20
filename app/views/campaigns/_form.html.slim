@@ -60,10 +60,11 @@
       #perks
         = f.fields_for :perks do |f_perk|
           = render 'perk_fields', f: f_perk
-        = link_to_add_association t('helpers.submit.perk.new'), f, :perks, class: 'btn btn-info'
+        = link_to_add_association t('helpers.submit.perk.new'), f, :perks,
+                                  class: 'btn btn-primary btn-violet'
       .form-group
         .col-sm-2.text-center#next-button-container
-          #next-button.btn.btn-primary.btn-lg= t 'campaigns.next'
+          #next-button.btn.btn-primary.btn-violet.btn-lg= t 'campaigns.next'
     #second-step.tab-pane.fade
       .col-sm-12.tabbed-form
         .form-group
@@ -71,7 +72,7 @@
           .col-sm-8
             = f.file_field :main_image, class: 'form-control col-sm-2'
             - if campaign.main_image.present?
-              =image_tag campaign.main_image
+              = image_tag campaign.main_image
         .form-group
           = f.label :video, class: 'control-label col-sm-2'
           .col-sm-8
@@ -86,7 +87,7 @@
             = tinymce
         .form-group
           .col-sm-2#previous-button-container.text-center
-            #previous-button.btn.btn-primary.btn-lg= t 'campaigns.previous'
+            #previous-button.btn.btn-primary.btn-violet.btn-lg= t 'campaigns.previous'
         .form-group
           .col-sm-offset-2.col-sm-10
-            = f.submit nil, class: 'btn btn-primary btn-lg'
+            = f.submit nil, class: 'btn btn-primary btn-lg btn-violet'

@@ -63,13 +63,13 @@ legend
       p
         = link_to t('helpers.submit.campaign.edit'),
                   edit_organization_campaign_path(@campaign.organization, @campaign),
-                  class: 'btn btn-primary'
+                  class: 'btn btn-primary btn-violet'
 .row
   .col-md-6
     p
       = link_to t('campaigns.constribute'),
                 new_organization_campaign_contribution_path(@campaign.organization, @campaign),
-                class: 'btn btn-primary'
+                class: 'btn btn-primary btn-violet'
 - if @campaign.next_unachieved_milestone.present?
   .row
     .col-md-6
@@ -77,7 +77,7 @@ legend
         = link_to t('campaigns.achieve_milestone'),
                   achieve_organization_campaign_milestone_path(@campaign.organization,
                     @campaign, @campaign.next_unachieved_milestone),
-                  class: 'btn btn-primary'
+                  class: 'btn btn-primary btn-violet'
 .row
   .col-md-12
     legend
@@ -86,7 +86,7 @@ legend
 .row
   .col-md-6
     p
-      = link_to Organization.model_name.human, parent_url, class: 'btn btn-primary'
+      = link_to Organization.model_name.human, parent_url, class: 'btn btn-primary btn-violet'
 .row
   .col-md-12
     legend
@@ -97,4 +97,4 @@ legend
   .col-md-6
     p
       = link_to t('helpers.submit.comment.new'), new_organization_campaign_comment_path(@campaign.organization, @campaign),
-                class: 'btn btn-primary'
+                class: 'btn btn-primary btn-violet'

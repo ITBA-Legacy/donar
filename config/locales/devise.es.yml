@@ -44,8 +44,8 @@ es:
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
-      sign_out: "Sign out"
-      sign_in: "Sign in"
+      sign_out: "Salir"
+      sign_in: "Ingresar"
       sign_in_with_facebook: "Sign in with Facebook"
       sign_in_with_google: "Sign in with Google"
     unlocks:
