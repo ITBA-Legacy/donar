@@ -84,6 +84,11 @@ en:
     milestone_achieved: Milestone achieved
     constribute: Contribute
     search: Search
+  milestones:
+    achieved: Achieved
+    approved: Approved
+    rejected: Rejected
+    notAchieved: Not Achieved
 
 
 
@@ -303,3 +308,4 @@ en:
     remove: Remove
     approve: Approve
     reject: Reject
+    achieve: Achieve
