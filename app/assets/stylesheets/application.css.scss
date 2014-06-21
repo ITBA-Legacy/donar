@@ -11,6 +11,9 @@
 
 $violet: #723270;
 $green: #40E246;
+$facebook-blue: #315EAF;
+$twitter-blue: #31B6EB;
+$google-red: #F03B3B;
 
 /* HEADER */
 
@@ -18,11 +21,83 @@ $green: #40E246;
 
   padding: 30px 100px 12px 0;
 
+
+
+  #login-modal {
+
+    .modal-dialog {
+      width: 475px;
+      margin-top: 115px;
+
+      .modal-content {
+        border-radius: 0;
+
+        .modal-header {
+          background-color: $green;
+          height: 63px;
+          text-align: center;
+          text-transform: uppercase;
+          color: white;
+          margin-bottom: 20px;
+
+          .modal-title {
+            padding: 5px;
+          }
+        }
+
+        .modal-body {
+          padding: 20px 40px 0 40px;
+          color: gray;
+
+          a {
+            color: gray;
+          }
+
+          input[type='submit'] {
+            display: none;
+          }
+        }
+
+        .modal-footer {
+          text-align: center;
+
+          .omniauth-button {
+            margin-bottom: 10px;
+            width: 390px;
+            padding: 8px;
+            color: white;
+          }
+
+          #btn-facebook {
+            background-color: $facebook-blue;
+            border-color: $facebook-blue;
+          }
+
+          #btn-twitter {
+            background-color: $twitter-blue;
+            border-color: $twitter-blue;
+          }
+
+          #btn-google {
+            background-color: $google-red;
+            border-color: $google-red;
+          }
+        }
+
+      }
+
+    }
+  }
+
   #brand {
     margin-left: 6.5%;
   }
 
   #header-search {
+
+    a:hover, a:focus, a:visited {
+      color: white;
+    }
 
     input[type='search'] {
       width: 186px;
