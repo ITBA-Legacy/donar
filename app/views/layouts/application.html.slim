@@ -12,7 +12,7 @@ html lang = I18n.locale
     .container
       #content.row
         - flash.each do |name, msg|
-          = content_tag :div, msg, class: 'alert alert-#{name}'
+          = content_tag :div, msg, class: flash_class(name)
         = yield
     #footer.row
       = render 'layouts/footer'

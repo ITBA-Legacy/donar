@@ -17,6 +17,8 @@ es:
       privacy: Políticas de Privacidad
     email: Email
     password: Contraseña
+    separator: ','
+    delimiter: '.'
   helpers:
     submit:
       comment:
@@ -75,6 +77,7 @@ es:
       pledgers: "%{count} Donadores"
       days_left: "Días Restantes"
       raised: 'Recaudado'
+      completed: 'Completado'
     categories:
       education: Educación
       social: Social

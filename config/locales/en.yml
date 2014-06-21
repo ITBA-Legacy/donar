@@ -17,6 +17,8 @@ en:
       privacy: Privacy Politics
     email: Email
     password: Password
+    separator: '.'
+    delimiter: ','
   helpers:
     submit:
       comment:
@@ -75,6 +77,7 @@ en:
       pledgers: "%{count} Donors"
       days_left: "Remaining Days"
       raised: 'Raised'
+      completed: 'Completed'
     categories:
       education: Education
       social: Social

@@ -49,7 +49,7 @@ module CampaignsCreationHelper
       1.upto(times) do |time|
         Milestone.create(
           name: Faker::Commerce.product_name,
-          description: Faker::Lorem.sentence,
+          description: Faker::Lorem.paragraph,
           goal_percentage: rand,
           campaign: campaign
         )
@@ -58,12 +58,14 @@ module CampaignsCreationHelper
 
     def create_contributions(campaign, times)
       1.upto(times) do |time|
+        amount = rand(10..2000)
         contribution = Contribution.create(
           user: User.all.sample,
           perk: campaign.perks.sample,
-          amount: rand(10..2000),
+          amount: amount,
           campaign: campaign
         )
+        campaign.add_contribution(amount)
         Purchase.create(status: :success, contribution: contribution)
       end
     end

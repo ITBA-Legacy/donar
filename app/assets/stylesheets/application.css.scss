@@ -21,8 +21,6 @@ $google-red: #F03B3B;
 
   padding: 30px 100px 12px 0;
 
-
-
   #login-modal {
 
     .modal-dialog {
@@ -68,20 +66,6 @@ $google-red: #F03B3B;
             color: white;
           }
 
-          #btn-facebook {
-            background-color: $facebook-blue;
-            border-color: $facebook-blue;
-          }
-
-          #btn-twitter {
-            background-color: $twitter-blue;
-            border-color: $twitter-blue;
-          }
-
-          #btn-google {
-            background-color: $google-red;
-            border-color: $google-red;
-          }
         }
 
       }
@@ -131,6 +115,21 @@ $google-red: #F03B3B;
 
 /* CONTENT */
 
+#btn-facebook {
+  background-color: $facebook-blue;
+  border-color: $facebook-blue;
+}
+
+#btn-twitter {
+  background-color: $twitter-blue;
+  border-color: $twitter-blue;
+}
+
+#btn-google_oauth2 {
+  background-color: $google-red;
+  border-color: $google-red;
+}
+
 #content {
 
   margin: 30px 0 40px 0;
@@ -149,6 +148,10 @@ $google-red: #F03B3B;
     color: white;
     font-size: 20px;
     padding: 5px 20px;
+
+    a {
+      color: white;
+    }
   }
 
   #slogan {
@@ -168,6 +171,12 @@ $google-red: #F03B3B;
       height: 120px;
       margin-bottom: 15px;
     }
+  }
+
+  .omniauth-button {
+    margin-bottom: 10px;
+    padding: 8px;
+    color: white;
   }
 }
 

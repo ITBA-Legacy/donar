@@ -1,5 +1,5 @@
 legend
-  = t('devise.registrations.sign_in')
+  = t('devise.sessions.sign_in')
 = form_for(resource, as: resource_name, url: session_path(resource_name),
                     html: { class: "form-horizontal", role: "form" }) do |f|
   .form-group
@@ -15,7 +15,7 @@ legend
       .checkbox
         .col-md-4.col-md-offset-2
           = f.check_box :remember_me
-          = f.label :remember_me
+          = f.label t('devise.sessions.remember_me')
   .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit t('devise.sessions.sign_in'), class: "btn btn-primary btn-green"
