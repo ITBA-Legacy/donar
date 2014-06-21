@@ -62,6 +62,13 @@
           = render 'perk_fields', f: f_perk
         = link_to_add_association t('helpers.submit.perk.new'), f, :perks,
                                   class: 'btn btn-primary btn-violet'
+      legend
+        = Milestone.model_name.human(count: 2)
+      #milestones
+        = f.fields_for :milestones do |f_milestone|
+          = render 'milestone_fields', f: f_milestone
+        = link_to_add_association t('helpers.submit.milestone.new'), f, :milestones,
+                                  class: 'btn btn-primary btn-violet'
       .form-group
         .col-sm-2.text-center#next-button-container
           #next-button.btn.btn-primary.btn-violet.btn-lg= t 'campaigns.next'

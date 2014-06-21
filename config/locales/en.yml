@@ -43,6 +43,11 @@ en:
         new: "New Perk"
         edit: "Edit Perk"
         remove: "Remove Perk"
+      milestone:
+        create: "Create %{model}"
+        new: "New Milestone"
+        edit: "Edit Milestone"
+        remove: "Remove Milestone"
       user:
         edit: "Edit Profile"
         edit_password: "Edit Password"

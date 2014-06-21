@@ -105,6 +105,7 @@ es:
         name: Nombre
         description: Descripción
         goal_percentage: Porcentaje del Objetivo
+        done_date: Fecha Límite
         aasm_state: Estado
       purchase:
         status: Estado

@@ -43,6 +43,11 @@ es:
         new: "Nuevo Beneficio"
         edit: "Editar Beneficio"
         remove: "Remover Beneficio"
+      milestone:
+        create: "Crear %{model}"
+        new: "Nuevo Hito"
+        edit: "Editar Hito"
+        remove: "Remover Hito"
       user:
         edit: "Editar Perfil"
         edit_password: "Editar Contraseña"
