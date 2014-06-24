@@ -4,6 +4,7 @@ Donar::Application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   root 'application#index'
+  get '/about', to: 'application#about'
 
   # Users Routes
 
