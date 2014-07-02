@@ -104,5 +104,6 @@ en:
         goal_percentage: Goal Percentage
         done_date: Deadline
         aasm_state: State
+        amount: Amount
       purchase:
         status: Status

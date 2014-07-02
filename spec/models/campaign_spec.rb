@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe Campaign do
 
-  let(:campaign) { build(:campaign) }
-
   describe '#create' do
+
+    let(:campaign) { build(:campaign) }
 
     context 'Creating an invalid campaign' do
 
@@ -100,10 +100,46 @@ describe Campaign do
 
   describe '#add_contribution' do
 
-    it 'increases the contribution' do
-      expect { campaign.add_contribution(10) }.to change(campaign, :contribution).by(10)
+    let!(:campaign) { create(:campaign) }
+    let!(:milestone1) { create(:milestone, campaign: campaign) }
+    let!(:milestone2) { create(:milestone, campaign: campaign) }
+
+    context 'add one contribution' do
+      it 'add a contribution of 10' do
+        expect { campaign.add_contribution(10) }.to change(campaign, :contribution).by(10)
+      end
     end
 
+    context 'until fully funded' do
+      it 'add contributions until funding the campaign' do
+        expect(campaign.pending?).to be true
+        campaign.approve
+        expect(campaign.approved?).to be true
+        campaign.start
+        expect(campaign.started_not_funded?).to be true
+        campaign.add_contribution(100) while campaign.goal > campaign.contribution
+        expect(campaign.closed_funded?).to be true
+      end
+    end
+
+    context 'until partially funded' do
+      it 'add a contribution with the amount of the first milestone (partial funding)' do
+        campaign.approve
+        campaign.start
+        campaign.add_contribution(milestone1.amount)
+        campaign.close
+        expect(campaign.closed_partially_funded?).to be true
+      end
+    end
+
+    context 'no contributions' do
+      it 'change states without funding' do
+        campaign.approve
+        campaign.start
+        campaign.close
+        expect(campaign.closed_not_funded?).to be true
+      end
+    end
   end
 
 end

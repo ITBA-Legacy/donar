@@ -3,7 +3,7 @@ ActiveAdmin.register Campaign do
   permit_params :name, :description, :goal, :deadline, :minimum, :category, :locality,
                 :organization_id, :short_description,
                 perks_attributes: [:id, :amount, :name, :maximum, :description, :_destroy],
-                milestones_attributes: [:id, :name, :description, :goal_percentage, :_destroy]
+                milestones_attributes: [:id, :name, :description, :amount, :_destroy]
 
   index do
     selectable_column
@@ -61,7 +61,7 @@ ActiveAdmin.register Campaign do
       f.has_many :milestones do |mf|
         mf.input :name
         mf.input :description
-        mf.input :goal_percentage, min: 0.0, max: 1.0
+        mf.input :amount, min: 1.0
         mf.input :_destroy, as: :boolean, required: false, label: t('active_admin.remove')
       end
     end
@@ -108,9 +108,13 @@ ActiveAdmin.register Campaign do
         table_for campaign.milestones do
           column Milestone.human_attribute_name(:name), :name
           column Milestone.human_attribute_name(:description), :description
-          column Milestone.human_attribute_name(:goal_percentage), :goal_percentage
           column Milestone.human_attribute_name(:aasm_state) do |milestone|
             t("milestones.states.#{milestone.aasm_state}")
+          end
+          column Milestone.human_attribute_name(:amount), :amount
+          column do
+            link_to t('active_admin.approve'), '#', class: 'button',
+                                                    onclick: 'alert("Hito Aprobado")'
           end
           column do |milestone|
             if milestone.aasm_state == 'achieved'

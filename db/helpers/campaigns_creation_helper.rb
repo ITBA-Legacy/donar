@@ -19,9 +19,9 @@ module CampaignsCreationHelper
       campaign = Campaign.create(
         name: "Campaign #{time}",
         description: Faker::Lorem.sentence,
-        goal: rand(5000..80000),
         deadline: DateTime.current + rand(10..60).days,
         minimum: 1.0,
+        goal: 1.0, # Then this will be updated by milestones
         category: Campaign::CATEGORIES.sample.to_s,
         locality: Faker::Address.city,
         short_description: Faker::Lorem.sentence,
@@ -29,6 +29,7 @@ module CampaignsCreationHelper
       )
       create_perks(campaign, rand(2..10))
       create_milestones(campaign, rand(2..10))
+      update_goal(campaign)
       create_contributions(campaign, rand(0..30))
       campaign.save!
     end
@@ -50,10 +51,15 @@ module CampaignsCreationHelper
         Milestone.create(
           name: Faker::Commerce.product_name,
           description: Faker::Lorem.paragraph,
-          goal_percentage: rand,
+          amount: rand(1..20000),
           campaign: campaign
         )
       end
+    end
+
+    def update_goal(campaign)
+      campaign.goal = 0.0
+      campaign.milestones.each { | milestone | campaign.goal += milestone.amount }
     end
 
     def create_contributions(campaign, times)
