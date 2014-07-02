@@ -124,11 +124,8 @@ describe Campaign do
 
     context 'until partially funded' do
       it 'add a contribution with the amount of the first milestone (partial funding)' do
-        expect(campaign.pending?).to be true
         campaign.approve
-        expect(campaign.approved?).to be true
         campaign.start
-        expect(campaign.started_not_funded?).to be true
         campaign.add_contribution(milestone1.amount)
         campaign.close
         expect(campaign.closed_partially_funded?).to be true
@@ -137,11 +134,8 @@ describe Campaign do
 
     context 'no contributions' do
       it 'change states without funding' do
-        expect(campaign.pending?).to be true
         campaign.approve
-        expect(campaign.approved?).to be true
         campaign.start
-        expect(campaign.started_not_funded?).to be true
         campaign.close
         expect(campaign.closed_not_funded?).to be true
       end
