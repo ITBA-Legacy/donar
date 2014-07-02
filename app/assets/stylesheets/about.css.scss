@@ -50,4 +50,16 @@ $green: #40E246;
     font-size: 18px;
     padding: 5px 20px;
   }
+
+  #about-sponsor {
+    div{
+      text-align: center;
+      a{
+        img{
+          margin: 30px 100px;
+          width:300px;
+        }
+      }
+    }
+  }
 }
