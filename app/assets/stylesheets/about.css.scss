@@ -3,13 +3,13 @@
 $violet: #723270;
 $green: #40E246;
 
-#about_us {
+#about-us {
 
   margin: 30px 0 40px 0;
   text-align: justify;
   font-family: Helvetica Neue;
 
-  #about-title {
+  .about-title {
     margin: 30px 0;
     background-color: $violet;
     color: white;
@@ -21,7 +21,7 @@ $green: #40E246;
     }
   }
 
-  #about-subtitle {
+  .about-subtitle {
     margin: 30px 0;
     background-color: $green;
     color: white;
@@ -33,7 +33,7 @@ $green: #40E246;
     }
   }
 
-  #about-text {
+  .about-text {
     margin: 30px 0;
     color: black;
     font-size: 18px;
@@ -43,15 +43,15 @@ $green: #40E246;
     }
   }
 
-  #about-list {
-    list-style-image: url('icn-meta.png');
+  .about-list {
+    list-style-image: asset-url('icn-meta.png');
     margin: 30px 0;
     color: black;
     font-size: 18px;
     padding: 5px 20px;
   }
 
-  #about-sponsor {
+  .about-sponsor {
     div{
       text-align: center;
       a{
