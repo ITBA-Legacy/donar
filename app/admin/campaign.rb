@@ -108,7 +108,6 @@ ActiveAdmin.register Campaign do
         table_for campaign.milestones do
           column Milestone.human_attribute_name(:name), :name
           column Milestone.human_attribute_name(:description), :description
-          column Milestone.human_attribute_name(:goal_percentage), :goal_percentage
           column Milestone.human_attribute_name(:aasm_state) do |milestone|
             t("milestones.states.#{milestone.aasm_state}")
           end
