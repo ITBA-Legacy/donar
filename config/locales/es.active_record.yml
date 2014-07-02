@@ -36,7 +36,10 @@ es:
           attributes:
             amount:
               not_a_number: Cantidad inválida
-
+        user:
+          attributes:
+            email:
+              already_confirmed: Email ya confirmado
     models:
       comment:
         one: Comentario

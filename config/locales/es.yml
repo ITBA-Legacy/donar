@@ -254,6 +254,7 @@ es:
       wrong_length:
         one: longitud errónea (debe ser de 1 caracter)
         other: longitud errónea (debe ser de %{count} caracteres)
+      not_saved: Ocurrió un error
     template:
       body:  'Revise que los siguientes campos sean válidos:'
       header:
