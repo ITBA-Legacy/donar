@@ -47,7 +47,7 @@ es:
       campaign:
         one: Campaña
         other: Campañas
-      constribution:
+      contribution:
         one: Contribución
         other: Contribuciones
       perk:
@@ -82,12 +82,18 @@ es:
         created_at: Fecha de Creación
       contribution:
         amount: Donación
+        created_at: Fecha de donación
+        campaign: Campaña
+        perk: Beneficio
+        status: Estado
       user:
         created_at: Fecha de ingreso
         full_name: Nombre
         email: Email
         first_name: Nombre
         last_name: Apellido
+        last_sign_in_at: Ultimo ingreso
+        sign_in_count: Cantidad de ingresos
         avatar: Imagen de Perfil
         password: Contraseña
         password_confirmation: Repetir Contraseña

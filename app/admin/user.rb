@@ -18,12 +18,29 @@ ActiveAdmin.register User do
   filter :last_name
   filter :email
 
-  show do
+  show do |user|
     attributes_table do
       row :email
       row :first_name
       row :last_name
       row :avatar
+    end
+    panel Contribution.model_name.human(count: 2) do
+      if user.contributions.empty?
+        t('application.no_results')
+      else
+        table_for user.contributions do
+          column Contribution.human_attribute_name(:amount), :amount do |contribution|
+            "$ #{contribution.amount}"
+          end
+          column Contribution.human_attribute_name(:campaign), :campaign
+          column Contribution.human_attribute_name(:perk), :perk
+          column Contribution.human_attribute_name(:created_at), :created_at
+          column Contribution.human_attribute_name(:status), :status do |contribution|
+            t("purchase.status.#{contribution.purchase.status}")
+          end
+        end
+      end
     end
   end
 
@@ -35,6 +52,5 @@ ActiveAdmin.register User do
       f.actions
     end
   end
-
 
 end
