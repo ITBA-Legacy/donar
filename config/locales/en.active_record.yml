@@ -84,7 +84,7 @@ en:
         created_at: Contribution date
         campaign: Campaign
         perk: Perk
-        status: Status
+        user: Contributor
       user:
         created_at: Joined
         full_name: Name

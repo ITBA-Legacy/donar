@@ -36,12 +36,13 @@ ActiveAdmin.register User do
           column Contribution.human_attribute_name(:campaign), :campaign
           column Contribution.human_attribute_name(:perk), :perk
           column Contribution.human_attribute_name(:created_at), :created_at
-          column Contribution.human_attribute_name(:status), :status do |contribution|
+          column Purchase.human_attribute_name(:status), :status do |contribution|
             t("purchase.status.#{contribution.purchase.status}")
           end
         end
       end
     end
+    active_admin_comments
   end
 
   form do |f|

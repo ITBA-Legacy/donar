@@ -85,7 +85,7 @@ es:
         created_at: Fecha de donación
         campaign: Campaña
         perk: Beneficio
-        status: Estado
+        user: Contribuidor
       user:
         created_at: Fecha de ingreso
         full_name: Nombre

@@ -18,16 +18,7 @@ ActiveAdmin.register Campaign do
       t("campaigns.categories.#{campaign.category}")
     end
     column :locality
-    actions defaults: false do
-      link_to t('active_admin.approve'), '#', class: 'button',
-                                              onclick: 'alert("Campaña Aprobada")'
-    end
-    actions defaults: false do
-      link_to t('active_admin.reject'), '#', class: 'button',
-                                             onclick: 'alert("Campaña Rechazada")'
-    end
     actions
-
   end
 
   filter :organization
@@ -128,6 +119,23 @@ ActiveAdmin.register Campaign do
               link_to t('active_admin.achieve'), achieve_milestone_admin_campaign_path(milestone),
                       class: 'button'
             end
+          end
+        end
+      end
+    end
+    panel Contribution.model_name.human(count: 2) do
+      if campaign.contributions.empty?
+        t('application.no_results')
+      else
+        table_for campaign.contributions do
+          column Contribution.human_attribute_name(:amount), :amount do |contribution|
+            "$ #{contribution.amount}"
+          end
+          column Contribution.human_attribute_name(:user), :user
+          column Contribution.human_attribute_name(:perk), :perk
+          column Contribution.human_attribute_name(:created_at), :created_at
+          column Purchase.human_attribute_name(:status), :status do |contribution|
+            t("purchase.status.#{contribution.purchase.status}")
           end
         end
       end
