@@ -47,7 +47,7 @@ en:
       campaign:
         one: Campaign
         other: Campaigns
-      constribution:
+      contribution:
         one: Contribution
         other: Contributions
       perk:
@@ -85,6 +85,10 @@ en:
         created_at: Created at
       contribution:
         amount: Amount
+        created_at: Contribution date
+        campaign: Campaign
+        perk: Perk
+        user: Contributor
       user:
         created_at: Joined
         full_name: Name
@@ -92,6 +96,8 @@ en:
         first_name: First Name
         last_name: Last Name
         avatar: Profile Picture
+        last_sign_in_at: Last sign in at
+        sign_in_count: Sign in count
       admin_user:
         created_at: Joined
         sign_in_count: Sign In count
@@ -108,5 +114,6 @@ en:
         goal_percentage: Goal Percentage
         done_date: Deadline
         aasm_state: State
+        amount: Amount
       purchase:
         status: Status
