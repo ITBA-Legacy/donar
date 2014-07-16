@@ -41,14 +41,14 @@
           .form-group
             = f.password_field :password, autocomplete: 'off', class: 'form-control',
                                placeholder: t('application.password'), required: true
+          .form-group
+            = f.submit t('devise.sessions.sign_in')
           .checkbox
             .pull-left
               = f.check_box :remember_me
               = f.label t('devise.sessions.remember_me')
             .pull-right
               = link_to t('devise.sessions.forgot_password'), new_password_path(:user)
-          .form-group
-            = f.submit t('devise.sessions.sign_in')
       .modal-footer
         .row
           = link_to t('devise.sessions.sign_in_with_facebook'),
