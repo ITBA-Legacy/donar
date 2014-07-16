@@ -18,6 +18,10 @@ class CampaignsController < ApplicationController
     index! { @campaigns = @campaigns.page(params[:page] || 1).per(10) }
   end
 
+  def landing
+    @user = current_user
+  end
+
   private
 
   def resource_params

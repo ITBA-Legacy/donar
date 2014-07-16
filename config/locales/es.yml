@@ -13,6 +13,8 @@ es:
       requests: PEDIDOS
       how_to: CÓMO DONAR
       public: PUBLICA
+      profile: MI PERFIL
+      create_campaign: CREAR CAMPAÑA
       terms: Términos y Condiciones
       privacy: Políticas de Privacidad
     about:
