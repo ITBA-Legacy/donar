@@ -1,4 +1,5 @@
 legend
-  = t('users.organizations')
+  = t('application.landing.choose_organization')
 - if user_signed_in?
-  = render '/organizations/index_table', organizations: @user.organizations.page(1).per(50)
+  = render '/campaigns/landing_table', organizations: @user.organizations
+

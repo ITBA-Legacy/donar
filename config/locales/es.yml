@@ -32,6 +32,8 @@ es:
         goal3: Estimular investigaciones que permitan definir y comprender el Sector Social y su potencialidad para el desarrollo social, cultural y económico.
         goal4: Fomentar un sistema de información y cooperación entre las OSC y los sectores gubernamentales y privados.
         goal5: Apoyar las iniciativas que promuevan el voluntariado.
+    landing:
+      choose_organization: Elija Organización
     email: Email
     password: Contraseña
     separator: ','

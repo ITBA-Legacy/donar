@@ -1,0 +1,14 @@
+- if organizations.empty?
+  p
+    = t('application.no_results')
+- else
+  table.table.table-bordered.table-hover
+    thead
+      tr
+        th
+          = Organization.human_attribute_name(:name)
+    tbody
+    - organizations.each do |organization|
+      tr
+        td
+          = link_to organization.name, organization
