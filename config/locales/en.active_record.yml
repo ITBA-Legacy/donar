@@ -77,6 +77,7 @@ en:
         category: Category
         short_description: Short Description
         locality: Locality
+        organization: Organization
         contribution: Total Contribution
         created_at: Created at
       contribution:
