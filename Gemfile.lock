@@ -102,6 +102,8 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    carrierwave-postgresql (0.1.4)
+      carrierwave
     carrierwave-video (0.5.6)
       carrierwave
       streamio-ffmpeg
@@ -260,6 +262,8 @@ GEM
     polyamorous (1.0.0)
       activerecord (>= 3.0)
     polyglot (0.3.4)
+    postgresql_lo_streamer (0.1.2)
+      rails (>= 3.2.8)
     powerpack (0.0.9)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -425,6 +429,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   carrierwave
+  carrierwave-postgresql
   carrierwave-video
   cocoon
   codeclimate-test-reporter
@@ -454,6 +459,7 @@ DEPENDENCIES
   pg
   pg_search
   poltergeist
+  postgresql_lo_streamer
   pry
   pry-nav
   pry-stack_explorer

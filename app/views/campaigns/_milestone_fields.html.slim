@@ -1,11 +1,11 @@
 .nested-fields
   .form-group
-    = f.label :goal_percentage, class: 'control-label col-sm-2'
+    = f.label :amount, class: 'control-label col-sm-2'
     .col-sm-4
       .input-group
         span.input-group-addon
           | $
-        = f.number_field :goal_percentage, class: 'form-control col-sm-2', required: true, min: 0.0
+        = f.number_field :amount, class: 'form-control col-sm-2', required: true, min: 0.0
   .form-group
     = f.label :name, class: 'control-label col-sm-2'
     .col-sm-4

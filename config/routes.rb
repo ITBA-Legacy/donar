@@ -34,7 +34,11 @@ Donar::Application.routes.draw do
           patch :confirm_achieved
         end
       end
-      resources :contributions
+      resources :contributions do
+        collection do
+          get :landing
+        end
+      end
       resources :comments, except: [:edit, :update]
     end
   end
@@ -68,5 +72,12 @@ Donar::Application.routes.draw do
   mount MailPreview => 'mail_view' if Rails.env.development?
 
   # End Mails Preview Routes
+
+  # Image Storage
+
+  mount PostgresqlLoStreamer::Engine => '/user_avatar', as: 'user_avatar'
+  mount PostgresqlLoStreamer::Engine => '/campaign_main_image', as: 'campaign_main_image'
+
+  # End Image Storage
 
 end

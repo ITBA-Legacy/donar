@@ -27,7 +27,6 @@ class Campaign < ActiveRecord::Base
   validates :deadline, timeliness: { on_or_after: -> { Date.current } }
 
   mount_uploader :main_image, CampaignImageUploader
-  mount_uploader :video, CampaignVideoUploader
 
   after_initialize :default_attributes
 

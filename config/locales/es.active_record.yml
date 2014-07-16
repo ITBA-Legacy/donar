@@ -83,12 +83,19 @@ es:
         locality: Localidad
         contribution: Contribución Total
         created_at: Fecha de Creación
+        video: Vimeo video url
+        main_image: Imagen
+        history: Historia
       contribution:
         amount: Donación
         created_at: Fecha de donación
         campaign: Campaña
         perk: Beneficio
         user: Contribuidor
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        phone: Teléfono
       user:
         created_at: Fecha de ingreso
         full_name: Nombre

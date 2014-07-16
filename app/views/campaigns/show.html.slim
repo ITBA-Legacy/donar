@@ -50,8 +50,10 @@ legend
       li.list-group-item
         h4.list-group-item-heading
           = Campaign.human_attribute_name(:video)
-        video controls="" height="240" width="320"
-          source src=@campaign.video type="video/mp4"
+        - if @campaign.video.present?
+          .span12
+            hr
+            iframe allowfullscreen="" frameborder="0" src="//player.vimeo.com/video/#{@campaign.video.split('/').last}" width="500" height="281"
       li.list-group-item
         h4.list-group-item-heading
           = Campaign.human_attribute_name(:main_image)

@@ -83,12 +83,19 @@ en:
         locality: Locality
         contribution: Total Contribution
         created_at: Created at
+        video: Vimeo video url
+        main_image: Image
+        history: History
       contribution:
         amount: Amount
         created_at: Contribution date
         campaign: Campaign
         perk: Perk
         user: Contributor
+        first_name: First Name
+        last_name: Last Name
+        email: Email
+        phone: Phone
       user:
         created_at: Joined
         full_name: Name

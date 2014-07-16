@@ -2,17 +2,15 @@ class ContributionsController < ApplicationController
 
   inherit_resources
 
-  before_action :authenticate_user!
   nested_belongs_to :organization, :campaign
 
-  FIELDS = [:amount]
+  FIELDS = [:amount, :first_name, :last_name, :email]
 
   def create
-
     create! do
       if @contribution.valid?
         # we have to find a way to make the following two lines happen inside inherit resources...
-        @contribution.user = current_user
+        @contribution.user = current_user if current_user.present?
         @contribution.save!
         handle_valid_contribution
       end
@@ -25,9 +23,14 @@ class ContributionsController < ApplicationController
   end
 
   def handle_valid_contribution
-    context = NewContributionContext.new(@contribution, request)
-    context.handle
-    context.redirect_url if context.success?
+    if user_signed_in?
+      context = NewContributionContext.new(@contribution, request)
+      context.handle
+      context.redirect_url if context.success?
+    else
+      Purchase.create(status: :success, contribution: @contribution)
+      organization_campaign_path(@organization, @campaign)
+    end
   end
 
 end
