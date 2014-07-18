@@ -1,0 +1,28 @@
+/* COLORS */
+
+$violet: #723270;
+$green: #40E246;
+
+#landing {
+
+  table{
+    width: 300px;
+
+    tr {
+      background-color: $violet;
+      text-align: center;
+      td{
+        vertical-align: middle;
+        a {
+          font-size: 20px;
+          color: white;
+        }
+        padding-left: 20px;
+      }
+      height: 30px;
+    }
+    :hover{
+      background-color: $green;
+    }
+  }
+}

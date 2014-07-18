@@ -34,6 +34,7 @@ es:
         goal5: Apoyar las iniciativas que promuevan el voluntariado.
     landing:
       choose_organization: Elija Organización
+      no_organizations: Usted no tiene organizaciones
     email: Email
     password: Contraseña
     separator: ','

@@ -34,6 +34,7 @@ en:
         goal5: Support initiatives to promote volunteering.
     landing:
       choose_organization: Choose Organization
+      no_organizations: You don't have any organization
     email: Email
     password: Password
     separator: '.'

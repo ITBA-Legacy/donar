@@ -1,14 +1,13 @@
-- if organizations.empty?
-  p
-    = t('application.no_results')
-- else
-  table.table.table-bordered.table-hover
-    thead
-      tr
-        th
-          = Organization.human_attribute_name(:name)
-    tbody
-    - organizations.each do |organization|
-      tr
-        td
-          = link_to organization.name, organization
+#landing
+  - if organizations.empty?
+    p
+      = t('application.landing.no_organizations')
+    = link_to t('helpers.submit.organization.new'), new_organization_path,
+              class: 'btn btn-primary btn-violet'
+  - else
+    table.table.table-bordered.table-hover
+      tbody
+      - organizations.each do |organization|
+        tr
+          td
+            = link_to organization.name, new_organization_campaign_path(organization)
