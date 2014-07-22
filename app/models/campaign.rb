@@ -54,6 +54,7 @@ class Campaign < ActiveRecord::Base
 
     event :approve do
       transitions from: :pending, to: :approved
+      transitions from: :pending, to: :fund
       transitions from: :rejected, to: :approved
     end
 

@@ -57,7 +57,8 @@ legend
       li.list-group-item
         h4.list-group-item-heading
           = Campaign.human_attribute_name(:main_image)
-        = image_tag @campaign.main_image
+        - if @campaign.main_image.present?
+          = image_tag @campaign.main_image
 
 - if policy(@campaign).update?
   .row

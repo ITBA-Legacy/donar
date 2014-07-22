@@ -87,6 +87,9 @@ en:
     profile: My Profile
     contributions: My Contributions
     link_accounts: Link accounts
+  contributions:
+    mercadopago: Contribute with MercadoPago
+    anonymous: Anonymous Contribution
   campaigns:
     next: Siguiente
     previous: Atrás

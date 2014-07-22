@@ -37,6 +37,7 @@ Donar::Application.routes.draw do
       resources :contributions do
         collection do
           get :landing
+          post :anonymous
         end
       end
       resources :comments, except: [:edit, :update]

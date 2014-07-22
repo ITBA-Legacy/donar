@@ -136,11 +136,23 @@ ActiveAdmin.register Campaign do
           column Contribution.human_attribute_name(:amount), :amount do |contribution|
             "$ #{contribution.amount}"
           end
-          column Contribution.human_attribute_name(:user), :user
+          column Contribution.human_attribute_name(:user), :user do |contribution|
+            if contribution.user.present?
+              contribution.user.full_name
+            elsif contribution.first_name.present? || contribution.last_name.present?
+              "#{contribution.first_name} #{contribution.last_name}"
+            else
+              '-'
+            end
+          end
+          column User.human_attribute_name(:email), :email do |contribution|
+            contribution.email || contribution.user.try(:email) || '-'
+          end
+          column Contribution.human_attribute_name(:phone), :phone
           column Contribution.human_attribute_name(:perk), :perk
           column Contribution.human_attribute_name(:created_at), :created_at
           column Purchase.human_attribute_name(:status), :status do |contribution|
-            t("purchase.status.#{contribution.purchase.status}")
+            t("purchase.status.#{contribution.purchase.try(:status)}")
           end
         end
       end
