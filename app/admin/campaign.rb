@@ -103,10 +103,6 @@ ActiveAdmin.register Campaign do
             t("milestones.states.#{milestone.aasm_state}")
           end
           column Milestone.human_attribute_name(:amount), :amount
-          column do
-            link_to t('active_admin.approve'), '#', class: 'button',
-                                                    onclick: 'alert("Hito Aprobado")'
-          end
           column do |milestone|
             if milestone.aasm_state == 'achieved'
               link_to t('active_admin.approve'), approve_milestone_admin_campaign_path(milestone),

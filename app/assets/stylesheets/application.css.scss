@@ -53,7 +53,12 @@ $google-red: #F03B3B;
           }
 
           input[type='submit'] {
-            display: none;
+            background-color: $green;
+            border: none;
+            margin-bottom: 10px;
+            width: 390px;
+            padding: 8px;
+            color: white;
           }
         }
 

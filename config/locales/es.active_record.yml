@@ -80,6 +80,7 @@ es:
         minimum: Donación mínima
         category: Categoría
         short_description: Descripción breve
+        organization: Organización
         locality: Localidad
         contribution: Contribución Total
         created_at: Fecha de Creación
