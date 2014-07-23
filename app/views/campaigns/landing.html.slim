@@ -1,5 +1,5 @@
 legend
   = t('application.landing.choose_organization')
 - if user_signed_in?
-  = render '/campaigns/landing_table', organizations: @user.organizations
+  = render '/campaigns/landing_table', organizations: current_user.organizations
 

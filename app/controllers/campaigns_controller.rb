@@ -19,7 +19,6 @@ class CampaignsController < ApplicationController
   end
 
   def landing
-    @user = current_user
   end
 
   private
