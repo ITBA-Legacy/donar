@@ -53,14 +53,6 @@ en:
         edit_password: "Edit Password"
         done_edit_password: "Update"
         done_edit_user: "Update"
-
-
-
-
-
-
-
-
   purchase:
     status:
       success: "Confirmed"
@@ -92,26 +84,36 @@ en:
     milestone_achieved: Milestone achieved
     constribute: Contribute
     search: Search
+    new:
+      info: "Comenzá tu campaña y unite a decenas de miles de ONG's que, al igual que vos, recauda fondos a través de ComuniDar"
+      title: "¡Comienza a recaudar fondos en ComuniDar!"
+      category:
+        question: "¿Qué categoría describe mejor tu campaña?"
+        chose: "Elige la categoría que mejor describe tu campaña. Puedes cambiarla después"
+      financing: "¿Cuál es tu meta de financiamiento?"
+      goal: Meta
+      input_message: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim"
+      minimum: "$500 mínimo"
+      who_receives: "¿Qué persona u organización recibirá los fondos de tu campaña?"
+      configure: "CONFIGURA TU CAMPAÑA"
+      basic_info:
+        title: "Datos básicos de la campaña"
+        info: "Tanto el título de tu capaña como una breve descripción de esta se muestran en la ficha de la campaña"
+        small_image: "Imagen pequeña"
+        choose_image: "CARGAR UNA IMAGEN"
+        campaign_title: "Título"
+        description: "Breve descripción"
+        country: "País"
+        city: "Ciudad"
   milestones:
     achieved: Achieved
     approved: Approved
     rejected: Rejected
     notAchieved: Not Achieved
-
-
-
-
-
-
   pundit:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
     constribute: Constribute
-
-
-
-
-
   date:
     abbr_day_names:
     - Sun

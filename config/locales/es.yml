@@ -1,4 +1,5 @@
 es:
+  save: Guardar
   application:
     title: Donar
     no_results: No se encontraron resultados
@@ -40,9 +41,9 @@ es:
         edit: "Editar Contribución"
       perk:
         create: "Crear %{model}"
-        new: "Nuevo Beneficio"
-        edit: "Editar Beneficio"
-        remove: "Remover Beneficio"
+        new: "Nueva Recompenza"
+        edit: "Editar Recompenza"
+        remove: "Remover Recompenza"
       milestone:
         create: "Crear %{model}"
         new: "Nuevo Hito"
@@ -91,6 +92,53 @@ es:
     milestone_achieved: Hito cumplido
     constribute: Contribuir
     search: Buscar
+    configure:
+      title: "Configura tu campaña"
+      text1: "¡Felicitaciones! Ahora estás listo para el próximo paso: contarle a la gente por qué debería financiar tu campaña."
+      text2: "En este momento, nadie más puede ver tu campaña. Puedes editar lo que quieras. Cuando estés satisfecho y listo para recibir financiamiento, haz clic en el botón 'Lanzar' en la última página para hacer visible tu campaña."
+      text3: "Después de lanzar tu campaña, podrás cambiar cualquier parte de esta página EXCEPTO tu meta, el tipo de financiamiento y cualquier recompensa que reclame un colaborador."
+      milestones: "Hitos"
+      milestones_text: "Utiliza $0 para omitir el hito"
+      first_milestone: "Monto tope de 1er hito"
+      second_milestone: "Monto tope de 2do hito"
+      third_milestone: "Monto tope de 3er hito"
+      fourth_milestone: "Monto tope de 4to hito"
+      recipient:
+        individual: Un individuo o grupo de personas
+        registered_company: Una empresa registrada
+        npo_501: Una institución sin fines de lucro registrada como 501(c)(3) en Estados Unidos
+        npo: Una insitución sin fines de lucro registrada en un país distinto de Estados Unidos
+        religious_npo: 'Una organización religiosa'
+      funding_type:
+        title: 'Datos de financiamiento'
+        all: 'Financiamiento flexible - conserva lo que recaudas'
+        partial: 'Financiamiento fijo - todo o nada'
+      perks:
+        title: Tus recompenzas
+      history:
+        title: 'Tu Historia'
+    new:
+      info: "Comenzá tu campaña y unite a decenas de miles de ONG's que, al igual que vos, recauda fondos a través de ComuniDar"
+      title: "¡Comienza a recaudar fondos en ComuniDar!"
+      category:
+        question: "¿Qué categoría describe mejor tu campaña?"
+        chose: "Elige la categoría que mejor describe tu campaña. Puedes cambiarla después"
+      financing: "¿Cuál es tu meta de financiamiento?"
+      goal: Meta
+      input_message: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim"
+      minimum: "$500 mínimo"
+      who_receives: "¿Qué persona u organización recibirá los fondos de tu campaña?"
+      configure: "CONFIGURA TU CAMPAÑA"
+      basic_info:
+        title: "Datos básicos de la campaña"
+        info: "Tanto el título de tu capaña como una breve descripción de esta se muestran en la ficha de la campaña"
+        small_image: "Imagen pequeña"
+        choose_image: "CARGAR UNA IMAGEN"
+        campaign_title: "Título"
+        description: "Breve descripción"
+        country: "País"
+        city: "Ciudad"
+        deadline: "Fecha de finalización"
   milestones:
     states:
       achieved: Cumplido

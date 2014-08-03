@@ -99,8 +99,10 @@ es:
       perk:
         amount: Mínima Donación
         name: Nombre
-        maximum: Máximo
+        maximum: Cantidad disponible
         description: Descripción
+        delivery_date: "Fecha de entrega estimada"
+        requires_address: ¿Requiere dirección de envío?
       milestone:
         name: Nombre
         description: Descripción

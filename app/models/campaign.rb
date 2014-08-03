@@ -17,9 +17,12 @@ class Campaign < ActiveRecord::Base
 
   CATEGORIES = [:education, :social, :health]
 
+  RECIPIENT = [:individual, :registered_company, :npo_501, :npo, :religious_npo]
+  FUNDING_TYPE = [:all, :partial]
+
   validates :category, inclusion: { in: CATEGORIES.map(&:to_s) }
-  validates :name, :description, :goal, :minimum, :short_description, :locality, presence: true
-  validates :minimum, :goal, numericality: { greater_than: 0 }
+  validates :name, :short_description, :locality, presence: true
+  # validates :minimum, :goal, numericality: { greater_than: 0 }
   validates :deadline, timeliness: { on_or_after: -> { Date.current } }
 
   mount_uploader :main_image, CampaignImageUploader

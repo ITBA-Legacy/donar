@@ -49,6 +49,9 @@ Donar::Application.routes.draw do
     end
     member do
       post :approve
+      get :configure
+      post :configure_step2
+      post :configure_step3
     end
   end
 
