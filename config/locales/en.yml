@@ -73,10 +73,16 @@ en:
     contributions: My Contributions
     link_accounts: Link accounts
   campaigns:
+    history: History
+    actualizations: Actualizations
+    comments: Comments
+    backers: Backers
+    benefits: Benefits
     next: Siguiente
     previous: Atrás
     first_step: 'Paso 1'
     second_step: 'Paso 2'
+    collected: 'Collected from'
     card:
       goal: "of $%{goal}"
       pledgers: "%{count} Donors"

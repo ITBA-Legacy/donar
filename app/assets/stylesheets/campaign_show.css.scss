@@ -1,0 +1,35 @@
+$violet: #723270;
+
+#campaign-nav-title {
+    float: left;
+    margin-right: 30px;
+  }
+
+#campaign-ul
+{
+    list-style-type: none;
+    font-size: 20px;
+}
+
+#text-violet
+{
+  color: $violet;
+  font-size: 18px;
+  text-align: left;
+}
+
+#text-bold
+{
+  font-weight: bold;
+}
+
+.fill-width {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.centerize {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}

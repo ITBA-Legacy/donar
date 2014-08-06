@@ -73,10 +73,16 @@ es:
     contributions: Mis Contribuciones
     link_accounts: Vincular cuentas
   campaigns:
+    history: Historia
+    actualizations: Actualizaciones
+    comments: Comentarios
+    backers: Financiadores
+    benefits: Beneficios
     next: Siguiente
     previous: Atrás
     first_step: 'Paso 1'
     second_step: 'Paso 2'
+    collected: 'Recaudados del objetivo de'
     card:
       goal: "de $%{goal}"
       pledgers: "%{count} Donadores"
@@ -89,7 +95,7 @@ es:
       health: Salud
     achieve_milestone: Cumplir Hito
     milestone_achieved: Hito cumplido
-    constribute: Contribuir
+    constribute: Dar
     search: Buscar
   milestones:
     states:
