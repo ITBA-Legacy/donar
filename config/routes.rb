@@ -4,6 +4,7 @@ Donar::Application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   root 'application#index'
+  get '/about', to: 'application#about'
 
   # Users Routes
 
@@ -33,7 +34,12 @@ Donar::Application.routes.draw do
           patch :confirm_achieved
         end
       end
-      resources :contributions
+      resources :contributions do
+        collection do
+          get :landing
+          post :anonymous
+        end
+      end
       resources :comments, except: [:edit, :update]
     end
   end
@@ -70,5 +76,12 @@ Donar::Application.routes.draw do
   mount MailPreview => 'mail_view' if Rails.env.development?
 
   # End Mails Preview Routes
+
+  # Image Storage
+
+  mount PostgresqlLoStreamer::Engine => '/user_avatar', as: 'user_avatar'
+  mount PostgresqlLoStreamer::Engine => '/campaign_main_image', as: 'campaign_main_image'
+
+  # End Image Storage
 
 end

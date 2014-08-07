@@ -173,7 +173,7 @@ class MercadoPago
       return e.message
     end
 
-    @rest_client.get("#{url}#{id?}?access_token=#{access_token}")
+    @rest_client.get("#{url}#{id}?access_token=#{access_token}")
   end
 
   class RestClient

@@ -3,7 +3,7 @@ ActiveAdmin.register Campaign do
   permit_params :name, :description, :goal, :deadline, :minimum, :category, :locality,
                 :organization_id, :short_description,
                 perks_attributes: [:id, :amount, :name, :maximum, :description, :_destroy],
-                milestones_attributes: [:id, :name, :description, :goal_percentage, :_destroy]
+                milestones_attributes: [:id, :name, :description, :amount, :_destroy]
 
   index do
     selectable_column
@@ -18,16 +18,7 @@ ActiveAdmin.register Campaign do
       t("campaigns.categories.#{campaign.category}")
     end
     column :locality
-    actions defaults: false do
-      link_to t('active_admin.approve'), '#', class: 'button',
-                                              onclick: 'alert("Campaña Aprobada")'
-    end
-    actions defaults: false do
-      link_to t('active_admin.reject'), '#', class: 'button',
-                                             onclick: 'alert("Campaña Rechazada")'
-    end
     actions
-
   end
 
   filter :organization
@@ -61,7 +52,7 @@ ActiveAdmin.register Campaign do
       f.has_many :milestones do |mf|
         mf.input :name
         mf.input :description
-        mf.input :goal_percentage, min: 0.0, max: 1.0
+        mf.input :amount, min: 1.0
         mf.input :_destroy, as: :boolean, required: false, label: t('active_admin.remove')
       end
     end
@@ -108,10 +99,10 @@ ActiveAdmin.register Campaign do
         table_for campaign.milestones do
           column Milestone.human_attribute_name(:name), :name
           column Milestone.human_attribute_name(:description), :description
-          column Milestone.human_attribute_name(:goal_percentage), :goal_percentage
           column Milestone.human_attribute_name(:aasm_state) do |milestone|
             t("milestones.states.#{milestone.aasm_state}")
           end
+          column Milestone.human_attribute_name(:amount), :amount
           column do |milestone|
             if milestone.aasm_state == 'achieved'
               link_to t('active_admin.approve'), approve_milestone_admin_campaign_path(milestone),
@@ -129,6 +120,35 @@ ActiveAdmin.register Campaign do
               link_to t('active_admin.achieve'), achieve_milestone_admin_campaign_path(milestone),
                       class: 'button'
             end
+          end
+        end
+      end
+    end
+    panel Contribution.model_name.human(count: 2) do
+      if campaign.contributions.empty?
+        t('application.no_results')
+      else
+        table_for campaign.contributions do
+          column Contribution.human_attribute_name(:amount), :amount do |contribution|
+            "$ #{contribution.amount}"
+          end
+          column Contribution.human_attribute_name(:user), :user do |contribution|
+            if contribution.user.present?
+              contribution.user.full_name
+            elsif contribution.first_name.present? || contribution.last_name.present?
+              "#{contribution.first_name} #{contribution.last_name}"
+            else
+              '-'
+            end
+          end
+          column User.human_attribute_name(:email), :email do |contribution|
+            contribution.email || contribution.user.try(:email) || '-'
+          end
+          column Contribution.human_attribute_name(:phone), :phone
+          column Contribution.human_attribute_name(:perk), :perk
+          column Contribution.human_attribute_name(:created_at), :created_at
+          column Purchase.human_attribute_name(:status), :status do |contribution|
+            t("purchase.status.#{contribution.purchase.try(:status)}")
           end
         end
       end

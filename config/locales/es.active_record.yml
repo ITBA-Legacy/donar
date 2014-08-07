@@ -36,7 +36,10 @@ es:
           attributes:
             amount:
               not_a_number: Cantidad inválida
-
+        user:
+          attributes:
+            email:
+              already_confirmed: Email ya confirmado
     models:
       comment:
         one: Comentario
@@ -47,7 +50,7 @@ es:
       campaign:
         one: Campaña
         other: Campañas
-      constribution:
+      contribution:
         one: Contribución
         other: Contribuciones
       perk:
@@ -77,17 +80,31 @@ es:
         minimum: Donación mínima
         category: Categoría
         short_description: Descripción breve
+        organization: Organización
         locality: Localidad
         contribution: Contribución Total
         created_at: Fecha de Creación
+        video: Vimeo video url
+        main_image: Imagen
+        history: Historia
       contribution:
         amount: Donación
+        created_at: Fecha de donación
+        campaign: Campaña
+        perk: Beneficio
+        user: Contribuidor
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        phone: Teléfono
       user:
         created_at: Fecha de ingreso
         full_name: Nombre
         email: Email
         first_name: Nombre
         last_name: Apellido
+        last_sign_in_at: Ultimo ingreso
+        sign_in_count: Cantidad de ingresos
         avatar: Imagen de Perfil
         password: Contraseña
         password_confirmation: Repetir Contraseña
@@ -109,5 +126,6 @@ es:
         goal_percentage: Porcentaje del Objetivo
         done_date: Fecha Límite
         aasm_state: Estado
+        amount: Monto
       purchase:
         status: Estado

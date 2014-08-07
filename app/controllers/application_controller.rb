@@ -11,6 +11,9 @@ class ApplicationController < ActionController::Base
     @campaigns = Kaminari.paginate_array(Campaign.limit(4)).page(1).per(4)
   end
 
+  def about
+  end
+
   private
 
   def configure_permitted_parameters

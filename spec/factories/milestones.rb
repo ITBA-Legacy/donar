@@ -5,6 +5,6 @@ FactoryGirl.define do
     name { Faker::Lorem.word }
     description { Faker::Lorem.paragraph }
     done_date { Time.current }
-    goal_percentage 1.5
+    amount 100
   end
 end

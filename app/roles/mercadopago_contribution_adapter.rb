@@ -24,6 +24,7 @@ class MercadopagoContributionAdapter < SimpleDelegator
   def mercadopago_data
     { external_reference: purchase.id,
       items:  items,
+      auto_return: 'approved',
       payer: user,
       back_urls: { pending: pending_mercadopago_callback,
                    success: success_mercadopago_callback,

@@ -1,10 +1,14 @@
 # It's a Campaign/Project/Fundriser to raise something.
+# Campaigs funding method will work on the bases of milestones.
+
 class Campaign < ActiveRecord::Base
 
   include PgSearch
   pg_search_scope :search,
                   against: [:name, :description, :short_description],
                   using: { tsearch: { dictionary: 'spanish' } }
+
+  include AASM
 
   belongs_to :organization
   has_many :perks
@@ -26,12 +30,12 @@ class Campaign < ActiveRecord::Base
   validates :deadline, timeliness: { on_or_after: -> { Date.current } }
 
   mount_uploader :main_image, CampaignImageUploader
-  mount_uploader :video, CampaignVideoUploader
 
   after_initialize :default_attributes
 
   def add_contribution(amount)
     update_attributes!(contribution: contribution + amount)
+    fund if contribution >= goal
   end
 
   def next_unachieved_milestone
@@ -41,7 +45,56 @@ class Campaign < ActiveRecord::Base
     nil
   end
 
+  # State machine that goes through the diferent states
+  aasm do
+    state :pending, initial: true
+    state :approved
+    state :rejected
+    state :started_not_funded
+    state :closed_funded
+    state :closed_partially_funded
+    state :closed_not_funded
+
+    event :approve do
+      transitions from: :pending, to: :approved
+      transitions from: :pending, to: :fund
+      transitions from: :rejected, to: :approved
+    end
+
+    event :reject do
+      transitions from: :pending, to: :rejected
+    end
+
+    event :fund do
+      transitions from: :started_not_funded, to: :closed_funded, guard: :funded?
+    end
+
+    event :start do
+      transitions from: :approved, to: :started_not_funded
+    end
+
+    event :close do
+      transitions from: :started_not_funded,
+                  to: :closed_funded,
+                  guard: :funded?
+      transitions from: :started_not_funded,
+                  to: :closed_partially_funded,
+                  guard: :partially_funded?
+      transitions from: :started_not_funded,
+                  to: :closed_not_funded
+    end
+
+  end
+
   private
+
+  def funded?
+    goal <= contribution
+  end
+
+  def partially_funded?
+    milestones.first.amount <= contribution
+  end
 
   def default_attributes
     self.contribution ||= 0.0

@@ -17,8 +17,16 @@ es:
       invalid_token: 'Token de autentificación inválido.'
     mailer:
       confirmation_instructions:
+        welcome: '¡Bienvenido %{email}!'
         subject: 'Instrucciones de confirmación'
+        confirm_legend: "Puedes confirmar tu cuenta haciendo click en el siguiente link:"
+        confirm_account: "Confirmar mi cuenta"
       reset_password_instructions:
+        hello: '¡Hola %{email}!'
+        reset_legend: 'Se ha pedido un cambio de contraseña. Puede hacer esto con el siguiente link:'
+        change_password: 'Cambiar contraseña'
+        reset_error: 'Si no has pedido un cambio de contraseña, por favor ignora este email.'
+        reset_warning: 'Tu contraseña no cambiará hasta que no accedas al link superior y crees una nueva.'
         subject: 'Instrucciones de cambio de contraseña'
       unlock_instructions:
         subject: 'Instrucciones de desbloqueo'
@@ -50,6 +58,9 @@ es:
       sign_in_with_twitter: "Ingresar con Twitter"
       sign_in_with_provider: "Ingresar con %{provider}"
       forgot_password: "Olvidé mi contraseña"
+      reset_password_instructions: "Enviarme instrucciones para resetear la constraseña"
+      resend_confirmation_instructions: "Reenviar instrucciones de confirmación"
+      change_password: 'Cambiar contraseña'
       remember_me: "Recordame"
     unlocks:
       send_instructions: 'Recibirás un email con instrucciones para desbloquear tu cuenta en unos minutos'
@@ -57,6 +68,7 @@ es:
       unlocked: 'Tu cuenta ha sido desbloqueada. Inicia sesión para continuar.'
     confirmable:
       didnt_receive_email_confirmation: '¿No has recibido intrucciones de confirmación?'
+      didnt_receive_unlock_instructions: '¿No has recibido intrucciones de desbloqueo?'
     errors:
       messages:
         already_confirmed: "ya fue confirmada. Intenta ingresar."

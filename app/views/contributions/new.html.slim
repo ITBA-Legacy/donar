@@ -1,17 +1,24 @@
+legend
+  = Contribution.model_name.human
 - if @contribution.errors.present?
   .alert.alert-danger
     ul
       - @contribution.errors.each do |attr, msg|
         li= msg
-= form_for [@organization, @campaign, @contribution],
-           html: { class: 'form-horizontal', role: 'form' } do |f|
-  .form-group
-    = f.label :amount, class: 'control-label col-sm-2'
-    .col-md-4
-      .input-group
-        span.input-group-addon
-          | $
-        = f.number_field :amount, class: 'form-control col-md-2', required: true, min: 0.1, step: 'any'
-  .form-group
-    .col-sm-offset-2.col-sm-10
-      = f.submit nil, class: 'btn btn-primary'
+- if user_signed_in?
+  legend
+    = t('contributions.mercadopago')
+  = form_for [@organization, @campaign, @contribution],
+             html: { class: 'form-horizontal', role: 'form' } do |f|
+    .form-group
+      = f.label :amount, class: 'control-label col-sm-2'
+      .col-md-4
+        .input-group
+          span.input-group-addon
+            | $
+          = f.number_field :amount, class: 'form-control col-md-2', required: true, min: 0.1, step: 'any'
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = f.submit nil, class: 'btn btn-primary'
+= render 'anonymous_form', organization: @organization, campaign: @campaign,
+                             contribution: @contribution

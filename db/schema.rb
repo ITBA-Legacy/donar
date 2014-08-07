@@ -62,11 +62,12 @@ ActiveRecord::Schema.define(version: 20140803200454) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "contribution",      default: 0.0
-    t.string   "main_image"
     t.string   "video"
     t.text     "history"
     t.string   "fund_recipient"
     t.string   "funding_type"
+    t.string   "aasm_state"
+    t.integer  "main_image"
   end
 
   add_index "campaigns", ["organization_id"], name: "index_campaigns_on_organization_id", using: :btree
@@ -90,6 +91,10 @@ ActiveRecord::Schema.define(version: 20140803200454) do
     t.float    "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
   end
 
   add_index "contributions", ["campaign_id"], name: "index_contributions_on_campaign_id", using: :btree
@@ -108,7 +113,7 @@ ActiveRecord::Schema.define(version: 20140803200454) do
     t.string   "name"
     t.text     "description"
     t.datetime "done_date"
-    t.integer  "amount"
+    t.float    "amount"
     t.integer  "campaign_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -185,12 +190,12 @@ ActiveRecord::Schema.define(version: 20140803200454) do
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
-    t.string   "avatar"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.integer  "avatar"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

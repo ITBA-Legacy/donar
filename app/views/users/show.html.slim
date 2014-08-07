@@ -2,7 +2,7 @@ legend
   = t('users.profile')
 .col-md-3
   - if @user.avatar.present?
-      = image_tag(@user.avatar.url, height: 150, width: 150)
+      = image_tag(@user.avatar.file.url, height: 150, width: 150)
   - else
       = image_tag('default_avatar.jpg', height: 150, width: 150)
 .col-md-4
