@@ -14,6 +14,8 @@ es:
       requests: PEDIDOS
       how_to: CÓMO DONAR
       public: PUBLICA
+      profile: MI PERFIL
+      create_campaign: CREAR CAMPAÑA
       terms: Términos y Condiciones
       privacy: Políticas de Privacidad
     about:
@@ -31,6 +33,9 @@ es:
         goal3: Estimular investigaciones que permitan definir y comprender el Sector Social y su potencialidad para el desarrollo social, cultural y económico.
         goal4: Fomentar un sistema de información y cooperación entre las OSC y los sectores gubernamentales y privados.
         goal5: Apoyar las iniciativas que promuevan el voluntariado.
+    landing:
+      choose_organization: Elija Organización
+      no_organizations: Usted no tiene organizaciones
     email: Email
     password: Contraseña
     separator: ','

@@ -19,12 +19,11 @@
 
   #header-pills.row
     ul.nav.nav-pills.pull-right
+      - if user_signed_in?
+        li
+          = link_to t('application.footer.profile'), current_user
       li
-        = link_to t('application.footer.requests'), '#'
-      li
-        = link_to t('application.footer.how_to'), '#'
-      li
-        = link_to t('application.footer.public'), '#'
+        = link_to t('application.footer.create_campaign'), landing_campaigns_path
       li
         = link_to t('application.footer.who_are_we'), about_path
 = render 'layouts/login_modal'

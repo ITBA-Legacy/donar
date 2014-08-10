@@ -52,6 +52,7 @@ Donar::Application.routes.draw do
     collection do
       get :search
       post :search
+      get :landing
     end
     member do
       post :approve

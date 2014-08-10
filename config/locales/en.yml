@@ -12,6 +12,8 @@ en:
       who_are_we: WHO ARE WE?
       requests: REQUESTS
       how_to: HOW TO DONATE
+      profile: MY PROFILE
+      create_campaign: CREATE CAMPAIGN
       public: PUBLIC
       terms: Terms and Conditions
       privacy: Privacy Politics
@@ -30,6 +32,9 @@ en:
         goal3: Encourage research to identify and understand the social sector and its potential for social, cultural and economic development.
         goal4: Promoting a system of information and cooperation between CSOs and government and private sectors.
         goal5: Support initiatives to promote volunteering.
+    landing:
+      choose_organization: Choose Organization
+      no_organizations: You don't have any organization
     email: Email
     password: Password
     separator: '.'

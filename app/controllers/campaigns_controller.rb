@@ -46,6 +46,10 @@ class CampaignsController < ApplicationController
     redirect_to campaigns_path
   end
 
+  def landing
+
+  end
+
   private
 
   def resource_params
