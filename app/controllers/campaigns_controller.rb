@@ -7,8 +7,8 @@ class CampaignsController < ApplicationController
 
   FIELDS = [:name, :description, :goal, :deadline, :minimum, :category, :short_description,
             :locality, :main_image, :video, :history,
-            perks_attributes: [:id, :amount, :name, :maximum, :description, :_destroy, :delivery_date,
-            :requires_address]]
+            perks_attributes: [:id, :amount, :name, :maximum, :description,
+                               :_destroy, :delivery_date, :requires_address]]
 
   def search
     @campaigns = Campaign.search(params[:query]).page(params[:page] || 1).per(10)
@@ -20,7 +20,7 @@ class CampaignsController < ApplicationController
   end
 
   def create
-    create!do |success, failure|
+    create!do |success|
       success.html { redirect_to configure_campaign_path(@campaign) }
     end
   end

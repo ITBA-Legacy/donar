@@ -56,9 +56,9 @@ es:
         edit: "Editar Contribución"
       perk:
         create: "Crear %{model}"
-        new: "Nueva Recompenza"
-        edit: "Editar Recompenza"
-        remove: "Remover Recompenza"
+        new: "Nueva Recompensa"
+        edit: "Editar Recompensa"
+        remove: "Remover Recompensa"
       milestone:
         create: "Crear %{model}"
         new: "Nuevo Hito"
