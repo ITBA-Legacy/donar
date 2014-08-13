@@ -66,6 +66,8 @@ class Campaign < ActiveRecord::Base
     end
 
     event :fund do
+      transitions from: :pending, to: :closed_funded, guard: :funded?
+      transitions from: :closed_funded, to: :closed_funded, guard: :funded?
       transitions from: :started_not_funded, to: :closed_funded, guard: :funded?
     end
 

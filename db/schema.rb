@@ -64,10 +64,10 @@ ActiveRecord::Schema.define(version: 20140803200454) do
     t.float    "contribution",      default: 0.0
     t.string   "video"
     t.text     "history"
-    t.string   "fund_recipient"
-    t.string   "funding_type"
     t.string   "aasm_state"
     t.integer  "main_image"
+    t.string   "fund_recipient"
+    t.string   "funding_type"
   end
 
   add_index "campaigns", ["organization_id"], name: "index_campaigns_on_organization_id", using: :btree
