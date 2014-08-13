@@ -88,10 +88,16 @@ en:
     mercadopago: Contribute with MercadoPago
     anonymous: Anonymous Contribution
   campaigns:
+    history: History
+    updates: Updates
+    comments: Comments
+    backers: Backers
+    benefits: Benefits
     next: Siguiente
     previous: Atrás
     first_step: 'Paso 1'
     second_step: 'Paso 2'
+    collected: 'Collected from'
     card:
       goal: "of $%{goal}"
       pledgers: "%{count} Donors"
@@ -102,10 +108,9 @@ en:
       education: Education
       social: Social
       health: Health
-    constribute: Constribute
+    contribute: Contribute
     achieve_milestone: Achieve Milestone
     milestone_achieved: Milestone achieved
-    constribute: Contribute
     search: Search
     new:
       info: "Comenzá tu campaña y unite a decenas de miles de ONG's que, al igual que vos, recauda fondos a través de ComuniDar"
@@ -136,7 +141,7 @@ en:
   pundit:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
-    constribute: Constribute
+    contribute: Contribute
   date:
     abbr_day_names:
     - Sun

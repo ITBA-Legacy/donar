@@ -97,10 +97,16 @@ es:
     mercadopago: Contribuir con MercadoPago
     anonymous: Contribuir Anónimamente
   campaigns:
+    history: Historia
+    updates: Actualizaciones
+    comments: Comentarios
+    backers: Financiadores
+    benefits: Beneficios
     next: Siguiente
     previous: Atrás
     first_step: 'Paso 1'
     second_step: 'Paso 2'
+    collected: 'Recaudados del objetivo de'
     card:
       goal: "de $%{goal}"
       pledgers: "%{count} Donadores"
@@ -113,7 +119,7 @@ es:
       health: Salud
     achieve_milestone: Cumplir Hito
     milestone_achieved: Hito cumplido
-    constribute: Contribuir
+    contribute: Dar
     search: Buscar
     configure:
       title: "Configura tu campaña"
@@ -178,7 +184,7 @@ es:
   pundit:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
-    constribute: Constribuir
+    contribute: Contribuir
 
 
 
