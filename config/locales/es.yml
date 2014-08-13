@@ -74,7 +74,7 @@ es:
     link_accounts: Vincular cuentas
   campaigns:
     history: Historia
-    actualizations: Actualizaciones
+    updates: Actualizaciones
     comments: Comentarios
     backers: Financiadores
     benefits: Beneficios
@@ -95,7 +95,7 @@ es:
       health: Salud
     achieve_milestone: Cumplir Hito
     milestone_achieved: Hito cumplido
-    constribute: Dar
+    contribute: Dar
     search: Buscar
   milestones:
     states:
@@ -113,7 +113,7 @@ es:
   pundit:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
-    constribute: Constribuir
+    contribute: Constribuir
 
 
 

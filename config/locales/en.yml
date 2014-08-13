@@ -74,7 +74,7 @@ en:
     link_accounts: Link accounts
   campaigns:
     history: History
-    actualizations: Actualizations
+    updates: Updates
     comments: Comments
     backers: Backers
     benefits: Benefits
@@ -93,10 +93,9 @@ en:
       education: Education
       social: Social
       health: Health
-    constribute: Constribute
+    contribute: Constribute
     achieve_milestone: Achieve Milestone
     milestone_achieved: Milestone achieved
-    constribute: Contribute
     search: Search
   milestones:
     achieved: Achieved
