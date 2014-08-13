@@ -1,4 +1,4 @@
-legend
+legend#contribution-subheader
   = t('contributions.anonymous')
 = form_for [organization, campaign, contribution],
            url: anonymous_organization_campaign_contributions_path(organization, campaign),
@@ -29,4 +29,4 @@ legend
           = f.number_field :amount, class: 'form-control col-md-2', required: true, min: 0.1, step: 'any'
     .form-group
       .col-sm-offset-2.col-sm-10
-        = f.submit nil, class: 'btn btn-primary'
+        = f.submit nil, class: 'btn btn-violet'
