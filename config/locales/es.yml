@@ -333,3 +333,12 @@ es:
     achieve: Cumplir
   faq:
     title: Preguntas frecuentes
+    question1:
+      title: ¿Cómo donar?
+      answer: Si ha iniciado en sesión en ComuniDar puede hacerlo mediante MercadoPago, seleccionando un monto a donar. Luego será requisito que complete sus datos personales para poder llevar a cabo la operación cuando sea necesario.
+    question2:
+      title: Pregunta 2
+      answer: Cuando éste proyecto haya recibido financiación para ya sea
+    question3:
+      title: ¿Así que sólo me van a estar cobrando si la financiación tiene éxito?
+      answer: ¡Sí! Si un proyecto no está financiado con éxito, nadie paga nada.

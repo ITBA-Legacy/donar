@@ -339,6 +339,11 @@ en:
   faq:
     title: Frequently asked questions
     question1:
-      title:
+      title: How do I pledge?
       answer:
     question2:
+      title: When is my card charged?
+      answer:
+    question3:
+      title: So I'm only charged if funding succeeds?
+      answer: Yes! If a project isn't successfully funded, no one pays anything.

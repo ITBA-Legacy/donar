@@ -1,4 +1,4 @@
-legend
+legend#contribution-header
   = Contribution.model_name.human
 .row
   .col-md-9
@@ -8,7 +8,7 @@ legend
           - @contribution.errors.each do |attr, msg|
             li= msg
     - if user_signed_in?
-      legend
+      legend#contribution-subheader
         = t('contributions.mercadopago')
       = form_for [@organization, @campaign, @contribution],
                  html: { class: 'form-horizontal', role: 'form' } do |f|
@@ -21,7 +21,7 @@ legend
               = f.number_field :amount, class: 'form-control col-md-2', required: true, min: 0.1, step: 'any'
         .form-group
           .col-sm-offset-2.col-sm-10
-            = f.submit nil, class: 'btn btn-primary'
+            = f.submit nil, class: 'btn btn-violet'
     = render 'anonymous_form', organization: @organization, campaign: @campaign, contribution: @contribution
   .col-md-3
     h5#faqHeader
@@ -31,26 +31,26 @@ legend
         .panel-heading
           h4.panel-title
             a#faqQuestion data-parent="#accordion" data-toggle="collapse" href="#collapseOne"
-              = 'How do I pledge?'
+              = t('faq.question1.title')
         #collapseOne.panel-collapse.collapse
           #faqAnswer.panel-body
-            = 'Enter your pledge amount and select a reward. On the next page well ask you to log in or sign up with Kickstarter, and then'
+            = t('faq.question1.answer')
       #faqPanel.panel
         .panel-heading
           h4.panel-title
             a#faqQuestion data-parent="#accordion" data-toggle="collapse" href="#collapseTwo"
-              = 'When is my card charged?'
+              = t('faq.question2.title')
         #collapseTwo.panel-collapse.collapse
           #faqAnswer.panel-body
-            = 'If this project is successfully funded, your card will be charged on Fri, Aug 15 2014 9:17 AM ART, along with all the other backers of this project. '
+            = t('faq.question2.answer')
       #faqPanel.panel
         .panel-heading
           h4.panel-title
             a#faqQuestion data-parent="#accordion" data-toggle="collapse" href="#collapseThree"
-              = 'What can others see about my pledge?'
+              = t('faq.question3.title')
         #collapseThree.panel-collapse.collapse
           #faqAnswer.panel-body
-            = 'When you back a project, your Kickstarter account name will be added to the list of backers on the project page. The amount you pledge, and the reward you choose, will not be made public. The project will also be added to the list of backings on your profile page.'
+            = t('faq.question3.answer')
 
 
 
