@@ -1,24 +1,56 @@
 legend
   = Contribution.model_name.human
-- if @contribution.errors.present?
-  .alert.alert-danger
-    ul
-      - @contribution.errors.each do |attr, msg|
-        li= msg
-- if user_signed_in?
-  legend
-    = t('contributions.mercadopago')
-  = form_for [@organization, @campaign, @contribution],
-             html: { class: 'form-horizontal', role: 'form' } do |f|
-    .form-group
-      = f.label :amount, class: 'control-label col-sm-2'
-      .col-md-4
-        .input-group
-          span.input-group-addon
-            | $
-          = f.number_field :amount, class: 'form-control col-md-2', required: true, min: 0.1, step: 'any'
-    .form-group
-      .col-sm-offset-2.col-sm-10
-        = f.submit nil, class: 'btn btn-primary'
-= render 'anonymous_form', organization: @organization, campaign: @campaign,
-                             contribution: @contribution
+.row
+  .col-md-9
+    - if @contribution.errors.present?
+      .alert.alert-danger
+        ul
+          - @contribution.errors.each do |attr, msg|
+            li= msg
+    - if user_signed_in?
+      legend
+        = t('contributions.mercadopago')
+      = form_for [@organization, @campaign, @contribution],
+                 html: { class: 'form-horizontal', role: 'form' } do |f|
+        .form-group
+          = f.label :amount, class: 'control-label col-sm-2'
+          .col-md-4
+            .input-group
+              span.input-group-addon
+                | $
+              = f.number_field :amount, class: 'form-control col-md-2', required: true, min: 0.1, step: 'any'
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            = f.submit nil, class: 'btn btn-primary'
+    = render 'anonymous_form', organization: @organization, campaign: @campaign, contribution: @contribution
+  .col-md-3
+    h5#faqHeader
+      = t('faq.title')
+    #accordion.panel-group
+      #faqPanel.panel
+        .panel-heading
+          h4.panel-title
+            a#faqQuestion data-parent="#accordion" data-toggle="collapse" href="#collapseOne"
+              = 'How do I pledge?'
+        #collapseOne.panel-collapse.collapse
+          #faqAnswer.panel-body
+            = 'Enter your pledge amount and select a reward. On the next page well ask you to log in or sign up with Kickstarter, and then'
+      #faqPanel.panel
+        .panel-heading
+          h4.panel-title
+            a#faqQuestion data-parent="#accordion" data-toggle="collapse" href="#collapseTwo"
+              = 'When is my card charged?'
+        #collapseTwo.panel-collapse.collapse
+          #faqAnswer.panel-body
+            = 'If this project is successfully funded, your card will be charged on Fri, Aug 15 2014 9:17 AM ART, along with all the other backers of this project. '
+      #faqPanel.panel
+        .panel-heading
+          h4.panel-title
+            a#faqQuestion data-parent="#accordion" data-toggle="collapse" href="#collapseThree"
+              = 'What can others see about my pledge?'
+        #collapseThree.panel-collapse.collapse
+          #faqAnswer.panel-body
+            = 'When you back a project, your Kickstarter account name will be added to the list of backers on the project page. The amount you pledge, and the reward you choose, will not be made public. The project will also be added to the list of backings on your profile page.'
+
+
+

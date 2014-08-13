@@ -336,3 +336,9 @@ en:
     approve: Approve
     reject: Reject
     achieve: Achieve
+  faq:
+    title: Frequently asked questions
+    question1:
+      title:
+      answer:
+    question2:
