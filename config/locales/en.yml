@@ -109,6 +109,14 @@ en:
       social: Social
       health: Health
     contribute: Contribute
+    states:
+      pending: Pending
+      approved: Approved
+      rejected: Rejected
+      started_not_funded: Started
+      closed_funded: Completed
+      closed_partially_funded: Not Completed
+      closed_not_funded: Not Completed
     achieve_milestone: Achieve Milestone
     milestone_achieved: Milestone achieved
     search: Search
@@ -348,6 +356,7 @@ en:
     approve: Approve
     reject: Reject
     achieve: Achieve
+    start: Start
   faq:
     title: Frequently asked questions
     question1:

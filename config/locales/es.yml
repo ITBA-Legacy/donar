@@ -117,6 +117,14 @@ es:
       education: Educación
       social: Social
       health: Salud
+    states:
+      pending: Pendiente
+      approved: Aprobada
+      rejected: Rechazada
+      started_not_funded: En Proceso
+      closed_funded: Completada
+      closed_partially_funded: No Completada
+      closed_not_funded: No Completada
     achieve_milestone: Cumplir Hito
     milestone_achieved: Hito cumplido
     contribute: Dar
@@ -390,6 +398,7 @@ es:
     approve: Aprobar
     reject: Rechazar
     achieve: Cumplir
+    start: Empezar
   faq:
     title: Preguntas frecuentes
     question1:

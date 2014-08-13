@@ -24,6 +24,9 @@ class Campaign < ActiveRecord::Base
   RECIPIENT = [:individual, :registered_company, :npo_501, :npo, :religious_npo]
   FUNDING_TYPE = [:all, :partial]
 
+  STATES = [:pending, :approved, :rejected, :started_not_funded,
+            :closed_funded, :closed_partially_funded, :closed_not_funded]
+
   validates :category, inclusion: { in: CATEGORIES.map(&:to_s) }
   validates :name, :short_description, :locality, presence: true
   # validates :minimum, :goal, numericality: { greater_than: 0 }

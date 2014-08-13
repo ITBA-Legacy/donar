@@ -87,6 +87,7 @@ en:
         video: Vimeo video url
         main_image: Image
         history: History
+        aasm_state: State
       contribution:
         amount: Amount
         created_at: Contribution date
