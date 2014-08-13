@@ -113,7 +113,7 @@ es:
   pundit:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
-    contribute: Constribuir
+    contribute: Contribuir
 
 
 

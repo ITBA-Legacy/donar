@@ -93,7 +93,7 @@ en:
       education: Education
       social: Social
       health: Health
-    contribute: Constribute
+    contribute: Contribute
     achieve_milestone: Achieve Milestone
     milestone_achieved: Milestone achieved
     search: Search
@@ -111,7 +111,7 @@ en:
   pundit:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
-    constribute: Constribute
+    costribute: Contribute
 
 
 
