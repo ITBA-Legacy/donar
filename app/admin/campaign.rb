@@ -18,7 +18,43 @@ ActiveAdmin.register Campaign do
       t("campaigns.categories.#{campaign.category}")
     end
     column :locality
+    column :aasm_state do |campaign|
+      t("campaigns.states.#{campaign.aasm_state}")
+    end
     actions
+    column do |campaign|
+      if campaign.aasm_state == 'pending' || campaign.aasm_state == 'rejected'
+
+        link_to t('active_admin.approve'), approve_campaign_admin_campaign_path(campaign),
+                class: 'button'
+      else
+        if campaign.aasm_state == 'approved'
+          link_to t('active_admin.start'), start_campaign_admin_campaign_path(campaign),
+                  class: 'button'
+        end
+      end
+    end
+    column do |campaign|
+      if campaign.aasm_state == 'pending'
+        link_to t('active_admin.reject'), reject_campaign_admin_campaign_path(campaign),
+                class: 'button'
+      end
+    end
+  end
+
+  member_action :start_campaign do
+    Campaign.find(params[:id]).start!
+    redirect_to :back
+  end
+
+  member_action :approve_campaign do
+    Campaign.find(params[:id]).approve!
+    redirect_to :back
+  end
+
+  member_action :reject_campaign do
+    Campaign.find(params[:id]).reject!
+    redirect_to :back
   end
 
   filter :organization
@@ -28,6 +64,9 @@ ActiveAdmin.register Campaign do
          collection: Campaign::CATEGORIES.map { |c| [I18n.t("campaigns.categories.#{c}"), c] }
   filter :goal
   filter :locality
+  filter :aasm_state,
+         as: :select,
+         collection: Campaign::STATES.map { |c| [I18n.t("campaigns.states.#{c}"), c] }
 
   form do |f|
     f.inputs Campaign.model_name.human do
@@ -77,6 +116,9 @@ ActiveAdmin.register Campaign do
       row :organization
       row :short_description
       row :created_at
+      row :aasm_state do |c|
+        t("campaigns.states.#{c.aasm_state}")
+      end
     end
     panel Perk.model_name.human(count: 2) do
       if campaign.perks.empty?

@@ -87,6 +87,7 @@ es:
         video: Vimeo video url
         main_image: Imagen
         history: Historia
+        aasm_state: Estado
       contribution:
         amount: Donación
         created_at: Fecha de donación

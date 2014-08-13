@@ -20,7 +20,8 @@ class Campaign < ActiveRecord::Base
   accepts_nested_attributes_for :perks, :milestones, reject_if: :all_blank, allow_destroy: true
 
   CATEGORIES = [:education, :social, :health]
-
+  STATES = [:pending, :approved, :rejected, :started_not_funded,
+            :closed_funded, :closed_partially_funded, :closed_not_funded]
   validates :category, inclusion: { in: CATEGORIES.map(&:to_s) }
   validates :name, :description, :goal, :minimum, :short_description, :locality, presence: true
   validates :minimum, :goal, numericality: { greater_than: 0 }
