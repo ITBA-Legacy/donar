@@ -104,6 +104,9 @@ gem 'jquery-validation-rails'
 # Pagination
 gem 'kaminari'
 
+# Share Links
+gem 'shareable'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
