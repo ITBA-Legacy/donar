@@ -176,6 +176,10 @@ es:
         country: "País"
         city: "Ciudad"
         deadline: "Fecha de finalización"
+    twitter_message:
+      introduction: "Construyamos un sueño juntos!! ayudame a fundar"
+      ending: "Entra al sitio para enterarte de todo lo que esta pasando en el proyecto"
+
   milestones:
     states:
       achieved: Cumplido

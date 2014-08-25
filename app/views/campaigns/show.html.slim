@@ -1,101 +1,128 @@
-- percentage_done = @campaign.contribution > 0 ? (@campaign.contribution / @campaign.goal) * 100 : 0
-h2
-  strong
-    = @campaign.name
-p
-  = @campaign.description
-#campaigns-title.row
-  #campaign-nav-title
-    = link_to t('campaigns.history')
-  #campaign-nav-title
-    = link_to t('campaigns.updates')
-  #campaign-nav-title
-    = link_to t('campaigns.comments')
-  #campaign-nav-title
-    = link_to t('campaigns.backers')
-  #campaign-nav-title
-    = link_to t('campaigns.benefits')
+html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"
 
-.row
-  .col-md-9
-    #campaign-ul
-      li
-        h4
-          = Campaign.human_attribute_name(:video)
-        video controls="" height="240" width="320"
-          source src=@campaign.video type="video/mp4"
-      br
-      li
-        p
-          = @campaign.short_description
-      br
-      li
-        h4
-          = Campaign.human_attribute_name(:main_image)
-        = image_tag @campaign.main_image
-  .col-md-3
-    #campaign-ul
-      li
-        p
-          h2
-            #text-bold
-              = "$ #{number_with_precision(@campaign.contribution, precision: 2,
-          separator: t('application.separator'), delimiter: t('application.delimiter'))}"
-      li
-        #text-violet
-          = t('campaigns.collected') + " $#{@campaign.goal}"
-      li
-        p
-          .progress
-            .progress-bar.progress-bar-success.p80 aria-valuenow=percentage_done aria-valuemin="0" aria-valuemax="100" style="width: #{percentage_done}%"
-        .information
-          .col-sm-5.pull-left.text-center
-            h4
-              = t('campaigns.card.completed')
-              br
-              = "#{number_with_precision(percentage_done, precision: 1, separator: t('application.separator'))} %"
-          .col-sm-6.pull-right.text-center
-            h4
-              = t('campaigns.card.days_left')
-              br
-              = (@campaign.deadline.to_date - Time.current.to_date).to_i
-      br
-      br
-      br
-      li
-        #text-bold
-          = Campaign.human_attribute_name(:deadline)
-      li
-          = l(@campaign.deadline, format: :short)
-      br
-      li
-        #text-bold
-          = Campaign.human_attribute_name(:minimum)
-      li
-          = "$ #{@campaign.minimum}"
-      br
-      p
-        .centerize
-          = link_to t('campaigns.contribute'),
-                  new_organization_campaign_contribution_path(@campaign.organization, @campaign),
-                  class: 'btn btn-violet fill-width'
-      / li
-      /     = Perk.model_name.human(count: 2)
-      / li
-      /     = render 'perks/index_table', perks: paginate_scope(@campaign.perks)
+  head
+    - content_for :head do
+      meta content=(@campaign.name) property="og:title" /
+      meta content="article" property="og:type" /
+      meta content=request.original_url property="og:url" /
+      meta content=(@campaign.main_image) property="og:image" /
+      meta content=("COMUNIDAR") property="og:site_name" /
+      meta content="1410568312542480" property="fb:app_id" /
+      meta content=("Awesome project") property="og:description" /
 
-- if policy(@campaign).update?
-  .row
-    .col-md-6
-      p
-        = link_to t('helpers.submit.campaign.edit'),
-                  edit_organization_campaign_path(@campaign.organization, @campaign),
-                  class: 'btn btn-primary btn-violet'
-- if @campaign.next_unachieved_milestone.present?
-  .row
-    .col-md-6
-      p
-        = link_to t('campaigns.achieve_milestone'),
-                  achieve_organization_campaign_milestone_path(@campaign.organization,
-                    @campaign, @campaign.next_unachieved_milestone),
-                  class: 'btn btn-primary btn-violet'
+  body
+
+    - percentage_done = @campaign.contribution > 0 ? (@campaign.contribution / @campaign.goal) * 100 : 0
+    h2
+      strong
+        = @campaign.name
+
+    p
+      = @campaign.description
+
+    #campaigns-title.row
+
+      #campaign-nav-title
+        = link_to t('campaigns.history')
+      #campaign-nav-title
+        = link_to t('campaigns.updates')
+      #campaign-nav-title
+        = link_to t('campaigns.comments')
+      #campaign-nav-title
+        = link_to t('campaigns.backers')
+      #campaign-nav-title
+        = link_to t('campaigns.benefits')
+
+    .row
+    .col-md-9
+      #campaign-ul
+        li
+          h4
+            = Campaign.human_attribute_name(:video)
+          video controls="" height="240" width="320"
+            source src=@campaign.video type="video/mp4"
+        br
+        li
+          p
+            = @campaign.short_description
+
+        br
+        li
+          h4
+            = Campaign.human_attribute_name(:main_image)
+          = image_tag @campaign.main_image
+    .col-md-3
+      .panel.panel-default
+        #information-panel.panel-body
+          #campaign-ul
+            li
+              =facebook_button :url=> request.original_url
+            li
+              =twitter_button :url=> request.original_url, :text=> t('campaigns.twitter_message.introduction') + " " + @campaign.name + ". " + t('campaigns.twitter_message.ending')
+            li
+              =google_plus_button :url=> request.original_url
+
+            li
+              p
+                h2
+                  #text-bold
+                    = "$ #{number_with_precision(@campaign.contribution, precision: 2,
+                separator: t('application.separator'), delimiter: t('application.delimiter'))}"
+            li
+              #text-violet
+                = t('campaigns.collected') + " $#{@campaign.goal}"
+            li
+              p
+                .progress
+                  .progress-bar.progress-bar-success.p80 aria-valuenow=percentage_done aria-valuemin="0" aria-valuemax="100" style="width: #{percentage_done}%"
+              .information
+                .col-sm-5.pull-left.text-center
+                  h4
+                    = t('campaigns.card.completed')
+                    br
+                    = "#{number_with_precision(percentage_done, precision: 1, separator: t('application.separator'))} %"
+                .col-sm-6.pull-right.text-center
+                  h4
+                    = t('campaigns.card.days_left')
+                    br
+                    = (@campaign.deadline.to_date - Time.current.to_date).to_i
+            br
+            br
+            br
+            li
+              #text-bold
+                = Campaign.human_attribute_name(:deadline)
+            li
+                = l(@campaign.deadline, format: :short)
+            br
+            li
+              #text-bold
+                = Campaign.human_attribute_name(:minimum)
+            li
+                = "$ #{@campaign.minimum}"
+            br
+            p
+              .centerize
+                = link_to t('campaigns.contribute'),
+                        new_organization_campaign_contribution_path(@campaign.organization, @campaign),
+                        class: 'btn btn-violet fill-width'
+            / li
+            /     = Perk.model_name.human(count: 2)
+            / li
+            /     = render 'perks/index_table', perks: paginate_scope(@campaign.perks)
+
+    - if policy(@campaign).update?
+      .row
+        .col-md-6
+          p
+            = link_to t('helpers.submit.campaign.edit'),
+                      edit_organization_campaign_path(@campaign.organization, @campaign),
+                      class: 'btn btn-primary btn-violet'
+    - if @campaign.next_unachieved_milestone.present?
+      .row
+        .col-md-6
+          p
+            = link_to t('campaigns.achieve_milestone'),
+                      achieve_organization_campaign_milestone_path(@campaign.organization,
+                        @campaign, @campaign.next_unachieved_milestone),
+                      class: 'btn btn-primary btn-violet'
