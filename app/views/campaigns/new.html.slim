@@ -41,10 +41,15 @@
           = file_field_tag :main_image
     .col-sm-9
       .row
-        .col-sm-12
+        .col-sm-6
           .form-group
             label.control-label= t('campaigns.new.basic_info.campaign_title')
             = f.text_field :name, class: 'form-control col-sm-12'
+        .col-sm-6
+          .form-group
+            label.control-label= t('campaigns.new.goal')
+            - if :goal > 0
+              = f.number_field :goal, class: 'form-control col-sm-12'
       .row#description-row
         .col-sm-6
           .form-group
