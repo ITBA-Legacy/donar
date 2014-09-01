@@ -179,6 +179,7 @@ es:
     twitter_message:
       introduction: "Construyamos un sueño juntos!! ayudame a fundar"
       ending: "Entra al sitio para enterarte de todo lo que esta pasando en el proyecto"
+    cant_donate: "La campaña ha finalizado, ya no es posible donar "
 
   milestones:
     states:
