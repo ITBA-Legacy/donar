@@ -46,16 +46,22 @@
             label.control-label= t('campaigns.new.basic_info.campaign_title')
             = f.text_field :name, class: 'form-control col-sm-12'
         .col-sm-6
-          .form-group
-            label.control-label= t('campaigns.new.goal')
-            - if :goal > 0
-              = f.number_field :goal, class: 'form-control col-sm-12'
+          label.control-label= t('campaigns.new.basic_info.goal')
+          .input-group
+            span.input-group-addon
+              | $
+            = f.number_field :goal, class: 'form-control col-sm-12', required: true, min: 1.0
       .row#description-row
         .col-sm-6
           .form-group
             label.control-label= t('campaigns.new.basic_info.description')
             = f.text_area :short_description, class: 'form-control', rows: 7
         .col-sm-6
+          label.control-label= t('campaigns.new.basic_info.minimum')
+          .input-group
+            span.input-group-addon
+              | $
+            = f.number_field :minimum, class: 'form-control', required: true, min: 1.0
           .form-group
             label.control-label= t('campaigns.new.basic_info.country')
             = f.text_field :locality, class: 'form-control'

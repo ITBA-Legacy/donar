@@ -21,7 +21,7 @@ class CampaignsController < ApplicationController
 
   def create
     create!do |success|
-      success.html { redirect_to configure_campaign_path(@campaign) }
+        success.html { redirect_to configure_campaign_path(@campaign) }
     end
   end
 
