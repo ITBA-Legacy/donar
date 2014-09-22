@@ -48,7 +48,7 @@ class Campaign < ActiveRecord::Base
     nil
   end
   
-  aasm_column: :aasm_state
+  aasm_column :aasm_state
 
   # State machine that goes through the diferent states
   aasm do
