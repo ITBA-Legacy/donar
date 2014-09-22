@@ -1,6 +1,9 @@
 = form_for [@organization, @campaign], html: { role: 'form' } do |f|
-  - @campaign.errors.each do |attr, msg|
-    li= msg
+  - if @campaign.errors.any?
+    .alert.alert-danger
+      ul
+        - @campaign.errors.each do |attr, msg|
+          li = msg
   .row
     h1
       = t('campaigns.new.title')
@@ -13,13 +16,13 @@
     .col-sm-7.white
       = t('campaigns.new.category.chose')
   .row#categories
-    = f.hidden_field :category, id: 'category-input'
+    = f.hidden_field :category, id: 'category-input', required: true
     - Campaign::CATEGORIES.each do |c|
       .col-sm-3.category-card
         .inner-card data-category=c
           = image_tag 'cat-blanco.png', class: 'cat-image'
           .category-name.col-sm-6
-            p= t "campaigns.categories.#{c}"
+            p = t "campaigns.categories.#{c}"
   .row.violet-row
     .row
       .col-sm-4.white-bold
@@ -64,16 +67,15 @@
             = f.number_field :minimum, class: 'form-control', required: true, min: 1.0
           .form-group
             label.control-label= t('campaigns.new.basic_info.country')
-            = f.text_field :locality, class: 'form-control'
+            = f.text_field :country, class: 'form-control', required: true
           .form-group
             label.control-label= t('campaigns.new.basic_info.city')
-            = f.text_field :locality, class: 'form-control'
+            = f.text_field :locality, class: 'form-control', required: true
           .form-group
             label.control-label= t('campaigns.new.basic_info.deadline')
-            = f.date_select :deadline, class: 'form-control'
-  .row#submit-row
-    = button_tag class: 'btn btn-primary btn-green '
-      = t('campaigns.new.configure')
-
+            = f.date_select :deadline, class: 'form-control', required: true
+  .form-group
+    .col-sm-12
+      = f.submit nil, class: 'btn btn-violet pull-right'
 
   / = render 'form', organization: @organization, campaign: @campaign

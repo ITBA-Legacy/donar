@@ -6,7 +6,7 @@ class CampaignsController < ApplicationController
   belongs_to :organization, optional: true
 
   FIELDS = [:name, :description, :goal, :deadline, :minimum, :category, :short_description,
-            :locality, :main_image, :video, :history,
+            :locality, :main_image, :video, :history, :country,
             perks_attributes: [:id, :amount, :name, :maximum, :description,
                                :_destroy, :delivery_date, :requires_address]]
 
@@ -20,8 +20,10 @@ class CampaignsController < ApplicationController
   end
 
   def create
-    create!do |success|
+    create! do |success|
+      if @campaign.valid?
         success.html { redirect_to configure_campaign_path(@campaign) }
+      end
     end
   end
 

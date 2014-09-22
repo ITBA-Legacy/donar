@@ -13,25 +13,31 @@ es:
         campaign:
           attributes:
             name:
-              blank: Nombre es requerido
+              blank: El título es requerido
             description:
-              blank: Descripción es requerida
+              blank: La descripción es requerida
             goal:
               blank: El objetivo es requerido
               only_integer: El objetivo debe ser un número
+              not_a_number: El objetivo debe ser un número
+              greater_than: El objetivo debe ser mayor a %{count}
+            minimum:
+              blank: El monto de la donación mínima es requerida
+              greater_than: El monto de la donación mínima debe ser mayor a %{count}
+              only_integer: El monto mínimo debe ser un número
+              not_a_number: El monto mínimo debe ser un número
             deadline:
               blank: La fecha de finalización es requerida
               on_or_after: La fecha de finalización debe ser posterior a la actual
-            minimum:
-              blank: El monto mínimo es requerido
-              only_integer: El monto mínimo debe ser un número
             category:
               blank: La categoría es requerida
-              inlusion: La categoría no es válida
+              inclusion: La categoría no es válida
             short_description:
               blank: La descripción breve es requerida
+            country:
+              blank: El país es requerido
             locality:
-              blank: Localidad es requerida
+              blank: La localidad es requerida
         contribution:
           attributes:
             amount:
