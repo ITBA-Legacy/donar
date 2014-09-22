@@ -439,6 +439,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner!
+  debugger
   debugger-pry
   devise
   exception_notification
