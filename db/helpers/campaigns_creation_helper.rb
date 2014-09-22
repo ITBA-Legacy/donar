@@ -24,6 +24,7 @@ module CampaignsCreationHelper
         goal: 1.0, # Then this will be updated by milestones
         category: Campaign::CATEGORIES.sample.to_s,
         locality: Faker::Address.city,
+        country: Faker::Address.country,
         short_description: Faker::Lorem.sentence,
         organization: Organization.all.sample,
         video: 'http://vimeo.com/8844376'

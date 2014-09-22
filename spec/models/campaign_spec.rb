@@ -86,6 +86,12 @@ describe Campaign do
         expect(campaign).to have(1).error_on(:category)
       end
 
+      it 'validates the country' do
+        campaign.country = nil
+        expect(campaign.valid?).to be false
+        expect(campaign).to have(1).error_on(:country)
+      end
+
     end
 
     context 'Creating a valid campaign' do
