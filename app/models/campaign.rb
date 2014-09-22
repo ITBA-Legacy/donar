@@ -50,6 +50,7 @@ class Campaign < ActiveRecord::Base
 
   # State machine that goes through the diferent states
   aasm do
+    aasm_column: :aasm_state
     state :pending, initial: true
     state :approved
     state :rejected
