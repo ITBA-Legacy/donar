@@ -28,7 +28,7 @@ class Campaign < ActiveRecord::Base
             :closed_funded, :closed_partially_funded, :closed_not_funded]
 
   validates :category, inclusion: { in: CATEGORIES.map(&:to_s) }, presence: true
-  validates :name, :short_description, :locality, :country, presence: true
+  validates :name, :description, :short_description, :locality, :country, presence: true
   validates :minimum, :goal, numericality: { greater_than: 0 }
   validates :deadline, timeliness: { on_or_after: -> { Date.current } }
   validates :minimum, :goal, presence: true

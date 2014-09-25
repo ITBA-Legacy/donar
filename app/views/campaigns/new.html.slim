@@ -57,8 +57,11 @@
       .row#description-row
         .col-sm-6
           .form-group
+            label.control-label= t('campaigns.new.basic_info.short_description')
+            = f.text_field :short_description, class: 'form-control', rows: 1
+          .form-group
             label.control-label= t('campaigns.new.basic_info.description')
-            = f.text_area :short_description, class: 'form-control', rows: 7
+            = f.text_area :description, class: 'form-control', rows: 5
         .col-sm-6
           label.control-label= t('campaigns.new.basic_info.minimum')
           .input-group
