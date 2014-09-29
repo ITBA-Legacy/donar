@@ -20,9 +20,9 @@ describe CampaignsController do
         expect(Campaign.last.organization).to eq organization
       end
 
-      it 'redirects to the campaign view' do
+      it 'redirects to the configure campaign view' do
         post :create, organization_id: organization.id, campaign: campaign
-        expect(response).to redirect_to organization_campaign_url(organization, Campaign.last)
+        expect(response).to redirect_to configure_campaign_path(Campaign.last)
       end
 
       it 'creates the campaign' do

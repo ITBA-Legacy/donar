@@ -18,7 +18,7 @@ module CampaignsCreationHelper
     def create_campaign(time)
       campaign = Campaign.create(
         name: "Campaign #{time}",
-        description: Faker::Lorem.sentence,
+        description: Faker::Lorem.paragraph,
         deadline: DateTime.current + rand(10..60).days,
         minimum: 1.0,
         goal: 1.0, # Then this will be updated by milestones

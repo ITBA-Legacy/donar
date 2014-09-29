@@ -80,6 +80,12 @@ describe Campaign do
         expect(campaign).to have(1).error_on(:locality)
       end
 
+      it 'validates the country' do
+        campaign.country = nil
+        expect(campaign.valid?).to be false
+        expect(campaign).to have(1).error_on(:country)
+      end
+
       it 'validates the category inclusion' do
         campaign.category = Faker::Lorem.characters(3)
         expect(campaign.valid?).to be false

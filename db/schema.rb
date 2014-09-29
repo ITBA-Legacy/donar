@@ -64,10 +64,10 @@ ActiveRecord::Schema.define(version: 20140922131015) do
     t.float    "contribution",      default: 0.0
     t.string   "video"
     t.text     "history"
-    t.string   "aasm_state"
-    t.integer  "main_image"
     t.string   "fund_recipient"
     t.string   "funding_type"
+    t.string   "aasm_state"
+    t.integer  "main_image"
     t.string   "country"
   end
 

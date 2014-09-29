@@ -102,10 +102,18 @@ html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/200
                 = "$ #{@campaign.minimum}"
             br
             p
-              .centerize
-                = link_to t('campaigns.contribute'),
-                        new_organization_campaign_contribution_path(@campaign.organization, @campaign),
-                        class: 'btn btn-violet fill-width'
+                .centerize
+                      -if @campaign.deadline.to_date >= Time.current.to_date
+                        = link_to t('campaigns.contribute'),
+                          new_organization_campaign_contribution_path(@campaign.organization, @campaign),
+                          class: 'btn btn-violet fill-width'
+                      -else
+                        = link_to t('campaigns.contribute'),
+                          new_organization_campaign_contribution_path(@campaign.organization, @campaign),
+                          class: 'btn btn-violet fill-width disabled'
+                        p
+                          small
+                            =t('campaigns.cant_donate')
             / li
             /     = Perk.model_name.human(count: 2)
             / li

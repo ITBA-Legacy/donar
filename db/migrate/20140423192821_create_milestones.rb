@@ -4,7 +4,7 @@ class CreateMilestones < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.datetime :done_date
-      t.float :goal_percentage
+      t.float :amount
       t.references :campaign, index: true
       t.boolean :approved
 

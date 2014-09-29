@@ -172,7 +172,8 @@ es:
         small_image: "Imagen pequeña"
         choose_image: "CARGAR UNA IMAGEN"
         campaign_title: "Título"
-        description: "Breve descripción"
+        short_description: "Breve descripción (Contanos tu campaña en una oración)"
+        description: "Descripción"
         country: "País"
         city: "Ciudad"
         deadline: "Fecha de finalización"
@@ -180,6 +181,7 @@ es:
     twitter_message:
       introduction: "Construyamos un sueño juntos!! ayudame a fundar"
       ending: "Entra al sitio para enterarte de todo lo que esta pasando en el proyecto"
+    cant_donate: "La campaña ha finalizado, ya no es posible donar "
 
   milestones:
     states:
