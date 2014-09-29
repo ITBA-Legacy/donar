@@ -1,27 +1,17 @@
-class ContributionsController < ApplicationController 
+class ContributionsController < ApplicationController
+
   inherit_resources
+
   nested_belongs_to :organization, :campaign
   FIELDS = [:amount, :first_name, :last_name, :email, :phone, :perk]
   def create
     id = params[:contribution][:perk].to_i
-    if id != 0
-      params[:contribution][:perk] = Perk.find(id)
-    else
-      params[:contribution][:perk] = nil
-    end
+    params[:contribution][:perk] = (id != 0 ?  Perk.find(id) : nil)
     create! do
       if @contribution.valid?
         @contribution.user = current_user if current_user.present?
         @contribution.perk_id = id
-        if @contribution.perk.amount > @contribution.amount
-          fetch_organization
-          fetch_campaign
-          flash[:error] = I18n.t('errors.messages.perk')
-          redirect_to new_organization_campaign_contribution_path(@organization, @campaign)
-          return
-        end
-        @contribution.save!
-        handle_valid_contribution
+        check_amount
       end
     end
   end
@@ -59,4 +49,15 @@ class ContributionsController < ApplicationController
     @campaign = Campaign.find(params[:campaign_id])
   end
 
+  def check_amount
+    if @contribution.perk.amount > @contribution.amount
+      fetch_organization
+      fetch_campaign
+      flash[:error] = I18n.t('errors.messages.perk')
+      redirect_to new_organization_campaign_contribution_path(@organization, @campaign)
+      return
+    end
+    @contribution.save!
+    handle_valid_contribution
+  end
 end
