@@ -138,9 +138,12 @@ en:
         small_image: "Imagen pequeña"
         choose_image: "CARGAR UNA IMAGEN"
         campaign_title: "Título"
-        description: "Breve descripción"
+        short_description: "Breve descripción (Contanos tu campaña en una oración)"
+        description: "Description"
         country: "País"
         city: "Ciudad"
+        deadline: "Deadline (mm/dd/yyyy)"
+        minimum: "Minimum pledge"
     twitter_message:
       introduction: "Lets build a dream together!! help me fundraising"
       ending: "Enter to the site to follow the development of the project"

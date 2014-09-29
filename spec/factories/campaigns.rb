@@ -9,6 +9,7 @@ FactoryGirl.define do
     minimum 1.0
     category 'health'
     locality { Faker::Address.city }
+    country { Faker::Address.country }
     short_description { Faker::Lorem.sentence }
   end
 end
