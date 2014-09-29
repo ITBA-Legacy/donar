@@ -138,6 +138,8 @@ en:
     approved: Approved
     rejected: Rejected
     notAchieved: Not Achieved
+  perks:
+    none: "None"
   pundit:
     organization_policy:
       update?: 'No tienes permisos para editar esta organización'
@@ -241,6 +243,7 @@ en:
   errors:
     format:  '%{attribute} %{message}'
     messages:
+      perk: The contribution amount should not be less than perk amount 
       accepted: must be accepted
       blank: can't be blank
       present: must be blank

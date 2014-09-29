@@ -1,16 +1,25 @@
-class ContributionsController < ApplicationController
-
+class ContributionsController < ApplicationController 
   inherit_resources
-
   nested_belongs_to :organization, :campaign
-
-  FIELDS = [:amount, :first_name, :last_name, :email, :phone]
-
+  FIELDS = [:amount, :first_name, :last_name, :email, :phone, :perk]
   def create
+    id = params[:contribution][:perk].to_i
+    if id != 0
+      params[:contribution][:perk] = Perk.find(id)
+    else
+      params[:contribution][:perk] = nil
+    end
     create! do
       if @contribution.valid?
-        # We have to find a way to make the following two lines happen inside inherit resources...
         @contribution.user = current_user if current_user.present?
+        @contribution.perk_id = id
+        if @contribution.perk.amount > @contribution.amount
+          fetch_organization
+          fetch_campaign
+          flash[:error] = I18n.t('errors.messages.perk')
+          redirect_to new_organization_campaign_contribution_path(@organization, @campaign)
+          return
+        end
         @contribution.save!
         handle_valid_contribution
       end

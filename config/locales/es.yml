@@ -96,6 +96,7 @@ es:
   contributions:
     mercadopago: Contribuir con MercadoPago
     anonymous: Contribuir Anónimamente
+
   campaigns:
     history: Historia
     updates: Actualizaciones
@@ -174,6 +175,8 @@ es:
       approved: Aprobado
       rejected: Rechazado
       notAchieved: No cumplido
+  perks:
+    none: "Ninguno"  
   views:
     pagination:
       first: "&laquo; Primera"
@@ -289,6 +292,7 @@ es:
   errors:
     format:  '%{attribute} %{message}'
     messages:
+      perk: El monto contribuido debe ser mayor que el monto del beneficio
       accepted: debe ser aceptado
       blank: no puede estar en blanco
       confirmation: No coincide con la confirmación
@@ -401,3 +405,4 @@ es:
     question3:
       title: ¿Así que sólo me van a estar cobrando si la financiación tiene éxito?
       answer: ¡Sí! Si un proyecto no está financiado con éxito, nadie paga nada.
+
