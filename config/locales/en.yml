@@ -142,7 +142,7 @@ en:
         description: "Description"
         country: "País"
         city: "Ciudad"
-        deadline: "Fecha de finalización"
+        deadline: "Deadline (mm/dd/yyyy)"
         minimum: "Minimum pledge"
     twitter_message:
       introduction: "Lets build a dream together!! help me fundraising"

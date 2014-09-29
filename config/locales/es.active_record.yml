@@ -29,9 +29,10 @@ es:
             deadline:
               blank: La fecha de finalización es requerida
               on_or_after: La fecha de finalización debe ser posterior a la actual
+              invalid_datetime: La fecha es inválida
             category:
               blank: La categoría es requerida
-              inclusion: La categoría no es válida
+              inclusion: La categoría es inválida
             short_description:
               blank: La descripción breve es requerida
             country:

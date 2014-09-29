@@ -17,29 +17,36 @@ en:
             description:
               blank: Description is required
             goal:
-              blank: Goal is required
-              only_integer: Goal must be a number
-            deadline:
-              blank: End date is required
-              on_or_after: End date must be after current date
+              blank: The goal is required
+              only_integer: The goal must be an integer
+              not_a_number: The goal must be a number
+              greater_than: The goal must be grater than %{count}
             minimum:
-              blank: Minimum pledge is required
-              only_integer: Minimum pledge must be a number
+              blank: The minimum pledge is required
+              greater_than: The minimum pledge must be greater than %{count}
+              only_integer: The minimum pledge must be an integer
+              not_a_number: The minimum pledge must be a number
+            deadline:
+              blank: The deadline is required
+              on_or_after: The deadline must be greater than the actual date
+              invalid_datetime: The deadline is not valid
             category:
               blank: Category is required
-              inlusion: Category not valid
+              inclusion: Category is not valid
             short_description:
-              blank: Short description is required
+              blank: The short description is required
+            country:
+              blank: The country is required
             locality:
-              blank: Locality is required
+              blank: The locality is required
         contribution:
           attributes:
             amount:
-              not_a_number: Invalid amount
+              not_a_number: Amount not valid
         user:
           attributes:
             email:
-              already_confirmed: Email already confirmed
+              already_confirmed: The email has been already confirmed
     models:
       organization:
         one: Organization

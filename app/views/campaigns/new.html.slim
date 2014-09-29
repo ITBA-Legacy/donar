@@ -77,10 +77,7 @@
           .form-group
             label.control-label = t('campaigns.new.basic_info.deadline')
             .input-group
-              .input-group-addon.btn for="date-picker-3"
-                span.glyphicon.glyphicon-calendar
-                  input#date-picker-3.date-picker.form-control type="text"
-                    = f.date_select :deadline, class: 'form-control', required: true
+              = f.date_field :deadline, class: 'form-control', required: true
   .form-group
     .col-sm-12
       = f.submit nil, class: 'btn btn-violet pull-right'

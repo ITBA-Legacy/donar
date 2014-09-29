@@ -176,7 +176,7 @@ es:
         description: "Descripción"
         country: "País"
         city: "Ciudad"
-        deadline: "Fecha de finalización"
+        deadline: "Fecha de finalización (dd/mm/aaaa)"
         minimum: "Donación mínima"
     twitter_message:
       introduction: "Construyamos un sueño juntos!! ayudame a fundar"
