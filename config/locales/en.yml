@@ -144,6 +144,7 @@ en:
         city: "Ciudad"
         deadline: "Deadline (mm/dd/yyyy)"
         minimum: "Minimum pledge"
+        goal: "Goal"
     twitter_message:
       introduction: "Lets build a dream together!! help me fundraising"
       ending: "Enter to the site to follow the development of the project"
