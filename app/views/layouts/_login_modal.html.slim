@@ -18,12 +18,13 @@
               = f.label t('devise.sessions.remember_me')
             .pull-right
               = link_to t('devise.sessions.forgot_password'), new_password_path(:user)
-          .checkbox
-            .pull-left
-              = link_to t('devise.registrations.sign_up'), new_registration_path(:user)
           .form-group
             = f.submit t('devise.sessions.sign_in')
       .modal-footer
+        .row
+          .form-group
+              = link_to t('devise.registrations.sign_up'), new_registration_path(:user),
+                class: 'btn btn-primary omniauth-button'
         .row
           = link_to t('devise.sessions.sign_in_with_facebook'),
                     user_omniauth_authorize_path(:facebook),
