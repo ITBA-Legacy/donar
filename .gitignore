@@ -38,6 +38,9 @@ public/uploads
 # Devise
 .devise.yml
 
+
+.database.yml
+
 # Oauth
 .google.yml
 .facebook.yml
