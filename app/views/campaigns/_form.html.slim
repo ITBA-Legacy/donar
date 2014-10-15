@@ -79,7 +79,7 @@
           .col-sm-8
             = f.file_field :main_image, class: 'form-control col-sm-2'
             - if campaign.main_image.present?
-              = image_tag campaign.main_image
+              = image_tag campaign.main_image, class: 'img-responsive'
         .form-group
           = f.label :video, class: 'control-label col-sm-2'
           .col-sm-8

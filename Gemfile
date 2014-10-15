@@ -107,6 +107,9 @@ gem 'kaminari'
 # Share Links
 gem 'shareable'
 
+# Easy embed links
+gem 'auto_html'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

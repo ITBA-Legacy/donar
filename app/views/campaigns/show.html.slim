@@ -1,3 +1,4 @@
+
 html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#"
 
   head
@@ -30,27 +31,36 @@ html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/200
         = link_to t('campaigns.comments')
       #campaign-nav-title
         = link_to t('campaigns.backers')
+
       #campaign-nav-title
         = link_to t('campaigns.benefits')
+      - if policy(@campaign).update?
+        #campaign-nav-tittle.pull-right
+          = link_to t('helpers.submit.campaign.edit'),edit_organization_campaign_path(@campaign.organization, @campaign)
+      - if @campaign.next_unachieved_milestone.present?
+        #campaign-nav-title.pull-right
+          = link_to t('campaigns.achieve_milestone'),achieve_organization_campaign_milestone_path(@campaign.organization,@campaign, @campaign.next_unachieved_milestone)
+
 
     .row
     .col-md-9
-      #campaign-ul
-        li
-          h4
-            = Campaign.human_attribute_name(:video)
-          video controls="" height="240" width="320"
-            source src=@campaign.video type="video/mp4"
-        br
-        li
-          p
-            = @campaign.short_description
+        .row
+          .container-fluid
+            .embed-responsive
+              iframe.embed-responsive-item.video-container.main-video src=youtube_embed(@campaign[:video])
 
-        br
-        li
-          h4
-            = Campaign.human_attribute_name(:main_image)
-          = image_tag @campaign.main_image
+        .row.main-image
+          = image_tag @campaign.main_image,class: "img-responsive center-block"
+
+        .row
+          .panel.panel-default
+            .panel-body
+              p
+                strong
+                  = @campaign.short_description
+        .row
+            = raw(@campaign.history)
+
     .col-md-3
       .panel.panel-default
         #information-panel.panel-body
@@ -119,18 +129,3 @@ html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/200
             / li
             /     = render 'perks/index_table', perks: paginate_scope(@campaign.perks)
 
-    - if policy(@campaign).update?
-      .row
-        .col-md-6
-          p
-            = link_to t('helpers.submit.campaign.edit'),
-                      edit_organization_campaign_path(@campaign.organization, @campaign),
-                      class: 'btn btn-primary btn-violet'
-    - if @campaign.next_unachieved_milestone.present?
-      .row
-        .col-md-6
-          p
-            = link_to t('campaigns.achieve_milestone'),
-                      achieve_organization_campaign_milestone_path(@campaign.organization,
-                        @campaign, @campaign.next_unachieved_milestone),
-                      class: 'btn btn-primary btn-violet'

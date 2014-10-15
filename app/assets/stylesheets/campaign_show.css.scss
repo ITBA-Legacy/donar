@@ -36,7 +36,6 @@ $violet: #723270;
 
 #information-panel
 {
-  background-color: rgba(64, 226, 70, .25);
 
 }
 
@@ -84,9 +83,24 @@ nav .share iframe
   display: inline-block;
 }
 
+.main-video
+{
+  width:100%;
+  height: auto;
 
+}
 
+.video-container
+{
+  height: 400px;
 
+}
+
+.main-image
+{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 
 

@@ -90,10 +90,10 @@ Shareable.configure do |config|
   ###############
   ##shared configuration options
   ###############
-  ##config.width='80' # used by facebook, google_plus and tumblr.
+  config.width='100' # used by facebook, google_plus and tumblr.
   ##config.title= '' # used by linkedin, pinterest, reddit, stumbleupon and tumblr.
   ##config.description='' # used by linkedin and tumblr.
-  ##config.size='medium' # used by twitter and google_plus.
+  config.size='large' # used by twitter and google_plus.
   ## google_plus config.size can be 'small', 'medium', 'standard' and 'tall'. Default is 'standard'. Shareable uses 'medium'.
   ## twitter config.size can be 'medium' or 'large'. Default is medium'.
 end
