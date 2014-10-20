@@ -49,8 +49,8 @@ html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/200
             .container-fluid
               .embed-responsive
                 iframe.embed-responsive-item.video-container.main-video src=youtube_embed(@campaign[:video])
-
-        .row.main-image
+        - if !@campaign.main_image.versions.blank?
+          .row.main-image
           = image_tag @campaign.main_image,class: "img-responsive center-block"
 
         .row
