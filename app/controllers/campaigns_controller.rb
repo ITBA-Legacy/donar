@@ -36,7 +36,9 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
     params[:campaign][:milestones_attributes].values.each do |hash|
       amount = hash[:amount].to_i
-      @campaign.milestones << Milestone.create(amount: amount) if amount > 0
+      name = hash[:name].to_s
+      description = hash[:description].to_s
+      @campaign.milestones << Milestone.create(amount: amount, name: name, description: description) if amount > 0
     end
     @campaign.fund_recipient = params[:fund_recipient]
     @campaign.funding_type = params[:funding_type]

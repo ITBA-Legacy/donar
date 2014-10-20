@@ -17,7 +17,8 @@
   .row#milestones
     .col-md-12
       #total-amount
-
+      #hidden-total-amount hidden=""
+        = f.number_field :goal, class: 'form-control col-sm-12', id: 'hidden-amount', required: true, min: 1.0
     .col-sm-3#milestone-card
       = f.fields_for :milestones do |f_milestone|
         = render 'milestone_fields', f: f_milestone

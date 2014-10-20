@@ -34,8 +34,8 @@ $ ->
     $('.milestone-amount').each (index,input) ->
       acum+= parseInt(input.value)
       return
-
-    t = document.createTextNode(acum)
+    $('#hidden-amount').val(acum)
+    t = document.createTextNode('$ ' + acum)
     $('#total-amount').empty()
     $('#total-amount').append t
     return
