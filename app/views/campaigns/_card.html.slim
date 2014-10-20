@@ -3,7 +3,10 @@
 .campaign-card.col-sm-3
   .thumbnail
     = link_to organization_campaign_path(campaign.organization, campaign) do
-      = image_tag 'crowdfunding.png'
+      - if !campaign.main_image.versions.blank?
+        = image_tag campaign.main_image
+      - else
+        = image_tag 'crowdfunding.png'
     .caption
       h4
         = campaign.name
