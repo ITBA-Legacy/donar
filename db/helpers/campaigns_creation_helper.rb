@@ -27,7 +27,7 @@ module CampaignsCreationHelper
         country: Faker::Address.country,
         short_description: Faker::Lorem.sentence,
         organization: Organization.all.sample,
-        video: 'http://vimeo.com/8844376'
+        video: 'http://www.youtube.com/watch?v=hT6uXI60po4'
       )
       create_perks(campaign, rand(2..10))
       create_milestones(campaign, rand(2..10))
