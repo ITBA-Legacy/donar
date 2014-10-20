@@ -6,7 +6,8 @@ class CampaignsController < ApplicationController
   belongs_to :organization, optional: true
 
   FIELDS = [:name, :description, :goal, :deadline, :minimum, :category, :short_description,
-            :locality, :main_image, :video, :history, :country,
+            :locality, :main_image, :video, :history, :milestones, :country,
+                milestones_attributes: [:id, :name, :description, :amount, :_destroy],
             perks_attributes: [:id, :amount, :name, :maximum, :description,
                                :_destroy, :delivery_date, :requires_address]]
 
@@ -33,7 +34,7 @@ class CampaignsController < ApplicationController
 
   def configure_step2
     @campaign = Campaign.find(params[:id])
-    params[:milestones].each do |hash|
+    params[:campaign][:milestones_attributes].values.each do |hash|
       amount = hash[:amount].to_i
       @campaign.milestones << Milestone.create(amount: amount) if amount > 0
     end

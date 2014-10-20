@@ -17,8 +17,25 @@ $ ->
     )
   )
 
+  add_milestone = ->
+    objTo = document.getElementById("milestone_field")
+    divtest = document.createElement("div")
+
+    return
+
   validateInputs = (inputs) ->
     valid = true
     inputs.each ->
       valid = false if not validator.element(this)
     return valid
+
+  jQuery(document.body).on 'keyup', '.milestone-amount', ->
+    acum = 0
+    $('.milestone-amount').each (index,input) ->
+      acum+= parseInt(input.value)
+      return
+
+    t = document.createTextNode(acum)
+    $('#total-amount').empty()
+    $('#total-amount').append t
+    return

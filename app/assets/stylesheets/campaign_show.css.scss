@@ -1,4 +1,5 @@
 $violet: #723270;
+$green: #40E246;
 
 #campaign-nav-title {
     float: left;
@@ -84,12 +85,10 @@ nav .share iframe
   display: inline-block;
 }
 
-
-
-
-
-
-
-
-
-
+#total-amount {
+  background-color: white;
+  width: 30%;
+  margin: 10px auto;
+  border-radius: 8px;
+  font-size: 25px;
+}

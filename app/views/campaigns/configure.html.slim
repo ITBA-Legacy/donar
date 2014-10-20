@@ -15,19 +15,14 @@
     .col-sm-11.white
       = t('campaigns.configure.milestones_text')
   .row#milestones
-    .col-sm-3.milestone-card
-      label= t 'campaigns.configure.first_milestone'
-      = f.number_field :amount, value: 0, name: 'milestones[][amount]'
-    .col-sm-3.milestone-card
-      label= t 'campaigns.configure.second_milestone'
-      = f.number_field :amount, value: 0, name: 'milestones[][amount]'
-    .col-sm-3.milestone-card
-      label= t 'campaigns.configure.third_milestone'
-      = f.number_field :amount, value: 0, name: 'milestones[][amount]'
-    .col-sm-3.milestone-card
-      label= t 'campaigns.configure.fourth_milestone'
-      = f.number_field :amount, value: 0, name: 'milestones[][amount]'
+    .col-md-12
+      #total-amount
 
+    .col-sm-3#milestone-card
+      = f.fields_for :milestones do |f_milestone|
+        = render 'milestone_fields', f: f_milestone
+      = link_to_add_association t('helpers.submit.milestone.new'), f, :milestones,
+                            class: 'btn btn-primary btn-violet'
   .row.violet-row
     .row
       .col-sm-9.white-bold
