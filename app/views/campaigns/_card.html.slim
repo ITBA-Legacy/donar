@@ -2,8 +2,13 @@
 - percentage_done = campaign.contribution > 0 ? (campaign.contribution / campaign.goal) * 100 : 0
 .campaign-card.col-sm-3
   .thumbnail
-    = link_to organization_campaign_path(campaign.organization, campaign) do
-      = image_tag 'crowdfunding.png'
+    .img-campaign-thumbnail
+      = link_to organization_campaign_path(campaign.organization, campaign) do
+        - if campaign.main_image.file.size > 0
+          = image_tag campaign.main_image
+        - else
+          = image_tag 'crowdfunding.png'
+
     .caption
       h4
         = campaign.name
