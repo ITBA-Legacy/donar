@@ -19,8 +19,8 @@ development:
   encoding: unicode
   database: donar_development
   pool: 5
-  username: donar
-  password: donar
+  username:
+  password:
   host: localhost
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -49,8 +49,8 @@ test: &test
   encoding: unicode
   database: donar_test
   pool: 5
-  username: donar
-  password: donar
+  username:
+  password:
   host: localhost
 
 staging:
@@ -58,8 +58,8 @@ staging:
   encoding: unicode
   database: donar_staging
   pool: 5
-  username: donar
-  password: donar
+  username:
+  password:
   host: localhost
 
 production:
@@ -67,8 +67,8 @@ production:
   encoding: unicode
   database: donar_production
   pool: 5
-  username: donar
-  password: donar
+  username:
+  password:
   host: localhost
 
 cucumber:
