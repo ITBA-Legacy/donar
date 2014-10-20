@@ -91,7 +91,7 @@ es:
         locality: Localidad
         contribution: Contribución Total
         created_at: Fecha de Creación
-        video: Vimeo video url
+        video: Youtube video url
         main_image: Imagen
         history: Historia
         aasm_state: Estado

@@ -44,10 +44,11 @@ html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/200
 
     .row
     .col-md-9
-        .row
-          .container-fluid
-            .embed-responsive
-              iframe.embed-responsive-item.video-container.main-video src=youtube_embed(@campaign[:video])
+        - if !@campaign.video.blank?
+          .row
+            .container-fluid
+              .embed-responsive
+                iframe.embed-responsive-item.video-container.main-video src=youtube_embed(@campaign[:video])
 
         .row.main-image
           = image_tag @campaign.main_image,class: "img-responsive center-block"
