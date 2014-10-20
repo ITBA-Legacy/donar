@@ -1,19 +1,20 @@
 .campaign-card {
-
-  .thumbnail {
-
-    height: 460px;
-
-    .caption {
-      padding: 0 9px;
+    .thumbnail {
+        height: 460px;
+        .caption {
+            padding: 0 9px;
+        }
+        .description {
+            height: 95px;
+        }
+        .information {
+            height: 40px;
+        }
     }
-
-    .description {
-      height: 95px;
-    }
-
-    .information {
-      height: 40px;
-    }
+}
+.img-campaign-thumbnail {
+  height: 200px;
+  img{
+    max-height: 200px;
   }
 }

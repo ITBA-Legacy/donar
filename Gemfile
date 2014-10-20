@@ -97,6 +97,8 @@ gem 'exception_notification'
 
 # Rich text input
 gem 'tinymce-rails'
+gem 'tinymce-rails-langs'
+
 
 # Validate forms
 gem 'jquery-validation-rails'

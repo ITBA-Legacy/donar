@@ -7,3 +7,7 @@ theme_advanced_buttons3_add:
 plugins:
   - table
   - fullscreen
+  - image
+  - link
+  - autosave
+image_class_list: tittle= 'image-tiny'
