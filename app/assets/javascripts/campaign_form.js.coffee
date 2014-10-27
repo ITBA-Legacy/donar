@@ -35,7 +35,21 @@ $ ->
       acum+= parseInt(input.value)
       return
     $('#hidden-amount').val(acum)
+    if ( isNaN(acum) )
+      acum = 0
     t = document.createTextNode('$ ' + acum)
+    $('#total-amount').empty()
+    $('#total-amount').append t
+    return
+
+  jQuery(document.body).on 'click', '.milestone-remove', ->
+    acum = $('#hidden-amount').val()
+    aux = $(this).parent().parent().find('.milestone-amount').val()
+    if ( isNaN(parseInt(aux)) )
+      aux = 0
+    total = parseInt(acum) - parseInt(aux)
+    $('#hidden-amount').val(total)
+    t = document.createTextNode('$ ' + total)
     $('#total-amount').empty()
     $('#total-amount').append t
     return

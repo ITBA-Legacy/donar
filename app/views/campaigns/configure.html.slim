@@ -1,4 +1,15 @@
-= form_for @campaign, url: configure_step2_campaign_url(@campaign), method: :post, html: { role: 'form' } do |f|
+= form_for [@campaign], url: configure_step2_campaign_url(@campaign), method: :post, html: { role: 'form' } do |f|
+  - if @campaign.errors.any?
+    .alert.alert-danger
+      ul
+        - @campaign.errors.each do |attr, msg|
+          li = msg
+  - if @milestone != nil && @milestone.errors.any?
+    .alert.alert-danger
+      ul
+        - @milestone.errors.each do |attr, msg|
+          li = msg
+
   .row
     h1
       = t('campaigns.configure.title')
@@ -17,6 +28,7 @@
   .row#milestones
     .col-md-12
       #total-amount
+        | $ 0
       #hidden-total-amount hidden=""
         = f.number_field :goal, class: 'form-control col-sm-12', id: 'hidden-amount', required: true, min: 1.0
     .col-sm-3#milestone-card

@@ -29,6 +29,7 @@ class CampaignsController < ApplicationController
   end
 
   def configure
+
     @campaign = Campaign.find(params[:id])
   end
 
@@ -38,10 +39,18 @@ class CampaignsController < ApplicationController
       amount = hash[:amount].to_i
       name = hash[:name].to_s
       description = hash[:description].to_s
-      @campaign.milestones << Milestone.create(amount: amount, name: name, description: description) if amount > 0
+      @milestone = Milestone.create(amount: amount, name: name, description: description)
+      #@campaign.milestones << Milestone.create(amount: amount, name: name, description: description) if amount > 0
+      if @milestone.valid?
+      else
+        render 'campaigns/configure'
+        return
+      end
+      @campaign.milestones << @milestone
     end
     @campaign.fund_recipient = params[:fund_recipient]
     @campaign.funding_type = params[:funding_type]
+    @campaign.goal = params[:campaign][:goal].to_i
     @campaign.save!
   end
 

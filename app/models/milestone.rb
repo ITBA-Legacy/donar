@@ -4,6 +4,7 @@ class Milestone < ActiveRecord::Base
   include AASM
 
   validates :description, :name, :amount, presence: true
+  validates :amount, numericality: { greater_than: 0 }
 
   aasm do
     state :notAchieved, initial: true
