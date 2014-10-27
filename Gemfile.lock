@@ -379,6 +379,8 @@ GEM
     timeliness (0.3.7)
     tinymce-rails (4.0.19)
       railties (>= 3.1.1)
+    tinymce-rails-langs (4.20140129)
+      tinymce-rails (~> 4.0)
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
@@ -459,6 +461,7 @@ DEPENDENCIES
   therubyracer
   timecop
   tinymce-rails
+  tinymce-rails-langs
   twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
   unicorn

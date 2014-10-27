@@ -59,8 +59,8 @@ html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/200
               p
                 strong
                   = @campaign.short_description
-        .row
-            = raw(@campaign.history)
+        .row.history
+          = raw(@campaign.history)
 
     .col-md-3
       .panel.panel-default
