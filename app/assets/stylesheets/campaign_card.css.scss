@@ -2,11 +2,13 @@
 
   .thumbnail {
 
-    height: 460px;
-
-
+    height: 500px;
+    max-width: 260px;
     .caption {
       padding: 0 9px;
+      .campaign-name{
+        font-weight: bold;
+      }
     }
 
     .description {
@@ -15,12 +17,25 @@
 
     .information {
       height: 40px;
+
+      .thumbnail-state{
+        padding: 10px;
+        font-weight: bold;
+      }
+
     }
+  }
+
+  .no-padding{
+    padding: 0;
   }
 }
 .img-campaign-thumbnail {
-  height: 200px;
+  height: 190px;
+  margin-bottom: 10px;
   img{
-    max-height: 200px;
+
+    max-height: 190px;
+    max-width: 250px;
   }
 }
