@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140922131015) do
+ActiveRecord::Schema.define(version: 20141110141551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(version: 20140922131015) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "aasm_state"
+    t.string   "file"
   end
 
   add_index "milestones", ["campaign_id"], name: "index_milestones_on_campaign_id", using: :btree

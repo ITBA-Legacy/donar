@@ -14,5 +14,9 @@
                     value: @milestone.description,
                     required: true
   .form-group
+    = f.label :file, class: 'control-label col-sm-2'
+    .col-md-4
+      = file_field_tag :file
+  .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit nil, class: 'btn btn-primary'

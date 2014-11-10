@@ -3,6 +3,8 @@ class Milestone < ActiveRecord::Base
 
   include AASM
 
+  mount_uploader :file, MilestoneFileUploader
+
   aasm do
     state :notAchieved, initial: true
     state :achieved
