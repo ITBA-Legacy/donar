@@ -74,7 +74,8 @@
 
           .form-group
             label.control-label= t('campaigns.new.basic_info.city')
-            = f.subregion_select :locality,'AR' ,class: 'form-control',required: true
+            #subregion
+              = render 'subregion_select', locals: {parent_region: 'AR'}
 
           .form-group
             label.control-label = t('campaigns.new.basic_info.deadline')
