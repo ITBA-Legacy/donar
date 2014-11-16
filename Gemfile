@@ -145,3 +145,6 @@ end
 group :production, :staging do
   gem 'rails_12factor'
 end
+
+#Country/State selection
+gem 'carmen-rails', '~> 1.0.0'
