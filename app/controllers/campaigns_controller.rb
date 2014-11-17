@@ -16,9 +16,8 @@ class CampaignsController < ApplicationController
   end
 
   def subregion_options
-    render 'subregion_select', locals: {parent_region: 'US'}
+    render partial: 'subregion_select'
   end
-
 
   def index
     index! { @campaigns = @campaigns.page(params[:page] || 1).per(10) }
@@ -63,6 +62,5 @@ class CampaignsController < ApplicationController
     return [] if request.get?
     [params.require(:campaign).permit(FIELDS)]
   end
-
 
 end

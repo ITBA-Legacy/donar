@@ -70,13 +70,11 @@
             = f.number_field :minimum, class: 'form-control', required: true, min: 1.0
           .form-group
             label.control-label= t('campaigns.new.basic_info.country')
-            = f.country_select :country, selected: 'AR',class: 'form-control', required: true
-
+            #country
+              = f.country_select :country, selected: 'AR',class: 'form-control', required: true
           .form-group
             label.control-label= t('campaigns.new.basic_info.city')
             #subregion
-              = render 'subregion_select', locals: {parent_region: 'AR'}
-
           .form-group
             label.control-label = t('campaigns.new.basic_info.deadline')
             .input-group
