@@ -5,9 +5,6 @@
     = link_to t('helpers.submit.organization.new'), new_organization_path,
               class: 'btn btn-primary btn-violet'
   - else
-    table.table.table-bordered.table-hover
-
-      - organizations.each do |organization|
-        tr
-          td
-            = link_to organization.name, new_organization_campaign_path(organization)
+    - organizations.each do |organization|
+      .row
+        = link_to organization.name, new_organization_campaign_path(organization), class: 'btn btn-violet landing_org'
