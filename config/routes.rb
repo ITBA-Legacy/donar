@@ -23,6 +23,7 @@ Donar::Application.routes.draw do
 
     collection do
       get :list
+      get :subregion_options
     end
 
     resources :comments, except: [:edit, :update]
