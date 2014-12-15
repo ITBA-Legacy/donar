@@ -9,7 +9,7 @@ html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/200
       meta content=(@campaign.main_image) property="og:image" /
       meta content=("COMUNIDAR") property="og:site_name" /
       meta content="1410568312542480" property="fb:app_id" /
-      meta content=("Awesome project") property="og:description" /
+      meta content=(@campaign.short_description) property="og:description" /
 
   body
 
@@ -97,15 +97,21 @@ html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/200
                     = t('campaigns.card.days_left')
                     br
                     = (@campaign.deadline.to_date - Time.current.to_date).to_i
-            br
-            br
-            br
+            li
+              #text-bold
+                = Campaign.human_attribute_name(:locality)
+            li
+                = Carmen::Country.coded(@campaign.country).subregions.coded(@campaign.locality).name
+            li
+              #text-bold
+                = Campaign.human_attribute_name(:country)
+            li
+                = Carmen::Country.coded(@campaign.country).name
             li
               #text-bold
                 = Campaign.human_attribute_name(:deadline)
             li
                 = l(@campaign.deadline, format: :short)
-            br
             li
               #text-bold
                 = Campaign.human_attribute_name(:minimum)
