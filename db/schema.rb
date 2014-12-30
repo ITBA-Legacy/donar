@@ -119,7 +119,7 @@ ActiveRecord::Schema.define(version: 20141110141551) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "aasm_state"
-    t.string   "file"
+    t.integer  "file"
   end
 
   add_index "milestones", ["campaign_id"], name: "index_milestones_on_campaign_id", using: :btree

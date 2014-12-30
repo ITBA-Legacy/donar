@@ -142,8 +142,10 @@ ActiveAdmin.register Campaign do
           column Milestone.human_attribute_name(:name), :name
           column Milestone.human_attribute_name(:description), :description
           column do |milestone|
-            link_to t('active_admin.download'), download_milestone_admin_campaign_path(milestone),
-                        class: 'button'
+            if milestone.file.size > 0
+              link_to t('active_admin.download'), download_milestone_admin_campaign_path(milestone),
+                          class: 'button'
+            end
           end
           column Milestone.human_attribute_name(:aasm_state) do |milestone|
             t("milestones.states.#{milestone.aasm_state}")
@@ -218,6 +220,7 @@ ActiveAdmin.register Campaign do
   end
 
   member_action :download_milestone do
-    send_file Milestone.find(params[:id]).file.store_dir
+    file = Milestone.find(params[:id]).file
+    send_data file.read, filename: "#{File.basename(file.url)}.zip"
   end
 end

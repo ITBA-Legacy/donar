@@ -1,5 +1,5 @@
 class AddFileToMilestone < ActiveRecord::Migration
   def change
-    add_column :milestones, :file, :string
+    add_column :milestones, :file, :oid
   end
 end

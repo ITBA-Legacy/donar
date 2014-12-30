@@ -22,6 +22,8 @@ gem 'unicorn'
 # Use AASM as a state machine engine
 gem 'aasm'
 
+gem 'rb-readline'
+
 group :assets do
   # Use SCSS for stylesheets
   gem 'sass-rails',   '~> 4.0.0'

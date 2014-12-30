@@ -5,7 +5,7 @@ class MilestonesController < ApplicationController
   before_action :authenticate_user!
   nested_belongs_to :organization, :campaign
 
-  FIELDS = [:description]
+  FIELDS = [:description, :file]
 
   def achieve
     @milestone = Milestone.find(params[:id])

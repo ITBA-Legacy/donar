@@ -82,6 +82,7 @@ Donar::Application.routes.draw do
 
   mount PostgresqlLoStreamer::Engine => '/user_avatar', as: 'user_avatar'
   mount PostgresqlLoStreamer::Engine => '/campaign_main_image', as: 'campaign_main_image'
+  mount PostgresqlLoStreamer::Engine => '/milestone_file', as: 'milestone_file'
 
   # End Image Storage
 
