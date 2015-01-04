@@ -143,8 +143,9 @@ ActiveAdmin.register Campaign do
           column Milestone.human_attribute_name(:description), :description
           column do |milestone|
             if milestone.file.size > 0
-              link_to t('active_admin.download'), download_milestone_admin_campaign_path(milestone),
-                          class: 'button'
+              link_to t('active_admin.download'),
+                      download_milestone_admin_campaign_path(milestone),
+                      class: 'button'
             end
           end
           column Milestone.human_attribute_name(:aasm_state) do |milestone|
