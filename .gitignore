@@ -54,5 +54,5 @@ public/uploads
 # Database configuration
 /config/database.yml
 
-# Ignore de gitignore
+# Ignore .gitignore
 .gitignore
