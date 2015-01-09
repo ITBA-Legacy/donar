@@ -50,3 +50,9 @@ public/uploads
 
 # Mercadopago
 .mercadopago.yml
+
+# Database configuration
+/config/database.yml
+
+# Ignore de gitignore
+.gitignore
