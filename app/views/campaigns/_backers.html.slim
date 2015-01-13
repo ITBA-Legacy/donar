@@ -1,0 +1,6 @@
+- if @campaign.contributions.empty?
+  h3
+    = t('campaigns.no_backers')
+- @campaign.contributions.each do |c|
+  h2
+    = "#{c.first_name} #{c.last_name}"

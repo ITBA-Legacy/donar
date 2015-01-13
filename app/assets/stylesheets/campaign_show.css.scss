@@ -92,6 +92,32 @@ img .fit{
 
 }
 
+/* Edition buttons */
+
+.btn-contribution {
+  width: 100%;
+}
+
+.btn-config {
+  display: block;
+  width: 85%;
+  margin: 10px auto;
+}
+
+/* Tabs */
+
+#campaign-tabs.nav-tabs {
+  border-bottom: 1px solid $violet;
+  li.active a {
+    border: 1px solid $violet;
+    border-bottom-color: transparent;
+  }
+  li a {
+    border: 1px solid $violet;
+    font-size: 18px;
+  }
+}
+
 
 
 

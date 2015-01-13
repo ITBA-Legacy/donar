@@ -1,0 +1,5 @@
+- if @campaign.perks.empty?
+  h1
+    = t('campaign.no_perks')
+- else
+  = render @campaign.perks
