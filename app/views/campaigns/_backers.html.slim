@@ -1,6 +1,21 @@
-- if @campaign.contributions.empty?
+- if contributions.empty?
   h3
     = t('campaigns.no_backers')
-- @campaign.contributions.each do |c|
-  h2
-    = "#{c.first_name} #{c.last_name}"
+- else
+  table.table.table-bordered.table-hover
+    thead
+      th
+        = Contribution.human_attribute_name(:user)
+      th
+        = Contribution.human_attribute_name(:created_at)
+      th
+        = Contribution.human_attribute_name(:amount)
+    tbody
+      - contributions.each do |c|
+        tr
+          td
+            = link_to "#{c.user.full_name}", user_path(c.user)
+          td
+            = l(c.created_at, format: :short)
+          td
+            = "$ #{c.amount}"

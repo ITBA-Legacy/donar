@@ -93,13 +93,13 @@ en:
     comments: Comments
     backers: Backers
     no_backers: This campaign does not have funders. Be the first!
-    benefits: Benefits
+    perks: Perks
     next: Next
     previous: Back
     first_step: 'Step 1'
     second_step: 'Step 2'
     collected: 'Collected from'
-    no_perks: 'This campaign has no benefits.'
+    no_perks: 'This campaign has no perks.'
     card:
       goal: "of $%{goal}"
       pledgers: "%{count} Donors"
