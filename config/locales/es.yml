@@ -101,12 +101,14 @@ es:
     updates: Actualizaciones
     comments: Comentarios
     backers: Financiadores
-    benefits: Beneficios
+    no_backers: Esta campaña aún no tiene financiadores. ¡Sé el primero!
+    perks: Beneficios
     next: Siguiente
     previous: Atrás
     first_step: 'Paso 1'
     second_step: 'Paso 2'
     collected: 'Recaudados del objetivo de'
+    no_perks: 'Esta campaña no tiene beneficios.'
     card:
       goal: "de $%{goal}"
       pledgers: "%{count} Donadores"

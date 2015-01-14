@@ -92,12 +92,14 @@ en:
     updates: Updates
     comments: Comments
     backers: Backers
-    benefits: Benefits
-    next: Siguiente
-    previous: Atrás
-    first_step: 'Paso 1'
-    second_step: 'Paso 2'
+    no_backers: This campaign does not have funders. Be the first!
+    perks: Perks
+    next: Next
+    previous: Back
+    first_step: 'Step 1'
+    second_step: 'Step 2'
     collected: 'Collected from'
+    no_perks: 'This campaign has no perks.'
     card:
       goal: "of $%{goal}"
       pledgers: "%{count} Donors"
