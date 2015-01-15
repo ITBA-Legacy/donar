@@ -20,7 +20,6 @@ class ApplicationController < ActionController::Base
   def faq
   end
 
-
   private
 
   def configure_permitted_parameters
