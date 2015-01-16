@@ -25,16 +25,16 @@ html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/200
         li
           = link_to t('campaigns.backers'), '#backers', data: {toggle: 'tab'}
         li
-          = link_to t('campaigns.perks'), '#perks', data: {toggle: 'tab'}
+          = link_to t('campaigns.perks'), '#perks-camp-show', data: {toggle: 'tab'}
 
       .tab-content
-        #history.tab-pane.active role='tabpanel'
+        .tab-pane.active role='tabpanel'
           = render 'history'
 
         #backers.tab-pane role='tabpanel'
           = render 'backers', contributions: @campaign.contributions
 
-        #perks.tab-pane role='tabpanel'
+        #perks-camp-show.tab-pane role='tabpanel'
           = render '/perks/index_table', perks: @campaign.perks
     .col-md-3
       = render 'side_panel'

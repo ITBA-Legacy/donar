@@ -153,6 +153,7 @@ es:
       text2: "En este momento, nadie más puede ver tu campaña. Puedes editar lo que quieras. Cuando estés satisfecho y listo para recibir financiamiento, haz clic en el botón 'Lanzar' en la última página para hacer visible tu campaña."
       text3: "Después de lanzar tu campaña, podrás cambiar cualquier parte de esta página EXCEPTO tu meta, el tipo de financiamiento y cualquier recompensa que reclame un colaborador."
       milestones: "Hitos"
+      milestone_add: Agregar otro hito
       milestones_text: "Utiliza $0 para omitir el hito"
       first_milestone: "Monto tope de 1er hito"
       second_milestone: "Monto tope de 2do hito"
@@ -169,7 +170,7 @@ es:
         all: 'Financiamiento flexible - conserva lo que recaudas'
         partial: 'Financiamiento fijo - todo o nada'
       perks:
-        title: Tus recompenzas
+        title: Tus recompensas
       history:
         title: 'Tu Historia'
     new:
@@ -197,6 +198,7 @@ es:
         deadline: "Fecha de finalización (dd/mm/aaaa)"
         minimum: "Donación mínima"
         goal: "Objetivo"
+        category: "Categoría"
     twitter_message:
       introduction: "Construyamos un sueño juntos!! ayudame a fundar"
       ending: "Entra al sitio para enterarte de todo lo que esta pasando en el proyecto"
