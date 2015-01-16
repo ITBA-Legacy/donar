@@ -29,14 +29,18 @@ class CampaignsController < ApplicationController
 
   def configure
     @campaign = Campaign.find(params[:id])
+    @campaign.milestones << Milestone.new if @campaign.milestones.empty?
   end
 
   def configure_step2
+    not_error = true
     @campaign = Campaign.find(params[:id])
-    params[:milestones].each do |hash|
-      amount = hash[:amount].to_i
-      @campaign.milestones << Milestone.create(amount: amount) if amount > 0
+    params[:campaign][:milestones_attributes].keys.each do |key_milestone|
+      @milestone = Milestone.create(milestone_params(key_milestone))
+      not_error = false unless @milestone.valid?
+      @campaign.milestones << @milestone
     end
+    render 'configure' unless not_error
     @campaign.fund_recipient = params[:fund_recipient]
     @campaign.funding_type = params[:funding_type]
     @campaign.save!
@@ -59,4 +63,7 @@ class CampaignsController < ApplicationController
     [params.require(:campaign).permit(FIELDS)]
   end
 
+  def milestone_params(key_milestone)
+    params[:campaign][:milestones_attributes][key_milestone].permit(:name, :description, :done_date, :amount)
+  end
 end

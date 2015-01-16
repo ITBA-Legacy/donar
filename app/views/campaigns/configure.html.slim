@@ -12,22 +12,12 @@
   .row.violet-row
     .col-sm-1.white-bold
       = t('campaigns.configure.milestones')
-    .col-sm-11.white
-      = t('campaigns.configure.milestones_text')
   .row#milestones
-    .col-sm-3.milestone-card
-      label= t 'campaigns.configure.first_milestone'
-      = f.number_field :amount, value: 0, name: 'milestones[][amount]'
-    .col-sm-3.milestone-card
-      label= t 'campaigns.configure.second_milestone'
-      = f.number_field :amount, value: 0, name: 'milestones[][amount]'
-    .col-sm-3.milestone-card
-      label= t 'campaigns.configure.third_milestone'
-      = f.number_field :amount, value: 0, name: 'milestones[][amount]'
-    .col-sm-3.milestone-card
-      label= t 'campaigns.configure.fourth_milestone'
-      = f.number_field :amount, value: 0, name: 'milestones[][amount]'
-
+    .col-md-12
+      = f.fields_for :milestones do |milestone|
+        = render 'milestone_fields', :f => milestone
+    .col-md-12
+      = link_to_add_association t('campaigns.configure.milestone_add'), f, :milestones, class: 'btn btn-violet btn-add-milestone'
   .row.violet-row
     .row
       .col-sm-9.white-bold
