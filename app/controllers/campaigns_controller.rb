@@ -43,7 +43,6 @@ class CampaignsController < ApplicationController
     render 'configure' unless not_error
     @campaign.fund_recipient = params[:fund_recipient]
     @campaign.funding_type = params[:funding_type]
-    @campaign.save!
   end
 
   def configure_step3
