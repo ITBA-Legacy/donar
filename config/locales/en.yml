@@ -109,6 +109,8 @@ en:
       days_left: "Remaining Days"
       raised: 'Raised'
       completed: 'Completed'
+      remaining_days_plural: '%{days} days remaining'
+      remaining_days_singular: '1 day remaining'
     categories:
       education: Education
       social: Social

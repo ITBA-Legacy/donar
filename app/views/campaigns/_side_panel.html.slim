@@ -23,29 +23,25 @@
                 .progress
                   .progress-bar.progress-bar-success.p80 aria-valuenow=percentage_done aria-valuemin="0" aria-valuemax="100" style="width: #{percentage_done}%"
               .information
-                .col-sm-5.pull-left.text-center
-                  h4
+                .col-sm-12
+                  p.text-center
                     = t('campaigns.card.completed')
-                    br
-                    = "#{number_with_precision(percentage_done, precision: 1, separator: t('application.separator'))} %"
-                .col-sm-6.pull-right.text-center
-                  h4
-                    = t('campaigns.card.days_left')
-                    br
-                    = (@campaign.deadline.to_date - Time.current.to_date).to_i
-            br
+                    = " #{number_with_precision(percentage_done, precision: 1, separator: t('application.separator'))} %"
             br
             br
             li
-              #text-bold
-                = Campaign.human_attribute_name(:deadline)
-            li
-                = l(@campaign.deadline, format: :short)
+              #text-bold.text-center
+                - if ((@campaign.deadline.to_date - Time.current.to_date).to_i) > 1
+                  = t('campaigns.card.remaining_days_plural',days: (@campaign.deadline.to_date - Time.current.to_date).to_i)
+                - elsif ((@campaign.deadline.to_date - Time.current.to_date).to_i) == 1
+                  = t('campaigns.card.remaining_days_singular')
+                - else
+                  = t('campaigns.card.remaining_days_plural',days: 0)
             br
             li
-              #text-bold
+              #text-bold.text-center
                 = Campaign.human_attribute_name(:minimum)
-            li
+            li.text.text-center
                 = "$ #{@campaign.minimum}"
             br
             p
@@ -53,11 +49,11 @@
                       -if @campaign.deadline.to_date >= Time.current.to_date
                         = link_to t('campaigns.contribute'),
                           new_organization_campaign_contribution_path(@campaign.organization, @campaign),
-                          class: 'btn btn-violet btn-contribution'
+                          class: 'btn btn-violet fill-width'
                       -else
                         = link_to t('campaigns.contribute'),
                           new_organization_campaign_contribution_path(@campaign.organization, @campaign),
                           class: 'btn btn-violet fill-width disabled'
                         p
                           small
-                            = t('campaigns.cant_donate')
+                            =t('campaigns.cant_donate')

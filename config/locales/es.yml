@@ -117,6 +117,8 @@ es:
       days_left: "Días Restantes"
       raised: 'Recaudado'
       completed: 'Completado'
+      remaining_days_plural: 'Faltan %{days} días'
+      remaining_days_singular: 'Falta 1 día'
     categories:
       education: Educación
       social: Social
