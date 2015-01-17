@@ -1,4 +1,4 @@
-= form_for @campaign, url: configure_step2_campaign_url(@campaign), method: :post, html: { role: 'form' } do |f|
+= simple_form_for @campaign, url: configure_step2_campaign_url(@campaign), method: :post, html: { role: 'form' } do |f|
   .row
     h1
       = t('campaigns.configure.title')
@@ -14,7 +14,7 @@
       = t('campaigns.configure.milestones')
   .row#milestones
     .col-md-12
-      = f.fields_for :milestones do |milestone|
+      = f.simple_fields_for :milestones do |milestone|
         = render 'milestone_fields', :f => milestone
     .col-md-12
       = link_to_add_association t('campaigns.configure.milestone_add'), f, :milestones, class: 'btn btn-violet btn-add-milestone'

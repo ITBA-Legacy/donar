@@ -4,8 +4,10 @@
       .col-md-6.form-group
         = f.label :name, class: 'control-label'
         = f.text_field :name, class: 'form-control', required: true
+        = f.full_error :name
       .col-md-6.form-group
         = f.label :amount, class: 'control-label'
+        = f.full_error :amount
         .input-group
           span.input-group-addon
             | $
@@ -13,9 +15,12 @@
       .col-md-6.form-group
         = f.label :description, class: 'control-label'
         = f.text_area :description, class: 'form-control', required: true
+        = f.full_error :description
       .col-md-6.form-group
         = f.label :done_date, class: 'control-label'
         = f.date_field :done_date, class: 'form-control', required: true, min: Time.current
+        = f.full_error :done_date
+        = f.hidden_field :id
   .col-md-12
     = link_to_remove_association t('helpers.submit.milestone.remove'), f,
                                    class: 'btn btn-primary btn-green btn-milestone-remove'
