@@ -14,7 +14,6 @@ class OrganizationsController < ApplicationController
     render partial: 'subregion_select'
   end
 
-
   def create
     create! do
       if @organization.valid?
