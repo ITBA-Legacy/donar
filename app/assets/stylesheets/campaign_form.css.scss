@@ -97,6 +97,14 @@ $grey: #C0C0C0;
   }
 }
 
+#backers {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  label {
+    padding-left: 0px;
+  }
+}
+
 #who {
   margin-bottom: 15px;
   .checkbox-label {

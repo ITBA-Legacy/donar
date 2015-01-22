@@ -2,7 +2,6 @@ $violet: #723270;
 
 #campaign-nav-title {
     float: left;
-    margin-right: 30px;
   }
 
 #campaign-ul
@@ -90,6 +89,31 @@ nav .share iframe
 img .fit{
   width: 100%;
 
+}
+
+/* Edition buttons */
+
+.btn-contribution {
+  width: 100%;
+}
+
+.btn-config {
+  display: block;
+  margin: 10px auto;
+}
+
+/* Tabs */
+
+#campaign-tabs.nav-tabs {
+  border-bottom: 1px solid $violet;
+  li.active a {
+    border: 1px solid $violet;
+    border-bottom-color: transparent;
+  }
+  li a {
+    border: 1px solid $violet;
+    font-size: 18px;
+  }
 }
 
 

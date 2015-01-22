@@ -1,10 +1,14 @@
 #footer-upper
-  #footer-sections.col-md-3
+  #footer-sections.col-md-4
     div
       p
         = link_to t('application.footer.create_campaign'), landing_campaigns_path
       p
         = link_to t('application.footer.who_are_we'), about_path
+      p
+        = link_to t('application.footer.faq'), faq_path
+      p
+        = link_to t('application.footer.tips'), tips_path
 
   #footer-sponsors
     div

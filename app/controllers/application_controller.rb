@@ -14,6 +14,12 @@ class ApplicationController < ActionController::Base
   def about
   end
 
+  def tips
+  end
+
+  def faq
+  end
+
   private
 
   def configure_permitted_parameters

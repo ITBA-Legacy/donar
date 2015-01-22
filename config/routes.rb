@@ -5,6 +5,8 @@ Donar::Application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   root 'application#index'
   get '/about', to: 'application#about'
+  get '/faq', to: 'application#faq'
+  get '/tips', to: 'application#tips'
 
   # Users Routes
 

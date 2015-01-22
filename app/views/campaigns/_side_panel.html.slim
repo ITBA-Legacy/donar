@@ -1,0 +1,63 @@
+- percentage_done = @campaign.contribution > 0 ? (@campaign.contribution / @campaign.goal) * 100 : 0
+.panel.panel-default
+        #information-panel.panel-body
+          #campaign-ul
+            li
+              =facebook_button :url=> request.original_url
+            li
+              =twitter_button :url=> request.original_url, :text=> t('campaigns.twitter_message.introduction') + " " + @campaign.name + ". " + t('campaigns.twitter_message.ending')
+            li
+              =google_plus_button :url=> request.original_url
+
+            li
+              p
+                h2
+                  #text-bold
+                    = "$ #{number_with_precision(@campaign.contribution, precision: 2,
+                separator: t('application.separator'), delimiter: t('application.delimiter'))}"
+            li
+              #text-violet
+                = t('campaigns.collected') + " $#{@campaign.goal}"
+            li
+              p
+                .progress
+                  .progress-bar.progress-bar-success.p80 aria-valuenow=percentage_done aria-valuemin="0" aria-valuemax="100" style="width: #{percentage_done}%"
+              .information
+                .col-sm-5.pull-left.text-center
+                  h4
+                    = t('campaigns.card.completed')
+                    br
+                    = "#{number_with_precision(percentage_done, precision: 1, separator: t('application.separator'))} %"
+                .col-sm-6.pull-right.text-center
+                  h4
+                    = t('campaigns.card.days_left')
+                    br
+                    = (@campaign.deadline.to_date - Time.current.to_date).to_i
+            br
+            br
+            br
+            li
+              #text-bold
+                = Campaign.human_attribute_name(:deadline)
+            li
+                = l(@campaign.deadline, format: :short)
+            br
+            li
+              #text-bold
+                = Campaign.human_attribute_name(:minimum)
+            li
+                = "$ #{@campaign.minimum}"
+            br
+            p
+                .centerize
+                      -if @campaign.deadline.to_date >= Time.current.to_date
+                        = link_to t('campaigns.contribute'),
+                          new_organization_campaign_contribution_path(@campaign.organization, @campaign),
+                          class: 'btn btn-violet btn-contribution'
+                      -else
+                        = link_to t('campaigns.contribute'),
+                          new_organization_campaign_contribution_path(@campaign.organization, @campaign),
+                          class: 'btn btn-violet fill-width disabled'
+                        p
+                          small
+                            = t('campaigns.cant_donate')
