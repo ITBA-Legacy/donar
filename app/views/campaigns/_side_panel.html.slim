@@ -31,12 +31,14 @@
             br
             li
               #text-bold.text-center
-                - if ((@campaign.deadline.to_date - Time.current.to_date).to_i) > 1
-                  = t('campaigns.card.remaining_days_plural',days: (@campaign.deadline.to_date - Time.current.to_date).to_i)
-                - elsif ((@campaign.deadline.to_date - Time.current.to_date).to_i) == 1
-                  = t('campaigns.card.remaining_days_singular')
-                - else
-                  = t('campaigns.card.remaining_days_plural',days: 0)
+                - time_diff = Time.diff(Time.current, @campagin.deadline)
+                - if Time
+/                - if ((@campaign.deadline.to_date - Time.current.to_date).to_i) > 1
+/                  = t('campaigns.card.remaining_days_plural',days: (@campaign.deadline.to_date - Time.current.to_date).to_i)
+/                - elsif ((@campaign.deadline.to_date - Time.current.to_date).to_i) == 1
+/                  = t('campaigns.card.remaining_days_singular')
+/                - else
+/                  = t('campaigns.card.remaining_days_plural',days: 0)
             br
             li
               #text-bold.text-center
