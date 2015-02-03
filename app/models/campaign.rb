@@ -36,7 +36,6 @@ class Campaign < ActiveRecord::Base
   # validates :minimum, :goal, numericality: { greater_than: 0 }
   # validates :minimum, :goal, presence: true
 
-
   mount_uploader :main_image, CampaignImageUploader
 
   after_initialize :default_attributes
