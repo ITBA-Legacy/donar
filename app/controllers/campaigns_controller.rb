@@ -29,36 +29,17 @@ class CampaignsController < ApplicationController
 
   def configure
     @campaign = Campaign.find(params[:id])
-    @campaign.milestones << Milestone.create() if @campaign.milestones.empty?
   end
 
   def configure_step2
-    error = false
     @campaign = Campaign.find(params[:id])
-    params[:campaign][:milestones_attributes].keys.each do |key_milestone|
-      @milestone = retrieve_milestone(key_milestone)
-      error |= !@milestone.valid?
-      @campaign.milestones << @milestone
-    end
-    if !error
-      @campaign.fund_recipient = params[:fund_recipient]
-      @campaign.funding_type = params[:funding_type]
-      @campaign.save!
+    @campaign.milestones.destroy_all
+    if params[:campaign][:milestones_attributes].present?
+      error = fetch_milestones(@campaign)
     else
-      render "configure"
+      error = true
     end
-
-
-  end
-
-  def retrieve_milestone(key_milestone)
-    milestone = Milestone.find_by_id(milestone_id(key_milestone))
-    if milestone
-      milestone.update_attributes(milestone_params(key_milestone))
-    else
-      milestone = Milestone.create(milestone_params(key_milestone))
-    end
-    milestone
+    error ? (render 'configure') : (save_campaign(@campaign))
   end
 
   def configure_step3
@@ -73,16 +54,36 @@ class CampaignsController < ApplicationController
 
   private
 
+  def save_campaign(campaign)
+    campaign.goal = params[:campaign][:goal]
+    campaign.fund_recipient = params[:fund_recipient]
+    campaign.funding_type = params[:funding_type]
+    campaign.save!
+  end
+
   def resource_params
     return [] if request.get?
     [params.require(:campaign).permit(FIELDS)]
   end
 
   def milestone_params(key_milestone)
-    params[:campaign][:milestones_attributes][key_milestone].permit(:name, :description, :done_date, :amount)
+    params[:campaign][:milestones_attributes][key_milestone].permit(:name,
+                                                                    :description,
+                                                                    :done_date,
+                                                                    :amount)
   end
 
   def milestone_id(key_milestone)
     params[:campaign][:milestones_attributes][key_milestone][:id]
+  end
+
+  def fetch_milestones(campaign)
+    error = false
+    params[:campaign][:milestones_attributes].keys.each do |key_milestone|
+      @milestone = Milestone.create(milestone_params(key_milestone))
+      error ||= !@milestone.valid?
+      campaign.milestones << @milestone
+    end
+    error
   end
 end

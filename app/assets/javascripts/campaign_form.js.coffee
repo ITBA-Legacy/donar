@@ -22,3 +22,6 @@ $ ->
     inputs.each ->
       valid = false if not validator.element(this)
     return valid
+
+  $('.upload-button').on 'click', ->
+    $('#upload-file-field').click()

@@ -1,26 +1,30 @@
+/ ATTENTION : JS functionality is linked with the DOM of this view
 .nested-fields
   .col-md-12
     .row
-      .col-md-6.form-group
-        = f.label :name, class: 'control-label'
-        = f.text_field :name, class: 'form-control', required: true
-        = f.full_error :name
-      .col-md-3.form-group
-        = f.label :amount, class: 'control-label'
-        .input-group
-          span.input-group-addon
-            | $
-          = f.number_field :amount, class: 'form-control', required: true, min: 0.0
-        = f.full_error :amount
-      .col-md-3.form-group
-        = f.label :done_date, class: 'control-label'
-        = f.date_field :done_date, class: 'form-control', required: true, min: Time.current
-        = f.full_error :done_date
-        = f.hidden_field :id
-      .col-md-12.form-group
-        = f.label :description, class: 'control-label'
-        = f.text_area :description, class: 'form-control', required: true
-        = f.full_error :description
-  .col-md-12
-    = link_to_remove_association t('helpers.submit.milestone.remove'), f,
-                                   class: 'btn btn-primary btn-green btn-milestone-remove'
+      .col-md-6.col-sm-12.col-xs-12
+        .form-group
+          = f.label :name, class: 'control-label'
+          = f.text_field :name, class: 'form-control', required: true
+          = f.full_error :name
+      .col-md-3.col-sm-6.col-xs-12.input-milestone-amount-col
+        .form-group.input-milestone-amount
+          = f.label :amount, class: 'control-label'
+          .input-group
+            span.input-group-addon
+              | $
+            = f.number_field :amount, class: 'form-control milestone-amount-input', required: true, min: 0.0
+          = f.full_error :amount
+      .col-md-3.col-sm-6.col-xs-12
+        .form-group
+          = f.label :done_date, class: 'control-label'
+          = f.date_field :done_date, class: 'form-control', required: true, min: Time.current
+          = f.full_error :done_date
+      .col-md-12
+        .form-group
+          = f.label :description, class: 'control-label'
+          = f.text_area :description, class: 'form-control', required: true
+          = f.full_error :description
+      .col-md-12
+        = link_to_remove_association t('helpers.submit.milestone.remove'), f,
+                                       class: 'btn btn-primary btn-green btn-milestone-remove'

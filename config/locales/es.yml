@@ -152,7 +152,7 @@ es:
         all: 'Financiamiento flexible - conserva lo que recaudas'
         partial: 'Financiamiento fijo - todo o nada'
       perks:
-        title: Tus recompenzas
+        title: Tus recompensas
       history:
         title: 'Tu Historia'
     new:

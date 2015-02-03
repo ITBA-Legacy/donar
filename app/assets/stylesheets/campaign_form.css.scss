@@ -7,7 +7,269 @@ $twitter-blue: #31B6EB;
 $google-red: #F03B3B;
 $grey: #C0C0C0;
 
-.tabbed-form {
+/*
+  ********************************
+  MAIN TITLE
+  ********************************
+*/
+
+.campaign-info {
+  font-size: 17px;
+}
+
+/*
+  ********************************
+  SECONDARY TITLES
+  ********************************
+*/
+
+.violet-row {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-bottom: 15px;
+  background-color: $violet;
+
+  .secondary-title {
+    display: inline-block;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 20px;
+    line-height: 28px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .secondary-title-description {
+    margin-left: 15px;
+    display: inline-block;
+    color: #FFF;
+    line-height: 36px;
+    font-size: 13px;
+  }
+}
+
+/*
+  ********************************
+  CATEGORIES
+  ********************************
+*/
+
+#categories {
+  .category-card {
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    padding-right: 5px;
+    padding-left: 5px;
+    cursor: pointer;
+  }
+
+  .inner-card {
+    background-color: $grey;
+    height: 40px;
+  }
+
+  .category-name {
+    display: inline-block;
+    color: white;
+    margin-left: 7px;
+    margin-top: 10px;
+  }
+
+  .cat-image {
+    margin-top: 7px;
+    float: left;
+    margin-left: 10px;
+  }
+}
+
+/*
+  ********************************
+  BASIC INFO
+  ********************************
+*/
+
+#basic-info {
+
+  margin-bottom: 15px;
+
+  #image-upload {
+
+    .image-text-field {
+      margin-bottom: 5px;
+
+      .small-image-text {
+        color: $violet;
+        margin-bottom: 5px;
+      }
+
+      .small-image-help {
+        margin-left: 10px;
+      }
+    }
+
+    .image-preview {
+      img {
+        width: 90%;
+        height: 280px;
+      }
+    }
+
+    .file-field {
+
+      #upload-field {
+        margin-bottom: 20px;
+
+        .upload-button {
+          padding-top: 0;
+          padding-bottom: 0;
+          border-radius: 0;
+          margin: 0 auto;
+          background-color: $green;
+          position: relative;
+          color: white;
+          text-align: center;
+          width: 90%;
+        }
+
+        #upload-file-field {
+          display: none;
+        }
+      }
+    }
+  }
+
+  #description-row {
+    margin-top: 15px;
+  }
+}
+
+/*
+  ********************************
+  CONFIGURE
+  ********************************
+*/
+
+#milestones {
+  background-color: $grey;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+  padding-bottom: 15px;
+  padding-top: 15px;
+
+  .milestone-card {
+    color: $violet;
+  }
+
+  #campaign-goal {
+    background-color: $green;
+    color: #FFF;
+    width: 20%;
+    font-size: 28px;
+    border-radius: 17px;
+    font-family: Helvetica;
+    border: 3px solid $violet;
+    margin: 20px auto;
+  }
+
+  .btn-add-milestone {
+    margin-top: 50px;
+    border-radius: 0;
+  }
+
+  .btn-milestone-remove {
+    margin-bottom: 25px;
+  }
+}
+
+#who {
+  background-color: $grey;
+  margin-bottom: 15px;
+
+  .checkbox-label {
+    margin-left: 10px;
+  }
+
+  .checkbox {
+    padding-left: 0px;
+  }
+}
+
+#funding-type {
+  background-color: $grey;
+  margin-bottom: 15px;
+
+  .checkbox-label {
+    margin-left: 10px;
+  }
+
+  .checkbox {
+    padding-left: 0px;
+  }
+}
+
+.btn-configure {
+  border-radius: 0;
+}
+
+/*
+  ********************************
+  CONFIGURE STEP 2
+  ********************************
+*/
+
+#perks {
+  background-color: $grey;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+
+  .nested-fields {
+    margin-top: 10px;
+
+    .btn-remove-perk {
+      margin: 15px 0;
+    }
+
+    .address-checkbox {
+      margin-left: 5px;
+    }
+
+    .require-address {
+      label,
+      input {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .btn-add-perks {
+    margin: 20px 0;
+  }
+
+
+}
+
+#history {
+  padding-top: 20px;
+  background-color: $grey;
+
+}
+
+.btn-save-campaign {
+  border-radius: 0;
+  margin-top: 15px;
+}
+
+
+
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+//////////////////////////////////////////////
+
+/*.tabbed-form {
   margin-top: 15px;
 }
 
@@ -21,54 +283,11 @@ $grey: #C0C0C0;
   color: red;
 }
 
-.campaign-info {
-  font-size: 17px;
-}
 
-.violet-row {
-  margin-bottom: 15px;
-  height: 30px;
-  background-color: $violet;
 
-  .white-bold {
-    font-weight: bold;
-    color: white;
-    font-size: 20px;
-    line-height: 28px;
-  }
 
-  .white {
-    color: white;
-    line-height: 36px;
-    font-size: 12px;
-  }
-}
 
-#categories {
-  .category-card {
-    margin-bottom: 15px;
-    padding-right: 7.5px;
-    padding-left: 7.5px;
-    cursor: pointer;
-  }
 
-  .inner-card {
-    background-color: $grey;
-    height: 40px;
-  }
-
-  .category-name {
-    color: white;
-    margin-left: 7px;
-    margin-top: 10px;
-  }
-
-  .cat-image {
-    margin-top: 7px;
-    float: left;
-    margin-left: 10px;
-  }
-}
 
 #goal {
   padding-top: 20px;
@@ -89,115 +308,6 @@ $grey: #C0C0C0;
   }
 }
 
-#perks {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  label {
-    padding-left: 0px;
-  }
-}
-
-#who {
-  margin-bottom: 15px;
-  .checkbox-label {
-    margin-left: 10px;
-  }
-
-  .checkbox {
-    padding-left: 0px;
-  }
-}
-
-#funding-type {
-  .checkbox-label {
-    margin-left: 10px;
-  }
-
-  .checkbox {
-    padding-left: 0px;
-  }
-}
-
-#submit-row {
-  margin-top: 15px;
-  padding: 0px;
-  button {
-    float: right;
-    border-radius: 0px;
-  }
-}
-
-#minimum {
-  margin-top: -15px;
-}
-
-.grey {
-  background-color: $grey;
-}
-
-#milestones {
-  background-color: silver;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  text-align: center;
-  padding-bottom: 15px;
-  padding-top: 15px;
-
-  .milestone-card {
-    color: $violet;
-  }
-}
-
-#basic-info {
-
-  margin-bottom: 15px;
-
-  .small-image-text {
-      color: $violet;
-      margin-bottom: 5px;
-  }
-
-  .small-image-help {
-    margin-left: 10px;
-  }
-
-  #description-row {
-    margin-top: 15px;
-  }
-
-  #image-upload{
-
-    .image-preview {
-      img {
-        width: 250px;
-        height: 280px;
-      }
-    }
-
-    .file-field {
-      .col-sm-12 {
-        padding: 0px;
-      }
-      input {
-        z-index: 100;
-        position: relative;
-        opacity: 0;
-        width: 250px;
-      }
-      .green-button {
-        z-index: 1;
-        background-color: $green;
-        position: absolute;
-        top: 0;
-        height: 20px;
-        color: white;
-        text-align: center;
-        width: 250px;
-      }
-    }
-  }
-}
-
 .requires-address {
   .requires-address-yes {
     cursor: pointer;
@@ -213,8 +323,5 @@ $grey: #C0C0C0;
   }
 }
 
-#history {
-  .row {
-    margin-bottom: 10px;
-  }
-}
+
+*/
