@@ -32,7 +32,8 @@
             li
               #text-bold.text-center
                 - time_diff = Time.diff(Time.current, @campagin.deadline)
-                - if Time
+                - binding.pry
+                //- if Time
 /                - if ((@campaign.deadline.to_date - Time.current.to_date).to_i) > 1
 /                  = t('campaigns.card.remaining_days_plural',days: (@campaign.deadline.to_date - Time.current.to_date).to_i)
 /                - elsif ((@campaign.deadline.to_date - Time.current.to_date).to_i) == 1
