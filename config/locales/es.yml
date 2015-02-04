@@ -118,7 +118,10 @@ es:
       raised: 'Recaudado'
       completed: 'Completado'
       remaining_days_plural: 'Faltan %{days} días'
-      remaining_days_singular: 'Falta 1 día'
+      remaining_hours_plural: 'Faltan %{hours} horas y %{minutes} minuto/s'
+      remaining_hours_singular: 'Falta 1 hora y %{minutes} minuto/s'
+      remaining_minutes: 'Faltan %{minutes} minuto/s'
+      finished: '¡Campaña finalizada!'
     categories:
       education: Educación
       social: Social

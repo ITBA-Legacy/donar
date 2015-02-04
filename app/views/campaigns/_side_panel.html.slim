@@ -31,15 +31,17 @@
             br
             li
               #text-bold.text-center
-                - time_diff = Time.diff(Time.current, @campagin.deadline)
-                - binding.pry
-                //- if Time
-/                - if ((@campaign.deadline.to_date - Time.current.to_date).to_i) > 1
-/                  = t('campaigns.card.remaining_days_plural',days: (@campaign.deadline.to_date - Time.current.to_date).to_i)
-/                - elsif ((@campaign.deadline.to_date - Time.current.to_date).to_i) == 1
-/                  = t('campaigns.card.remaining_days_singular')
-/                - else
-/                  = t('campaigns.card.remaining_days_plural',days: 0)
+                - time_diff = Time.diff(Time.current, @campaign.deadline)
+                - if time_diff[:day] > 1
+                  = t('campaigns.card.remaining_days_plural', days: time_diff[:day])
+                - elsif time_diff[:hour] > 1
+                  = t('campaigns.card.remaining_hours_plural', hours: time_diff[:hour], minutes: time_diff[:minute])
+                - elsif time_diff[:hour] == 1
+                  = t('campaigns.card.remaining_hours_singular', minutes: time_diff[:minute])
+                - elsif time_dif[:hour] == 0
+                  = t('campaigns.card.remaining_minutes', minutes: time_diff[:minute])
+                - else
+                  = t('campaigns.card.finished')
             br
             li
               #text-bold.text-center

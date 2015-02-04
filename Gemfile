@@ -112,6 +112,8 @@ gem 'shareable'
 # Easy calculation of time differnece
 gem 'time_diff'
 
+gem 'byebug'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
