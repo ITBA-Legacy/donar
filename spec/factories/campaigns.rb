@@ -8,8 +8,8 @@ FactoryGirl.define do
     deadline { Time.current + 1.month }
     minimum 1.0
     category 'health'
-    locality { 'BA' }
-    country { 'ARG' }
+    locality 'BA'
+    country 'ARG'
     short_description { Faker::Lorem.sentence }
   end
 end
