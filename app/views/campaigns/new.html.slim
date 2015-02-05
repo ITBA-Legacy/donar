@@ -71,10 +71,10 @@
           .form-group
             label.control-label= t('campaigns.new.basic_info.country')
             #country
-              = f.country_select :country, selected: 'AR',class: 'form-control', required: true
+              = f.country_select :country, {selected: 'AR'}, class:'form-control'
           .form-group
             label.control-label= t('campaigns.new.basic_info.city')
-            #subregion
+            #campaign-subregion
           .form-group
             label.control-label = t('campaigns.new.basic_info.deadline')
             .input-group

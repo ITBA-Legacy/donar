@@ -1,6 +1,6 @@
 $(document).ready ->
 
-  select_wrapper = $('#subregion')
+  select_wrapper = $('#campaign-subregion')
 
   url = "/campaigns/subregion_options?parent_region=AR"
   select_wrapper.load(url)
