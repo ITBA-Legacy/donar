@@ -15,6 +15,10 @@ class CampaignsController < ApplicationController
     render :index
   end
 
+  def subregion_options
+    render partial: 'subregion_select'
+  end
+
   def index
     index! { @campaigns = @campaigns.page(params[:page] || 1).per(10) }
   end

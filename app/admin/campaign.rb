@@ -112,7 +112,12 @@ ActiveAdmin.register Campaign do
       row :category do
         t("campaigns.categories.#{campaign.category}")
       end
-      row :locality
+      row :locality do
+        Carmen::Country.coded(campaign.country).subregions.coded(campaign.locality)
+      end
+      row :country do
+        Carmen::Country.coded(campaign.country)
+      end
       row :organization
       row :short_description
       row :created_at

@@ -25,6 +25,7 @@ Donar::Application.routes.draw do
 
     collection do
       get :list
+      get :subregion_options
     end
 
     resources :comments, except: [:edit, :update]
@@ -55,12 +56,14 @@ Donar::Application.routes.draw do
       get :search
       post :search
       get :landing
+      get :subregion_options
     end
     member do
       post :approve
       get :configure
       post :configure_step2
       post :configure_step3
+
     end
   end
 
