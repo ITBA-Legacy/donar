@@ -17,6 +17,7 @@ $ ->
     )
   )
 
+
   validateInputs = (inputs) ->
     valid = true
     inputs.each ->
@@ -25,3 +26,36 @@ $ ->
 
   $('.upload-button').on 'click', ->
     $('#upload-file-field').click()
+
+  $('#upload-file-field').on 'change', ->
+    handleFileSelect(event)
+
+  handleFileSelect = (evt) ->
+    alert 'asd'
+    file = evt.target.files
+    alert file
+    # FileList object
+    # Loop through the FileList and render image files as thumbnails.
+    i = 0
+    f = undefined
+    f = file[0]
+    alert f.type.match('image.*')
+    alert 'wait!'
+    reader = new FileReader
+    reader.onload = ((theFile) ->
+      (e) ->
+        # Render thumbnail.
+        span = document.createElement('span')
+        span.innerHTML = [
+          '<img class="thumb" src="'
+          e.target.result
+          '" title="'
+          escape(theFile.name)
+          '"/>'
+        ].join('')
+        $('.image-preview').empty()
+        $('.image-preview').append span
+        return
+    )(f)
+    # Read in the image file as a data URL.
+    reader.readAsDataURL f
