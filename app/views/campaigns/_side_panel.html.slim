@@ -31,17 +31,22 @@
             br
             li
               #text-bold.text-center
-                - time_diff = Time.diff(Time.current, @campaign.deadline)
-                - if time_diff[:day] > 1
-                  = t('campaigns.card.remaining_days_plural', days: time_diff[:day])
-                - elsif time_diff[:hour] > 1
-                  = t('campaigns.card.remaining_hours_plural', hours: time_diff[:hour], minutes: time_diff[:minute])
-                - elsif time_diff[:hour] == 1
-                  = t('campaigns.card.remaining_hours_singular', minutes: time_diff[:minute])
-                - elsif time_dif[:hour] == 0
-                  = t('campaigns.card.remaining_minutes', minutes: time_diff[:minute])
-                - else
+                - if Time.now > @campaign.deadline
                   = t('campaigns.card.finished')
+                - else
+                  - days = (@campaign.deadline - Time.now) / (60 * 60 * 24)
+                  - hours = (days % 1) * 24
+                  - minutes = (hours % 1) * 60
+                  - if days.floor > 1
+                    = t('campaigns.card.remaining_days_plural', days: days.floor)
+                  - elsif days.floor == 1
+                    = t('campaigns.card.remaining_days_singular', hours: hours.floor)
+                  - elsif hours.floor > 1
+                    = t('campaigns.card.remaining_hours_plural', hours: hours.floor, minutes: minutes.floor)
+                  - elsif hours.floor == 1
+                    = t('campaigns.card.remaining_hours_singular', minutes: minutes.floor)
+                  - else
+                    = t('campaigns.card.remaining_minutes', minutes: minutes.floor)
             br
             li
               #text-bold.text-center
@@ -50,15 +55,15 @@
                 = "$ #{@campaign.minimum}"
             br
             p
-                .centerize
-                      -if @campaign.deadline.to_date >= Time.current.to_date
-                        = link_to t('campaigns.contribute'),
-                          new_organization_campaign_contribution_path(@campaign.organization, @campaign),
-                          class: 'btn btn-violet fill-width'
-                      -else
-                        = link_to t('campaigns.contribute'),
-                          new_organization_campaign_contribution_path(@campaign.organization, @campaign),
-                          class: 'btn btn-violet fill-width disabled'
-                        p
-                          small
-                            =t('campaigns.cant_donate')
+              .centerize
+                -if @campaign.deadline.to_date >= Time.current.to_date
+                  = link_to t('campaigns.contribute'),
+                    new_organization_campaign_contribution_path(@campaign.organization, @campaign),
+                    class: 'btn btn-violet fill-width'
+                -else
+                  = link_to t('campaigns.contribute'),
+                    new_organization_campaign_contribution_path(@campaign.organization, @campaign),
+                    class: 'btn btn-violet fill-width disabled'
+                  p
+                    small
+                      =t('campaigns.cant_donate')

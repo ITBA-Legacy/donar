@@ -110,6 +110,7 @@ en:
       raised: 'Raised'
       completed: 'Completed'
       remaining_days_plural: '%{days} days remaining'
+      remaining_days_singular: '1 day and %{hours} remaining'
       remaining_hours_plural: '%{hours} hours and %{minutes} minute/s remaining'
       remaining_hours_singular: '1 hour and %{minutes} minute/s remaining'
       remaining_minutes: '%{minutes} minute/s remaining'
