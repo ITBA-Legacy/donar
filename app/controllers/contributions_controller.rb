@@ -12,6 +12,7 @@ class ContributionsController < ApplicationController
         # We have to find a way to make the following two lines happen inside inherit resources...
         @contribution.user = current_user if current_user.present?
         @contribution.save!
+        @campaign.add_contribution(@contribution.amount)
         handle_valid_contribution
       end
     end
@@ -26,6 +27,7 @@ class ContributionsController < ApplicationController
       return redirect_to new_organization_campaign_contribution_path(@organization, @campaign)
     end
     Purchase.create(status: :success, contribution: @contribution)
+    @campaign.add_contribution(@contribution.amount)
     redirect_to organization_campaign_path(@organization, @campaign)
   end
 
