@@ -43,6 +43,8 @@ html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/200
       - if @campaign.next_unachieved_milestone.present?
         #campaign-nav-title.pull-right
           = link_to t('campaigns.achieve_milestone'), achieve_organization_campaign_milestone_path(@campaign.organization,@campaign, @campaign.next_unachieved_milestone), class: 'btn btn-green btn-config'
+          = link_to t('helpers.submit.organization.edit'), edit_organization_campaign_path(@campaign.organization, @campaign), class: 'btn btn-green btn-config'
+
 
             / li
             /     = Perk.model_name.human(count: 2)
