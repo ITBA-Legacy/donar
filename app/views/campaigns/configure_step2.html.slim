@@ -4,7 +4,7 @@
       .col-sm-9.white-bold
         = t('campaigns.configure.perks.title')
   .row#perks
-    = f.fields_for :perks do |f_perk|
+    = f.simple_fields_for :perks do |f_perk|
       = render 'perk_fields', f: f_perk
     = link_to_add_association t('helpers.submit.perk.new'), f, :perks,
                             class: 'btn btn-primary btn-violet'

@@ -194,6 +194,8 @@ es:
       approved: Aprobado
       rejected: Rechazado
       notAchieved: No cumplido
+  perks:
+    amount_error: El monto de la recompensa no puede ser menor que lo contribuido
   views:
     pagination:
       first: "&laquo; Primera"

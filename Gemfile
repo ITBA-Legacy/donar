@@ -6,6 +6,7 @@ ruby "2.0.0"
 gem 'rails', '4.0.4'
 
 gem 'google-webfonts-rails'
+gem 'simple_form'
 
 # Use postgresql as the database for Active Record
 gem 'pg'

@@ -90,6 +90,8 @@ en:
   contributions:
     mercadopago: Contribute with MercadoPago
     anonymous: Anonymous Contribution
+  perks:
+    amount_error: The perk´s amount can not be greater than contributtion´s amount
   campaigns:
     history: History
     updates: Updates

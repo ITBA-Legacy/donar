@@ -19,6 +19,14 @@ legend#contribution-header
               span.input-group-addon
                 | $
               = f.number_field :amount, class: 'form-control col-md-2', required: true, min: 0.1, step: 'any'
+          - if @campaign.perks.count > 0
+            br
+            .form-group
+              = f.label :perk, class: 'control-label col-sm-2'
+              ul
+                .col-md-4
+                  .input-group
+                    = f.collection_radio_buttons(:perk_id, @contribution.campaign.perks, :id, :name_with_amount)
         .form-group
           .col-sm-offset-2.col-sm-10
             = f.submit nil, class: 'btn btn-violet'
