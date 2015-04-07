@@ -5,7 +5,6 @@ class Perk < ActiveRecord::Base
   validates :amount, :maximum, numericality: { greater_than: 0 }
 
   def name_with_amount
-  	"#{name}  $ #{amount}"
+    "#{name}  $ #{amount}"
   end
-
 end
