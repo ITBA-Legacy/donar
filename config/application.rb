@@ -32,6 +32,7 @@ module Donar
     config.i18n.default_locale = :es
     I18n.default_locale = :es
     I18n.locale = :es
+    config.i18n.fallbacks = [:en]
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"

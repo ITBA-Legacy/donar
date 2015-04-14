@@ -10,7 +10,8 @@ module OrganizationsCreationHelper
         organization = Organization.create(
           name: "Organization #{time}",
           description: Faker::Lorem.sentence,
-          locality: Faker::Address.city,
+          country: 'AR',
+          locality: 'B',
           user_ids: User.all.pluck(:id).sample(rand(1..User.count))
         )
       end

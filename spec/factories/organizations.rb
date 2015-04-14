@@ -4,6 +4,7 @@ FactoryGirl.define do
   factory :organization do
     name { Faker::Company.name }
     description { Faker::Company.catch_phrase }
-    locality { Faker::Address.city }
+    locality 'BA'
+    country 'ARG'
   end
 end
