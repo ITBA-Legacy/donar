@@ -4,12 +4,11 @@ class ContributionsController < ApplicationController
 
   nested_belongs_to :organization, :campaign
 
-  FIELDS = [:amount, :first_name, :last_name, :email, :phone]
+  FIELDS = [:amount, :first_name, :last_name, :email, :phone, :perk_id]
 
   def create
     create! do
       if @contribution.valid?
-        # We have to find a way to make the following two lines happen inside inherit resources...
         @contribution.user = current_user if current_user.present?
         @contribution.save!
         handle_valid_contribution

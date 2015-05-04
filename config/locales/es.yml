@@ -1,4 +1,12 @@
 es:
+  activerecord:
+    errors:
+      models:
+        contribution:
+          attributes:
+            perk:
+              quantity: No hay stock para este beneficio
+              amount_error: El monto donado debe ser mayor o igual que el valor del beneficio.
   save: Guardar
   application:
     title: Donar
@@ -200,6 +208,9 @@ es:
       approved: Aprobado
       rejected: Rechazado
       notAchieved: No cumplido
+  perks:
+    amount_error: El monto de la recompensa no puede ser menor que lo contribuido
+    selection: Elegí el beneficio que queres
   views:
     pagination:
       first: "&laquo; Primera"
