@@ -33,8 +33,10 @@
               br
               = "#{number_with_precision(percentage_done, precision: 2, separator: t('application.separator'))} %"
             .col-sm-6.pull-right.text-center
-              = t('campaigns.card.days_left')
-              br
-              = (campaign.deadline.to_date - Time.current.to_date).to_i
-
+              - if campaign.deadline > Time.current
+                = t('campaigns.card.days_left')
+                br
+                  = (campaign.deadline.to_date - Time.current.to_date).to_i
+              - else
+                = t('campaigns.card.finished')
 
