@@ -6,7 +6,6 @@ ruby "2.0.0"
 gem 'rails', '4.0.4'
 
 gem 'google-webfonts-rails'
-gem 'simple_form'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -110,8 +109,10 @@ gem 'kaminari'
 # Share Links
 gem 'shareable'
 
-# Easy calculation of time differnece
-gem 'time_diff'
+gem 'byebug'
+
+# Simple forms
+gem 'simple_form', '~> 3.1.0rc'
 
 gem 'byebug'
 

@@ -1,23 +1,27 @@
+/ ATTENTION : JS functionality is linked with the DOM of this view
 .nested-fields
-  .form-group
-    = f.label :amount, class: 'control-label col-sm-2'
-    .col-sm-4
-      .input-group
-        span.input-group-addon
-          | $
-        = f.number_field :amount, class: 'form-control col-sm-2', required: true, min: 0.0
-  .form-group
-    = f.label :name, class: 'control-label col-sm-2'
-    .col-sm-4
-      = f.text_field :name, class: 'form-control col-sm-2', required: true
-  .form-group
-    = f.label :description, class: 'control-label col-sm-2'
-    .col-sm-4
-      = f.text_area :description, class: 'form-control col-sm-2', required: true
-  .form-group
-    = f.label :done_date, class: 'control-label col-sm-2'
-    .col-sm-4
-      = f.date_field :done_date, class: 'form-control col-sm-2', required: true, min: Time.current
-  p
-    = link_to_remove_association t('helpers.submit.milestone.remove'), f,
-                                 class: 'btn btn-primary btn-green'
+  .col-md-12
+    .row
+      .col-md-6.col-sm-12.col-xs-12
+        = f.label :name, class: 'control-label'
+        = f.text_field :name, class: 'form-control', required: true
+        = f.full_error :name
+      .col-md-3.col-sm-6.col-xs-12.input-milestone-amount-col
+        .input-milestone-amount
+          = f.label :amount, class: 'control-label'
+          .input-group
+            span.input-group-addon
+              | $
+            = f.number_field :amount, class: 'form-control milestone-amount-input', required: true, min: 0.0
+          = f.full_error :amount
+      .col-md-3.col-sm-6.col-xs-12
+        = f.label :done_date, class: 'control-label'
+        = f.date_field :done_date, class: 'form-control', required: true, min: Time.current
+        = f.full_error :done_date
+      .col-md-12
+        = f.label :description, class: 'control-label'
+        = f.text_area :description, class: 'form-control', required: true
+        = f.full_error :description
+      .col-md-12
+        = link_to_remove_association t('helpers.submit.milestone.remove'), f,
+                                       class: 'btn btn-primary btn-green btn-milestone-remove'
