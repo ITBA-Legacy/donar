@@ -37,15 +37,34 @@ module UserAuthenticationHelper
   # created
   def create_user(auth)
     user = User.where(email: auth.info.email).first_or_create do |aux_user|
-      aux_user[:provider] = auth.provider
-      aux_user[:uid] = auth.uid
-      [:email, :first_name, :last_name]. each do |method|
-        aux_user[method] = auth.info[method]
-      end
-      aux_user.confirmed_at = Time.current
+      fill_user_attributes(aux_user, auth)
     end
     Identity.create(uid: auth.uid, provider: auth.provider, user: user)
     user
+  end
+
+  def fill_user_attributes_twitter(user, auth)
+    name = auth.info[:name].split(' ')
+    user[:first_name] = name[0]
+    user[:last_name] = name[1]
+  end
+
+  def fill_user_attributes_provider(user, auth)
+    [:email, :first_name, :last_name]. each { |method| user[method] = auth.info[method] }
+  end
+
+  def fill_user_attributes(user, auth)
+    user[:provider] = auth.provider
+    user[:uid] = auth.uid
+
+    if auth.provider == 'twitter'
+      fill_user_attributes_twitter(user, auth)
+    else
+      fill_user_attributes_provider(user, auth)
+    end
+
+    user.confirmed_at = Time.current
+    user.remote_avatar_url = auth.info[:image]
   end
 
   def update_email_if_necessary(auth, current_user)
