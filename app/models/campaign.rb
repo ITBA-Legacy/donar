@@ -31,7 +31,8 @@ class Campaign < ActiveRecord::Base
 
   validates :category, inclusion: { in: CATEGORIES.map(&:to_s) }, presence: true
   validates :name, :description, :short_description, :locality, :country, :deadline, presence: true
-  validates :deadline, timeliness: { on_or_after: -> { Date.current } }
+  validates :deadline, timeliness: { on_or_after: -> { Date.current },
+                                     on_or_before: -> { Date.current + 2.months } }
   # validates :minimum, :goal, numericality: true
   # validates :minimum, :goal, numericality: { greater_than: 0 }
   # validates :minimum, :goal, presence: true

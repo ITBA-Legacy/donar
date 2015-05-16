@@ -29,6 +29,7 @@ es:
             deadline:
               blank: La fecha de finalización es requerida
               on_or_after: La fecha de finalización debe ser posterior a la actual
+              on_or_after: La fecha de finalización no debe sobrepasar a los dos meses con respecto a la fecha actual
               invalid_datetime: La fecha es inválida
             category:
               blank: La categoría es requerida
