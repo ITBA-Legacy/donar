@@ -33,7 +33,7 @@ class CampaignsController < ApplicationController
   def configure_step2
     @campaign = Campaign.find(params[:id])
     @campaign.milestones.destroy_all
-    error = generate_milestones(@campagin)
+    error = generate_milestones(@campaign)
     error ? (render 'configure') : (save_campaign(@campaign))
   end
 
