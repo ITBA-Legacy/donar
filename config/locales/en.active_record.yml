@@ -29,6 +29,7 @@ en:
             deadline:
               blank: The deadline is required
               on_or_after: The deadline must be greater than the actual date
+              on_or_before: The deadline must not exceed two months with regard to the current date
               invalid_datetime: The deadline is not valid
             category:
               blank: Category is required
