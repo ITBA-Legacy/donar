@@ -19,6 +19,7 @@ class PurchasesController < ApplicationController
 
   def mercadopago_callback(purchase, status)
     purchase.update_attributes!(status: status.to_s)
+    purchase.contribution.campaign.add_contribution(purchase.contribution.amount)
     redirect_to organization_campaign_path(
       purchase.contribution.campaign.organization,
       purchase.contribution.campaign

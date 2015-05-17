@@ -25,6 +25,7 @@ class ContributionsController < ApplicationController
       return redirect_to new_organization_campaign_contribution_path(@organization, @campaign)
     end
     Purchase.create(status: :success, contribution: @contribution)
+    @campaign.add_contribution(@contribution.amount)
     redirect_to organization_campaign_path(@organization, @campaign)
   end
 
