@@ -28,7 +28,7 @@ html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/200
           = link_to t('campaigns.perks'), '#perks-camp-show', data: {toggle: 'tab'}
 
       .tab-content
-        .tab-pane.active role='tabpanel'
+        #history.tab-pane.active role='tabpanel'
           = render 'history'
 
         #backers.tab-pane role='tabpanel'
