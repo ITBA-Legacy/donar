@@ -70,6 +70,9 @@ es:
       user:
         one: Usuario
         other: Usuarios
+      category:
+        one: Categoría
+        other: Categorias
       admin_user:
         one: Administrador
         other: Administradores

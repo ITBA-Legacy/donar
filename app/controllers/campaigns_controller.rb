@@ -2,7 +2,8 @@ class CampaignsController < ApplicationController
   inherit_resources
   before_action :authenticate_user!, except: [:search, :index, :show]
   belongs_to :organization, optional: true
-  FIELDS = [:name, :description, :goal, :deadline, :minimum, :category, :short_description,
+
+  FIELDS = [:category_id, :name, :description, :goal, :deadline, :minimum, :short_description,
             :locality, :main_image, :video, :history, :country,
             perks_attributes: [:id, :amount, :name, :maximum, :description,
                                :_destroy, :delivery_date, :requires_address]]
