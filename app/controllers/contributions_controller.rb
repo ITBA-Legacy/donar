@@ -11,6 +11,7 @@ class ContributionsController < ApplicationController
       if @contribution.valid?
         @contribution.user = current_user if current_user.present?
         @contribution.save!
+        @campaign.add_contribution(@contribution.amount)
         handle_valid_contribution
       end
     end
