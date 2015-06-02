@@ -1,46 +1,27 @@
-.nested-fields#perks
-  form
-
+.nested-fields
+  .container
     .row
-      .col-sm-3
-        .form-group
-          label
-            = f.label :amount, class: 'control-label col-sm-12'
-          .input-group
-            span.input-group-addon
-              | $
-            = f.number_field :amount, class: 'form-control col-sm-2', required: true, min: 0.0
-    .row
-      .col-sm-7
-        .form-group
-          label
-            = f.label :name, class: 'control-label col-sm-12'
-          = f.text_field :name, class: 'form-control col-sm-12', required: true
-    .row
-      .col-sm-2
-        .form-group
-          label
-            = f.label :maximum, class: 'control-label col-sm-12'
-          = f.number_field :maximum, class: 'form-control col-sm-12', required: true, min: 0
-
-    .row
-      .col-sm-12
-        .form-group
-          label
-            = f.label :description, class: 'control-label col-sm-12'
-          = f.text_area :description, class: 'form-control ',rows: '2', required: true
-    .row
-      .col-sm-3
-        .form-group
-          label
-            = f.label :delivery_date, class: 'control-label col-sm-12'
-          = f.date_field :delivery_date, class: 'form-control col-sm-12'
-    .row
-      .col-sm-12
-        .form-group
-            label
-              = f.label :requires_address, class: 'control-label col-sm-12'
-            = f.check_box :requires_address
-    .row
-      = link_to_remove_association t('helpers.submit.perk.remove'), f,
-                                   class: 'btn btn-primary btn-green'
+      .col-md-4.col-sm-8.col-xs-12
+        = f.label :name, class: 'control-label'
+        = f.text_field :name, class: 'form-control', required: true
+      .col-md-2.col-sm-4.col-xs-12
+        = f.label :amount, class: 'control-label'
+        .input-group
+          span.input-group-addon
+            | $
+          = f.number_field :amount, class: 'form-control', required: true, min: 0.0
+      .col-md-3.col-sm-6.col-xs-12
+        = f.label :maximum, class: 'control-label'
+        = f.number_field :maximum, class: 'form-control', required: true, min: 0
+      .col-md-3.col-sm-6.col-xs-12
+        = f.label :delivery_date, class: 'control-label'
+        = f.date_field :delivery_date, class: 'form-control'
+        .require-address
+          = f.label :requires_address, class: 'control-label'
+          = f.check_box :requires_address, class: 'address-checkbox'
+      .col-md-12
+        = f.label :description, class: 'control-label'
+        = f.text_area :description, class: 'form-control', required: true
+      .col-md-12
+        = link_to_remove_association t('helpers.submit.perk.remove'), f,
+                                   class: 'btn btn-primary btn-green btn-remove-perk'

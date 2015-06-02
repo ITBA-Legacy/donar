@@ -109,8 +109,10 @@ gem 'kaminari'
 # Share Links
 gem 'shareable'
 
-# Easy calculation of time differnece
-gem 'time_diff'
+gem 'byebug'
+
+# Simple forms
+gem 'simple_form', '~> 3.1.0rc'
 
 gem 'byebug'
 

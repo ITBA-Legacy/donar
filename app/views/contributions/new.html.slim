@@ -13,12 +13,27 @@ legend#contribution-header
       = form_for [@organization, @campaign, @contribution],
                  html: { class: 'form-horizontal', role: 'form' } do |f|
         .form-group
-          = f.label :amount, class: 'control-label col-sm-2'
-          .col-md-4
-            .input-group
-              span.input-group-addon
-                | $
-              = f.number_field :amount, class: 'form-control col-md-2', required: true, min: 0.1, step: 'any'
+          .col-md-12
+            = f.label :amount, class: 'control-label col-sm-2'
+            .col-md-4
+              .input-group
+                span.input-group-addon
+                  | $
+                = f.number_field :amount, class: 'form-control col-md-2', required: true, min: 0.1, step: 'any'
+          .col-md-12
+            - if @campaign.perks.count > 0
+              br
+              p.contribution-perk-selection=t('perks.selection')
+                | Elegí tu beneficio
+              .col-md-12
+                .input-group
+                  - perks = @contribution.campaign.perks.select { |p| p.maximum > 0 }
+                  br
+                  .row
+                  = f.collection_radio_buttons(:perk_id, perks, :id, :name_with_amount) do |d| 
+                    .col-md-12
+                      = d.radio_button(class: "radio_button perk-radio-button", id: "perk-radio-button")
+                      = d.label(class: "perk-label") 
         .form-group
           .col-sm-offset-2.col-sm-10
             = f.submit nil, class: 'btn btn-violet'

@@ -1,4 +1,12 @@
 en:
+  activerecord:
+      errors:
+        models:
+          contribution:
+            attributes:
+              perk:
+                quantity: There is no more stock of this perk
+                amount_error: The amount of the donation should be equal or grater than the benfits´s value
   application:
     title: Donar
     no_results: No results found
@@ -90,6 +98,9 @@ en:
   contributions:
     mercadopago: Contribute with MercadoPago
     anonymous: Anonymous Contribution
+  perks:
+    amount_error: The perk´s amount can not be greater than contributtion´s amount
+    selection: Choose the perk you want
   campaigns:
     history: History
     updates: Updates
@@ -156,6 +167,7 @@ en:
         deadline: "Deadline (mm/dd/yyyy)"
         minimum: "Minimum pledge"
         goal: "Goal"
+        category: "Category"
     twitter_message:
       introduction: "Lets build a dream together!! help me fundraising"
       ending: "Enter to the site to follow the development of the project"

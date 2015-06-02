@@ -1,8 +1,10 @@
 class Milestone < ActiveRecord::Base
   belongs_to :campaign
+  validates :amount, :description, :done_date, :name, presence: true
+  validates :amount, numericality: { greater_than: 0 }
+  validates :done_date, timeliness: { on_or_after: -> { Date.current } }
 
   include AASM
-
   aasm do
     state :notAchieved, initial: true
     state :achieved

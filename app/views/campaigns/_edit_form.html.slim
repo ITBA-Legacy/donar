@@ -1,0 +1,104 @@
+- if campaign.errors.present?
+  .alert.alert-danger
+    ul
+      - campaign.errors.messages.slice(*@error_fields).each do |attr, msg|
+        li
+          = msg[0]
+= simple_form_for [@organization, campaign],
+                  html: { class: 'form-horizontal', role: 'form' } do |f|
+
+  ul.nav.nav-tabs#campaign-tabs
+    li.active
+      a data-toggle="tab" href="#first-step"
+        = t 'campaigns.first_step'
+    li
+      a data-toggle="tab" href="#second-step"
+        = t 'campaigns.second_step'
+  .tab-content
+    #first-step.tab-pane.fade.active.in
+      .col-md-12
+        .form-group
+          label.control-label
+            = t('campaigns.new.basic_info.campaign_title')
+          = f.text_field :name, class: 'form-control', required: true
+      .col-md-12
+        .form-group
+          label.control-label
+            = t('campaigns.new.basic_info.short_description')
+          = f.text_field :short_description, class: 'form-control', required: true
+      .col-md-12
+        .form-group
+          label.control-label
+            = t('campaigns.new.basic_info.description')
+          = f.text_area :description, class: 'form-control', required: true
+      .col-md-12
+        .form-group
+          label.control-label
+            = t('campaigns.new.basic_info.deadline')
+          = f.date_field :deadline, class: 'form-control', required: true, min: Time.current
+      .col-md-12
+        .form-group
+          label.control-label
+            = t('campaigns.new.basic_info.minimum')
+          .input-group
+            span.input-group-addon
+              | $
+            = f.number_field :minimum, class: 'form-control', required: true, min: 0.0
+      .col-md-12
+        .form-group
+          label.control-label
+            = t('campaigns.new.basic_info.category')
+          = f.select :category,
+                      Campaign::CATEGORIES.collect { |c| [t("campaigns.categories.#{c}"), c] },
+                      {class: "form-control"}
+      .col-md-12
+        = f.label t('campaigns.new.basic_info.country'), class: 'control-label col-sm-2'
+        .col-md-4
+          = f.country_select :country, {selected: 'AR'}, class:'form-control'
+        = f.label :locality, class: 'control-label col-sm-2'
+        .col-md-4
+          = f.text_field :locality, class: 'form-control col-md-2', required: true
+      legend
+        = Perk.model_name.human(count: 2)
+      #perks
+        = f.fields_for :perks do |f_perk|
+          = render 'perk_fields', f: f_perk
+        = link_to_add_association t('helpers.submit.perk.new'), f, :perks,
+                                  class: 'btn btn-primary btn-violet'
+      legend
+        = Milestone.model_name.human(count: 2)
+      #milestones
+        .col-md-12
+          = f.hidden_field :goal, id: 'campaign-hidden-goal'
+          #campaign-goal
+        .col-md-12
+          = f.fields_for :milestones do |f_milestone|
+            = render 'milestone_fields', f: f_milestone
+        .col-md-12
+          = link_to_add_association t('helpers.submit.milestone.new'), f, :milestones,
+                                    class: 'btn btn-primary btn-violet'
+      .form-group
+        .col-sm-2.text-center#next-button-container
+          #next-button.btn.btn-primary.btn-violet.btn-lg
+            = t 'campaigns.next'
+    #second-step.tab-pane.fade
+      .col-sm-12.tabbed-form
+        .form-group
+          = f.label :main_image, class: 'control-label'
+          = f.file_field :main_image, class: 'form-control'
+          - if campaign.main_image.present?
+            = image_tag campaign.main_image
+        .form-group
+          = f.label :video, class: 'control-label'
+          = f.text_field :video, class: 'form-control'
+        .form-group
+          = f.label :history, class: 'control-label'
+          = f.text_area :history, class: 'tinymce'
+          = tinymce
+        .form-group
+          .col-sm-2#previous-button-container.text-center
+            #previous-button.btn.btn-primary.btn-violet.btn-lg
+              = t 'campaigns.previous'
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            = f.submit nil, class: 'btn btn-primary btn-lg btn-violet'
