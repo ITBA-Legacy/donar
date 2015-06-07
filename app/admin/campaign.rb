@@ -221,7 +221,9 @@ ActiveAdmin.register Campaign do
   end
 
   member_action :download_milestone do
-    file = Milestone.find(params[:id]).file
-    send_data file.read, filename: "#{File.basename(file.url)}.zip"
+    milestone = Milestone.find(params[:id])
+    file = milestone.file
+    extension = milestone.file_extension
+    send_data file.read, filename: "#{File.basename(file.url)}#{extension}"
   end
 end
