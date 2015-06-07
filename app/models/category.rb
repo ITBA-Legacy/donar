@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-	has_many :campaigns
+  has_many :campaigns
 end

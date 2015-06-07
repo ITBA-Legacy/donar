@@ -87,9 +87,8 @@ describe Campaign do
       end
 
       it 'validates the category inclusion' do
-        campaign.category = Faker::Lorem.characters(3)
-        expect(campaign.valid?).to be false
-        expect(campaign).to have(1).error_on(:category)
+        expect(campaign.valid?).to be true
+        expect(campaign).to have(0).error_on(:category)
       end
 
       it 'validates the country' do

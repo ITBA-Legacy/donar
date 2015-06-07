@@ -11,7 +11,7 @@ ActiveAdmin.register Category do
 
   filter :name
 
-  show do |user|
+  show do
     attributes_table do
       row :name
     end
