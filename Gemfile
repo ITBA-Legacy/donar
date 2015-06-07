@@ -109,6 +109,12 @@ gem 'kaminari'
 # Share Links
 gem 'shareable'
 
+gem 'byebug'
+
+# Simple forms
+gem 'simple_form', '~> 3.1.0rc'
+
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -145,3 +151,6 @@ end
 group :production, :staging do
   gem 'rails_12factor'
 end
+
+#Country/State selection
+gem 'carmen-rails', '~> 1.0.0'

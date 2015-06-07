@@ -1,0 +1,69 @@
+- percentage_done = @campaign.contribution > 0 ? (@campaign.contribution / @campaign.goal) * 100 : 0
+.panel.panel-default
+        #information-panel.panel-body
+          #campaign-ul
+            li
+              =facebook_button :url=> request.original_url
+            li
+              =twitter_button :url=> request.original_url, :text=> t('campaigns.twitter_message.introduction') + " " + @campaign.name + ". " + t('campaigns.twitter_message.ending')
+            li
+              =google_plus_button :url=> request.original_url
+
+            li
+              p
+                h2
+                  #text-bold
+                    = "$ #{number_with_precision(@campaign.contribution, precision: 2,
+                separator: t('application.separator'), delimiter: t('application.delimiter'))}"
+            li
+              #text-violet
+                = t('campaigns.collected') + " $#{@campaign.goal}"
+            li
+              p
+                .progress
+                  .progress-bar.progress-bar-success.p80 aria-valuenow=percentage_done aria-valuemin="0" aria-valuemax="100" style="width: #{percentage_done}%"
+              .information
+                .col-sm-12
+                  p.text-center
+                    = t('campaigns.card.completed')
+                    = " #{number_with_precision(percentage_done, precision: 1, separator: t('application.separator'))} %"
+            br
+            br
+            li
+              #text-bold.text-center
+                - if Time.now > @campaign.deadline
+                  = t('campaigns.card.finished')
+                - else
+                  - days = (@campaign.deadline - Time.now) / (60 * 60 * 24)
+                  - hours = (days % 1) * 24
+                  - minutes = (hours % 1) * 60
+                  - if days.floor > 1
+                    = t('campaigns.card.remaining_days_plural', days: days.floor)
+                  - elsif days.floor == 1
+                    = t('campaigns.card.remaining_days_singular', hours: hours.floor)
+                  - elsif hours.floor > 1
+                    = t('campaigns.card.remaining_hours_plural', hours: hours.floor, minutes: minutes.floor)
+                  - elsif hours.floor == 1
+                    = t('campaigns.card.remaining_hours_singular', minutes: minutes.floor)
+                  - else
+                    = t('campaigns.card.remaining_minutes', minutes: minutes.floor)
+            br
+            li
+              #text-bold.text-center
+                = Campaign.human_attribute_name(:minimum)
+            li.text.text-center
+                = "$ #{@campaign.minimum}"
+            br
+            p
+              .centerize
+                -if @campaign.deadline.to_date >= Time.current.to_date
+                  = link_to t('campaigns.contribute'),
+                    new_organization_campaign_contribution_path(@campaign.organization, @campaign),
+                    class: 'btn btn-violet fill-width'
+                -else
+                  = link_to t('campaigns.contribute'),
+                    new_organization_campaign_contribution_path(@campaign.organization, @campaign),
+                    class: 'btn btn-violet fill-width disabled'
+                  p
+                    small
+                      =t('campaigns.cant_donate')

@@ -4,10 +4,14 @@ class OrganizationsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
 
-  FIELDS = [:name, :description, :locality]
+  FIELDS = [:name, :description, :locality, :country]
 
   def list
     @organizations = current_user.organizations.page(params[:page] || 1)
+  end
+
+  def subregion_options
+    render partial: 'subregion_select'
   end
 
   def create

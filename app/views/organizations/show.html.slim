@@ -15,9 +15,14 @@ legend
           = @organization.description
       li.list-group-item
         h4.list-group-item-heading
+          = Organization.human_attribute_name(:country)
+        p.list-group-item-text
+          = Carmen::Country.coded(@organization.country).name
+      li.list-group-item
+        h4.list-group-item-heading
           = Organization.human_attribute_name(:locality)
         p.list-group-item-text
-          = @organization.locality
+          = Carmen::Country.coded(@organization.country).subregions.coded(@organization.locality).name
 
 - if policy(@organization).update?
   .row

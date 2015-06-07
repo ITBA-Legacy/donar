@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(version: 20150607181805) do
     t.string   "locality"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "country"
   end
 
   create_table "organizations_users", id: false, force: true do |t|

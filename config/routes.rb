@@ -5,6 +5,8 @@ Donar::Application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   root 'application#index'
   get '/about', to: 'application#about'
+  get '/faq', to: 'application#faq'
+  get '/tips', to: 'application#tips'
 
   # Users Routes
 
@@ -23,6 +25,7 @@ Donar::Application.routes.draw do
 
     collection do
       get :list
+      get :subregion_options
     end
 
     resources :comments, except: [:edit, :update]
@@ -53,12 +56,14 @@ Donar::Application.routes.draw do
       get :search
       post :search
       get :landing
+      get :subregion_options
     end
     member do
       post :approve
       get :configure
       post :configure_step2
       post :configure_step3
+
     end
   end
 

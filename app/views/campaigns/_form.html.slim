@@ -43,14 +43,16 @@
               = f.number_field :minimum, class: 'form-control col-sm-2', required: true, min: 0.0
         .form-group
           = f.label :category, class: 'control-label col-sm-2'
-          .col-sm-8
+          .col-sm-6
             = f.select :category,
                        Campaign::CATEGORIES.collect { |c| [t("campaigns.categories.#{c}"), c] },
                        class: 'form-control col-md-2', required: true
         .form-group
+          = f.label t('campaigns.new.basic_info.country'), class: 'control-label col-sm-2'
+          #country
+            = f.country_select :country, {selected: 'AR'}, class:'form-control'
           = f.label :locality, class: 'control-label col-sm-2'
-          .col-sm-8
-            = f.text_field :locality, class: 'form-control col-md-2', required: true
+          #campaign-subregion
         .form-group
           = f.label :short_description, class: 'control-label col-sm-2'
           .col-sm-8

@@ -1,4 +1,12 @@
 en:
+  activerecord:
+      errors:
+        models:
+          contribution:
+            attributes:
+              perk:
+                quantity: There is no more stock of this perk
+                amount_error: The amount of the donation should be equal or grater than the benfits´s value
   application:
     title: Donar
     no_results: No results found
@@ -10,6 +18,8 @@ en:
     transparent: TRANSPARENT
     footer:
       who_are_we: WHO ARE WE?
+      faq: FAQ
+      tips: WHAT MAKES A SUCCESSFUL CAMPAIGN?
       requests: REQUESTS
       how_to: HOW TO DONATE
       profile: MY PROFILE
@@ -32,6 +42,7 @@ en:
         goal3: Encourage research to identify and understand the social sector and its potential for social, cultural and economic development.
         goal4: Promoting a system of information and cooperation between CSOs and government and private sectors.
         goal5: Support initiatives to promote volunteering.
+
     landing:
       choose_organization: Choose Organization
       no_organizations: You don't have any organization
@@ -87,23 +98,34 @@ en:
   contributions:
     mercadopago: Contribute with MercadoPago
     anonymous: Anonymous Contribution
+  perks:
+    amount_error: The perk´s amount can not be greater than contributtion´s amount
+    selection: Choose the perk you want
   campaigns:
     history: History
     updates: Updates
     comments: Comments
     backers: Backers
-    benefits: Benefits
-    next: Siguiente
-    previous: Atrás
-    first_step: 'Paso 1'
-    second_step: 'Paso 2'
+    no_backers: This campaign does not have funders. Be the first!
+    perks: Perks
+    next: Next
+    previous: Back
+    first_step: 'Step 1'
+    second_step: 'Step 2'
     collected: 'Collected from'
+    no_perks: 'This campaign has no perks.'
     card:
       goal: "of $%{goal}"
       pledgers: "%{count} Donors"
       days_left: "Remaining Days"
       raised: 'Raised'
       completed: 'Completed'
+      remaining_days_plural: '%{days} days remaining'
+      remaining_days_singular: '1 day and %{hours} remaining'
+      remaining_hours_plural: '%{hours} hours and %{minutes} minute/s remaining'
+      remaining_hours_singular: '1 hour and %{minutes} minute/s remaining'
+      remaining_minutes: '%{minutes} minute/s remaining'
+      finished: '¡End of campaign!'
     categories:
       education: Education
       social: Social
@@ -145,6 +167,7 @@ en:
         deadline: "Deadline (mm/dd/yyyy)"
         minimum: "Minimum pledge"
         goal: "Goal"
+        category: "Category"
     twitter_message:
       introduction: "Lets build a dream together!! help me fundraising"
       ending: "Enter to the site to follow the development of the project"
@@ -368,13 +391,24 @@ en:
     start: Start
     download: Download
   faq:
-    title: Frequently asked questions
+    title: Frequently Asked Questions
     question1:
-      title: How do I pledge?
-      answer:
+      title: Aenean sit amet lectus nec massa sodales tempus?
+      answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pellentesque, elit ac feugiat auctor, dolor quam efficitur ante, at dapibus mi libero sed ligula. Donec condimentum elit vitae elit lacinia gravida. Quisque purus diam, dignissim vel vehicula eu, facilisis eget neque. Mauris elementum quam at odio aliquet maximus. Aliquam semper est luctus magna pulvinar egestas. Duis purus dolor, blandit a pretium sed, pretium vitae magna. Nulla quis luctus leo. Proin ultricies fringilla nibh, id dapibus ante tincidunt eget. Donec vitae neque hendrerit, ornare ipsum sed, tincidunt velit. Integer tincidunt ipsum at velit vulputate tristique. Integer interdum metus semper erat bibendum fermentum. Fusce a feugiat tortor. Donec eu est urna. Phasellus aliquam, ipsum a gravida accumsan, dui turpis blandit neque, et ullamcorper nibh metus quis sem. Donec ac velit quis arcu aliquet pulvinar. Quisque iaculis vulputate tortor, ac hendrerit arcu auctor ac.
     question2:
-      title: When is my card charged?
-      answer:
+      title: Cras vestibulum urna in metus sodales faucibus?
+      answer: In maximus nisl quis scelerisque rutrum. Nunc nisl metus, accumsan ac purus et, vestibulum blandit diam. Nulla non velit ligula. Etiam egestas vehicula fermentum. Pellentesque facilisis consequat erat, accumsan blandit augue sollicitudin tristique. Sed eget efficitur lorem, eget scelerisque magna. Aliquam erat volutpat. Phasellus maximus rutrum interdum. Praesent arcu massa, ultricies id accumsan eu, maximus eget eros. Nulla non aliquam est, pellentesque luctus orci. Sed ipsum tellus, porta at molestie vel, pulvinar placerat libero. Fusce semper vehicula ornare. Praesent volutpat dolor at enim faucibus, non ultricies risus sollicitudin. Sed vitae nibh urna.
     question3:
-      title: So I'm only charged if funding succeeds?
-      answer: Yes! If a project isn't successfully funded, no one pays anything.
+      title:  Quisque ac ante vitae diam finibus consectetur.?
+      answer: Sed hendrerit nisi sem, et laoreet lacus dapibus at. Sed tempor odio in volutpat molestie. Vestibulum tortor risus, consectetur id tincidunt sit amet, pharetra vel neque. Morbi ut egestas orci. Vestibulum porttitor diam sapien, vel consectetur lectus consectetur id. Integer auctor at dui eu maximus. Nullam et finibus lectus, in lacinia leo. Sed ullamcorper vulputate suscipit. Quisque at eros lacus. Ut sed turpis a neque malesuada porta at non justo. Donec vitae dictum urna, aliquet pharetra felis. Cras ultricies, arcu eu finibus imperdiet, risus magna vehicula mi, eu cursus nisi neque non lorem. Suspendisse at tellus libero. Donec leo enim, interdum id sapien venenatis, luctus consequat ligula. Morbi at elit magna.
+    question4:
+      title: Suspendisse quis urna vitae augue pretium ullamcorper vel ac metus.?
+      answer: Phasellus ullamcorper dui eros, et vehicula leo lacinia ac. Maecenas blandit neque ut lacinia lacinia. Etiam ac condimentum urna, sit amet mollis felis. Sed vehicula molestie massa sed hendrerit. Nunc cursus diam eget magna pretium, at convallis mauris vestibulum. Etiam et interdum nisl, at semper tortor. Duis fringilla convallis lacus vitae congue. Nunc consectetur sollicitudin orci, non finibus mi pretium sed. Mauris tortor nibh, sollicitudin venenatis finibus id, efficitur vitae mi. Aenean id fringilla est. Donec non est odio. Integer molestie interdum dolor. Vestibulum metus quam, eleifend ac congue non, rutrum non quam. Integer ut purus a justo malesuada eleifend. Proin malesuada ipsum sit amet lacus accumsan, at lacinia risus rutrum. Donec tempor eros at posuere rhoncus.
+    question5:
+      title: Donec lacinia lectus at malesuada semper.
+      answer: Nunc id ligula scelerisque, elementum massa id, vestibulum nibh. Curabitur tincidunt facilisis orci, nec rutrum nisl sodales sed. Phasellus enim libero, sollicitudin vel varius ut, laoreet id quam. Maecenas venenatis vestibulum eleifend. Maecenas vestibulum rhoncus nulla, sit amet malesuada tellus molestie quis. Praesent in ex accumsan, semper enim ut, tincidunt nibh. Vestibulum lobortis gravida ipsum a vulputate. Sed malesuada porttitor arcu et vestibulum. Quisque dolor ante, maximus sit amet sapien in, bibendum pretium diam. Aliquam suscipit, ante eget porta tempor, velit purus suscipit dui, eu tincidunt urna metus sed sem. Nunc porttitor fringilla urna, sit amet fermentum diam volutpat id. Integer luctus enim nec orci condimentum, fringilla auctor diam posuere.
+  tips:
+    title: What makes a successful campaign?
+    tip1:
+      title: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur
+      text: Nulla vel fermentum velit. Fusce vitae venenatis tortor. Proin posuere, erat eu ultricies porttitor, dui metus tristique tortor, sit amet sollicitudin magna enim nec enim. Pellentesque commodo tempus ligula. Donec volutpat enim egestas, semper nibh in, placerat augue. Nam in placerat mi, tristique interdum orci. Nullam vitae convallis turpis. Maecenas ultricies nibh sed tristique commodo. Quisque nec rutrum elit, et eleifend ex. Maecenas efficitur magna a lectus imperdiet consequat. Aliquam auctor arcu diam, sit amet interdum mauris ullamcorper vel. Donec faucibus, justo ut pulvinar cursus, ligula ipsum convallis justo, et egestas justo erat id lectus. Cras rhoncus vel diam nec commodo. Integer arcu velit, auctor nec iaculis vel, convallis ac erat. Etiam nec diam at ex ullamcorper varius. Proin et vulputate ipsum. Proin eget sem ante. In erat lacus, tempus non efficitur a, cursus in orci. Quisque consequat porta nibh sit amet tincidunt. Cras ultrices dictum nibh et aliquet. Nulla scelerisque tincidunt tellus, id vehicula mauris cursus vitae. Nullam a eros sapien. Proin convallis vitae velit et ornare. Cras tincidunt ut lacus et malesuada. Quisque varius efficitur enim convallis blandit. Curabitur varius, arcu sed sodales egestas, arcu tortor porta orci, vitae sagittis augue odio eget metus. Nunc tempor, sem a ultrices placerat, elit sem posuere est, eu consectetur ex quam sed nisl. Cras rhoncus augue sed metus dignissim vehicula. Nunc vitae magna mi. Aliquam consequat commodo nisi, nec laoreet ante. Aenean tempus lorem quis porttitor feugiat. Donec dignissim nunc in urna mollis, vel egestas magna accumsan. Proin quis enim et eros aliquam malesuada. Praesent fermentum justo eu tortor volutpat, nec facilisis nunc commodo. Fusce in lacinia lorem, ut egestas nibh. Nam in ipsum et odio imperdiet consectetur nec ac sem. Phasellus sagittis orci feugiat neque efficitur, id vulputate lectus fringilla. Mauris quis urna leo. Nunc pretium mauris a eros luctus, eu venenatis mauris pellentesque. Suspendisse dignissim nulla velit, at porta nulla ultrices sit amet. Nulla auctor nunc condimentum ligula ultrices, ac porta ipsum egestas. Curabitur euismod sagittis justo sed lacinia. Donec vel lorem mi. Nulla non nisi egestas, tincidunt nisi id, iaculis diam. Vivamus eu lacus convallis, sodales erat eu, viverra lectus. In laoreet tempus est non commodo. Vivamus sit amet turpis ut metus iaculis ultrices sit amet in turpis. Mauris eu felis ac est accumsan commodo. Cras aliquam est sit amet tellus bibendum, vel consectetur urna vehicula. Nam tortor libero, accumsan fringilla fringilla eu, fringilla et felis. Duis scelerisque eu arcu eget placerat. Phasellus et purus tristique, luctus erat in, posuere lectus. Phasellus a magna eu erat aliquet molestie sed ac nisl. Donec facilisis mollis purus interdum tempor. Ut efficitur, sapien ac molestie porttitor, odio risus laoreet ipsum, quis vehicula lorem leo ut arcu. Pellentesque sit amet mollis urna, vel congue tellus. Nulla dolor ante, mattis at sapien varius, ornare iaculis urna. Proin id mattis metus. Sed nec dictum quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque rutrum enim non leo rutrum finibus ut vitae dolor. Donec ac augue et nisl posuere tincidunt.
