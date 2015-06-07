@@ -54,6 +54,7 @@ module CampaignsCreationHelper
           name: Faker::Commerce.product_name,
           description: Faker::Lorem.paragraph,
           amount: rand(1..20000),
+          done_date: DateTime.current + rand(10..60).days,
           campaign: campaign
         )
       end
