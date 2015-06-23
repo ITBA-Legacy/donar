@@ -22,7 +22,7 @@ module CampaignsCreationHelper
         deadline: DateTime.current + rand(10..60).days,
         minimum: 1.0,
         goal: 1.0, # Then this will be updated by milestones
-        category: Campaign::CATEGORIES.sample.to_s,
+        category: Category.all.sample,
         locality: 'B',
         country: 'AR',
         short_description: Faker::Lorem.sentence,
