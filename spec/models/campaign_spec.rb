@@ -5,7 +5,6 @@ describe Campaign do
   describe '#create' do
 
     let(:campaign) { build(:campaign) }
-
     context 'Creating an invalid campaign' do
 
       it 'validates the name not to be nil' do
@@ -87,7 +86,7 @@ describe Campaign do
       end
 
       it 'validates the category inclusion' do
-        campaign.category = Faker::Lorem.characters(3)
+        campaign.update_attributes(category: nil)
         expect(campaign.valid?).to be false
         expect(campaign).to have(1).error_on(:category)
       end

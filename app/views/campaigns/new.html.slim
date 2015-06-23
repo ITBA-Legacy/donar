@@ -1,32 +1,10 @@
-= form_for [@organization, @campaign], html: { role: 'form' } do |f|
-  - if @campaign.errors.any?
-    .alert.alert-danger
-      ul
-        - @campaign.errors.each do |attr, msg|
-          li = msg
-  .row
-    h1
-      = t('campaigns.new.title')
-  .row
-    p.campaign-info
-      = t('campaigns.new.info')
-  .row.violet-row
-    .col-sm-5.white-bold
-      = t('campaigns.new.category.question')
-    .col-sm-7.white
-      = t('campaigns.new.category.chose')
-  .row#categories
-    .col-sm-5.white-bold
-      = f.collection_select(:category_id, Category.find(:all), :id, :name,{}, {class: 'form-control'})
-      br/
-    //= f.hidden_field :category, id: 'category-input', required: true
-    //- Category.each do |c|
-      //.col-sm-3.category-card
-        //.inner-card data-category=c
-          //= image_tag 'cat-blanco.png', class: 'cat-image'
-          //.category-name.col-sm-6
-            //p = t "#{c.name}"
-  .row.violet-row
+.container
+  = form_for [@organization, @campaign], html: { role: 'form' } do |f|
+    - if @campaign.errors.any?
+      .alert.alert-danger
+        ul
+          - @campaign.errors.each do |attr, msg|
+            li = msg
     .row
       h1
         = t('campaigns.new.title')
@@ -40,14 +18,9 @@
         .secondary-title-description.hidden-sm.hidden-xs
           = t('campaigns.new.category.chose')
     .row#categories
-      = f.hidden_field :category, id: 'category-input', required: true
-      - Campaign::CATEGORIES.each do |c|
-        .col-md-4.col-sm-4.col-xs-12.category-card
-          .inner-card data-category=c
-            = image_tag 'cat-blanco.png', class: 'cat-image'
-            .category-name
-              p
-                = t("campaigns.categories.#{c}")
+      .col-sm-5.white-bold
+        = f.collection_select(:category_id, Category.find(:all), :id, :name,{}, {class: 'form-control'})
+        br/
     .row.violet-row
       .col-md-12
         .secondary-title
