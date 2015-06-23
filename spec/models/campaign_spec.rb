@@ -5,7 +5,6 @@ describe Campaign do
   describe '#create' do
 
     let(:campaign) { build(:campaign) }
-
     context 'Creating an invalid campaign' do
 
       it 'validates the name not to be nil' do
@@ -87,8 +86,9 @@ describe Campaign do
       end
 
       it 'validates the category inclusion' do
-        expect(campaign.valid?).to be true
-        expect(campaign).to have(0).error_on(:category)
+        campaign.update_attributes(category: nil)
+        expect(campaign.valid?).to be false
+        expect(campaign).to have(1).error_on(:category)
       end
 
       it 'validates the country' do

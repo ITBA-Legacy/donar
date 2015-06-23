@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe CampaignsController do
 
+  let(:category) { create(:category) }
   let(:organization) { create(:organization) }
   let(:campaign) { attributes_for(:campaign) }
   let(:user) { create(:user, organizations: [organization]) }
@@ -13,6 +14,7 @@ describe CampaignsController do
       before(:each) do
         sign_in(user)
         user.reload
+        campaign[:category_id] = category.id
       end
 
       it 'assigns the organization to the campaign' do
