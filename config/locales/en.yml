@@ -313,6 +313,7 @@ en:
         other: is the wrong length (should be %{count} characters)
       other_than: "must be other than %{count}"
       not_saved: An error ocurred
+      extension_white_list_error: The file must be compressed
     template:
       body:  'There were problems with the following fields:'
       header:
@@ -388,6 +389,7 @@ en:
     reject: Reject
     achieve: Achieve
     start: Start
+    download: Download
   faq:
     title: Frequently Asked Questions
     question1:

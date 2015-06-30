@@ -137,5 +137,6 @@ es:
         done_date: Fecha Límite
         aasm_state: Estado
         amount: Monto
+        file: Archivo
       purchase:
         status: Estado

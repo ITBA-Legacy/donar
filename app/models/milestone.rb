@@ -5,6 +5,9 @@ class Milestone < ActiveRecord::Base
   validates :done_date, timeliness: { on_or_after: -> { Date.current } }
 
   include AASM
+
+  mount_uploader :file, MilestoneFileUploader
+
   aasm do
     state :notAchieved, initial: true
     state :achieved
