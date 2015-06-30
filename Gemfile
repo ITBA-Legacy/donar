@@ -114,7 +114,6 @@ gem 'byebug'
 # Simple forms
 gem 'simple_form', '~> 3.1.0rc'
 
-
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'

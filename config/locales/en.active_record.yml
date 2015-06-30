@@ -67,6 +67,9 @@ en:
       user:
         one: User
         other: Users
+      category:
+        one: Category
+        other: Categories
       admin_user:
         one: Admin User
         other: Admin Users

@@ -61,7 +61,7 @@ ActiveAdmin.register Campaign do
   filter :name
   filter :category,
          as: :select,
-         collection: Campaign::CATEGORIES.map { |c| [I18n.t("campaigns.categories.#{c}"), c] }
+         collection: Category.all
   filter :goal
   filter :locality
   filter :aasm_state,
@@ -77,7 +77,7 @@ ActiveAdmin.register Campaign do
       f.input :minimum, min: 0.0
       f.input :category,
               as: :select,
-              collection: Campaign::CATEGORIES.map { |c| [t("campaigns.categories.#{c}"), c] }
+              collection: Category.all
       f.input :locality
       f.input :organization
       f.input :short_description

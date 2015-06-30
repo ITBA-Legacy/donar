@@ -7,9 +7,9 @@ FactoryGirl.define do
     goal 200.0
     deadline { Time.current + 1.month }
     minimum 1.0
-    category 'health'
     locality 'BA'
     country 'ARG'
     short_description { Faker::Lorem.sentence }
+    category { FactoryGirl.create(:category) }
   end
 end

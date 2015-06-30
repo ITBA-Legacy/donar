@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20150607181805) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,7 +57,6 @@ ActiveRecord::Schema.define(version: 20150607181805) do
     t.float    "goal"
     t.datetime "deadline"
     t.float    "minimum"
-    t.string   "category"
     t.string   "locality"
     t.integer  "organization_id"
     t.text     "short_description"
@@ -69,9 +70,17 @@ ActiveRecord::Schema.define(version: 20150607181805) do
     t.string   "fund_recipient"
     t.string   "funding_type"
     t.string   "country"
+    t.integer  "category_id"
   end
 
+  add_index "campaigns", ["category_id"], name: "index_campaigns_on_category_id", using: :btree
   add_index "campaigns", ["organization_id"], name: "index_campaigns_on_organization_id", using: :btree
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", force: true do |t|
     t.integer  "commentable_id"
