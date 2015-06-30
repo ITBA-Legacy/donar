@@ -187,7 +187,7 @@ es:
       configure: "CONFIGURA TU CAMPAÑA"
       basic_info:
         title: "Datos básicos de la campaña"
-        info: "Tanto el título de tu capaña como una breve descripción de esta se muestran en la ficha de la campaña"
+        info: "Tanto el título de tu campaña como una breve descripción de esta se muestran en la ficha de la campaña"
         small_image: "Imagen pequeña"
         choose_image: "CARGAR UNA IMAGEN"
         campaign_title: "Título"
