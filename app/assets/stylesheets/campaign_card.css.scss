@@ -30,6 +30,17 @@
     padding: 0;
   }
 }
+
+.index-img-campaign {
+  img {
+    width: 100%;
+  }
+}
+
+.index-card {
+  margin: 10px auto;
+}
+
 .img-campaign-thumbnail {
   height: 190px;
   margin-bottom: 10px;
@@ -38,4 +49,9 @@
     max-height: 190px;
     max-width: 250px;
   }
+}
+
+.label-index-card {
+  position: relative;
+  float: right;
 }
