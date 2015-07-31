@@ -48,12 +48,6 @@
                   - else
                     = t('campaigns.card.remaining_minutes', minutes: minutes.floor)
             br
-            li
-              #text-bold.text-center
-                = Campaign.human_attribute_name(:minimum)
-            li.text.text-center
-                = "$ #{@campaign.minimum}"
-            br
             p
               .centerize
                 -if @campaign.deadline.to_date >= Time.current.to_date
