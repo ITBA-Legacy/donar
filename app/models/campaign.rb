@@ -17,6 +17,7 @@ class Campaign < ActiveRecord::Base
   has_many :contributions
   has_many :milestones
   belongs_to :category
+  validates :category, presence: true
 
   accepts_nested_attributes_for :perks, :milestones, reject_if: :all_blank, allow_destroy: true
 
@@ -24,7 +25,7 @@ class Campaign < ActiveRecord::Base
 
   RECIPIENT = [:individual, :registered_company, :npo_501, :npo, :religious_npo]
   FUNDING_TYPE = [:all, :partial]
-
+  CATEGORIES = [:education, :social, :health]
   STATES = [:pending, :approved, :rejected, :started_not_funded,
             :closed_funded, :closed_partially_funded, :closed_not_funded]
 
