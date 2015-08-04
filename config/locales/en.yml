@@ -95,6 +95,7 @@ en:
     profile: My Profile
     contributions: My Contributions
     link_accounts: Link accounts
+    email_request: Please enter you email
   contributions:
     mercadopago: Contribute with MercadoPago
     anonymous: Anonymous Contribution

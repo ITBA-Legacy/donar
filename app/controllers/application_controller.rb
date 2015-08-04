@@ -20,6 +20,15 @@ class ApplicationController < ActionController::Base
   def faq
   end
 
+  def after_sign_in_path_for(resource)
+    if current_user.email.nil? || current_user.email.blank?
+      flash.notice = t('users.email_request')
+      edit_user_path id: current_user.id
+    else
+      super
+    end
+  end
+
   private
 
   def configure_permitted_parameters
