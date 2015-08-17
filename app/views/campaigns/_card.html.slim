@@ -34,7 +34,7 @@
             - if campaign.deadline > Time.current
               = t('campaigns.card.days_left')
               br
-                = (campaign.deadline.to_date - Time.current.to_date).to_i
+              = ((campaign.deadline - Time.now) / (60 * 60 * 24)).floor
             - else
               = t('campaigns.card.finished')
 
