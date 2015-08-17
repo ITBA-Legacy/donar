@@ -20,7 +20,7 @@
         #campaign-goal
       .col-md-12
         = f.simple_fields_for :milestones do |milestone|
-          = render 'milestone_fields', :f => milestone
+          = render 'milestone_fields', :f => milestone, :campaign => @campaign
       .col-md-12
         = link_to_add_association t('campaigns.configure.milestone_add'), f, :milestones, class: 'btn btn-violet btn-add-milestone'
     .row.violet-row
