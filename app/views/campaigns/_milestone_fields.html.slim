@@ -16,7 +16,7 @@
           = f.full_error :amount
       .col-md-3.col-sm-6.col-xs-12
         = f.label :done_date, class: 'control-label'
-        = f.date_field :done_date, class: 'form-control', required: true, min: Time.current
+        = f.date_field :done_date, class: 'form-control', required: true, min: Time.current, max: @campaign.deadline.to_date
         = f.full_error :done_date
       .col-md-12
         = f.label :description, class: 'control-label'

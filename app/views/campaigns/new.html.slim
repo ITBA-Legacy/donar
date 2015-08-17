@@ -75,7 +75,7 @@
               label.control-label
                 = t('campaigns.new.basic_info.deadline')
               .input-group
-                = f.date_field :deadline, class: 'form-control', required: true
+                = f.date_field :deadline, min: Date.current, max: Date.current + 2.months, class: 'form-control', required: true
       .col-md-12
         = f.submit nil, class: 'btn btn-violet pull-right'
 
