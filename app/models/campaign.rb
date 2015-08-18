@@ -97,6 +97,10 @@ class Campaign < ActiveRecord::Base
 
   end
 
+  def expired?
+    deadline < Time.now
+  end
+
   private
 
   def funded?
