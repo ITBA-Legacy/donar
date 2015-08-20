@@ -19,6 +19,6 @@
         td
           = organization.description
         td
-          = organization.locality
+          = Carmen::Country.coded(organization.country).subregions.coded(organization.locality).name
 #pagination
   = paginate organizations
