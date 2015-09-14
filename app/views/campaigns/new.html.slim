@@ -35,10 +35,12 @@
               span.small-image-text
                 = t('campaigns.new.basic_info.small_image')
               = image_tag 'ayuda.png', class: 'small-image-help'
-            .image-preview.text-center
-              = image_tag @campaign.main_image
+            - if @campaign.main_image.present?
+              .image-preview.text-center
+                = image_tag @campaign.main_image
           .col-md-12.file-field
             #upload-field.text-center
+              input id= "inputFile" readonly=""
               .upload-button.btn
                 = t('campaigns.new.basic_info.choose_image')
               = file_field_tag :main_image, id: 'upload-file-field'

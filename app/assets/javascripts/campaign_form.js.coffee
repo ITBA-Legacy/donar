@@ -25,3 +25,5 @@ $ ->
 
   $('.upload-button').on 'click', ->
     $('#upload-file-field').click()
+  $('#upload-file-field').change ->
+      $('#inputFile').val(@value)
